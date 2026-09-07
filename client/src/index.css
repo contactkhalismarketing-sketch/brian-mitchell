@@ -106,6 +106,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (min-width: 640px) { .service-split-hero__copy { padding: 6rem 3rem 4.5rem; } }
 @media (min-width: 1024px) { .service-split-hero { grid-template-columns: minmax(0,.92fr) minmax(0,1.08fr); min-height: 610px; } .service-split-hero__copy { min-height: 610px; padding: 8.5rem 4rem 5rem max(3rem, calc((100vw - 1344px)/2)); } .service-split-hero__video { min-height: 610px; } .service-split-hero__video video { object-position: center; } }
 .hero-overlay { background: linear-gradient(90deg, rgba(255,250,243,.74) 0%, rgba(255,250,243,.46) 38%, rgba(255,250,243,.12) 65%, rgba(24,33,31,.08) 100%); }
+.page-hero-scrim { background: linear-gradient(90deg, rgba(24,20,22,.82) 0%, rgba(24,20,22,.6) 30%, rgba(24,20,22,.28) 55%, rgba(24,20,22,.06) 76%, transparent 100%); }
+@media (max-width: 767px) { .page-hero-scrim { background: rgba(24,20,22,.64); } }
 .sun-portal { border: 1px solid rgba(228,137,99,.72); border-bottom: 0; border-radius: 999px 999px 0 0; pointer-events: none; position: absolute; }
 .sun-portal.tall { height: 290px; width: 580px; }
 .sun-portal.wide { height: 190px; width: 380px; }
