@@ -1,17 +1,18 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import { liveAssets } from "../lib/data";
 ---
 
 <footer class="bg-[#fffaf3]">
   <div class="mx-auto flex max-w-[1440px] flex-col justify-between gap-7 px-5 pt-10 sm:px-8 md:flex-row md:items-center lg:px-12">
-    <img src={liveAssets.logo} alt="Dr. Brian Mitchell & Associates" class="w-[210px]" />
+    <Image src={liveAssets.logo} alt="Dr. Brian Mitchell & Associates" class="w-[210px]" width={410} />
     <div class="text-xs leading-6 text-[#72827f]">
       <p>6383 E. Grant Road, Suite 155 · Tucson, AZ 85715</p>
       <p>Monday–Tuesday 8am–4pm · Wednesday–Friday 7am–4pm</p>
     </div>
     <div class="flex items-center gap-3 border-l-2 border-[#bb6846] pl-3">
-      <img src={liveAssets.bioclear} alt="Dr. Brian Mitchell BioClear Certified" class="h-16 w-16 object-contain" />
+      <Image src={liveAssets.bioclear} alt="Dr. Brian Mitchell BioClear Certified" class="h-16 w-16 object-contain" width={128} />
       <p class="max-w-[155px] text-[0.64rem] font-extrabold uppercase leading-4 tracking-[0.11em] text-[#27594e]">Dr. Brian Mitchell<br />BioClear Certified</p>
     </div>
   </div>

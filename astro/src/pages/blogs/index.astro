@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import PracticeHeader from "../../components/PracticeHeader.astro";
 import PracticeFooter from "../../components/PracticeFooter.astro";
@@ -25,7 +26,7 @@ import { liveAssets, articles } from "../../lib/data";
       </PageHero>
       <section class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
         <div class="grid gap-8 border-b border-[#77a49f]/25 pb-12 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
-          <img src={liveAssets.blogSoftTissue} alt="Soft tissue management illustration" class="aspect-[16/9] w-full object-cover" />
+          <Image src={liveAssets.blogSoftTissue} alt="Soft tissue management illustration" class="aspect-[16/9] w-full object-cover" width={800} />
           <article>
             <p class="eyebrow">Featured article · Dental implants</p>
             <h2 class="display-face mt-4 text-4xl leading-[.98] tracking-[-.025em] text-[#2b2930] sm:text-5xl">The Importance of Soft Tissue in Successful Dental Implant Surgery</h2>
@@ -36,7 +37,7 @@ import { liveAssets, articles } from "../../lib/data";
         <div class="mt-14 grid gap-7 md:grid-cols-3">
           {articles.slice(1).map(([title, category, copy, image]) => (
             <article>
-              <img src={image} alt="" class="aspect-[4/3] w-full object-cover" />
+              <Image src={image} alt="" class="aspect-[4/3] w-full object-cover" width={480} />
               <p class="eyebrow mt-6">{category}</p>
               <h3 class="display-face mt-3 text-3xl leading-none text-[#2b2930]">{title}</h3>
               <p class="mt-4 text-sm leading-7 text-[#596966]">{copy}</p>

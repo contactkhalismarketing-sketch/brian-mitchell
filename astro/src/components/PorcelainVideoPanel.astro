@@ -1,10 +1,12 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import { liveAssets } from "../lib/data";
 ---
 
 <div class="porcelain-video-panel" id="porcelain-video-panel">
   <button class="porcelain-video-panel__play" type="button" id="porcelain-video-play" aria-label="Play Dr. Brian Mitchell Cosmetic Dentistry video">
-    <img src="/assets/practice/brian-cosmetic-youtube-thumb_7a5e79b6.jpg" alt="Dr. Brian Mitchell in the Cosmetic Dentistry video" />
+    <Image src={liveAssets.cosmeticYoutubeThumb} alt="Dr. Brian Mitchell in the Cosmetic Dentistry video" width={800} />
     <span class="porcelain-video-panel__overlay"></span>
     <span class="porcelain-video-panel__play-button"><Icon name="lucide:play-circle" class="h-8 w-8" />Watch Dr. Mitchell</span>
   </button>

@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import { liveAssets, featuredServices, practiceStats, patientInfoMenu } from "../lib/data";
 import PatientInfoMenu from "../components/PatientInfoMenu.astro";
@@ -11,7 +12,7 @@ import ReviewSlider from "../components/ReviewSlider.astro";
     <header class="relative z-20 bg-[#fffaf3]/95 backdrop-blur-md">
       <div class="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-5 py-4 sm:px-8 lg:px-12">
         <a class="block w-[160px] sm:w-[205px]" href="#top" aria-label="Dr. Brian Mitchell & Associates home">
-          <img src={liveAssets.logo} class="h-auto w-full" alt="Dr. Brian Mitchell & Associates Dentistry, Dental Implants, Orthodontics" />
+          <Image src={liveAssets.logo} class="h-auto w-full" alt="Dr. Brian Mitchell & Associates Dentistry, Dental Implants, Orthodontics" width={410} loading="eager" />
         </a>
         <nav class="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
           <a class="nav-link" href="#services">Services</a>
@@ -56,7 +57,7 @@ import ReviewSlider from "../components/ReviewSlider.astro";
       <section class="homepage-hero relative isolate overflow-hidden bg-[#e9f1ed] text-[#2b2930]">
         <div class="homepage-hero__video-band relative">
           <div class="video-hero inset-0" aria-label="Dr. Brian Mitchell & Associates treatment room and dental technology">
-            <video class="video-fallback" autoplay loop muted playsinline preload="metadata" poster={liveAssets.office} aria-label="Dr. Brian Mitchell & Associates building and dental technology tour">
+            <video class="video-fallback" autoplay loop muted playsinline preload="metadata" poster={liveAssets.office.src} aria-label="Dr. Brian Mitchell & Associates building and dental technology tour">
               <source src={liveAssets.heroVideo} type="video/mp4" />
             </video>
           </div>
@@ -118,7 +119,7 @@ import ReviewSlider from "../components/ReviewSlider.astro";
         <div class="relative grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
           <div class="relative">
             <div class="absolute -left-3 -top-3 h-full w-full border border-[#d77c55]/55"></div>
-            <img src={liveAssets.brian} alt="Dr. Brian Mitchell" class="relative aspect-[4/4.6] w-full object-cover object-[center_22%]" />
+            <Image src={liveAssets.brian} alt="Dr. Brian Mitchell" class="relative aspect-[4/4.6] w-full object-cover object-[center_22%]" width={640} />
           </div>
           <div>
             <p class="eyebrow">Why Dr. Mitchell?</p>
@@ -142,7 +143,7 @@ import ReviewSlider from "../components/ReviewSlider.astro";
           <div class="featured-service-grid mt-12">
             {featuredServices.map((service) => (
               <a class="homepage-service-card group block no-underline" href={service.href}>
-                <img src={service.image} alt="" class="absolute inset-0 h-full w-full object-cover object-center" />
+                <Image src={service.image} alt="" class="absolute inset-0 h-full w-full object-cover object-center" width={640} />
                 <div class="absolute inset-0 bg-gradient-to-t from-[#2b2930]/90 via-[#2b2930]/12 to-transparent"></div>
                 <div class="absolute right-4 top-4 h-11 w-11 rounded-full border border-[#df8b64]/80" aria-hidden="true"></div>
                 <div class="relative flex min-h-[330px] flex-col justify-end p-6 text-white">
@@ -176,7 +177,7 @@ import ReviewSlider from "../components/ReviewSlider.astro";
             </div>
           </div>
           <div class="relative min-h-[460px] bg-[#d8e5df]">
-            <img src={liveAssets.dianaHome} alt="Dr. Diana Zhen" class="absolute inset-0 h-full w-full object-contain object-center" />
+            <Image src={liveAssets.dianaHome} alt="Dr. Diana Zhen" class="absolute inset-0 h-full w-full object-contain object-center" width={700} />
             <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#2b2930]/78 via-[#2b2930]/20 to-transparent"></div>
             <div class="absolute right-7 top-7 h-16 w-16 rounded-full border border-[#df8b64]" aria-hidden="true"></div>
             <div class="absolute inset-x-0 bottom-0 p-7 text-white sm:p-10">
@@ -227,10 +228,10 @@ import ReviewSlider from "../components/ReviewSlider.astro";
 
     <footer class="bg-[#fffaf3]">
       <div class="mx-auto flex max-w-[1440px] flex-col justify-between gap-7 px-5 py-10 sm:px-8 md:flex-row md:items-center lg:px-12">
-        <img src={liveAssets.logo} alt="Dr. Brian Mitchell & Associates" class="w-[210px]" />
+        <Image src={liveAssets.logo} alt="Dr. Brian Mitchell & Associates" class="w-[210px]" width={410} />
         <p class="max-w-md text-[.62rem] leading-5 text-[#72827f]">Dentistry · Dental Implants · Orthodontics · 6383 E. Grant Road, Suite 155, Tucson, AZ 85715</p>
         <div class="flex items-center gap-3 border-l-2 border-[#bb6846] pl-3">
-          <img src={liveAssets.bioclear} alt="Dr. Brian Mitchell BioClear Certified" class="h-16 w-16 object-contain" />
+          <Image src={liveAssets.bioclear} alt="Dr. Brian Mitchell BioClear Certified" class="h-16 w-16 object-contain" width={128} />
           <p class="max-w-[155px] text-[0.64rem] font-extrabold uppercase leading-4 tracking-[0.11em] text-[#27594e]">Dr. Brian Mitchell<br />BioClear Certified</p>
         </div>
       </div>

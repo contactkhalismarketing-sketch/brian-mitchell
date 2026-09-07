@@ -1,9 +1,12 @@
 ---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
 interface Props {
   eyebrow: string;
   title: string;
   body: string;
-  image: string;
+  image: ImageMetadata;
   imagePosition?: string;
   taller?: boolean;
 }
@@ -13,7 +16,7 @@ const verticalPadding = taller ? "py-28 sm:py-32 lg:py-40 xl:py-44" : "py-24 lg:
 ---
 
 <section class="relative isolate overflow-hidden bg-[#2b2930] text-white">
-  <img src={image} alt="" style={{ objectPosition: imagePosition }} class="absolute inset-0 h-full w-full object-cover" />
+  <Image src={image} alt="" style={{ objectPosition: imagePosition }} class="absolute inset-0 h-full w-full object-cover" width={1440} loading="eager" />
   <div class="page-hero-scrim absolute inset-0"></div>
   <div class="sun-portal tall -bottom-24 -right-36 opacity-80" aria-hidden="true"></div>
   <div class={`relative mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:pl-20 ${verticalPadding}`}>

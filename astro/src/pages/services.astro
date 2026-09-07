@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import PracticeHeader from "../components/PracticeHeader.astro";
 import PracticeFooter from "../components/PracticeFooter.astro";
@@ -36,7 +37,7 @@ import { liveAssets, serviceList } from "../lib/data";
         <div class="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {serviceList.map(([name, copy, image, href], index) => (
             <a href={href} class="service-card group block min-h-[390px] no-underline">
-              <img src={image} alt="" class="absolute inset-0 h-full w-full object-cover" />
+              <Image src={image} alt="" class="absolute inset-0 h-full w-full object-cover" width={640} />
               <div class="absolute inset-0 bg-gradient-to-t from-[#2b2930]/90 via-[#2b2930]/10 to-transparent"></div>
               <div class="absolute right-4 top-4 h-11 w-11 rounded-full border border-[#df8b64]/80" aria-hidden="true"></div>
               <div class="relative flex min-h-[390px] flex-col justify-end p-6 text-white">

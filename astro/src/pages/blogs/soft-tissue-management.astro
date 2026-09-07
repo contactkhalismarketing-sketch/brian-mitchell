@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import PracticeHeader from "../../components/PracticeHeader.astro";
 import PracticeFooter from "../../components/PracticeFooter.astro";
@@ -23,7 +24,7 @@ import { liveAssets } from "../../lib/data";
         </div>
       </section>
       <section class="mx-auto max-w-[1080px] px-5 py-12 sm:px-8 lg:py-16">
-        <img src={liveAssets.blogSoftTissue} alt="Dental implant soft tissue illustration" class="aspect-[16/8] w-full object-cover" />
+        <Image src={liveAssets.blogSoftTissue} alt="Dental implant soft tissue illustration" class="aspect-[16/8] w-full object-cover" width={1080} />
         <div class="mx-auto mt-14 grid max-w-4xl gap-12 lg:grid-cols-[190px_minmax(0,1fr)]">
           <aside class="lg:sticky lg:top-8 lg:self-start">
             <p class="text-[.63rem] font-extrabold uppercase tracking-[.14em] text-[#bb6846]">In this article</p>
@@ -44,7 +45,7 @@ import { liveAssets } from "../../lib/data";
             </div>
             <h2 id="method">Dr. Mitchell and Associates' high-tech method</h2>
             <p>3D X-ray technology can support careful implant planning by giving the clinical team a detailed picture of the treatment area. The technology is part of a thorough process, alongside an individual examination and conversation about your needs.</p>
-            <img src={liveAssets.blogImplant} alt="Dental implant planning illustration" class="my-10 w-full" />
+            <Image src={liveAssets.blogImplant} alt="Dental implant planning illustration" class="my-10 w-full" width={900} />
             <h2 id="procedures">Common soft tissue procedures</h2>
             <p>Depending on the patient, treatment may include soft tissue grafting or other techniques that support the contour and health of the gum tissue. The best approach is specific to the treatment site, your oral health, and the outcome you are hoping for.</p>
             <div class="mt-12 bg-[#2b2930] p-7 text-white sm:p-10">

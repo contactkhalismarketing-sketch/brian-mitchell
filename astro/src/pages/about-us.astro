@@ -6,6 +6,7 @@ import PageHero from "../components/PageHero.astro";
 import ContactBand from "../components/ContactBand.astro";
 import PracticeTourPanel from "../components/PracticeTourPanel.astro";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import { liveAssets, team } from "../lib/data";
 ---
 
@@ -41,7 +42,7 @@ import { liveAssets, team } from "../lib/data";
           <p class="eyebrow">Meet the doctors</p>
           <div class="mt-8 grid gap-7 lg:grid-cols-2">
             <article class="grid overflow-hidden bg-[#fffaf3] shadow-[0_20px_46px_rgba(40,43,40,.09)] sm:grid-cols-[.78fr_1.22fr] doctor-feature">
-              <img src={liveAssets.brianAbout} alt="Dr. Brian Mitchell" class="h-full min-h-[360px] w-full object-cover object-[center_20%]" />
+              <Image src={liveAssets.brianAbout} alt="Dr. Brian Mitchell" class="h-full min-h-[360px] w-full object-cover object-[center_20%]" width={640} />
               <div class="doctor-feature__content p-8">
                 <p class="eyebrow">Dr. Brian Mitchell</p>
                 <h3 class="display-face mt-3 text-3xl leading-none text-[#2b2930]">Dedicated to your smile.</h3>
@@ -50,7 +51,7 @@ import { liveAssets, team } from "../lib/data";
               </div>
             </article>
             <article class="grid overflow-hidden bg-[#fffaf3] shadow-[0_20px_46px_rgba(40,43,40,.09)] sm:grid-cols-[.78fr_1.22fr] doctor-feature">
-              <img src={liveAssets.dianaAbout} alt="Dr. Diana Zhen" class="h-full min-h-[360px] w-full object-cover object-[center_20%]" />
+              <Image src={liveAssets.dianaAbout} alt="Dr. Diana Zhen" class="h-full min-h-[360px] w-full object-cover object-[center_20%]" width={640} />
               <div class="doctor-feature__content p-8">
                 <p class="eyebrow">Dr. Diana Zhen</p>
                 <h3 class="display-face mt-3 text-3xl leading-none text-[#2b2930]">Thoughtful, patient-first care.</h3>
@@ -73,7 +74,7 @@ import { liveAssets, team } from "../lib/data";
           <div class="team-grid mt-12">
             {team.map((member, index) => (
               <article class={`team-card team-card-${index + 1}`}>
-                <img src={member.image} alt={member.name} />
+                <Image src={member.image} alt={member.name} width={320} />
                 <div>
                   <h3 class="display-face text-3xl leading-none text-[#2b2930]">{member.name}</h3>
                   <p class="mt-2 text-[.66rem] font-extrabold uppercase tracking-[.12em] text-[#47766c]">{member.role}</p>

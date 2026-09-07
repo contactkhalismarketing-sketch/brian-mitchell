@@ -1,18 +1,45 @@
+import logo from "../assets/practice/brian-mitchell-live-logo_02f81e9c.png";
+import brian from "../assets/practice/brian_c0d844bb.jpg";
+import diana from "../assets/practice/diana_4c83a6c1.jpg";
+import dianaHome from "../assets/practice/dr-diana-zhen-live_c8e7cb59.jpg";
+import office from "../assets/practice/brian-mitchell-live-office_d91a92cb.jpg";
+import cosmetics from "../assets/practice/cosmetics_48be418b.png";
+import orthodontics from "../assets/practice/ortho_9f9f5437.png";
+import teamPracticePhoto from "../assets/practice/team-practice_c32289f8.jpg";
+import blogSoftTissue from "../assets/practice/blog-soft-tissue_118170c6.png";
+import blogImplant from "../assets/practice/blog-implant_6ad9e8fd.png";
+import bioclear from "../assets/practice/bioclear-certified-dr-brian-mitchell_489e77d8.png";
+import cosmeticHeroPoster from "../assets/practice/cosmetic-hero-poster_7f4095a0.jpg";
+import cosmeticYoutubeThumb from "../assets/practice/brian-cosmetic-youtube-thumb_7a5e79b6.jpg";
+import camille from "../assets/practice/camille_06a39838.jpg";
+import roxanne from "../assets/practice/roxanne_50319ff2.jpg";
+import tenzi from "../assets/practice/tenzi_625460fa.jpg";
+import crystal from "../assets/practice/crystal_cf908663.jpg";
+import monique from "../assets/practice/monique_166d66e2.jpg";
+import nita from "../assets/practice/nita_74b0856c.jpg";
+import jackie from "../assets/practice/jackie_99712114.jpg";
+import kiana from "../assets/practice/kiana_d5850992.jpg";
+import yuri from "../assets/practice/yuri_059e611a.jpg";
+import gisselle from "../assets/practice/gisselle_06071191.jpg";
+
 export const liveAssets = {
-  logo: "/assets/practice/brian-mitchell-live-logo_02f81e9c.png",
-  brian: "/assets/practice/brian_c0d844bb.jpg",
-  diana: "/assets/practice/diana_4c83a6c1.jpg",
-  dianaHome: "/assets/practice/dr-diana-zhen-live_c8e7cb59.jpg",
-  office: "/assets/practice/brian-mitchell-live-office_d91a92cb.jpg",
-  cosmetics: "/assets/practice/cosmetics_48be418b.png",
-  orthodontics: "/assets/practice/ortho_9f9f5437.png",
-  brianAbout: "/assets/practice/brian_c0d844bb.jpg",
-  dianaAbout: "/assets/practice/diana_4c83a6c1.jpg",
-  team: "/assets/practice/team-practice_c32289f8.jpg",
-  blogSoftTissue: "/assets/practice/blog-soft-tissue_118170c6.png",
-  blogImplant: "/assets/practice/blog-implant_6ad9e8fd.png",
-  bioclear: "/assets/practice/bioclear-certified-dr-brian-mitchell_489e77d8.png",
+  logo,
+  brian,
+  diana,
+  dianaHome,
+  office,
+  cosmetics,
+  orthodontics,
+  brianAbout: brian,
+  dianaAbout: diana,
+  team: teamPracticePhoto,
+  blogSoftTissue,
+  blogImplant,
+  bioclear,
+  cosmeticHeroPoster,
+  cosmeticYoutubeThumb,
   heroVideo: "/assets/practice/brian-mitchell-full-composition-practice-tour_5757208e.mp4",
+  logoPublicPath: "/assets/practice/brian-mitchell-live-logo_02f81e9c.png",
 };
 
 export const navigation = [
@@ -160,61 +187,61 @@ export const team = [
   {
     name: "Camille",
     role: "Treatment Plan Coordinator",
-    image: "/assets/practice/camille_06a39838.jpg",
+    image: camille,
     bio: "During my off time I appreciate that I get to exercise. Reading is a favorite of mine. I enjoy a good murder mystery, and I care deeply about Alzheimer's, diabetes, and domestic-abuse education and awareness. If you asked what I do with friends in my spare time, I would say: what spare time?",
   },
   {
     name: "Roxanne",
     role: "Dental Hygienist",
-    image: "/assets/practice/roxanne_50319ff2.jpg",
+    image: roxanne,
     bio: "One of my favorite parts of my career is the way patients introduce the world to me. From travel and careers to sharing life perspectives, I appreciate their knowledge and wisdom. I love adventure and all sports—especially the University of Arizona Wildcats. Bear Down!",
   },
   {
     name: "Tenzi",
     role: "Dental Hygienist",
-    image: "/assets/practice/tenzi_625460fa.jpg",
+    image: tenzi,
     bio: "I have worked in dentistry for more than 15 years and have lived in Tucson since 1992. I take pride in tailoring care to each patient and improving dental awareness. I speak Hungarian, Romanian, and English, and enjoy hiking, reading, movies, and time with family and friends.",
   },
   {
     name: "Crystal",
     role: "Financial / Orthodontic Coordinator",
-    image: "/assets/practice/crystal_cf908663.jpg",
+    image: crystal,
     bio: "As a Tucson native with more than 19 years in the dental field, I am passionate about numbers and managing office finances. Outside of work, I enjoy spending quality time with my family and going shopping.",
   },
   {
     name: "Monique",
     role: "Dental Hygienist",
-    image: "/assets/practice/monique_166d66e2.jpg",
+    image: monique,
     bio: "I bring more than 25 years of dental experience and a passion for oral-health education. I also mentor future dental hygienists at Pima Community College. As a mother of four, I value family, continuing education, volunteering, and giving every patient compassionate, tailored care.",
   },
   {
     name: "Nita",
     role: "Dental Assistant",
-    image: "/assets/practice/nita_74b0856c.jpg",
+    image: nita,
     bio: "I was born in Utah, raised in Los Angeles, and came to Tucson in 2000. I began as a dental technician in the U.S. Navy in 1985. I enjoy the arts, music, painting, sculpture, and jewelry-making, and I am passionate about helping patients enhance their smiles.",
   },
   {
     name: "Jackie",
     role: "Dental Hygienist",
-    image: "/assets/practice/jackie_99712114.jpg",
+    image: jackie,
     bio: "I was born and raised in Tucson and love our desert landscape. Patient care and education led me to dental hygiene, and my goal is to give every patient the most comfortable and comprehensive care possible. Weekends near any body of water with family are a favorite.",
   },
   {
     name: "Kiana",
     role: "Patient Coordinator",
-    image: "/assets/practice/kiana_d5850992.jpg",
+    image: kiana,
     bio: "As one of the first people you will meet, I work to make each visit smooth and welcoming. Clear communication—whether managing calls or keeping patients informed about appointments—is central to my role. I am passionate about music, authenticity, balance, and compassion.",
   },
   {
     name: "Yuri",
     role: "Patient Care Team",
-    image: "/assets/practice/yuri_059e611a.jpg",
+    image: yuri,
     bio: "Yuri helps create a calm, welcoming experience for every patient, supporting the thoughtful and personal care that defines the practice from the first hello through each visit.",
   },
   {
     name: "Gisselle",
     role: "Dental Assistant",
-    image: "/assets/practice/gisselle_06071191.jpg",
+    image: gisselle,
     bio: "I am a Tucson native and have worked in the dental field for 20 years. I still love seeing patients smile. When I am not assisting, I enjoy baking and spending time with my grandchildren.",
   },
 ];

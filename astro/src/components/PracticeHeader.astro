@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import { liveAssets, navigation, patientInfoMenu } from "../lib/data";
 import PatientInfoMenu from "./PatientInfoMenu.astro";
 
@@ -14,7 +15,7 @@ const [servicesItem, aboutItem, ...restItems] = navigation;
 <header class="relative z-30 bg-[#fffaf3]/95 backdrop-blur-md">
   <div class="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-5 py-4 sm:px-8 lg:px-12">
     <a href="/" class="block w-[160px] sm:w-[205px]" aria-label="Dr. Brian Mitchell & Associates home">
-      <img src={liveAssets.logo} class="h-auto w-full" alt="Dr. Brian Mitchell & Associates Dentistry, Dental Implants, Orthodontics" />
+      <Image src={liveAssets.logo} class="h-auto w-full" alt="Dr. Brian Mitchell & Associates Dentistry, Dental Implants, Orthodontics" width={410} loading="eager" />
     </a>
     <nav class="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
       <a href={servicesItem.href} class={`nav-link ${active === servicesItem.active ? "text-[#27594e]" : ""}`}>{servicesItem.label}</a>

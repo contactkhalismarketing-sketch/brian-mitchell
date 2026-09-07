@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import { liveAssets } from "../lib/data";
 ---
 
@@ -18,7 +19,7 @@ import { liveAssets } from "../lib/data";
     </div>
     <div class="about-practice-video__frame" id="practice-tour-frame">
       <button class="about-practice-video__play" type="button" id="practice-tour-play" aria-label="Play Dr. Brian Mitchell & Associates practice tour">
-        <img src={liveAssets.office} alt="Dr. Brian Mitchell & Associates treatment room" />
+        <Image src={liveAssets.office} alt="Dr. Brian Mitchell & Associates treatment room" width={900} />
         <span class="about-practice-video__overlay"></span>
         <span class="about-practice-video__play-button"><Icon name="lucide:play-circle" class="h-9 w-9" />Watch the practice tour</span>
       </button>
