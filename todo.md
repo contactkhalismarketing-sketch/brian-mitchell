@@ -65,7 +65,7 @@
 - [x] Repair the broken Dr. Brian portrait request on the mobile homepage using a publicly reliable image asset path and verify it on the branded domain.
 - [x] Add an Inside the Practice click-to-play version of the approved practice-tour video between the About story and doctor profiles.
 - [x] Brighten the homepage opening with a warm ivory hero-copy panel, lighter practice-video treatment, and softened trust strip while preserving contrast and conversion actions.
-- [ ] Export the complete current project to the provided GitHub repository and prepare a Claude Code handoff with asset-path guidance.
+- [x] Export the complete current project to the provided GitHub repository and prepare a Claude Code handoff with asset-path guidance.
 - [x] Prepare a client-ready mockup approval email with contextual page links that open in new tabs.
 - [x] Add Dr. Brian Mitchell’s BioClear certification as an accessible shared-footer trust credential.
 - [x] Verify the published public domain directly and confirm the footer BioClear credential and full-bleed homepage video are visibly live.
