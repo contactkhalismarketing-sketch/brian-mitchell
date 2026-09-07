@@ -5,7 +5,8 @@ import PracticeHeader from "../components/PracticeHeader.astro";
 import PracticeFooter from "../components/PracticeFooter.astro";
 import PageHero from "../components/PageHero.astro";
 import ContactBand from "../components/ContactBand.astro";
-import { liveAssets, specials, testimonial, practiceStats } from "../lib/data";
+import { liveAssets, specials, practiceStats } from "../lib/data";
+import ReviewSlider from "../components/ReviewSlider.astro";
 ---
 
 <Layout title="New Patient Specials | Dr. Brian Mitchell & Associates">
@@ -43,25 +44,20 @@ import { liveAssets, specials, testimonial, practiceStats } from "../lib/data";
       </section>
 
       <section class="bg-[#2b2930] text-white">
-        <div class="mx-auto grid max-w-[1440px] gap-10 px-5 py-16 sm:px-8 md:grid-cols-2 lg:px-12 lg:py-20">
-          <div>
-            <p class="eyebrow text-[#bde0da]">Why patients trust this team</p>
-            <p class="display-face mt-4 text-5xl leading-none">{practiceStats.combinedExperience}</p>
-            <p class="mt-2 text-sm leading-7 text-[#d8e8e5]">of combined experience across the team caring for you.</p>
-            <div class="mt-8 flex items-center gap-3">
-              <div class="flex gap-1">
-                {[0, 1, 2, 3, 4].map(() => <Icon name="lucide:star" class="h-4 w-4 fill-[#df8b64] text-[#df8b64]" />)}
-              </div>
-              <p class="text-sm font-semibold">{practiceStats.googleRating} Google rating</p>
+        <div class="mx-auto max-w-[1440px] px-5 py-16 text-center sm:px-8 lg:px-12 lg:py-20">
+          <p class="eyebrow text-[#bde0da]">Why patients trust this team</p>
+          <p class="display-face mt-4 text-5xl leading-none">{practiceStats.combinedExperience}</p>
+          <p class="mt-2 text-sm leading-7 text-[#d8e8e5]">of combined experience across the team caring for you.</p>
+          <div class="mt-8 flex items-center justify-center gap-3">
+            <div class="flex gap-1">
+              {[0, 1, 2, 3, 4].map(() => <Icon name="lucide:star" class="h-4 w-4 fill-[#df8b64] text-[#df8b64]" />)}
             </div>
-          </div>
-          <div class="border-l border-white/15 pl-8">
-            <Icon name="lucide:quote" class="h-6 w-6 text-[#df8b64]" />
-            <p class="display-face mt-4 text-2xl leading-tight">{testimonial.quote}</p>
-            <p class="mt-4 text-sm font-bold uppercase tracking-[.1em] text-[#bde0da]">— {testimonial.author}, Google review</p>
+            <p class="text-sm font-semibold">{practiceStats.googleRating} · {practiceStats.reviewCount}+ Google reviews</p>
           </div>
         </div>
       </section>
+
+      <ReviewSlider />
 
       <ContactBand title="Ready to take the next step?" />
     </main>

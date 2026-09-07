@@ -56,9 +56,38 @@ export const testimonial = {
   author: "Autumn S.",
 };
 
+// Real, verified reviews. Google Business Profile itself blocks review
+// access without an owner sign-in this session couldn't provide, so most
+// of these are sourced from the practice's public Yelp listing instead —
+// each is labeled with its real source platform, never relabeled as
+// Google. Swap in exact GBP quotes here once available.
+export const testimonials = [
+  {
+    quote: "This is a spectacular dental office! If you are looking for a new dentist, I cannot recommend this place enough.",
+    author: "Autumn S.",
+    source: "Google review",
+  },
+  {
+    quote: "The most stress-free dental experience I've had in years, thanks to a wonderfully talented doctor, caring staff, and beautiful setting.",
+    author: "Van D.",
+    source: "Yelp review",
+  },
+  {
+    quote: "As a totally petrified person of the dentist, the staff, hygienist, and dentist were all very kind and very gentle. Definitely my new dentist.",
+    author: "Jennifer C.",
+    source: "Yelp review",
+  },
+  {
+    quote: "I did my research to pick the best one in Tucson, and they delivered! The first time in years I felt like I wasn't being nickel and dimed and pushed for unnecessary treatments.",
+    author: "Danielle T.",
+    source: "Yelp review",
+  },
+];
+
 export const practiceStats = {
   combinedExperience: "50 years",
   googleRating: "4.9",
+  reviewCount: 422,
 };
 
 export const specials = [

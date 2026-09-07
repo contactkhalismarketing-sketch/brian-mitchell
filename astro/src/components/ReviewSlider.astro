@@ -1,0 +1,69 @@
+---
+import { Icon } from "astro-icon/components";
+import GoogleRatingBadge from "./GoogleRatingBadge.astro";
+import { testimonials } from "../lib/data";
+---
+
+<section class="bg-[#f7efe5]">
+  <div class="mx-auto flex max-w-[900px] flex-col items-center px-5 py-16 text-center sm:px-8 lg:py-20">
+    <GoogleRatingBadge size="lg" />
+    <div class="review-slider mt-8 w-full" data-review-slider>
+      <div class="review-slider__track" data-review-track>
+        {testimonials.map((item) => (
+          <div class="review-slider__slide">
+            <Icon name="lucide:quote" class="mx-auto h-7 w-7 text-[#bb6846]" />
+            <p class="display-face mx-auto mt-5 max-w-2xl text-2xl leading-tight text-[#2b2930] sm:text-3xl">{item.quote}</p>
+            <p class="mt-5 text-xs font-extrabold uppercase tracking-[.14em] text-[#52736b]">— {item.author}, {item.source}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-7 flex items-center justify-center gap-5">
+        <button type="button" class="review-slider__nav" data-review-prev aria-label="Previous review">
+          <Icon name="lucide:chevron-left" class="h-4 w-4" />
+        </button>
+        <div class="flex gap-2" data-review-dots>
+          {testimonials.map((_, index) => (
+            <button type="button" class="review-slider__dot" data-review-dot={index} aria-label={`Show review ${index + 1}`}></button>
+          ))}
+        </div>
+        <button type="button" class="review-slider__nav" data-review-next aria-label="Next review">
+          <Icon name="lucide:chevron-right" class="h-4 w-4" />
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupReviewSlider() {
+    document.querySelectorAll<HTMLElement>("[data-review-slider]").forEach((root) => {
+      const track = root.querySelector<HTMLElement>("[data-review-track]");
+      const slides = Array.from(root.querySelectorAll<HTMLElement>(".review-slider__slide"));
+      const dots = Array.from(root.querySelectorAll<HTMLElement>("[data-review-dot]"));
+      if (!track || slides.length === 0) return;
+
+      let index = 0;
+      let timer: ReturnType<typeof setInterval> | undefined;
+
+      function show(next: number) {
+        index = (next + slides.length) % slides.length;
+        track?.style.setProperty("transform", `translateX(-${index * 100}%)`);
+        dots.forEach((dot, i) => dot.classList.toggle("is-active", i === index));
+      }
+
+      function restart() {
+        if (timer) clearInterval(timer);
+        timer = setInterval(() => show(index + 1), 7000);
+      }
+
+      root.querySelector("[data-review-prev]")?.addEventListener("click", () => { show(index - 1); restart(); });
+      root.querySelector("[data-review-next]")?.addEventListener("click", () => { show(index + 1); restart(); });
+      dots.forEach((dot, i) => dot.addEventListener("click", () => { show(i); restart(); }));
+
+      show(0);
+      restart();
+    });
+  }
+
+  setupReviewSlider();
+</script>
