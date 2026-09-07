@@ -55,8 +55,6 @@ export default function Home() {
             <PracticeHeroVisual />
             <div className="hero-overlay absolute inset-0 hidden lg:block" />
             <div className="homepage-hero__video-scrim absolute inset-x-0 bottom-0 lg:hidden" aria-hidden="true" />
-            <div className="sun-portal tall -bottom-24 -right-36 hidden opacity-55 lg:block" aria-hidden="true" />
-            <div className="sun-portal wide -right-10 top-14 hidden opacity-45 lg:block" aria-hidden="true" />
             <div className="hero-media-label">Practice · equipment · technology</div>
           </div>
           <div className="homepage-hero__copy-band relative">
