@@ -18,7 +18,9 @@ export const liveAssets = {
 export const navigation = [
   { label: "Services", href: "/services", active: "services" },
   { label: "About", href: "/about-us", active: "about" },
-  { label: "Patient Info", href: "/blogs", active: "blogs" },
+  { label: "Blogs", href: "/blogs", active: "blogs" },
+  { label: "First Visit", href: "/first-visit", active: "first-visit" },
+  { label: "Financing", href: "/financing", active: "financing" },
   { label: "New Patients", href: "/new-patient-specials", active: "new" },
   { label: "Contact", href: "/contact-us", active: "contact" },
 ];
