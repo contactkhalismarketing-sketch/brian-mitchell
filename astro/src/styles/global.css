@@ -137,8 +137,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .about-practice-video__play img { display: block; height: 100%; object-fit: cover; transition: transform 500ms cubic-bezier(.23,1,.32,1); width: 100%; }
 .about-practice-video__play:hover img { transform: scale(1.035); }
 .about-practice-video__overlay { background: linear-gradient(90deg, rgba(22,34,31,.56), rgba(22,34,31,.1) 68%), linear-gradient(180deg, rgba(22,34,31,.08), rgba(22,34,31,.48)); inset: 0; position: absolute; }
-.about-practice-video__play-button { align-items: center; background: rgba(255,250,243,.96); color: #27594e; display: inline-flex; font-size: .66rem; font-weight: 800; gap: .65rem; left: 1.35rem; letter-spacing: .09em; padding: .9rem 1rem; position: absolute; text-transform: uppercase; top: 50%; transform: translateY(-50%); transition: background 180ms cubic-bezier(.23,1,.32,1), color 180ms cubic-bezier(.23,1,.32,1), transform 180ms cubic-bezier(.23,1,.32,1); z-index: 1; }
-.about-practice-video__play:hover .about-practice-video__play-button { background: #bb6846; color: #fffaf3; transform: translateY(calc(-50% - 3px)); }
+.about-practice-video__play-button { align-items: center; background: rgba(255,250,243,.96); bottom: 1rem; color: #27594e; display: inline-flex; font-size: .66rem; font-weight: 800; gap: .65rem; left: 1rem; letter-spacing: .09em; padding: .9rem 1rem; position: absolute; text-transform: uppercase; transition: background 180ms cubic-bezier(.23,1,.32,1), color 180ms cubic-bezier(.23,1,.32,1), transform 180ms cubic-bezier(.23,1,.32,1); z-index: 1; }
+.about-practice-video__play:hover .about-practice-video__play-button { background: #bb6846; color: #fffaf3; transform: translateY(-3px); }
 .about-practice-video__tag { background: rgba(39,89,78,.88); bottom: 1rem; color: #fffaf3; font-size: .56rem; font-weight: 800; letter-spacing: .13em; padding: .65rem .75rem; position: absolute; right: 1rem; text-transform: uppercase; z-index: 1; }
 .service-decision-rail { background: #273c36; box-shadow: 0 18px 35px rgba(39,89,78,.14); padding: 1.75rem; }
 .service-decision-rail .eyebrow { color: #f6c3a9; }

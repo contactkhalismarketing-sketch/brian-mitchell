@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import { liveAssets } from "../lib/data";
 ---
 
 <section class="about-practice-video-stage">
@@ -17,7 +18,7 @@ import { Icon } from "astro-icon/components";
     </div>
     <div class="about-practice-video__frame" id="practice-tour-frame">
       <button class="about-practice-video__play" type="button" id="practice-tour-play" aria-label="Play Dr. Brian Mitchell & Associates practice tour">
-        <img src="/assets/practice/brian-practice-tour-equipment-poster_106066d8.jpg" alt="Dental technology at Dr. Brian Mitchell & Associates" />
+        <img src={liveAssets.office} alt="Dr. Brian Mitchell & Associates treatment room" />
         <span class="about-practice-video__overlay"></span>
         <span class="about-practice-video__play-button"><Icon name="lucide:play-circle" class="h-9 w-9" />Watch the practice tour</span>
       </button>
@@ -30,11 +31,12 @@ import { Icon } from "astro-icon/components";
   const button = document.getElementById("practice-tour-play");
 
   button?.addEventListener("click", () => {
-    const iframe = document.createElement("iframe");
-    iframe.src = "https://www.youtube-nocookie.com/embed/N5E4s1wcdTQ?autoplay=1&rel=0&modestbranding=1&playsinline=1";
-    iframe.title = "Dr. Brian Mitchell & Associates practice tour";
-    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-    iframe.allowFullscreen = true;
-    button.replaceWith(iframe);
+    const video = document.createElement("video");
+    video.src = "/assets/practice/brian-mitchell-full-composition-practice-tour_5757208e.mp4";
+    video.controls = true;
+    video.autoplay = true;
+    video.playsInline = true;
+    video.style.cssText = "width:100%;height:100%;object-fit:cover;display:block;";
+    button.replaceWith(video);
   });
 </script>
