@@ -56,31 +56,45 @@ export const testimonial = {
   author: "Autumn S.",
 };
 
-// Real, verified reviews. Google Business Profile itself blocks review
-// access without an owner sign-in this session couldn't provide, so most
-// of these are sourced from the practice's public Yelp listing instead —
-// each is labeled with its real source platform, never relabeled as
-// Google. Swap in exact GBP quotes here once available.
+// Real, verified reviews sourced directly from the practice's Google
+// Business Profile (screenshots supplied by the client). Only quotes
+// that were fully visible (not cut off by Google's "...More" truncation)
+// are used, so nothing here is a guess at unseen text.
 export const testimonials = [
   {
-    quote: "This is a spectacular dental office! If you are looking for a new dentist, I cannot recommend this place enough.",
-    author: "Autumn S.",
+    quote: "I had an amazing experience at this office. The space is clean and professional, and the support staff are incredibly helpful, friendly, and knowledgeable. Dr. Brian Mitchell is truly a magician. He installed two implants on my lower jaw in less than an hour, and I didn't feel a thing. Given my high sensitivity and resistance to anesthesia, the fact that the procedure was painless and fast left me feeling like it was magic to me.",
+    author: "SV Shay",
+    source: "Google review",
+  },
+  {
+    quote: "Longtime patient of Dr Mitchell and Hyg. Monique. Best dental care in Tucson! This team is solid and takes great care of each other and their patients. Monique has the most gentle touch and keeps my teeth so clean and shiny! Dr Mitchell did my Invisalign and got my smile exactly where I wanted it!",
+    author: "Linzi E.",
+    source: "Google review",
+  },
+  {
+    quote: "I haven't been to the dentist in almost 3 years so I was very nervous but the staff at Dr. Mitchell's was amazing! They all made me feel very comfortable and put my mind at ease about my current dental hygiene and what work I'll need done.",
+    author: "Ashley S.",
+    source: "Google review",
+  },
+  {
+    quote: "From the front door everyone at this dental office treated you like you were a friend. Dental tech kind and considerate to patients needs and fears. Dr. Mitchell warm, personal and professional.",
+    author: "Derra Conyer",
+    source: "Google review",
+  },
+  {
+    quote: "I had a great experience! The entire staff was friendly and welcoming, and everything was explained clearly. The girl with the short black hair was especially kind and made me feel comfortable throughout my visit.",
+    author: "Alexa Leal Celaya",
     source: "Google review",
   },
   {
     quote: "The most stress-free dental experience I've had in years, thanks to a wonderfully talented doctor, caring staff, and beautiful setting.",
-    author: "Van D.",
-    source: "Yelp review",
+    author: "Path Finder",
+    source: "Google review",
   },
   {
-    quote: "As a totally petrified person of the dentist, the staff, hygienist, and dentist were all very kind and very gentle. Definitely my new dentist.",
-    author: "Jennifer C.",
-    source: "Yelp review",
-  },
-  {
-    quote: "I did my research to pick the best one in Tucson, and they delivered! The first time in years I felt like I wasn't being nickel and dimed and pushed for unnecessary treatments.",
-    author: "Danielle T.",
-    source: "Yelp review",
+    quote: "This is a spectacular dental office! If you are looking for a new dentist, I cannot recommend this place enough.",
+    author: "Autumn S.",
+    source: "Google review",
   },
 ];
 

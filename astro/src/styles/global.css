@@ -246,6 +246,11 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .review-slider__dot { background: rgba(39,89,78,.25); border-radius: 999px; height: .5rem; transition: background 180ms cubic-bezier(.23,1,.32,1), width 180ms cubic-bezier(.23,1,.32,1); width: .5rem; }
 .review-slider__dot.is-active { background: #27594e; width: 1.5rem; }
 
+/* Lucide icons ship as stroke-only outlines (fill="none" on the inner path),
+   so a Tailwind fill-* class on the <svg> never reaches it. Force fill to
+   follow the element's own color so star ratings render solid. */
+svg[class*="fill-"] path { fill: currentColor; }
+
 /* About doctor cards — actions share the same lower baseline on multi-column layouts; mobile retains its deliberate text pause. */
 .doctor-feature__content { min-height: 100%; }
 @media (min-width: 640px) { .doctor-feature__content .action-button { align-self: flex-start; margin-top: auto; } }
