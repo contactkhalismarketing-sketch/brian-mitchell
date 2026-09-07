@@ -43,13 +43,13 @@ The most recent homepage treatment is **Sunlit Welcome**. It uses real practice 
 
 ## Asset portability
 
-The original managed preview used `/manus-storage/...` URLs. Run the following command once after cloning this repository to download the approved public practice assets into `client/public/assets/practice/` and replace all managed URLs with portable local paths:
+The original managed preview used `/manus-storage/...` URLs. This export already includes the approved portable assets in `client/public/assets/practice/`, and source references have already been converted to local paths. The following command is retained only as a recovery utility if those assets need to be downloaded again from the branded preview:
 
 ```bash
 node scripts/prepare-portable-assets.mjs
 ```
 
-The asset list includes the logo, practice imagery, staff portraits, BioClear credential, approved posters, and homepage practice-tour MP4. Review the Git diff after the script completes, then commit the downloaded assets and rewritten references.
+The asset list includes the logo, practice imagery, staff portraits, BioClear credential, approved posters, and homepage practice-tour MP4. If the recovery script is used, review the Git diff and commit any refreshed files deliberately.
 
 The exported copy removes platform-specific analytics from `client/index.html`. Configure analytics for the chosen production host separately; do not paste production tracking credentials into the repository.
 
