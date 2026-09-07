@@ -22,12 +22,14 @@ const { active = false, id } = Astro.props;
     <Icon name="lucide:chevron-down" class="h-3 w-3 transition-transform" data-patient-info-chevron={id} />
   </button>
   <div
-    class="patient-info-menu__panel absolute left-0 top-full z-40 mt-3 hidden min-w-[210px] border border-[#77a49f]/25 bg-[#fffaf3] py-2 shadow-[0_18px_36px_rgba(39,89,78,.14)]"
+    class="patient-info-menu__panel absolute left-0 top-full z-40 hidden min-w-[210px] pt-3"
     data-patient-info-panel={id}
   >
-    {patientInfoMenu.map((item) => (
-      <a href={item.href} class="block px-5 py-2.5 text-xs font-bold uppercase tracking-[.08em] text-[#2b2930] no-underline hover:bg-[#f0f6f4] hover:text-[#27594e]">{item.label}</a>
-    ))}
+    <div class="border border-[#77a49f]/25 bg-[#fffaf3] py-2 shadow-[0_18px_36px_rgba(39,89,78,.14)]">
+      {patientInfoMenu.map((item) => (
+        <a href={item.href} class="block px-5 py-2.5 text-xs font-bold uppercase tracking-[.08em] text-[#2b2930] no-underline hover:bg-[#f0f6f4] hover:text-[#27594e]">{item.label}</a>
+      ))}
+    </div>
   </div>
 </div>
 
