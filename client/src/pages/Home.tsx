@@ -50,14 +50,19 @@ export default function Home() {
       </header>
 
       <main id="top">
-        <section className="homepage-hero relative isolate min-h-[650px] overflow-hidden bg-[#e9f1ed] text-[#2b2930]">
-          <PracticeHeroVisual />
-          <div className="hero-overlay absolute inset-0" />
-          <div className="sun-portal tall -bottom-24 -right-36 opacity-55" aria-hidden="true" />
-          <div className="sun-portal wide -right-10 top-14 opacity-45" aria-hidden="true" />
-          <div className="homepage-hero__content relative mx-auto flex min-h-[650px] max-w-[1440px] items-end px-5 pb-14 pt-16 sm:px-8 lg:min-h-0 lg:px-12 lg:pb-20 xl:pl-20">
-            <div className="homepage-hero__copy-panel max-w-2xl"><div className="fade-up"><span className="stamp">Tucson, Arizona · Practice tour</span></div><p className="fade-up delay-1 mt-8 text-[.67rem] font-extrabold uppercase tracking-[.2em] text-[#47766c]">Dentistry · Dental Implants · Orthodontics</p><h1 className="fade-up delay-2 display-face mt-4 max-w-xl text-6xl leading-[.9] tracking-[-.04em] sm:text-7xl lg:text-[5.5rem] xl:text-[5.85rem]">Dentistry<br />Redefined</h1><p className="fade-up delay-3 mt-7 max-w-lg text-base leading-8 text-[#4f645f]">Experience the refined world of dentistry at Dr. Brian Mitchell & Associates. Our team is committed to cultivating strong, healthy, and aesthetically pleasing smiles.</p><div className="fade-up delay-3 mt-9 flex flex-col gap-3 sm:flex-row"><a className="action-button primary" href="/contact"><CalendarDays className="h-4 w-4" />Book an appointment</a><a className="action-button hero-outline" href="tel:5205234860"><Phone className="h-4 w-4" />Call (520) 523-4860</a></div><div className="fade-up delay-3 mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-[#27594e]/20 pt-5"><div className="flex gap-1">{[0, 1, 2, 3, 4].map((star) => <Star className="h-4 w-4 fill-[#77a49f] text-[#77a49f]" key={star} />)}</div><p className="text-sm font-semibold text-[#2b2930]"><strong>4.9</strong> Google rating</p><span className="hidden h-4 w-px bg-[#27594e]/25 sm:block" /><p className="text-sm text-[#52736b]">Same-day appointments available</p></div></div>
+        <section className="homepage-hero relative isolate overflow-hidden bg-[#e9f1ed] text-[#2b2930]">
+          <div className="homepage-hero__video-band relative">
+            <PracticeHeroVisual />
+            <div className="hero-overlay absolute inset-0 hidden lg:block" />
+            <div className="homepage-hero__video-scrim absolute inset-x-0 bottom-0 lg:hidden" aria-hidden="true" />
+            <div className="sun-portal tall -bottom-24 -right-36 hidden opacity-55 lg:block" aria-hidden="true" />
+            <div className="sun-portal wide -right-10 top-14 hidden opacity-45 lg:block" aria-hidden="true" />
             <div className="hero-media-label">Practice · equipment · technology</div>
+          </div>
+          <div className="homepage-hero__copy-band relative">
+            <div className="homepage-hero__content relative mx-auto flex max-w-[1440px] items-end px-5 pb-10 pt-9 sm:px-8 lg:px-12 lg:pb-20 lg:pt-16 xl:pl-20">
+              <div className="homepage-hero__copy-panel max-w-2xl"><div className="fade-up"><span className="stamp">Tucson, Arizona · Practice tour</span></div><p className="fade-up delay-1 mt-8 text-[.67rem] font-extrabold uppercase tracking-[.2em] text-[#47766c]">Dentistry · Dental Implants · Orthodontics</p><h1 className="fade-up delay-2 display-face mt-4 max-w-xl text-6xl leading-[.9] tracking-[-.04em] sm:text-7xl lg:text-[5.5rem] xl:text-[5.85rem]">Dentistry<br />Redefined</h1><p className="fade-up delay-3 mt-7 max-w-lg text-base leading-8 text-[#4f645f]">Experience the refined world of dentistry at Dr. Brian Mitchell & Associates. Our team is committed to cultivating strong, healthy, and aesthetically pleasing smiles.</p><div className="fade-up delay-3 mt-9 flex flex-col gap-3 sm:flex-row"><a className="action-button primary" href="/contact"><CalendarDays className="h-4 w-4" />Book an appointment</a><a className="action-button hero-outline" href="tel:5205234860"><Phone className="h-4 w-4" />Call (520) 523-4860</a></div><div className="fade-up delay-3 mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-[#27594e]/20 pt-5"><div className="flex gap-1">{[0, 1, 2, 3, 4].map((star) => <Star className="h-4 w-4 fill-[#77a49f] text-[#77a49f]" key={star} />)}</div><p className="text-sm font-semibold text-[#2b2930]"><strong>4.9</strong> Google rating</p><span className="hidden h-4 w-px bg-[#27594e]/25 sm:block" /><p className="text-sm text-[#52736b]">Same-day appointments available</p></div></div>
+            </div>
           </div>
         </section>
 
