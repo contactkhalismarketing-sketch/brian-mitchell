@@ -9,11 +9,4 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  redirects: {
-    '/homepage': '/',
-    '/services/cosmetic-dentistry': '/cosmetic-dentistry',
-    '/contact': '/contact-us',
-    '/about': '/about-us',
-    '/blog/soft-tissue-management': '/blogs/soft-tissue-management',
-  },
 });

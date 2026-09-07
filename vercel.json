@@ -1,5 +1,12 @@
 {
   "installCommand": "cd astro && corepack enable && pnpm install",
   "buildCommand": "cd astro && pnpm run build",
-  "outputDirectory": "astro/dist"
+  "outputDirectory": "astro/dist",
+  "redirects": [
+    { "source": "/homepage", "destination": "/", "statusCode": 301 },
+    { "source": "/services/cosmetic-dentistry", "destination": "/cosmetic-dentistry", "statusCode": 301 },
+    { "source": "/contact", "destination": "/contact-us", "statusCode": 301 },
+    { "source": "/about", "destination": "/about-us", "statusCode": 301 },
+    { "source": "/blog/soft-tissue-management", "destination": "/blogs/soft-tissue-management", "statusCode": 301 }
+  ]
 }
