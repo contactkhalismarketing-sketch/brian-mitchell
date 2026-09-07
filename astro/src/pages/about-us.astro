@@ -1,0 +1,91 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PracticeHeader from "../components/PracticeHeader.astro";
+import PracticeFooter from "../components/PracticeFooter.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactBand from "../components/ContactBand.astro";
+import PracticeTourPanel from "../components/PracticeTourPanel.astro";
+import { Icon } from "astro-icon/components";
+import { liveAssets, team } from "../lib/data";
+---
+
+<Layout title="About | Dr. Brian Mitchell & Associates">
+  <div class="page-shell min-h-screen">
+    <PracticeHeader active="about" />
+    <main>
+      <PageHero
+        eyebrow="About the practice"
+        title="Personal care, in a place that feels considered."
+        body="Driven by a commitment to cultivating strong, healthy, and aesthetically pleasing smiles, our team welcomes you into a serene environment where your comfort and goals come first."
+        image={liveAssets.team}
+        imagePosition="32% 14%"
+        taller
+      >
+        <div class="mt-9">
+          <a class="action-button primary" href="/contact-us"><Icon name="lucide:calendar-days" class="h-4 w-4" />Meet the team</a>
+        </div>
+      </PageHero>
+      <section class="mx-auto grid max-w-[1440px] gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:px-12 lg:py-28">
+        <div>
+          <p class="eyebrow">What sets us apart?</p>
+          <h2 class="display-face mt-4 max-w-xl text-4xl leading-[.98] tracking-[-.025em] text-[#2b2930] sm:text-5xl">A sophisticated approach to care.</h2>
+        </div>
+        <div class="space-y-6 text-base leading-8 text-[#596966]">
+          <p>We go beyond routine dental care by providing personalised services designed around your individual needs. Our goal is to give you a clear understanding of your options and an experience that feels calm from the moment you arrive.</p>
+          <p>Alongside the essentials of a healthy smile, we understand the value of preserving and improving its natural beauty. It is a careful balance of clinical expertise, modern technology, and attention to the person in the chair.</p>
+        </div>
+      </section>
+      <PracticeTourPanel />
+      <section class="bg-[#f7efe5]">
+        <div class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+          <p class="eyebrow">Meet the doctors</p>
+          <div class="mt-8 grid gap-7 lg:grid-cols-2">
+            <article class="grid overflow-hidden bg-[#fffaf3] shadow-[0_20px_46px_rgba(40,43,40,.09)] sm:grid-cols-[.78fr_1.22fr] doctor-feature">
+              <img src={liveAssets.brianAbout} alt="Dr. Brian Mitchell" class="h-full min-h-[360px] w-full object-cover object-[center_20%]" />
+              <div class="doctor-feature__content p-8">
+                <p class="eyebrow">Dr. Brian Mitchell</p>
+                <h3 class="display-face mt-3 text-3xl leading-none text-[#2b2930]">Dedicated to your smile.</h3>
+                <p class="mt-5 text-sm leading-7 text-[#596966]">Originally from Salt Lake City, Dr. Mitchell studied Exercise Physiology at the University of Utah before completing dental training at the Baltimore College of Dental Surgery. After more than a decade in Arizona, he brings a thoughtful, precise perspective to helping patients protect and improve their smiles. Outside the practice, he enjoys time with his daughters, Tucson mornings, meditation, exercise, and a good book.</p>
+                <a href="/contact-us" class="action-button primary mt-7">Book an appointment <Icon name="lucide:calendar-days" class="h-4 w-4" /></a>
+              </div>
+            </article>
+            <article class="grid overflow-hidden bg-[#fffaf3] shadow-[0_20px_46px_rgba(40,43,40,.09)] sm:grid-cols-[.78fr_1.22fr] doctor-feature">
+              <img src={liveAssets.dianaAbout} alt="Dr. Diana Zhen" class="h-full min-h-[360px] w-full object-cover object-[center_20%]" />
+              <div class="doctor-feature__content p-8">
+                <p class="eyebrow">Dr. Diana Zhen</p>
+                <h3 class="display-face mt-3 text-3xl leading-none text-[#2b2930]">Thoughtful, patient-first care.</h3>
+                <p class="mt-5 text-sm leading-7 text-[#596966]">Raised in San Francisco, Dr. Zhen earned her dental degree at Roseman University College of Dental Medicine and completed an Advanced Education in General Dentistry residency at the Society of St. Vincent de Paul's Dental Oral Health Center in Phoenix. She is passionate about comprehensive care and the tangible difference dentistry can make in a patient's well-being. Away from the practice, she enjoys staying active, reading, and exploring new places.</p>
+                <a href="/contact-us" class="action-button primary mt-7">Book an appointment <Icon name="lucide:calendar-days" class="h-4 w-4" /></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="team-section relative overflow-hidden">
+        <div class="relative mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+          <div class="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p class="eyebrow">Meet the team</p>
+              <h2 class="display-face mt-4 text-4xl leading-none text-[#2b2930] sm:text-5xl">The people who make you feel at home.</h2>
+            </div>
+            <p class="max-w-md text-sm leading-7 text-[#596966]">The same welcoming team supports every step—from your first call through treatment and ongoing care.</p>
+          </div>
+          <div class="team-grid mt-12">
+            {team.map((member, index) => (
+              <article class={`team-card team-card-${index + 1}`}>
+                <img src={member.image} alt={member.name} />
+                <div>
+                  <h3 class="display-face text-3xl leading-none text-[#2b2930]">{member.name}</h3>
+                  <p class="mt-2 text-[.66rem] font-extrabold uppercase tracking-[.12em] text-[#47766c]">{member.role}</p>
+                  <p class="team-bio mt-5">{member.bio}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <ContactBand title="The right care starts with the right conversation." />
+    </main>
+    <PracticeFooter />
+  </div>
+</Layout>

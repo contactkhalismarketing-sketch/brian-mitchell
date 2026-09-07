@@ -1,0 +1,238 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import { liveAssets, featuredServices } from "../lib/data";
+---
+
+<Layout title="Dr. Brian Mitchell & Associates | Tucson Dentistry">
+  <div class="page-shell min-h-screen overflow-x-hidden">
+    <header class="relative z-20 bg-[#fffaf3]/95 backdrop-blur-md">
+      <div class="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-5 py-4 sm:px-8 lg:px-12">
+        <a class="block w-[160px] sm:w-[205px]" href="#top" aria-label="Dr. Brian Mitchell & Associates home">
+          <img src={liveAssets.logo} class="h-auto w-full" alt="Dr. Brian Mitchell & Associates Dentistry, Dental Implants, Orthodontics" />
+        </a>
+        <nav class="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#patient-info">Patient Info</a>
+          <a class="nav-link" href="#new-patients">New Patients</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+        <div class="hidden items-center gap-3 sm:flex">
+          <a class="action-button outline" href="tel:5205234860"><Icon name="lucide:phone" class="h-3.5 w-3.5" />Call us</a>
+          <a class="action-button primary" href="#contact"><Icon name="lucide:calendar-days" class="h-3.5 w-3.5" />Book an appointment</a>
+        </div>
+        <button id="home-menu-toggle" class="rounded-full border border-[#77a49f]/40 p-3 text-[#27594e] sm:hidden" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="home-mobile-menu">
+          <Icon name="lucide:menu" class="h-5 w-5" data-menu-icon="open" />
+          <Icon name="lucide:x" class="hidden h-5 w-5" data-menu-icon="close" />
+        </button>
+      </div>
+      <nav id="home-mobile-menu" class="hidden border-t border-[#77a49f]/15 bg-[#fffaf3] px-5 py-5 sm:hidden" aria-label="Mobile navigation">
+        <div class="grid gap-4">
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#patient-info">Patient Info</a>
+          <a class="nav-link" href="#new-patients">New Patients</a>
+          <a class="nav-link" href="#contact">Contact</a>
+          <a class="action-button primary mt-2 w-full" href="#contact">Book an appointment <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="homepage-hero relative isolate overflow-hidden bg-[#e9f1ed] text-[#2b2930]">
+        <div class="homepage-hero__video-band relative">
+          <div class="video-hero inset-0" aria-label="Dr. Brian Mitchell & Associates treatment room and dental technology">
+            <video class="video-fallback" autoplay loop muted playsinline preload="metadata" poster={liveAssets.office} aria-label="Dr. Brian Mitchell & Associates building and dental technology tour">
+              <source src={liveAssets.heroVideo} type="video/mp4" />
+            </video>
+          </div>
+          <div class="hero-overlay absolute inset-0 hidden lg:block"></div>
+          <div class="homepage-hero__video-scrim absolute inset-x-0 bottom-0 lg:hidden" aria-hidden="true"></div>
+          <div class="sun-portal tall -bottom-24 -right-36 hidden opacity-55 lg:block" aria-hidden="true"></div>
+          <div class="sun-portal wide -right-10 top-14 hidden opacity-45 lg:block" aria-hidden="true"></div>
+          <div class="hero-media-label">Practice · equipment · technology</div>
+        </div>
+        <div class="homepage-hero__copy-band relative">
+          <div class="homepage-hero__content relative mx-auto flex max-w-[1440px] items-end px-5 pb-10 pt-9 sm:px-8 lg:px-12 lg:pb-20 lg:pt-16 xl:pl-20">
+            <div class="homepage-hero__copy-panel max-w-2xl">
+              <div class="fade-up"><span class="stamp">Tucson, Arizona · Practice tour</span></div>
+              <p class="fade-up delay-1 mt-8 text-[.67rem] font-extrabold uppercase tracking-[.2em] text-[#47766c]">Dentistry · Dental Implants · Orthodontics</p>
+              <h1 class="fade-up delay-2 display-face mt-4 max-w-xl text-6xl leading-[.9] tracking-[-.04em] sm:text-7xl lg:text-[5.5rem] xl:text-[5.85rem]">Dentistry<br />Redefined</h1>
+              <p class="fade-up delay-3 mt-7 max-w-lg text-base leading-8 text-[#4f645f]">Experience the refined world of dentistry at Dr. Brian Mitchell & Associates. Our team is committed to cultivating strong, healthy, and aesthetically pleasing smiles.</p>
+              <div class="fade-up delay-3 mt-9 flex flex-col gap-3 sm:flex-row">
+                <a class="action-button primary" href="/contact-us"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book an appointment</a>
+                <a class="action-button hero-outline" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Call (520) 523-4860</a>
+              </div>
+              <div class="fade-up delay-3 mt-10 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-[#27594e]/20 pt-5">
+                <div class="flex gap-1">
+                  {[0, 1, 2, 3, 4].map(() => <Icon name="lucide:star" class="h-4 w-4 fill-[#77a49f] text-[#77a49f]" />)}
+                </div>
+                <p class="text-sm font-semibold text-[#2b2930]"><strong>4.9</strong> Google rating</p>
+                <span class="hidden h-4 w-px bg-[#27594e]/25 sm:block"></span>
+                <p class="text-sm text-[#52736b]">Same-day appointments available</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="homepage-trust-strip bg-[#e8f1ed] text-[#27594e]">
+        <div class="mx-auto grid max-w-[1440px] gap-6 px-5 py-7 sm:px-8 md:grid-cols-3 md:gap-0 lg:px-12">
+          <div class="flex items-center gap-4 md:border-r md:border-[#27594e]/18 md:pr-8">
+            <span class="grid h-10 w-10 place-items-center rounded-full bg-[#27594e]/10"><Icon name="lucide:star" class="h-4 w-4 fill-[#27594e] text-[#27594e]" /></span>
+            <p class="text-sm leading-6"><strong class="font-extrabold">Why Dr. Mitchell?</strong><br /><span class="text-[#52736b]">A sophisticated approach to care.</span></p>
+          </div>
+          <div class="flex items-center gap-4 md:border-r md:border-[#27594e]/18 md:px-8">
+            <span class="grid h-10 w-10 place-items-center rounded-full bg-[#27594e]/10"><Icon name="lucide:clock-3" class="h-4 w-4" /></span>
+            <p class="text-sm leading-6"><strong class="font-extrabold">Time for your smile</strong><br /><span class="text-[#52736b]">Clear, personal treatment planning.</span></p>
+          </div>
+          <div class="flex items-center gap-4 md:pl-8">
+            <span class="grid h-10 w-10 place-items-center rounded-full bg-[#27594e]/10"><Icon name="lucide:map-pin" class="h-4 w-4" /></span>
+            <p class="text-sm leading-6"><strong class="font-extrabold">In Tucson</strong><br /><span class="text-[#52736b]">Comprehensive care close to home.</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="relative mx-auto max-w-[1440px] overflow-hidden px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <div class="sun-portal wide -left-44 bottom-9 border-[#df8b64]/50" aria-hidden="true"></div>
+        <div class="relative grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
+          <div class="relative">
+            <div class="absolute -left-3 -top-3 h-full w-full border border-[#d77c55]/55"></div>
+            <img src={liveAssets.brian} alt="Dr. Brian Mitchell" class="relative aspect-[4/4.6] w-full object-cover object-[center_22%]" />
+          </div>
+          <div>
+            <p class="eyebrow">Why Dr. Mitchell?</p>
+            <h2 class="display-face mt-4 max-w-xl text-4xl leading-[.98] tracking-[-.025em] text-[#2b2930] sm:text-5xl">A personal touch to dentistry.</h2>
+            <p class="mt-6 max-w-xl text-base leading-8 text-[#596966]">In our serene environment, we go beyond routine dental care, providing personalized services designed to meet your individual needs. Your well-being and comfort take center stage.</p>
+            <p class="mt-5 max-w-xl text-base leading-8 text-[#596966]">While we excel in the essentials of maintaining optimal oral health, we recognize the importance of your smile and are devoted to preserving and improving its natural beauty.</p>
+            <a class="action-button dark mt-8" href="#contact">Learn more about our practice <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="bg-[#f7efe5]">
+        <div class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+          <div class="grid gap-9 lg:grid-cols-[.9fr_1.1fr] lg:items-end">
+            <div>
+              <p class="eyebrow">Our services</p>
+              <h2 class="display-face mt-4 max-w-md text-4xl leading-[.98] tracking-[-.025em] text-[#2b2930] sm:text-5xl">Care for the smile you want to share.</h2>
+            </div>
+            <p class="max-w-xl text-sm leading-7 text-[#596966]">Welcome to our dental family. At our office, we believe in making your dental journey as comfortable as possible. Dr. Brian Mitchell & Associates bring a personal touch to dentistry.</p>
+          </div>
+          <div class="featured-service-grid mt-12">
+            {featuredServices.map((service) => (
+              <a class="homepage-service-card group block no-underline" href={service.href}>
+                <img src={service.image} alt="" class="absolute inset-0 h-full w-full object-cover object-center" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#2b2930]/90 via-[#2b2930]/12 to-transparent"></div>
+                <div class="absolute right-4 top-4 h-11 w-11 rounded-full border border-[#df8b64]/80" aria-hidden="true"></div>
+                <div class="relative flex min-h-[330px] flex-col justify-end p-6 text-white">
+                  <p class="text-[.62rem] font-extrabold uppercase tracking-[.15em] text-[#d7e9e6]">{service.number} · Care tailored to you</p>
+                  <div class="mt-3 flex items-end justify-between gap-3">
+                    <div>
+                      <h3 class="display-face text-3xl leading-none">{service.name}</h3>
+                      <p class="mt-3 max-w-[245px] text-sm leading-6 text-white/85">{service.copy}</p>
+                    </div>
+                    <span class="service-arrow flex-none"><Icon name="lucide:arrow-right" class="h-4 w-4" /></span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+          <div class="mt-9 flex justify-center">
+            <a class="action-button outline" href="/services">Explore all services <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="new-patients" class="bg-[#fffaf3]">
+        <div class="mx-auto grid max-w-[1440px] overflow-hidden lg:grid-cols-[.92fr_1.08fr]">
+          <div class="relative overflow-hidden bg-[#2b2930] px-5 py-16 text-white sm:px-8 lg:px-16 lg:py-24">
+            <div class="sun-portal wide -bottom-24 -left-16 border-[#df8b64]/80" aria-hidden="true"></div>
+            <div class="relative">
+              <p class="eyebrow text-[#bde0da]">New patient specials</p>
+              <h2 class="display-face mt-4 max-w-lg text-4xl leading-[.98] tracking-[-.025em] sm:text-5xl">A clearer next step starts here.</h2>
+              <p class="mt-6 max-w-lg text-sm leading-7 text-[#d8e8e5]">Explore payment options, an in-house dental savings plan, Invisalign treatment, and dental implant care with a team ready to talk through your choices.</p>
+              <a class="action-button primary mt-8" href="#contact">Explore new patient specials <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+            </div>
+          </div>
+          <div class="relative min-h-[460px] bg-[#d8e5df]">
+            <img src={liveAssets.dianaHome} alt="Dr. Diana Zhen" class="absolute inset-0 h-full w-full object-contain object-center" />
+            <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#2b2930]/78 via-[#2b2930]/20 to-transparent"></div>
+            <div class="absolute right-7 top-7 h-16 w-16 rounded-full border border-[#df8b64]" aria-hidden="true"></div>
+            <div class="absolute inset-x-0 bottom-0 p-7 text-white sm:p-10">
+              <p class="text-[.63rem] font-extrabold uppercase tracking-[.17em] text-[#bfe1dc]">Meet our new doctor</p>
+              <h3 class="display-face mt-2 text-4xl leading-none">Dr. Diana Zhen</h3>
+              <a class="mt-5 inline-flex items-center gap-2 text-[.7rem] font-extrabold uppercase tracking-[.1em] text-white no-underline" href="#contact">Learn more <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="patient-info" class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <div class="relative overflow-hidden border-y border-[#77a49f]/24 py-12 text-center">
+          <div class="sun-portal wide -top-24 right-10 border-[#df8b64]/55" aria-hidden="true"></div>
+          <div class="relative">
+            <p class="eyebrow">Patient information</p>
+            <h2 class="display-face mx-auto mt-4 max-w-2xl text-4xl leading-[.98] tracking-[-.025em] text-[#2b2930] sm:text-5xl">A more confident smile starts with a conversation.</h2>
+            <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+              <a class="action-button dark" href="#contact">Let's connect <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+              <a class="action-button outline" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Call the practice</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="relative overflow-hidden bg-[#27594e] text-white">
+        <div class="sun-portal tall -right-44 -bottom-28 border-[#f6c3a9]/70" aria-hidden="true"></div>
+        <div class="relative mx-auto grid max-w-[1440px] gap-10 px-5 py-20 sm:px-8 md:grid-cols-[1.15fr_.85fr] lg:px-12 lg:py-28">
+          <div>
+            <p class="eyebrow text-[#f6d1bd]">Book an appointment</p>
+            <h2 class="display-face mt-4 max-w-xl text-5xl leading-[.94] tracking-[-.035em] sm:text-6xl">Your next step can be simple.</h2>
+            <p class="mt-7 max-w-lg text-base leading-8 text-white/85">Call our team today to schedule your appointment. We are here to help you feel welcome, informed, and ready to care for your smile.</p>
+            <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+              <a class="action-button dark" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Call (520) 523-4860</a>
+              <a class="action-button light" href="#top"><Icon name="lucide:calendar-days" class="h-4 w-4" />Online booking to connect</a>
+            </div>
+          </div>
+          <div class="border-l border-white/35 pl-6 sm:pl-8">
+            <p class="text-[.62rem] font-extrabold uppercase tracking-[.16em] text-[#f6d1bd]">Visit us</p>
+            <p class="mt-4 text-base font-bold leading-7">6383 E. Grant Road, Suite 155<br />Tucson, AZ 85715</p>
+            <div class="hairline my-7"></div>
+            <p class="text-[.62rem] font-extrabold uppercase tracking-[.16em] text-[#f6d1bd]">Office hours</p>
+            <p class="mt-3 text-sm leading-7 text-white/85">Monday · 8am to 4pm<br />Tuesday · 8am to 4pm<br />Wednesday · 7am to 4pm<br />Thursday · 7am to 4pm<br />Friday · 7am to 4pm</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-[#fffaf3]">
+      <div class="mx-auto flex max-w-[1440px] flex-col justify-between gap-7 px-5 py-10 sm:px-8 md:flex-row md:items-center lg:px-12">
+        <img src={liveAssets.logo} alt="Dr. Brian Mitchell & Associates" class="w-[210px]" />
+        <p class="max-w-md text-[.62rem] leading-5 text-[#72827f]">Dentistry · Dental Implants · Orthodontics · 6383 E. Grant Road, Suite 155, Tucson, AZ 85715</p>
+        <div class="flex items-center gap-3 border-l-2 border-[#bb6846] pl-3">
+          <img src={liveAssets.bioclear} alt="Dr. Brian Mitchell BioClear Certified" class="h-16 w-16 object-contain" />
+          <p class="max-w-[155px] text-[0.64rem] font-extrabold uppercase leading-4 tracking-[0.11em] text-[#27594e]">Dr. Brian Mitchell<br />BioClear Certified</p>
+        </div>
+      </div>
+    </footer>
+    <div class="fixed inset-x-0 bottom-0 z-30 flex items-center gap-3 bg-[#fffaf3]/95 px-4 py-3 shadow-[0_-6px_30px_rgba(26,29,30,.13)] backdrop-blur md:hidden">
+      <a class="action-button outline flex-1 py-3" href="tel:5205234860"><Icon name="lucide:phone" class="h-3.5 w-3.5" />Call</a>
+      <a class="action-button primary flex-1 py-3" href="#contact"><Icon name="lucide:calendar-days" class="h-3.5 w-3.5" />Book</a>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const toggle = document.getElementById("home-menu-toggle");
+  const menu = document.getElementById("home-mobile-menu");
+  const openIcon = toggle?.querySelector('[data-menu-icon="open"]');
+  const closeIcon = toggle?.querySelector('[data-menu-icon="close"]');
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = menu?.classList.toggle("hidden") === false;
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    openIcon?.classList.toggle("hidden", isOpen);
+    closeIcon?.classList.toggle("hidden", !isOpen);
+  });
+</script>

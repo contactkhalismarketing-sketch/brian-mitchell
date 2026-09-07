@@ -1,0 +1,52 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../../layouts/Layout.astro";
+import PracticeHeader from "../../components/PracticeHeader.astro";
+import PracticeFooter from "../../components/PracticeFooter.astro";
+import PageHero from "../../components/PageHero.astro";
+import ContactBand from "../../components/ContactBand.astro";
+import { liveAssets, articles } from "../../lib/data";
+---
+
+<Layout title="Patient Information | Dr. Brian Mitchell & Associates">
+  <div class="page-shell min-h-screen">
+    <PracticeHeader active="blogs" />
+    <main>
+      <PageHero
+        eyebrow="Patient information"
+        title="A closer look at your care."
+        body="Clear information can make a dental decision feel easier. Explore the latest clinical insight, treatment context, and patient education from Dr. Brian Mitchell & Associates."
+        image={liveAssets.blogSoftTissue}
+      >
+        <div class="mt-9 flex gap-3">
+          <span class="stamp">Dental implants</span>
+          <span class="stamp">Patient education</span>
+        </div>
+      </PageHero>
+      <section class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <div class="grid gap-8 border-b border-[#77a49f]/25 pb-12 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
+          <img src={liveAssets.blogSoftTissue} alt="Soft tissue management illustration" class="aspect-[16/9] w-full object-cover" />
+          <article>
+            <p class="eyebrow">Featured article · Dental implants</p>
+            <h2 class="display-face mt-4 text-4xl leading-[.98] tracking-[-.025em] text-[#2b2930] sm:text-5xl">The Importance of Soft Tissue in Successful Dental Implant Surgery</h2>
+            <p class="mt-5 text-sm leading-7 text-[#596966]">Soft tissue management plays a critical role in the stability, aesthetics, and long-term success of dental implants. Learn how careful planning supports a natural result.</p>
+            <a href="/blogs/soft-tissue-management" class="action-button dark mt-7">Read the article <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+          </article>
+        </div>
+        <div class="mt-14 grid gap-7 md:grid-cols-3">
+          {articles.slice(1).map(([title, category, copy, image]) => (
+            <article>
+              <img src={image} alt="" class="aspect-[4/3] w-full object-cover" />
+              <p class="eyebrow mt-6">{category}</p>
+              <h3 class="display-face mt-3 text-3xl leading-none text-[#2b2930]">{title}</h3>
+              <p class="mt-4 text-sm leading-7 text-[#596966]">{copy}</p>
+              <a href="/blogs/soft-tissue-management" class="mt-5 inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.11em] text-[#27594e] no-underline">Read more <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+            </article>
+          ))}
+        </div>
+      </section>
+      <ContactBand title="Have a question about a treatment?" />
+    </main>
+    <PracticeFooter />
+  </div>
+</Layout>

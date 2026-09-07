@@ -1,0 +1,62 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../../layouts/Layout.astro";
+import PracticeHeader from "../../components/PracticeHeader.astro";
+import PracticeFooter from "../../components/PracticeFooter.astro";
+import { liveAssets } from "../../lib/data";
+---
+
+<Layout title="The Importance of Soft Tissue in Successful Dental Implant Surgery | Dr. Brian Mitchell & Associates">
+  <div class="page-shell min-h-screen">
+    <PracticeHeader active="blogs" />
+    <main>
+      <section class="bg-[#f7efe5]">
+        <div class="mx-auto max-w-[1080px] px-5 py-14 sm:px-8 lg:py-20">
+          <a href="/blogs" class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.11em] text-[#27594e] no-underline"><Icon name="lucide:chevron-right" class="h-4 w-4 rotate-180" />Back to patient information</a>
+          <p class="eyebrow mt-12">Dental implants · Patient education</p>
+          <h1 class="display-face mt-5 max-w-4xl text-5xl leading-[.93] tracking-[-.035em] text-[#2b2930] sm:text-6xl lg:text-7xl">The Importance of Soft Tissue in Successful Dental Implant Surgery</h1>
+          <div class="mt-8 flex flex-wrap items-center gap-4 text-xs font-bold text-[#6c857e]">
+            <span>By Dr. Brian Mitchell & Associates</span>
+            <span class="h-1 w-1 rounded-full bg-[#df8b64]"></span>
+            <span>Dental implant care</span>
+          </div>
+        </div>
+      </section>
+      <section class="mx-auto max-w-[1080px] px-5 py-12 sm:px-8 lg:py-16">
+        <img src={liveAssets.blogSoftTissue} alt="Dental implant soft tissue illustration" class="aspect-[16/8] w-full object-cover" />
+        <div class="mx-auto mt-14 grid max-w-4xl gap-12 lg:grid-cols-[190px_minmax(0,1fr)]">
+          <aside class="lg:sticky lg:top-8 lg:self-start">
+            <p class="text-[.63rem] font-extrabold uppercase tracking-[.14em] text-[#bb6846]">In this article</p>
+            <div class="mt-4 grid gap-3 text-sm font-bold text-[#52736b]">
+              <a href="#why" class="no-underline">Why soft tissue matters</a>
+              <a href="#method" class="no-underline">A high-tech method</a>
+              <a href="#procedures" class="no-underline">Common procedures</a>
+            </div>
+          </aside>
+          <article class="article-copy">
+            <p class="lead">Soft tissue is a crucial part of a successful dental implant result. It provides the supportive framework around an implant, helping the restoration look natural while protecting the long-term health of the site.</p>
+            <h2 id="why">Why soft tissue matters</h2>
+            <p>Strong, healthy soft tissue contributes to the stability and aesthetics of a dental implant. When planning a tooth replacement, it is important to consider both the visible tooth and the gum tissue that frames it.</p>
+            <p>A thoughtful approach can help create a balanced result and support ongoing health around the implant. Every situation is different, so a consultation is the right place to understand what is appropriate for your smile.</p>
+            <div class="my-10 border-l-2 border-[#df8b64] bg-[#f7efe5] px-6 py-6">
+              <Icon name="lucide:quote" class="h-6 w-6 text-[#bb6846]" />
+              <p class="display-face mt-3 text-2xl leading-tight text-[#2b2930]">The right plan considers the foundation as carefully as the smile people see.</p>
+            </div>
+            <h2 id="method">Dr. Mitchell and Associates' high-tech method</h2>
+            <p>3D X-ray technology can support careful implant planning by giving the clinical team a detailed picture of the treatment area. The technology is part of a thorough process, alongside an individual examination and conversation about your needs.</p>
+            <img src={liveAssets.blogImplant} alt="Dental implant planning illustration" class="my-10 w-full" />
+            <h2 id="procedures">Common soft tissue procedures</h2>
+            <p>Depending on the patient, treatment may include soft tissue grafting or other techniques that support the contour and health of the gum tissue. The best approach is specific to the treatment site, your oral health, and the outcome you are hoping for.</p>
+            <div class="mt-12 bg-[#2b2930] p-7 text-white sm:p-10">
+              <p class="eyebrow text-[#bde0da]">Considering implants?</p>
+              <h3 class="display-face mt-3 text-4xl leading-none">Let's talk through the right next step.</h3>
+              <p class="mt-4 max-w-xl text-sm leading-7 text-[#d8e8e5]">A visit gives us the chance to understand your goals and review the options available to you.</p>
+              <a href="/contact-us" class="action-button primary mt-7">Request a consultation <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <PracticeFooter />
+  </div>
+</Layout>

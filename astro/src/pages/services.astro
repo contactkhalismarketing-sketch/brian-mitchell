@@ -1,0 +1,61 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import PracticeHeader from "../components/PracticeHeader.astro";
+import PracticeFooter from "../components/PracticeFooter.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactBand from "../components/ContactBand.astro";
+import FullServiceDirectory from "../components/FullServiceDirectory.astro";
+import { liveAssets, serviceList } from "../lib/data";
+---
+
+<Layout title="Services | Dr. Brian Mitchell & Associates">
+  <div class="page-shell min-h-screen">
+    <PracticeHeader active="services" />
+    <main>
+      <PageHero
+        eyebrow="Services"
+        title="Care made personal."
+        body="Welcome to our dental family. Our team makes your dental journey as comfortable as possible, with a thoughtful plan for the smile you have today and the one you're working toward."
+        image={liveAssets.office}
+      >
+        <div class="mt-9 flex flex-wrap gap-3">
+          <span class="stamp">Cosmetic dentistry</span>
+          <span class="stamp">Orthodontics</span>
+          <span class="stamp">Dental implants</span>
+        </div>
+      </PageHero>
+      <section class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <div class="grid gap-9 lg:grid-cols-[.9fr_1.1fr] lg:items-end">
+          <div>
+            <p class="eyebrow">How we can help</p>
+            <h2 class="display-face mt-4 max-w-xl text-4xl leading-[.98] tracking-[-.025em] text-[#2b2930] sm:text-5xl">Thoughtful treatment. Clear next steps.</h2>
+          </div>
+          <p class="max-w-xl text-sm leading-7 text-[#596966]">From routine preventive care to restorative and aesthetic treatment, we begin by understanding your needs and then talk through the options together.</p>
+        </div>
+        <div class="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {serviceList.map(([name, copy, image, href], index) => (
+            <a href={href} class="service-card group block min-h-[390px] no-underline">
+              <img src={image} alt="" class="absolute inset-0 h-full w-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#2b2930]/90 via-[#2b2930]/10 to-transparent"></div>
+              <div class="absolute right-4 top-4 h-11 w-11 rounded-full border border-[#df8b64]/80" aria-hidden="true"></div>
+              <div class="relative flex min-h-[390px] flex-col justify-end p-6 text-white">
+                <p class="text-[.62rem] font-extrabold uppercase tracking-[.15em] text-[#d7e9e6]">0{index + 1} · Explore care</p>
+                <div class="mt-3 flex items-end justify-between gap-3">
+                  <div>
+                    <h3 class="display-face text-3xl leading-none">{name}</h3>
+                    <p class="mt-3 max-w-[240px] text-sm leading-6 text-white/85">{copy}</p>
+                  </div>
+                  <span class="service-arrow flex-none"><Icon name="lucide:arrow-right" class="h-4 w-4" /></span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+        <FullServiceDirectory />
+      </section>
+      <ContactBand title="Questions about a treatment? Let's talk." />
+    </main>
+    <PracticeFooter />
+  </div>
+</Layout>

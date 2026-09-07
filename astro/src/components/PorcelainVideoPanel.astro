@@ -1,0 +1,26 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="porcelain-video-panel" id="porcelain-video-panel">
+  <button class="porcelain-video-panel__play" type="button" id="porcelain-video-play" aria-label="Play Dr. Brian Mitchell Cosmetic Dentistry video">
+    <img src="/assets/practice/brian-cosmetic-youtube-thumb_7a5e79b6.jpg" alt="Dr. Brian Mitchell in the Cosmetic Dentistry video" />
+    <span class="porcelain-video-panel__overlay"></span>
+    <span class="porcelain-video-panel__play-button"><Icon name="lucide:play-circle" class="h-8 w-8" />Watch Dr. Mitchell</span>
+  </button>
+  <span class="porcelain-video-panel__tag">A closer look at cosmetic care</span>
+</div>
+
+<script>
+  const panel = document.getElementById("porcelain-video-panel");
+  const button = document.getElementById("porcelain-video-play");
+
+  button?.addEventListener("click", () => {
+    const iframe = document.createElement("iframe");
+    iframe.src = "https://www.youtube-nocookie.com/embed/-b0rDx0T7GI?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+    iframe.title = "Dr. Brian Mitchell on Cosmetic Dentistry";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    button.replaceWith(iframe);
+  });
+</script>

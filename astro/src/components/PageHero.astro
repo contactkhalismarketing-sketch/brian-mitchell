@@ -1,0 +1,25 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  body: string;
+  image: string;
+  imagePosition?: string;
+  taller?: boolean;
+}
+
+const { eyebrow, title, body, image, imagePosition = "center", taller = false } = Astro.props;
+const verticalPadding = taller ? "py-28 sm:py-32 lg:py-40 xl:py-44" : "py-24 lg:py-32";
+---
+
+<section class="relative isolate overflow-hidden bg-[#2b2930] text-white">
+  <img src={image} alt="" style={{ objectPosition: imagePosition }} class="absolute inset-0 h-full w-full object-cover" />
+  <div class="page-hero-scrim absolute inset-0"></div>
+  <div class="sun-portal tall -bottom-24 -right-36 opacity-80" aria-hidden="true"></div>
+  <div class={`relative mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:pl-20 ${verticalPadding}`}>
+    <p class="eyebrow text-[#bde0da]">{eyebrow}</p>
+    <h1 class="display-face mt-4 max-w-3xl text-5xl leading-[.93] tracking-[-.035em] sm:text-6xl lg:text-7xl">{title}</h1>
+    <p class="mt-7 max-w-2xl text-base leading-8 text-[#e7f1ee]">{body}</p>
+    <slot />
+  </div>
+</section>

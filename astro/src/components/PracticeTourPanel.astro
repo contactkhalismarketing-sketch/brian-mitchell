@@ -1,0 +1,40 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section class="about-practice-video-stage">
+  <div class="about-practice-video mx-auto max-w-[1440px]">
+    <div class="about-practice-video__copy">
+      <div>
+        <p class="eyebrow text-[#f6d1bd]">Inside the practice</p>
+        <h2 class="display-face mt-4 max-w-lg text-4xl leading-[.96] tracking-[-.025em] text-white sm:text-5xl">A calm space, designed around your care.</h2>
+        <p class="mt-6 max-w-lg text-sm leading-7 text-[#d8e8e5]">Take a closer look at the place, technology, and thoughtful details that support a more comfortable dental experience from the moment you arrive.</p>
+      </div>
+      <div class="about-practice-video__note">
+        <span>What you will see</span>
+        <p>Our Tucson practice, treatment spaces, and digital technology.</p>
+      </div>
+    </div>
+    <div class="about-practice-video__frame" id="practice-tour-frame">
+      <button class="about-practice-video__play" type="button" id="practice-tour-play" aria-label="Play Dr. Brian Mitchell & Associates practice tour">
+        <img src="/assets/practice/brian-practice-tour-equipment-poster_106066d8.jpg" alt="Dental technology at Dr. Brian Mitchell & Associates" />
+        <span class="about-practice-video__overlay"></span>
+        <span class="about-practice-video__play-button"><Icon name="lucide:play-circle" class="h-9 w-9" />Watch the practice tour</span>
+      </button>
+      <span class="about-practice-video__tag">Tucson, Arizona · Practice tour</span>
+    </div>
+  </div>
+</section>
+
+<script>
+  const button = document.getElementById("practice-tour-play");
+
+  button?.addEventListener("click", () => {
+    const iframe = document.createElement("iframe");
+    iframe.src = "https://www.youtube-nocookie.com/embed/N5E4s1wcdTQ?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+    iframe.title = "Dr. Brian Mitchell & Associates practice tour";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    button.replaceWith(iframe);
+  });
+</script>

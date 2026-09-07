@@ -1,0 +1,22 @@
+---
+import { Icon } from "astro-icon/components";
+import { liveAssets } from "../lib/data";
+---
+
+<footer class="bg-[#fffaf3]">
+  <div class="mx-auto flex max-w-[1440px] flex-col justify-between gap-7 px-5 py-10 sm:px-8 md:flex-row md:items-center lg:px-12">
+    <img src={liveAssets.logo} alt="Dr. Brian Mitchell & Associates" class="w-[210px]" />
+    <div class="text-xs leading-6 text-[#72827f]">
+      <p>6383 E. Grant Road, Suite 155 · Tucson, AZ 85715</p>
+      <p>Monday–Tuesday 8am–4pm · Wednesday–Friday 7am–4pm</p>
+    </div>
+    <div class="flex items-center gap-3 border-l-2 border-[#bb6846] pl-3">
+      <img src={liveAssets.bioclear} alt="Dr. Brian Mitchell BioClear Certified" class="h-16 w-16 object-contain" />
+      <p class="max-w-[155px] text-[0.64rem] font-extrabold uppercase leading-4 tracking-[0.11em] text-[#27594e]">Dr. Brian Mitchell<br />BioClear Certified</p>
+    </div>
+  </div>
+</footer>
+<div class="fixed inset-x-0 bottom-0 z-40 flex items-center gap-3 bg-[#fffaf3]/95 px-4 py-3 shadow-[0_-6px_30px_rgba(26,29,30,.13)] backdrop-blur md:hidden">
+  <a class="action-button outline flex-1 py-3" href="tel:5205234860"><Icon name="lucide:phone" class="h-3.5 w-3.5" />Call</a>
+  <a class="action-button primary flex-1 py-3" href="/contact-us"><Icon name="lucide:calendar-days" class="h-3.5 w-3.5" />Book</a>
+</div>

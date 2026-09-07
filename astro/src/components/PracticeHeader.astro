@@ -1,0 +1,58 @@
+---
+import { Icon } from "astro-icon/components";
+import { liveAssets, navigation } from "../lib/data";
+
+interface Props {
+  active?: string;
+}
+
+const { active } = Astro.props;
+---
+
+<header class="relative z-30 bg-[#fffaf3]/95 backdrop-blur-md">
+  <div class="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-5 py-4 sm:px-8 lg:px-12">
+    <a href="/" class="block w-[160px] sm:w-[205px]" aria-label="Dr. Brian Mitchell & Associates home">
+      <img src={liveAssets.logo} class="h-auto w-full" alt="Dr. Brian Mitchell & Associates Dentistry, Dental Implants, Orthodontics" />
+    </a>
+    <nav class="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
+      {navigation.map((item) => (
+        <a href={item.href} class={`nav-link ${active === item.active ? "text-[#27594e]" : ""}`}>{item.label}</a>
+      ))}
+    </nav>
+    <div class="hidden items-center gap-3 sm:flex">
+      <a class="action-button outline" href="tel:5205234860"><Icon name="lucide:phone" class="h-3.5 w-3.5" />Call us</a>
+      <a href="/contact-us" class="action-button primary"><Icon name="lucide:calendar-days" class="h-3.5 w-3.5" />Book an appointment</a>
+    </div>
+    <button
+      id="mobile-menu-toggle"
+      class="rounded-full border border-[#77a49f]/40 p-3 text-[#27594e] sm:hidden"
+      type="button"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <Icon name="lucide:menu" class="h-5 w-5" data-menu-icon="open" />
+      <Icon name="lucide:x" class="hidden h-5 w-5" data-menu-icon="close" />
+    </button>
+  </div>
+  <nav id="mobile-menu" class="hidden border-t border-[#77a49f]/15 bg-[#fffaf3] px-5 py-5 sm:hidden" aria-label="Mobile navigation">
+    <div class="grid gap-4">
+      {navigation.map((item) => <a class="nav-link" href={item.href}>{item.label}</a>)}
+      <a class="action-button primary mt-2 w-full" href="/contact-us">Book an appointment <Icon name="lucide:calendar-days" class="h-4 w-4" /></a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById("mobile-menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const openIcon = toggle?.querySelector('[data-menu-icon="open"]');
+  const closeIcon = toggle?.querySelector('[data-menu-icon="close"]');
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = menu?.classList.toggle("hidden") === false;
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    openIcon?.classList.toggle("hidden", isOpen);
+    closeIcon?.classList.toggle("hidden", !isOpen);
+  });
+</script>

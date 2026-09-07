@@ -1,0 +1,23 @@
+---
+import { Icon } from "astro-icon/components";
+import { additionalServiceList } from "../lib/data";
+---
+
+<section class="compact-services-stage">
+  <div class="compact-services-stage__heading">
+    <div>
+      <p class="eyebrow">More ways we care</p>
+      <h3 class="display-face mt-3 text-3xl leading-none text-[#2b2930] sm:text-4xl">The full care offering, at a glance.</h3>
+    </div>
+    <p>Explore everyday, restorative, and aesthetic care with a team that will help you choose the appropriate next step.</p>
+  </div>
+  <div class="compact-service-grid">
+    {additionalServiceList.map(([number, name, copy]) => (
+      <a href="/services" class="compact-service-card group">
+        <span class="compact-service-card__number">{number}</span>
+        <span class="compact-service-card__copy"><strong>{name}</strong><span>{copy}</span></span>
+        <Icon name="lucide:arrow-right" class="compact-service-card__arrow h-4 w-4" />
+      </a>
+    ))}
+  </div>
+</section>
