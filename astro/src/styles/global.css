@@ -237,7 +237,7 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .compact-service-card__copy span { color: #596966; font-size: .76rem; line-height: 1.5; }
 .compact-service-card__arrow { color: #27594e; transition: transform 180ms cubic-bezier(.23,1,.32,1); }
 .compact-service-card:hover .compact-service-card__arrow { transform: translateX(.3rem); }
-.hero-media-label { background: rgba(43,41,48,.65); bottom: 0; font-size: .59rem; font-weight: 800; letter-spacing: .12em; padding: .75rem 1rem; position: absolute; right: 0; text-transform: uppercase; backdrop-filter: blur(8px); }
+.hero-media-label { background: rgba(24,20,22,.78); bottom: 0; color: #fffaf3; font-size: .59rem; font-weight: 800; letter-spacing: .12em; padding: .75rem 1rem; position: absolute; right: 0; text-transform: uppercase; backdrop-filter: blur(8px); }
 
 /* About doctor cards — actions share the same lower baseline on multi-column layouts; mobile retains its deliberate text pause. */
 .doctor-feature__content { min-height: 100%; }
