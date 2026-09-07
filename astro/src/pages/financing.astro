@@ -1,0 +1,43 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import PracticeHeader from "../components/PracticeHeader.astro";
+import PracticeFooter from "../components/PracticeFooter.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactBand from "../components/ContactBand.astro";
+import { liveAssets, financingOptions } from "../lib/data";
+---
+
+<Layout title="Financing & Insurance | Dr. Brian Mitchell & Associates">
+  <div class="page-shell min-h-screen">
+    <PracticeHeader active="new" />
+    <main>
+      <PageHero
+        eyebrow="Financing & insurance"
+        title="Clear costs, before any work begins."
+        body="We believe you should understand exactly how a visit is paid for before you're in the chair. Here's every option, in plain terms."
+        image={liveAssets.office}
+      />
+
+      <section class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <div class="grid gap-7 lg:grid-cols-3">
+          {financingOptions.map((option) => (
+            <article class="border-t-2 border-[#bb6846] bg-[#f7efe5] p-7">
+              <h2 class="display-face text-2xl leading-none text-[#2b2930]">{option.name}</h2>
+              <p class="mt-4 text-sm leading-7 text-[#596966]">{option.detail}</p>
+            </article>
+          ))}
+        </div>
+        <div class="mt-14 max-w-2xl">
+          <p class="eyebrow">A note on insurance</p>
+          <h2 class="display-face mt-4 text-3xl leading-none text-[#2b2930] sm:text-4xl">Not sure what your plan covers?</h2>
+          <p class="mt-5 text-base leading-8 text-[#596966]">Call the practice and our team will help confirm your coverage before your visit, so there's nothing unexpected on the day. We're also happy to talk through the Mitchell Savings Plan or CareCredit if you're weighing your options.</p>
+          <a class="action-button dark mt-7" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Call (520) 523-4860</a>
+        </div>
+      </section>
+
+      <ContactBand title="Have a question about cost before you book?" />
+    </main>
+    <PracticeFooter />
+  </div>
+</Layout>

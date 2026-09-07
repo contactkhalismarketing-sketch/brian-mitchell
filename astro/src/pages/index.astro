@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
-import { liveAssets, featuredServices } from "../lib/data";
+import { liveAssets, featuredServices, testimonial, practiceStats } from "../lib/data";
 ---
 
 <Layout title="Dr. Brian Mitchell & Associates | Tucson Dentistry">
@@ -92,6 +92,19 @@ import { liveAssets, featuredServices } from "../lib/data";
         </div>
       </section>
 
+      <section class="bg-[#f7efe5]">
+        <div class="mx-auto flex max-w-[900px] flex-col items-center px-5 py-16 text-center sm:px-8 lg:py-20">
+          <Icon name="lucide:quote" class="h-7 w-7 text-[#bb6846]" />
+          <p class="display-face mt-5 max-w-2xl text-2xl leading-tight text-[#2b2930] sm:text-3xl">{testimonial.quote}</p>
+          <p class="mt-5 text-xs font-extrabold uppercase tracking-[.14em] text-[#52736b]">— {testimonial.author}, Google review</p>
+          <div class="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-t border-[#77a49f]/25 pt-6">
+            <p class="text-sm font-semibold text-[#2b2930]"><strong>{practiceStats.googleRating}</strong> Google rating</p>
+            <span class="hidden h-4 w-px bg-[#27594e]/25 sm:block"></span>
+            <p class="text-sm text-[#52736b]"><strong class="text-[#2b2930]">{practiceStats.combinedExperience}</strong> combined team experience</p>
+          </div>
+        </div>
+      </section>
+
       <section id="about" class="relative mx-auto max-w-[1440px] overflow-hidden px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
         <div class="sun-portal wide -left-44 bottom-9 border-[#df8b64]/50" aria-hidden="true"></div>
         <div class="relative grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
@@ -150,8 +163,8 @@ import { liveAssets, featuredServices } from "../lib/data";
             <div class="relative">
               <p class="eyebrow text-[#bde0da]">New patient specials</p>
               <h2 class="display-face mt-4 max-w-lg text-4xl leading-[.98] tracking-[-.025em] sm:text-5xl">A clearer next step starts here.</h2>
-              <p class="mt-6 max-w-lg text-sm leading-7 text-[#d8e8e5]">Explore payment options, an in-house dental savings plan, Invisalign treatment, and dental implant care with a team ready to talk through your choices.</p>
-              <a class="action-button primary mt-8" href="#contact">Explore new patient specials <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+              <p class="mt-6 max-w-lg text-sm leading-7 text-[#d8e8e5]">A dental implant special at $3,500, a free Invisalign&reg; consultation, and an in-house savings plan for patients without insurance — with a team ready to talk through what's right for you.</p>
+              <a class="action-button primary mt-8" href="/new-patient-specials">See current specials <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
             </div>
           </div>
           <div class="relative min-h-[460px] bg-[#d8e5df]">
@@ -161,7 +174,7 @@ import { liveAssets, featuredServices } from "../lib/data";
             <div class="absolute inset-x-0 bottom-0 p-7 text-white sm:p-10">
               <p class="text-[.63rem] font-extrabold uppercase tracking-[.17em] text-[#bfe1dc]">Meet our new doctor</p>
               <h3 class="display-face mt-2 text-4xl leading-none">Dr. Diana Zhen</h3>
-              <a class="mt-5 inline-flex items-center gap-2 text-[.7rem] font-extrabold uppercase tracking-[.1em] text-white no-underline" href="#contact">Learn more <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+              <a class="mt-5 inline-flex items-center gap-2 text-[.7rem] font-extrabold uppercase tracking-[.1em] text-white no-underline" href="/about-us">Learn more <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
             </div>
           </div>
         </div>

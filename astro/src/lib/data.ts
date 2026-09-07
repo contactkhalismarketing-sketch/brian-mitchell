@@ -19,8 +19,73 @@ export const navigation = [
   { label: "Services", href: "/services", active: "services" },
   { label: "About", href: "/about-us", active: "about" },
   { label: "Patient Info", href: "/blogs", active: "blogs" },
-  { label: "New Patients", href: "/contact-us", active: "new" },
+  { label: "New Patients", href: "/new-patient-specials", active: "new" },
   { label: "Contact", href: "/contact-us", active: "contact" },
+];
+
+// Sourced from the live practice site (brianmitchelldds.com) — real pricing,
+// financing terms, first-visit process, and a real published patient review.
+// Do not replace with invented figures or fabricated testimonials.
+export const testimonial = {
+  quote: "This is a spectacular dental office! If you are looking for a new dentist, I cannot recommend this place enough.",
+  author: "Autumn S.",
+};
+
+export const practiceStats = {
+  combinedExperience: "50 years",
+  googleRating: "4.9",
+};
+
+export const specials = [
+  {
+    name: "Dental Implant Special",
+    price: "$3,500",
+    detail: "Includes the final crown. Does not include bone or soft tissue grafting, if needed.",
+  },
+  {
+    name: "Invisalign® Treatment",
+    price: "Free consultation",
+    detail: "A complimentary consultation to talk through comprehensive clear-aligner treatment.",
+  },
+  {
+    name: "In-House Dental Savings Plan",
+    price: "$650 / year",
+    detail: "For patients without insurance. Call the practice for full plan details.",
+  },
+];
+
+export const financingOptions = [
+  {
+    name: "PPO Insurance",
+    detail: "We bill PPO insurance plans directly. Your plan must allow you to see any healthcare provider — HMO plans cannot be billed.",
+  },
+  {
+    name: "Mitchell Savings Plan",
+    detail: "Our in-house plan for uninsured patients: $650 per year. Call the practice for full details.",
+  },
+  {
+    name: "CareCredit®",
+    detail: "A convenient way to make interest-free payments on your dental work.",
+  },
+];
+
+export const firstVisitSteps = [
+  {
+    name: "Medical & dental history",
+    detail: "A thorough review of your background so your plan accounts for your full health picture.",
+  },
+  {
+    name: "Diagnostic imaging",
+    detail: "Any necessary X-rays, intraoral photos, and a full digital scan of your teeth.",
+  },
+  {
+    name: "Clinical evaluation",
+    detail: "Dr. Mitchell personally reviews TMJ (jaw joint) health, performs an oral cancer screening, and evaluates your bite, periodontal health, and orthodontic needs.",
+  },
+  {
+    name: "Your custom plan",
+    detail: "Everything gathered comes together into a dental plan built around you — for the long-term health of your teeth and smile.",
+  },
 ];
 
 export const team = [

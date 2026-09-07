@@ -1,0 +1,46 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import PracticeHeader from "../components/PracticeHeader.astro";
+import PracticeFooter from "../components/PracticeFooter.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactBand from "../components/ContactBand.astro";
+import { liveAssets, firstVisitSteps } from "../lib/data";
+---
+
+<Layout title="Your First Visit | Dr. Brian Mitchell & Associates">
+  <div class="page-shell min-h-screen">
+    <PracticeHeader active="blogs" />
+    <main>
+      <PageHero
+        eyebrow="Your first visit"
+        title="Know exactly what to expect."
+        body="Plan for about one hour. Nothing about your first appointment is a mystery — here's precisely what happens, and why."
+        image={liveAssets.office}
+      >
+        <div class="mt-9 flex items-center gap-3 text-sm font-semibold text-[#e7f1ee]">
+          <Icon name="lucide:clock-3" class="h-4 w-4" />
+          Plan for one full hour
+        </div>
+      </PageHero>
+
+      <section class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <p class="eyebrow">The process</p>
+        <h2 class="display-face mt-4 max-w-xl text-4xl leading-[.98] tracking-[-.025em] text-[#2b2930] sm:text-5xl">Four steps, one hour, one clear plan.</h2>
+        <div class="mt-12 grid gap-px border-y border-[#77a49f]/20 bg-[#77a49f]/20 md:grid-cols-2">
+          {firstVisitSteps.map((step, index) => (
+            <article class="bg-[#fffaf3] p-7">
+              <span class="text-xs font-extrabold uppercase tracking-[.14em] text-[#bb6846]">0{index + 1}</span>
+              <h3 class="display-face mt-3 text-2xl leading-none text-[#2b2930]">{step.name}</h3>
+              <p class="mt-3 text-sm leading-6 text-[#596966]">{step.detail}</p>
+            </article>
+          ))}
+        </div>
+        <p class="mt-10 max-w-2xl text-base leading-8 text-[#596966]">Gathering all of this is what lets us build a dental plan specific to you — not a generic one — aimed at the long-term health of your teeth and smile.</p>
+      </section>
+
+      <ContactBand title="Ready to schedule your first visit?" />
+    </main>
+    <PracticeFooter />
+  </div>
+</Layout>
