@@ -84,32 +84,32 @@ export const testimonial = {
 };
 
 // Real, verified reviews sourced directly from the practice's Google
-// Business Profile (screenshots supplied by the client). Only quotes
-// that were fully visible (not cut off by Google's "...More" truncation)
-// are used, so nothing here is a guess at unseen text.
+// Business Profile (screenshots supplied by the client). Quotes are
+// trimmed to the punchiest sentence(s) — every word here is a direct
+// excerpt of what the reviewer wrote, nothing paraphrased or invented.
 export const testimonials = [
   {
-    quote: "I had an amazing experience at this office. The space is clean and professional, and the support staff are incredibly helpful, friendly, and knowledgeable. Dr. Brian Mitchell is truly a magician. He installed two implants on my lower jaw in less than an hour, and I didn't feel a thing. Given my high sensitivity and resistance to anesthesia, the fact that the procedure was painless and fast left me feeling like it was magic to me.",
+    quote: "Dr. Brian Mitchell is truly a magician. He installed two implants on my lower jaw in less than an hour, and I didn't feel a thing.",
     author: "SV Shay",
     source: "Google review",
   },
   {
-    quote: "Longtime patient of Dr Mitchell and Hyg. Monique. Best dental care in Tucson! This team is solid and takes great care of each other and their patients. Monique has the most gentle touch and keeps my teeth so clean and shiny! Dr Mitchell did my Invisalign and got my smile exactly where I wanted it!",
+    quote: "Best dental care in Tucson! Dr Mitchell did my Invisalign and got my smile exactly where I wanted it!",
     author: "Linzi E.",
     source: "Google review",
   },
   {
-    quote: "I haven't been to the dentist in almost 3 years so I was very nervous but the staff at Dr. Mitchell's was amazing! They all made me feel very comfortable and put my mind at ease about my current dental hygiene and what work I'll need done.",
+    quote: "I was very nervous but the staff at Dr. Mitchell's was amazing! They all made me feel very comfortable.",
     author: "Ashley S.",
     source: "Google review",
   },
   {
-    quote: "From the front door everyone at this dental office treated you like you were a friend. Dental tech kind and considerate to patients needs and fears. Dr. Mitchell warm, personal and professional.",
+    quote: "From the front door everyone at this dental office treated you like you were a friend.",
     author: "Derra Conyer",
     source: "Google review",
   },
   {
-    quote: "I had a great experience! The entire staff was friendly and welcoming, and everything was explained clearly. The girl with the short black hair was especially kind and made me feel comfortable throughout my visit.",
+    quote: "I had a great experience! The entire staff was friendly and welcoming, and everything was explained clearly.",
     author: "Alexa Leal Celaya",
     source: "Google review",
   },

@@ -7,6 +7,7 @@ import PageHero from "../components/PageHero.astro";
 import ContactBand from "../components/ContactBand.astro";
 import { liveAssets, specials, practiceStats } from "../lib/data";
 import ReviewSlider from "../components/ReviewSlider.astro";
+import StarIcon from "../components/StarIcon.astro";
 ---
 
 <Layout title="New Patient Specials | Dr. Brian Mitchell & Associates">
@@ -50,7 +51,7 @@ import ReviewSlider from "../components/ReviewSlider.astro";
           <p class="mt-2 text-sm leading-7 text-[#d8e8e5]">of combined experience across the team caring for you.</p>
           <div class="mt-8 flex items-center justify-center gap-3">
             <div class="flex gap-1">
-              {[0, 1, 2, 3, 4].map(() => <Icon name="lucide:star" class="h-4 w-4 fill-[#df8b64] text-[#df8b64]" />)}
+              {[0, 1, 2, 3, 4].map(() => <StarIcon class="h-4 w-4 text-[#df8b64]" />)}
             </div>
             <p class="text-sm font-semibold">{practiceStats.googleRating} · {practiceStats.reviewCount}+ Google reviews</p>
           </div>

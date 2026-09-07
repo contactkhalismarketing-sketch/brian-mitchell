@@ -65,6 +65,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .nav-link { color: #202424; font-size: .68rem; font-weight: 800; letter-spacing: .085em; position: relative; text-decoration: none; text-transform: uppercase; }
 .nav-link::after { background: #d77c55; bottom: -8px; content: ""; height: 2px; left: 0; position: absolute; transform: scaleX(0); transform-origin: right; transition: transform 180ms cubic-bezier(.23,1,.32,1); width: 100%; }
 .nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
+.patient-info-menu { align-items: center; display: inline-flex; }
+.patient-info-menu__trigger { background: none; border: 0; cursor: pointer; margin: 0; padding: 0; }
+@media (hover: hover) { .patient-info-menu:hover .patient-info-menu__panel { display: block; } .patient-info-menu:hover [data-patient-info-chevron] { transform: rotate(180deg); } }
 
 .action-button { align-items: center; border-radius: 999px; display: inline-flex; font-size: .68rem; font-weight: 800; gap: .52rem; justify-content: center; letter-spacing: .075em; padding: .9rem 1.1rem; text-decoration: none; text-transform: uppercase; transition: background 180ms cubic-bezier(.23,1,.32,1), border-color 180ms cubic-bezier(.23,1,.32,1), box-shadow 180ms cubic-bezier(.23,1,.32,1), color 180ms cubic-bezier(.23,1,.32,1), transform 180ms cubic-bezier(.23,1,.32,1); }
 .action-button:active { transform: scale(.97); }
@@ -245,11 +248,6 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .review-slider__nav:hover { background: #27594e; color: #fff; }
 .review-slider__dot { background: rgba(39,89,78,.25); border-radius: 999px; height: .5rem; transition: background 180ms cubic-bezier(.23,1,.32,1), width 180ms cubic-bezier(.23,1,.32,1); width: .5rem; }
 .review-slider__dot.is-active { background: #27594e; width: 1.5rem; }
-
-/* Lucide icons ship as stroke-only outlines (fill="none" on the inner path),
-   so a Tailwind fill-* class on the <svg> never reaches it. Force fill to
-   follow the element's own color so star ratings render solid. */
-svg[class*="fill-"] path { fill: currentColor; }
 
 /* About doctor cards — actions share the same lower baseline on multi-column layouts; mobile retains its deliberate text pause. */
 .doctor-feature__content { min-height: 100%; }

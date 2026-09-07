@@ -13,7 +13,7 @@ const { active = false, id } = Astro.props;
 <div class="patient-info-menu relative">
   <button
     type="button"
-    class={`nav-link inline-flex items-center gap-1 ${active ? "text-[#27594e]" : ""}`}
+    class={`nav-link patient-info-menu__trigger inline-flex items-center gap-1 ${active ? "text-[#27594e]" : ""}`}
     aria-expanded="false"
     aria-haspopup="true"
     data-patient-info-trigger={id}

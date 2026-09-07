@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import { liveAssets, featuredServices, practiceStats, patientInfoMenu } from "../lib/data";
 import PatientInfoMenu from "../components/PatientInfoMenu.astro";
 import ReviewSlider from "../components/ReviewSlider.astro";
+import StarIcon from "../components/StarIcon.astro";
 ---
 
 <Layout title="Dr. Brian Mitchell & Associates | Tucson Dentistry">
@@ -84,7 +85,7 @@ import ReviewSlider from "../components/ReviewSlider.astro";
                   <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
                 </svg>
                 <div class="flex gap-1">
-                  {[0, 1, 2, 3, 4].map(() => <Icon name="lucide:star" class="h-4 w-4 fill-[#fbbc05] text-[#fbbc05]" />)}
+                  {[0, 1, 2, 3, 4].map(() => <StarIcon class="h-4 w-4 text-[#fbbc05]" />)}
                 </div>
                 <p class="text-sm font-semibold text-[#2b2930]"><strong>{practiceStats.googleRating}</strong> · {practiceStats.reviewCount}+ Google reviews</p>
                 <span class="hidden h-4 w-px bg-[#27594e]/25 sm:block"></span>
@@ -98,7 +99,7 @@ import ReviewSlider from "../components/ReviewSlider.astro";
       <section class="homepage-trust-strip bg-[#e8f1ed] text-[#27594e]">
         <div class="mx-auto grid max-w-[1440px] gap-6 px-5 py-7 sm:px-8 md:grid-cols-3 md:gap-0 lg:px-12">
           <div class="flex items-center gap-4 md:border-r md:border-[#27594e]/18 md:pr-8">
-            <span class="grid h-10 w-10 place-items-center rounded-full bg-[#27594e]/10"><Icon name="lucide:star" class="h-4 w-4 fill-[#27594e] text-[#27594e]" /></span>
+            <span class="grid h-10 w-10 place-items-center rounded-full bg-[#27594e]/10"><StarIcon class="h-4 w-4 text-[#27594e]" /></span>
             <p class="text-sm leading-6"><strong class="font-extrabold">Why Dr. Mitchell?</strong><br /><span class="text-[#52736b]">A sophisticated approach to care.</span></p>
           </div>
           <div class="flex items-center gap-4 md:border-r md:border-[#27594e]/18 md:px-8">

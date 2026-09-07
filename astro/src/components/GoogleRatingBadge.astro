@@ -1,6 +1,6 @@
 ---
-import { Icon } from "astro-icon/components";
 import { practiceStats } from "../lib/data";
+import StarIcon from "./StarIcon.astro";
 
 interface Props {
   size?: "sm" | "lg";
@@ -24,7 +24,7 @@ const ratingClass = size === "lg" ? "text-2xl" : "text-base";
     <div class="mt-0.5 flex items-center gap-2">
       <span class={`display-face leading-none ${ratingClass} ${dark ? "text-white" : "text-[#2b2930]"}`}>{practiceStats.googleRating}</span>
       <div class="flex gap-0.5">
-        {[0, 1, 2, 3, 4].map(() => <Icon name="lucide:star" class={`${starClass} fill-[#fbbc05] text-[#fbbc05]`} />)}
+        {[0, 1, 2, 3, 4].map(() => <StarIcon class={`${starClass} text-[#fbbc05]`} />)}
       </div>
     </div>
     <p class={`mt-0.5 text-xs ${dark ? "text-white/60" : "text-[#72827f]"}`}>{practiceStats.reviewCount}+ reviews</p>
