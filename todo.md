@@ -1,0 +1,83 @@
+# Dr. Brian Mitchell & Associates — Website Build Tasks
+
+- [ ] Replace the assessment-microsite structure with the dental-practice website architecture.
+- [ ] Prepare and present the homepage mockup for approval before building additional dental website pages.
+- [ ] Hold full-site implementation until written approval of the homepage direction is received.
+- [ ] Replace mockup imagery, copy, logo, and colour direction with the live practice website’s approved public materials while retaining the mockup layout.
+- [ ] Review the supplied practice video and use an appropriate exterior/equipment segment in the homepage mockup hero.
+- [ ] Fix the embedded video player error and confirm the hero loads without a browser-console exception.
+- [ ] Remove the YouTube title/subtitle overlay and exclude the receptionist-speaking segment from the hero video montage.
+- [ ] Replace the YouTube hero embed with a caption-free visual treatment that preserves the practice building and equipment context.
+- [ ] Restore the practice video hero and crop the YouTube title and caption regions out of the visible frame.
+- [ ] Restrict the hero to person-free exterior, reception, treatment-room, equipment, and technology visuals.
+- [ ] Remove the blocked YouTube player state and retain a clean person-free practice visual fallback until the original video file is provided.
+- [ ] Analyze and trim the uploaded practice-tour video into a muted exterior/interior/equipment hero loop with no people-focused footage.
+- [ ] Re-sample the uploaded video and replace the incorrect speaking-doctor segment with verified person-free footage only.
+- [ ] Use frame-accurate trim points so the final loop excludes the speaking-doctor shot introduced by keyframe seeking.
+- [ ] Crop the entry and equipment frames to remove the remaining incidental passerby and clinician edge from the final hero loop.
+- [ ] Crop the source watermark and gloved hand out of the video so the hero contains only architecture and equipment.
+- [ ] Widen the hero-video framing while maintaining person-free exterior and technology shots.
+- [ ] Revise the hero loop so the equipment and digital-treatment footage is the dominant visual sequence.
+- [ ] Publish the native-scale team portrait treatment with the completed wider practice-tour video revision.
+- [ ] Create a non-destructive WordPress inventory covering all pages, posts, media, menus, people profiles, SEO metadata, and migration dependencies.
+- [ ] Reframe the Dr. Diana Zhen feature image so the full portrait is visible without face or shoulder cropping.
+- [ ] Create an approval-stage services hub mockup using live practice materials.
+- [ ] Create an approval-stage individual service-page mockup using live practice materials.
+- [ ] Create an approval-stage contact-page mockup using live practice materials.
+- [ ] Add clearly visible bordered entry fields and an expanded message textarea to the contact-page form mockup.
+- [ ] Create an approval-stage about page that combines the live practice story and full team presentation.
+- [ ] Repair the About-page team gallery so it uses a balanced responsive multi-column card grid at the reported viewport.
+- [ ] Adjust the team-gallery card dimensions and portrait rendering so the small live-source staff images are not visibly upscaled or blurry.
+- [ ] Create approval-stage blog-index and individual-blog-page mockups using live practice content.
+- [ ] Fix the preview’s direct route handling so all mockup URLs open without a 404.
+- [ ] Publish a stable review revision and retest every shared mockup route outside the development preview.
+- [x] Replace low-resolution mockup imagery with verified full-resolution WordPress originals, prioritizing team portraits and prominent practice photography.
+- [x] Add each current team member’s approved role and individual biography to the combined About-page team presentation.
+- [x] Add source-verified Dr. Brian Mitchell and Dr. Diana Zhen biographies to the About page.
+- [x] Verify whether individual live service pages use video and introduce a modern, accessible service-video treatment in the matching mockup.
+- [x] Extend the homepage hero video with person-free clinic interior, equipment, and digital-treatment footage.
+- [x] Replace doctor-profile links with clear appointment-booking actions on both About-page doctor cards.
+- [x] Rebuild the homepage hero video with a professionally paced, full-composition clinic-and-equipment treatment that avoids tight monitor crops.
+- [x] Replace the boxed homepage-video frame treatment with an approved uncropped composition that removes the visible side-border effect.
+- [x] Apply the selected borderless, full-frame homepage video treatment with a soft text-legibility gradient only.
+- [x] Align team-card heights, portrait baselines, biographies, and doctor-card booking actions across desktop and mobile layouts.
+- [x] Replace the individual service page’s cluttered left-side service list with a cleaner mobile-first decision flow.
+- [x] Build a split Cosmetic Dentistry hero with text and booking actions on the left and a permanently visible muted video panel on the right.
+- [x] Pause Dr. Brian’s original Cosmetic Dentistry video in the right-side hero panel and add a polished click-to-play overlay.
+- [x] Restore the existing Cosmetic Dentistry hero and move the paused click-to-play Dr. Brian video to the Porcelain Veneers section’s right-hand panel.
+- [x] Remove the cosmetic-video control from the hero so the Porcelain Veneers panel is the only video interaction on the page.
+- [x] Replace the AI-style Porcelain Veneers video poster with a real frame from Dr. Brian’s original Cosmetic Dentistry video.
+- [x] Ensure the Porcelain Veneers panel plays Dr. Brian’s original Cosmetic Dentistry video rather than an AI-style treatment-room visual.
+- [x] Reintroduce the Porcelain Veneers circle motif in a contained position that does not overlap the option grid.
+- [x] Add a compact, mobile-friendly related-services section to the Cosmetic Dentistry page without reintroducing a side menu.
+- [x] Restyle the related-service links as clearly separated cards with strong clickable affordance.
+- [x] Replace the homepage’s three large service tiles with refreshed imagery and a compact card system that can show the full service catalog without excessive height.
+- [x] Add comfortable spacing before doctor-card booking buttons on desktop and mobile.
+- [x] Reposition or suppress the mobile hero label so “Practice · equipment · technology” cannot overlap the video or hero content.
+- [x] Modernize individual blog pages with responsive, readable font sizing and a clearer left-side article navigation treatment.
+- [x] Move the compact full-service card grid from the homepage to the Services-page mockup and restore the homepage to featured services only.
+- [x] Reframe the About-page hero group photograph so Dr. Brian is clearly visible behind the copy.
+- [x] Reduce the desktop homepage hero height and adjust the source-video framing so its embedded practice logo is not visible.
+- [x] Add a subtle desktop hero legibility treatment over the lower source-video watermark so it is fully concealed without re-editing the video asset.
+- [x] Refine the mobile Cosmetic Dentistry video overlay and consultation-card typography, spacing, and CTA sizing for clean narrow-screen presentation.
+- [x] Increase the About-page hero height and refine its group-photo framing so all team faces are visible behind the copy.
+- [x] Anchor both About-page doctor-card booking buttons to the same bottom content baseline on desktop and mobile.
+- [x] Repair the broken Dr. Brian portrait request on the mobile homepage using a publicly reliable image asset path and verify it on the branded domain.
+- [x] Add an Inside the Practice click-to-play version of the approved practice-tour video between the About story and doctor profiles.
+- [x] Brighten the homepage opening with a warm ivory hero-copy panel, lighter practice-video treatment, and softened trust strip while preserving contrast and conversion actions.
+- [ ] Export the complete current project to the provided GitHub repository and prepare a Claude Code handoff with asset-path guidance.
+- [x] Prepare a client-ready mockup approval email with contextual page links that open in new tabs.
+- [x] Add Dr. Brian Mitchell’s BioClear certification as an accessible shared-footer trust credential.
+- [x] Verify the published public domain directly and confirm the footer BioClear credential and full-bleed homepage video are visibly live.
+- [ ] Configure a neutral custom domain or subdomain for client review so the shared mockup URL does not expose the hosting platform.
+- [ ] Configure an isolated preview.khalismarketing.com.au subdomain for client review without modifying the khalismarketing.com.au root-domain records.
+- [ ] Configure brianmitchell.khalismarketing.com.au as the preferred isolated client-review subdomain and map its clean mockup paths.
+- [ ] Add and verify the GoDaddy CNAME for host `brianmitchell` using the exact target issued by the project Domains panel.
+- [ ] Map client-review routes under preview.bhavleensingh.com: /homepage, /about-us, /services, /cosmetic-dentistry, /contact-us, /blogs, and /blog/soft-tissue-management.
+- [ ] Confirm the canonical public practice name, primary phone, email, address, hours, and booking destination before launch.
+- [ ] Create the premium dental visual direction and generate distinct hero, service, trust, and brand-mark assets.
+- [ ] Build the conversion-first homepage with a clear Tucson positioning, offer, booking action, review proof, and mobile click-to-call.
+- [ ] Build the services hub and priority service journeys for cosmetic dentistry, dental implants, Invisalign/orthodontics, and general care.
+- [ ] Build the team/about, new-patient, financing, patient information, gallery, and contact experiences.
+- [ ] Establish accessible responsive behavior, foundational metadata/schema, and clear patient data/privacy boundaries.
+- [ ] Verify the site on desktop and mobile, then save a revised project checkpoint.
