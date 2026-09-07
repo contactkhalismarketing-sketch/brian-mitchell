@@ -46,7 +46,6 @@ export const navigation = [
   { label: "Services", href: "/services", active: "services" },
   { label: "About", href: "/about-us", active: "about" },
   { label: "Blogs", href: "/blogs", active: "blogs" },
-  { label: "New Patients", href: "/new-patient-specials", active: "new" },
   { label: "Contact", href: "/contact-us", active: "contact" },
 ];
 
