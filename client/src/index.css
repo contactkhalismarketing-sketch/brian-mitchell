@@ -227,7 +227,7 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .compact-services-stage__heading { align-items: end; display: flex; flex-direction: column; gap: 1.25rem; justify-content: space-between; }
 .compact-services-stage__heading > div { align-self: flex-start; }
 .compact-services-stage__heading > p { color: #596966; font-size: .86rem; line-height: 1.7; max-width: 31rem; }
-.compact-service-grid { border-bottom: 1px solid rgba(39,89,78,.2); border-top: 1px solid rgba(39,89,78,.2); display: grid; gap: 1px; margin-top: 2rem; }
+.compact-service-grid { background: rgba(39,89,78,.2); border-bottom: 1px solid rgba(39,89,78,.2); border-top: 1px solid rgba(39,89,78,.2); display: grid; gap: 1px; margin-top: 2rem; }
 .compact-service-card { align-items: center; background: #fffaf3; color: #2b2930; display: grid; gap: .9rem; grid-template-columns: auto minmax(0,1fr) auto; min-height: 108px; padding: 1.25rem; text-decoration: none; transition: background 180ms cubic-bezier(.23,1,.32,1), box-shadow 180ms cubic-bezier(.23,1,.32,1), transform 180ms cubic-bezier(.23,1,.32,1); }
 .compact-service-card:hover { background: #edf4f1; box-shadow: inset 4px 0 #bb6846; transform: translateX(3px); }
 .compact-service-card:focus-visible { outline: 3px solid rgba(187,104,70,.45); outline-offset: -3px; }
