@@ -1,0 +1,47 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import PracticeHeader from "../components/PracticeHeader.astro";
+import PracticeFooter from "../components/PracticeFooter.astro";
+import PageHero from "../components/PageHero.astro";
+import { liveAssets } from "../lib/data";
+---
+
+<Layout title="FAQ | Dr. Brian Mitchell & Associates">
+  <div class="page-shell min-h-screen">
+    <PracticeHeader active="patient-info" />
+    <main>
+      <PageHero
+        eyebrow="Frequently asked questions"
+        title="Have a question? Just ask us directly."
+        body="Our FAQ page is being put together. In the meantime, our team is happy to answer anything by phone or email — no question is too small."
+        image={liveAssets.office}
+      >
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+          <a class="action-button primary" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Call (520) 523-4860</a>
+          <a class="action-button light" href="/contact-us">Send a message <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+        </div>
+      </PageHero>
+
+      <section class="mx-auto max-w-[900px] px-5 py-20 text-center sm:px-8 lg:py-28">
+        <p class="eyebrow">Common starting points</p>
+        <h2 class="display-face mt-4 text-3xl leading-tight text-[#2b2930] sm:text-4xl">Questions we hear most often have their own pages:</h2>
+        <div class="mt-10 grid gap-4 sm:grid-cols-3">
+          <a href="/first-visit" class="border border-[#77a49f]/25 bg-[#fffaf3] p-6 no-underline hover:bg-[#f0f6f4]">
+            <span class="display-face block text-xl text-[#2b2930]">What to expect</span>
+            <span class="mt-2 block text-sm text-[#596966]">Your first visit, step by step</span>
+          </a>
+          <a href="/financing" class="border border-[#77a49f]/25 bg-[#fffaf3] p-6 no-underline hover:bg-[#f0f6f4]">
+            <span class="display-face block text-xl text-[#2b2930]">Cost & insurance</span>
+            <span class="mt-2 block text-sm text-[#596966]">Financing and payment options</span>
+          </a>
+          <a href="/forms" class="border border-[#77a49f]/25 bg-[#fffaf3] p-6 no-underline hover:bg-[#f0f6f4]">
+            <span class="display-face block text-xl text-[#2b2930]">Paperwork</span>
+            <span class="mt-2 block text-sm text-[#596966]">Forms to complete before you arrive</span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <PracticeFooter />
+  </div>
+</Layout>

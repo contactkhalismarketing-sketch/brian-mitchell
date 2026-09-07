@@ -1,7 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
-import { liveAssets, featuredServices, testimonial, practiceStats } from "../lib/data";
+import { liveAssets, featuredServices, testimonial, practiceStats, patientInfoMenu } from "../lib/data";
+import PatientInfoMenu from "../components/PatientInfoMenu.astro";
 ---
 
 <Layout title="Dr. Brian Mitchell & Associates | Tucson Dentistry">
@@ -14,9 +15,8 @@ import { liveAssets, featuredServices, testimonial, practiceStats } from "../lib
         <nav class="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
           <a class="nav-link" href="#services">Services</a>
           <a class="nav-link" href="#about">About</a>
+          <PatientInfoMenu id="home-desktop" />
           <a class="nav-link" href="/blogs">Blogs</a>
-          <a class="nav-link" href="/first-visit">First Visit</a>
-          <a class="nav-link" href="/financing">Financing</a>
           <a class="nav-link" href="#new-patients">New Patients</a>
           <a class="nav-link" href="#contact">Contact</a>
         </nav>
@@ -33,11 +33,19 @@ import { liveAssets, featuredServices, testimonial, practiceStats } from "../lib
         <div class="grid gap-4">
           <a class="nav-link" href="#services">Services</a>
           <a class="nav-link" href="#about">About</a>
-          <a class="nav-link" href="/blogs">Blogs</a>
-          <a class="nav-link" href="/first-visit">First Visit</a>
-          <a class="nav-link" href="/financing">Financing</a>
-          <a class="nav-link" href="#new-patients">New Patients</a>
-          <a class="nav-link" href="#contact">Contact</a>
+          <div class="border-t border-[#77a49f]/15 pt-4">
+            <p class="text-[.62rem] font-extrabold uppercase tracking-[.14em] text-[#8a9a96]">Patient info</p>
+            <div class="mt-3 grid gap-3">
+              {patientInfoMenu.map((item) => <a class="nav-link" href={item.href}>{item.label}</a>)}
+            </div>
+          </div>
+          <div class="border-t border-[#77a49f]/15 pt-4">
+            <div class="grid gap-4">
+              <a class="nav-link" href="/blogs">Blogs</a>
+              <a class="nav-link" href="#new-patients">New Patients</a>
+              <a class="nav-link" href="#contact">Contact</a>
+            </div>
+          </div>
           <a class="action-button primary mt-2 w-full" href="#contact">Book an appointment <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
         </div>
       </nav>

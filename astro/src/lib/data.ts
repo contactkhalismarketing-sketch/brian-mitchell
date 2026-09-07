@@ -19,10 +19,33 @@ export const navigation = [
   { label: "Services", href: "/services", active: "services" },
   { label: "About", href: "/about-us", active: "about" },
   { label: "Blogs", href: "/blogs", active: "blogs" },
-  { label: "First Visit", href: "/first-visit", active: "first-visit" },
-  { label: "Financing", href: "/financing", active: "financing" },
   { label: "New Patients", href: "/new-patient-specials", active: "new" },
   { label: "Contact", href: "/contact-us", active: "contact" },
+];
+
+// Matches the live site's "Patient Info" dropdown structure
+// (brianmitchelldds.com): First Time Visit, Financial, Forms, FAQ.
+export const patientInfoMenu = [
+  { label: "First Time Visit", href: "/first-visit" },
+  { label: "Financial", href: "/financing" },
+  { label: "Forms", href: "/forms" },
+  { label: "FAQ", href: "/faq" },
+];
+
+// Sourced from the live Forms page (brianmitchelldds.com/forms/).
+export const formCategories = [
+  {
+    name: "New Patient Forms",
+    items: ["New Patient Information", "Financial Office Policies"],
+  },
+  {
+    name: "Post-Operative Care Instructions",
+    items: ["Tooth Removal", "Implant Placement", "Mitchell Whitening"],
+  },
+  {
+    name: "Consent Forms",
+    items: ["Tooth Extractions", "Endo (Root Canal)", "Surgical Implant"],
+  },
 ];
 
 // Sourced from the live practice site (brianmitchelldds.com) — real pricing,

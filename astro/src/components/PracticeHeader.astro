@@ -1,12 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
-import { liveAssets, navigation } from "../lib/data";
+import { liveAssets, navigation, patientInfoMenu } from "../lib/data";
+import PatientInfoMenu from "./PatientInfoMenu.astro";
 
 interface Props {
   active?: string;
 }
 
 const { active } = Astro.props;
+const [servicesItem, aboutItem, ...restItems] = navigation;
 ---
 
 <header class="relative z-30 bg-[#fffaf3]/95 backdrop-blur-md">
@@ -15,7 +17,10 @@ const { active } = Astro.props;
       <img src={liveAssets.logo} class="h-auto w-full" alt="Dr. Brian Mitchell & Associates Dentistry, Dental Implants, Orthodontics" />
     </a>
     <nav class="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
-      {navigation.map((item) => (
+      <a href={servicesItem.href} class={`nav-link ${active === servicesItem.active ? "text-[#27594e]" : ""}`}>{servicesItem.label}</a>
+      <a href={aboutItem.href} class={`nav-link ${active === aboutItem.active ? "text-[#27594e]" : ""}`}>{aboutItem.label}</a>
+      <PatientInfoMenu id="desktop" active={active === "patient-info"} />
+      {restItems.map((item) => (
         <a href={item.href} class={`nav-link ${active === item.active ? "text-[#27594e]" : ""}`}>{item.label}</a>
       ))}
     </nav>
@@ -37,7 +42,19 @@ const { active } = Astro.props;
   </div>
   <nav id="mobile-menu" class="hidden border-t border-[#77a49f]/15 bg-[#fffaf3] px-5 py-5 sm:hidden" aria-label="Mobile navigation">
     <div class="grid gap-4">
-      {navigation.map((item) => <a class="nav-link" href={item.href}>{item.label}</a>)}
+      <a class="nav-link" href={servicesItem.href}>{servicesItem.label}</a>
+      <a class="nav-link" href={aboutItem.href}>{aboutItem.label}</a>
+      <div class="border-t border-[#77a49f]/15 pt-4">
+        <p class="text-[.62rem] font-extrabold uppercase tracking-[.14em] text-[#8a9a96]">Patient info</p>
+        <div class="mt-3 grid gap-3">
+          {patientInfoMenu.map((item) => <a class="nav-link" href={item.href}>{item.label}</a>)}
+        </div>
+      </div>
+      <div class="border-t border-[#77a49f]/15 pt-4">
+        <div class="grid gap-4">
+          {restItems.map((item) => <a class="nav-link" href={item.href}>{item.label}</a>)}
+        </div>
+      </div>
       <a class="action-button primary mt-2 w-full" href="/contact-us">Book an appointment <Icon name="lucide:calendar-days" class="h-4 w-4" /></a>
     </div>
   </nav>

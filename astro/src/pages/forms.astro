@@ -1,0 +1,62 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import PracticeHeader from "../components/PracticeHeader.astro";
+import PracticeFooter from "../components/PracticeFooter.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactBand from "../components/ContactBand.astro";
+import { liveAssets, formCategories } from "../lib/data";
+---
+
+<Layout title="Patient Forms | Dr. Brian Mitchell & Associates">
+  <div class="page-shell min-h-screen">
+    <PracticeHeader active="patient-info" />
+    <main>
+      <PageHero
+        eyebrow="Patient forms"
+        title="Handle the paperwork before you arrive."
+        body="Complete your forms ahead of time and your first visit runs smoother from the moment you walk in."
+        image={liveAssets.office}
+      >
+        <div class="mt-9 flex items-center gap-3 text-sm font-semibold text-[#e7f1ee]">
+          <Icon name="lucide:clock-3" class="h-4 w-4" />
+          Arrive 10 minutes early with your insurance card and photo ID
+        </div>
+      </PageHero>
+
+      <section class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <p class="eyebrow">Available forms</p>
+        <h2 class="display-face mt-4 max-w-xl text-4xl leading-[.98] tracking-[-.025em] text-[#2b2930] sm:text-5xl">What you'll need, by visit type.</h2>
+        <div class="mt-12 grid gap-7 lg:grid-cols-3">
+          {formCategories.map((category) => (
+            <article class="border-t-2 border-[#bb6846] bg-[#f7efe5] p-7">
+              <h3 class="display-face text-2xl leading-none text-[#2b2930]">{category.name}</h3>
+              <ul class="mt-5 grid gap-3">
+                {category.items.map((item) => (
+                  <li class="flex items-start gap-2 text-sm leading-6 text-[#596966]">
+                    <Icon name="lucide:file-text" class="mt-0.5 h-4 w-4 flex-none text-[#bb6846]" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+
+        <div class="mt-14 max-w-2xl border-t border-[#77a49f]/25 pt-10">
+          <p class="eyebrow">How to submit</p>
+          <h2 class="display-face mt-4 text-3xl leading-none text-[#2b2930] sm:text-4xl">Bring them in, or send them ahead.</h2>
+          <p class="mt-5 text-base leading-8 text-[#596966]">Call the practice and our team will get the right forms to you — print and bring them to your visit, or submit beforehand by fax or email.</p>
+          <div class="mt-6 grid gap-2 text-sm text-[#596966]">
+            <p><strong class="text-[#2b2930]">Fax:</strong> (520) 881-3759</p>
+            <p><strong class="text-[#2b2930]">Email:</strong> checkin@brianmitchelldds.com</p>
+          </div>
+          <a class="action-button dark mt-7" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Call (520) 523-4860</a>
+        </div>
+      </section>
+
+      <ContactBand title="Ready to schedule your visit?" />
+    </main>
+    <PracticeFooter />
+  </div>
+</Layout>
