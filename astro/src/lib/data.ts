@@ -178,7 +178,7 @@ export const firstVisitSteps = [
   },
   {
     name: "Your custom plan",
-    detail: "Everything gathered comes together into a dental plan built around you — for the long-term health of your teeth and smile.",
+    detail: "This visit sets the baseline for a dental plan tailored to your individual oral health — built for the long-term health of your teeth and smile.",
   },
 ];
 
