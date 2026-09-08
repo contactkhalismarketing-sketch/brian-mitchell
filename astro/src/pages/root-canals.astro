@@ -1,0 +1,102 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import PracticeHeader from "../components/PracticeHeader.astro";
+import PracticeFooter from "../components/PracticeFooter.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactBand from "../components/ContactBand.astro";
+import { liveAssets } from "../lib/data";
+
+const rootCanalSteps = [
+  ["Evaluation", "X-rays let us see the shape of the root canal and check for any infection in the surrounding bone before we begin."],
+  ["Cleaning", "With the area numbed and kept dry, we remove the infected pulp and bacteria, then clean and shape the canal."],
+  ["Sealing", "If there's no infection, the tooth can often be sealed the same day. If there is, a temporary filling and medication clear it first."],
+  ["Restoration", "A crown, or crown and post, is placed afterward to protect the tooth and restore full function."],
+] as const;
+---
+
+<Layout title="Root Canals | Dr. Brian Mitchell & Associates">
+  <div class="page-shell min-h-screen">
+    <PracticeHeader active="services" />
+    <main>
+      <PageHero
+        eyebrow="Root Canals"
+        title="Save the tooth, remove the infection."
+        body="A root canal clears infection from deep inside a tooth so it can be sealed, restored, and kept for years to come, rather than removed."
+        image={liveAssets.office}
+      >
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+          <a class="action-button primary" href="/contact-us"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book a consultation</a>
+          <a class="action-button outline" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Ask a question</a>
+        </div>
+      </PageHero>
+      <section class="mx-auto max-w-[1240px] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+        <div class="service-intro-stage">
+          <div>
+            <p class="eyebrow">When it's needed</p>
+            <h2 class="display-face mt-4 max-w-2xl text-4xl leading-[.98] tracking-[-.025em] text-[#2b2930] sm:text-5xl">A precise way to save a tooth.</h2>
+            <p class="mt-6 max-w-2xl text-base leading-8 text-[#596966]">When a large cavity or an injury lets bacteria reach the inside of a tooth, a root canal clears that infection out. We work under a dry, clean field, using fine instruments to gently clean and shape the canal before it's sealed and restored.</p>
+          </div>
+          <div class="service-next-step">
+            <p class="eyebrow text-[#f6d1bd]">Your next step</p>
+            <p class="display-face mt-3 text-3xl leading-none text-white">A root canal evaluation.</p>
+            <p class="mt-4 text-sm leading-7 text-[#d8e8e5]">If a tooth is aching or sensitive, we will take a look and talk through what's needed.</p>
+            <a href="/contact-us" class="action-button light mt-6 w-full">Request a visit <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+          </div>
+        </div>
+
+        <section class="mt-14">
+          <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p class="eyebrow">How it works</p>
+              <h3 class="display-face mt-3 text-3xl leading-none text-[#2b2930] sm:text-4xl">From evaluation to a restored tooth.</h3>
+            </div>
+            <p class="max-w-md text-sm leading-7 text-[#596966]">Every step is planned to protect as much of your natural tooth as possible.</p>
+          </div>
+          <div class="service-option-grid mt-8">
+            {rootCanalSteps.map(([name, copy], index) => (
+              <article class="service-option">
+                <span class="service-option__number">0{index + 1}</span>
+                <div>
+                  <h4 class="display-face text-2xl leading-none text-[#2b2930]">{name}</h4>
+                  <p class="mt-3 text-sm leading-6 text-[#596966]">{copy}</p>
+                </div>
+                <Icon name="lucide:check" class="service-option__check h-5 w-5" />
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="related-services mt-16">
+          <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p class="eyebrow">Continue your care</p>
+              <h3 class="display-face mt-3 text-3xl leading-none text-[#2b2930] sm:text-4xl">You may also be interested in.</h3>
+            </div>
+            <a href="/services" class="text-sm font-extrabold uppercase tracking-[.12em] text-[#27594e] no-underline">View all services <Icon name="lucide:arrow-right" class="ml-1 inline h-4 w-4" /></a>
+          </div>
+          <div class="related-services__grid mt-8">
+            <a href="/bridges" class="related-service-link">
+              <span class="related-service-link__number">01</span>
+              <span>
+                <span class="display-face block text-2xl leading-none text-[#2b2930]">Bridges</span>
+                <span class="mt-2 block text-sm leading-6 text-[#596966]">Restorative options designed to renew everyday confidence.</span>
+              </span>
+              <Icon name="lucide:arrow-right" class="related-service-link__arrow h-5 w-5" />
+            </a>
+            <a href="/extractions" class="related-service-link">
+              <span class="related-service-link__number">02</span>
+              <span>
+                <span class="display-face block text-2xl leading-none text-[#2b2930]">Extractions</span>
+                <span class="mt-2 block text-sm leading-6 text-[#596966]">Clear guidance and gentle care when a tooth needs attention.</span>
+              </span>
+              <Icon name="lucide:arrow-right" class="related-service-link__arrow h-5 w-5" />
+            </a>
+          </div>
+        </section>
+      </section>
+      <ContactBand title="A more confident smile starts with a conversation." />
+    </main>
+    <PracticeFooter />
+  </div>
+</Layout>

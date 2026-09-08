@@ -53,15 +53,15 @@ export const servicesMenu = [
   { label: "Cosmetic Dentistry", href: "/cosmetic-dentistry" },
   { label: "Orthodontics", href: "/orthodontics" },
   { label: "Dental Implants", href: "/dental-implants" },
-  { label: "Bioclear", href: "/services" },
-  { label: "Whitening", href: "/services" },
-  { label: "Preventative Dentistry", href: "/services" },
-  { label: "Extractions", href: "/services" },
-  { label: "Bridges", href: "/services" },
-  { label: "Root Canals", href: "/services" },
-  { label: "Adult Braces", href: "/services" },
-  { label: "Professional Teeth Cleaning", href: "/services" },
-  { label: "Routine Dental Care", href: "/services" },
+  { label: "Bioclear", href: "/bioclear" },
+  { label: "Whitening", href: "/cosmetic-dentistry" },
+  { label: "Preventative Dentistry", href: "/preventative-dentistry" },
+  { label: "Extractions", href: "/extractions" },
+  { label: "Bridges", href: "/bridges" },
+  { label: "Root Canals", href: "/root-canals" },
+  { label: "Adult Braces", href: "/adult-braces" },
+  { label: "Professional Teeth Cleaning", href: "/professional-teeth-cleaning" },
+  { label: "Routine Dental Care", href: "/preventative-dentistry" },
 ];
 
 // Matches the live site's "Patient Info" dropdown structure
@@ -273,15 +273,15 @@ export const featuredServices = [
 ] as const;
 
 export const additionalServiceList = [
-  ["04", "Bioclear", "Conservative, aesthetic solutions for natural teeth."],
-  ["05", "Whitening", "A brighter smile planned around your goals."],
-  ["06", "Preventative Dentistry", "Thoughtful check-ups and cleaning for lasting oral health."],
-  ["07", "Extractions", "Clear guidance and gentle care when a tooth needs attention."],
-  ["08", "Bridges", "Restorative options designed to renew everyday confidence."],
-  ["09", "Root Canals", "Comfort-led treatment to protect and preserve your natural tooth."],
-  ["10", "Adult Braces", "A considered path toward better alignment at any stage of life."],
-  ["11", "Professional Teeth Cleaning", "A fresh, healthy foundation for your ongoing care."],
-  ["12", "Routine Dental Care", "The essentials of a healthy smile, thoughtfully delivered."],
+  ["04", "Bioclear", "Conservative, aesthetic solutions for natural teeth.", "/bioclear"],
+  ["05", "Whitening", "A brighter smile planned around your goals.", "/cosmetic-dentistry"],
+  ["06", "Preventative Dentistry", "Thoughtful check-ups and cleaning for lasting oral health.", "/preventative-dentistry"],
+  ["07", "Extractions", "Clear guidance and gentle care when a tooth needs attention.", "/extractions"],
+  ["08", "Bridges", "Restorative options designed to renew everyday confidence.", "/bridges"],
+  ["09", "Root Canals", "Comfort-led treatment to protect and preserve your natural tooth.", "/root-canals"],
+  ["10", "Adult Braces", "A considered path toward better alignment at any stage of life.", "/adult-braces"],
+  ["11", "Professional Teeth Cleaning", "A fresh, healthy foundation for your ongoing care.", "/professional-teeth-cleaning"],
+  ["12", "Routine Dental Care", "The essentials of a healthy smile, thoughtfully delivered.", "/preventative-dentistry"],
 ] as const;
 
 export const cosmeticOptions = [

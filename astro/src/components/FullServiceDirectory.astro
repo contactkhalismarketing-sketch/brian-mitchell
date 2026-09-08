@@ -12,8 +12,8 @@ import { additionalServiceList } from "../lib/data";
     <p>Explore everyday, restorative, and aesthetic care with a team that will help you choose the appropriate next step.</p>
   </div>
   <div class="compact-service-grid">
-    {additionalServiceList.map(([number, name, copy]) => (
-      <a href="/services" class="compact-service-card group">
+    {additionalServiceList.map(([number, name, copy, href]) => (
+      <a href={href} class="compact-service-card group">
         <span class="compact-service-card__number">{number}</span>
         <span class="compact-service-card__copy"><strong>{name}</strong><span>{copy}</span></span>
         <Icon name="lucide:arrow-right" class="compact-service-card__arrow h-4 w-4" />
