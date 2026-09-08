@@ -1,0 +1,74 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import PracticeHeader from "../components/PracticeHeader.astro";
+import PracticeFooter from "../components/PracticeFooter.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactBand from "../components/ContactBand.astro";
+import { liveAssets } from "../lib/data";
+---
+
+<Layout title="Whitening | Dr. Brian Mitchell & Associates">
+  <div class="page-shell min-h-screen">
+    <PracticeHeader active="services" />
+    <main>
+      <PageHero
+        eyebrow="Whitening"
+        title="A brighter smile, planned around your goals."
+        body="A brighter smile planned around your goals and your existing dental health."
+        image={liveAssets.office}
+        imagePosition="65% 50%"
+      >
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+          <a class="action-button primary" href="/contact-us"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book a consultation</a>
+          <a class="action-button outline" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Ask a question</a>
+        </div>
+      </PageHero>
+      <section class="mx-auto max-w-[1240px] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+        <div class="service-intro-stage">
+          <div>
+            <p class="eyebrow">Part of your cosmetic options</p>
+            <h2 class="display-face mt-4 max-w-2xl text-4xl leading-[.98] tracking-[-.025em] text-[#2b2930] sm:text-5xl">A plan built around your smile, not a standard tray.</h2>
+            <p class="mt-6 max-w-2xl text-base leading-8 text-[#596966]">We're still putting together the full detail page for whitening. In the meantime, know this: any whitening plan we recommend is weighed against your existing dental health first, so it's suited to your teeth specifically, not a one-size treatment. Call or send a message and we'll walk you through your options directly.</p>
+          </div>
+          <div class="service-next-step">
+            <p class="eyebrow text-[#f6d1bd]">Your next step</p>
+            <p class="display-face mt-3 text-3xl leading-none text-white">A whitening consultation.</p>
+            <p class="mt-4 text-sm leading-7 text-[#d8e8e5]">We'll look at your smile and talk through what's realistic and safe for your teeth.</p>
+            <a href="/contact-us" class="action-button light mt-6 w-full">Request a consultation <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+          </div>
+        </div>
+
+        <section class="related-services mt-16">
+          <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p class="eyebrow">Continue your care</p>
+              <h3 class="display-face mt-3 text-3xl leading-none text-[#2b2930] sm:text-4xl">You may also be interested in.</h3>
+            </div>
+            <a href="/services" class="text-sm font-extrabold uppercase tracking-[.12em] text-[#27594e] no-underline">View all services <Icon name="lucide:arrow-right" class="ml-1 inline h-4 w-4" /></a>
+          </div>
+          <div class="related-services__grid mt-8">
+            <a href="/cosmetic-dentistry" class="related-service-link">
+              <span class="related-service-link__number">01</span>
+              <span>
+                <span class="display-face block text-2xl leading-none text-[#2b2930]">Cosmetic Dentistry</span>
+                <span class="mt-2 block text-sm leading-6 text-[#596966]">A personalized approach to a smile that feels like you.</span>
+              </span>
+              <Icon name="lucide:arrow-right" class="related-service-link__arrow h-5 w-5" />
+            </a>
+            <a href="/professional-teeth-cleaning" class="related-service-link">
+              <span class="related-service-link__number">02</span>
+              <span>
+                <span class="display-face block text-2xl leading-none text-[#2b2930]">Professional Teeth Cleaning</span>
+                <span class="mt-2 block text-sm leading-6 text-[#596966]">A fresh, healthy foundation for your ongoing care.</span>
+              </span>
+              <Icon name="lucide:arrow-right" class="related-service-link__arrow h-5 w-5" />
+            </a>
+          </div>
+        </section>
+      </section>
+      <ContactBand title="A more confident smile starts with a conversation." />
+    </main>
+    <PracticeFooter />
+  </div>
+</Layout>

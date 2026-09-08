@@ -54,7 +54,7 @@ export const servicesMenu = [
   { label: "Orthodontics", href: "/orthodontics" },
   { label: "Dental Implants", href: "/dental-implants" },
   { label: "Bioclear", href: "/bioclear" },
-  { label: "Whitening", href: "/cosmetic-dentistry" },
+  { label: "Whitening", href: "/whitening" },
   { label: "Preventative Dentistry", href: "/preventative-dentistry" },
   { label: "Extractions", href: "/extractions" },
   { label: "Bridges", href: "/bridges" },
@@ -274,7 +274,7 @@ export const featuredServices = [
 
 export const additionalServiceList = [
   ["04", "Bioclear", "Conservative, aesthetic solutions for natural teeth.", "/bioclear"],
-  ["05", "Whitening", "A brighter smile planned around your goals.", "/cosmetic-dentistry"],
+  ["05", "Whitening", "A brighter smile planned around your goals.", "/whitening"],
   ["06", "Preventative Dentistry", "Thoughtful check-ups and cleaning for lasting oral health.", "/preventative-dentistry"],
   ["07", "Extractions", "Clear guidance and gentle care when a tooth needs attention.", "/extractions"],
   ["08", "Bridges", "Restorative options designed to renew everyday confidence.", "/bridges"],
