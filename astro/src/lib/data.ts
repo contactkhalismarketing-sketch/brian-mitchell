@@ -21,6 +21,48 @@ import jackie from "../assets/practice/jackie_99712114.jpg";
 import kiana from "../assets/practice/kiana_d5850992.jpg";
 import yuri from "../assets/practice/yuri_059e611a.jpg";
 import gisselle from "../assets/practice/gisselle_06071191.jpg";
+import heroAdultBraces from "../assets/practice/heroes/adult-braces-hero.jpg";
+import heroAdultBracesMobile from "../assets/practice/heroes/adult-braces-hero-mobile.jpg";
+import heroBioclear from "../assets/practice/heroes/bioclear-hero.jpg";
+import heroBioclearMobile from "../assets/practice/heroes/bioclear-hero-mobile.jpg";
+import heroBridges from "../assets/practice/heroes/bridges-hero.jpg";
+import heroBridgesMobile from "../assets/practice/heroes/bridges-hero-mobile.jpg";
+import heroCosmetic from "../assets/practice/heroes/cosmetic-dentistry-hero.jpg";
+import heroCosmeticMobile from "../assets/practice/heroes/cosmetic-dentistry-hero-mobile.jpg";
+import heroImplants from "../assets/practice/heroes/dental-implants-hero.jpg";
+import heroImplantsMobile from "../assets/practice/heroes/dental-implants-hero-mobile.jpg";
+import heroExtractions from "../assets/practice/heroes/extractions-hero.jpg";
+import heroExtractionsMobile from "../assets/practice/heroes/extractions-hero-mobile.jpg";
+import heroOrthodontics from "../assets/practice/heroes/orthodontics-hero.jpg";
+import heroOrthodonticsMobile from "../assets/practice/heroes/orthodontics-hero-mobile.jpg";
+import heroPreventative from "../assets/practice/heroes/preventative-dentistry-hero.jpg";
+import heroPreventativeMobile from "../assets/practice/heroes/preventative-dentistry-hero-mobile.jpg";
+import heroCleaning from "../assets/practice/heroes/professional-teeth-cleaning-hero.jpg";
+import heroCleaningMobile from "../assets/practice/heroes/professional-teeth-cleaning-hero-mobile.jpg";
+import heroRootCanals from "../assets/practice/heroes/root-canals-hero.jpg";
+import heroRootCanalsMobile from "../assets/practice/heroes/root-canals-hero-mobile.jpg";
+import heroRoutine from "../assets/practice/heroes/routine-dental-care-hero.jpg";
+import heroRoutineMobile from "../assets/practice/heroes/routine-dental-care-hero-mobile.jpg";
+import heroWhitening from "../assets/practice/heroes/whitening-hero.jpg";
+import heroWhiteningMobile from "../assets/practice/heroes/whitening-hero-mobile.jpg";
+
+// Service hero set: subject sits right of centre with clear space on the left, so the desktop
+// copy card overlays the empty side. `position` is the desktop focal point (x anchored right,
+// y centred on the subject); the mobile crop is already tight around the subject.
+export const serviceHeroes = {
+  adultBraces: { image: heroAdultBraces, mobile: heroAdultBracesMobile, position: "100% 58%" },
+  bioclear: { image: heroBioclear, mobile: heroBioclearMobile, position: "100% 62%" },
+  bridges: { image: heroBridges, mobile: heroBridgesMobile, position: "100% 58%" },
+  cosmetic: { image: heroCosmetic, mobile: heroCosmeticMobile, position: "100% 69%" },
+  implants: { image: heroImplants, mobile: heroImplantsMobile, position: "100% 67%" },
+  extractions: { image: heroExtractions, mobile: heroExtractionsMobile, position: "100% 69%" },
+  orthodontics: { image: heroOrthodontics, mobile: heroOrthodonticsMobile, position: "100% 69%" },
+  preventative: { image: heroPreventative, mobile: heroPreventativeMobile, position: "100% 62%" },
+  cleaning: { image: heroCleaning, mobile: heroCleaningMobile, position: "100% 60%" },
+  rootCanals: { image: heroRootCanals, mobile: heroRootCanalsMobile, position: "100% 64%" },
+  routine: { image: heroRoutine, mobile: heroRoutineMobile, position: "100% 53%" },
+  whitening: { image: heroWhitening, mobile: heroWhiteningMobile, position: "100% 69%" },
+};
 
 export const liveAssets = {
   logo,

@@ -5,7 +5,7 @@ import PracticeHeader from "../components/PracticeHeader.astro";
 import PracticeFooter from "../components/PracticeFooter.astro";
 import PageHero from "../components/PageHero.astro";
 import ContactBand from "../components/ContactBand.astro";
-import { liveAssets } from "../lib/data";
+import { serviceHeroes } from "../lib/data";
 
 const extractionCare = [
   ["During your visit", "We numb the area thoroughly before starting, and monitor you closely throughout the procedure."],
@@ -22,8 +22,9 @@ const extractionCare = [
         eyebrow="Extractions"
         title="Removed only when it's truly the best option."
         body="Preserving your natural teeth is always our priority. An extraction is considered only when it's the clearest path to protecting your health."
-        image={liveAssets.office}
-        imagePosition="60% 55%"
+        image={serviceHeroes.extractions.image}
+        imagePosition={serviceHeroes.extractions.position}
+        imageMobile={serviceHeroes.extractions.mobile}
       >
         <div class="mt-9 flex flex-col gap-3 sm:flex-row">
           <a class="action-button primary" href="/contact-us"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book a consultation</a>

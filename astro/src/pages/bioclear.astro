@@ -5,7 +5,7 @@ import PracticeHeader from "../components/PracticeHeader.astro";
 import PracticeFooter from "../components/PracticeFooter.astro";
 import PageHero from "../components/PageHero.astro";
 import ContactBand from "../components/ContactBand.astro";
-import { liveAssets } from "../lib/data";
+import { serviceHeroes } from "../lib/data";
 
 const bioclearSteps = [
   ["Matrix placement", "A specially designed plastic form is fitted around your tooth, shaping the space the new material will fill."],
@@ -22,7 +22,9 @@ const bioclearSteps = [
         eyebrow="Bioclear"
         title="A natural-looking repair, without removing your tooth."
         body="An additive, tooth-colored restoration that builds on your natural tooth structure instead of filing it down, often completed in a single visit."
-        image={liveAssets.blogSoftTissue}
+        image={serviceHeroes.bioclear.image}
+        imagePosition={serviceHeroes.bioclear.position}
+        imageMobile={serviceHeroes.bioclear.mobile}
       >
         <div class="mt-9 flex flex-col gap-3 sm:flex-row">
           <a class="action-button primary" href="/contact-us"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book a consultation</a>

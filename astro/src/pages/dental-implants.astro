@@ -5,7 +5,7 @@ import PracticeHeader from "../components/PracticeHeader.astro";
 import PracticeFooter from "../components/PracticeFooter.astro";
 import PageHero from "../components/PageHero.astro";
 import ContactBand from "../components/ContactBand.astro";
-import { liveAssets } from "../lib/data";
+import { serviceHeroes } from "../lib/data";
 
 const implantProcess = [
   ["3D imaging", "A cone-beam X-ray captures a three-dimensional image of your mouth, replacing guesswork with a precise picture of your bone and teeth."],
@@ -23,7 +23,9 @@ const implantProcess = [
         eyebrow="Dental Implants"
         title="Modern tooth replacement, planned with precision."
         body="Computer-guided surgery and 3D imaging take the guesswork out of implant placement, for a plan built around comfort, function, and a natural-looking result."
-        image={liveAssets.blogImplant}
+        image={serviceHeroes.implants.image}
+        imagePosition={serviceHeroes.implants.position}
+        imageMobile={serviceHeroes.implants.mobile}
       >
         <div class="mt-9 flex flex-col gap-3 sm:flex-row">
           <a class="action-button primary" href="/contact-us"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book a consultation</a>

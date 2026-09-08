@@ -7,7 +7,7 @@ import PracticeFooter from "../components/PracticeFooter.astro";
 import PageHero from "../components/PageHero.astro";
 import ContactBand from "../components/ContactBand.astro";
 import FullServiceDirectory from "../components/FullServiceDirectory.astro";
-import { liveAssets, serviceList } from "../lib/data";
+import { serviceHeroes, serviceList } from "../lib/data";
 ---
 
 <Layout title="Services | Dr. Brian Mitchell & Associates">
@@ -18,8 +18,9 @@ import { liveAssets, serviceList } from "../lib/data";
         eyebrow="Services"
         title="Care made personal."
         body="Welcome to our dental family. Our team makes your dental journey as comfortable as possible, with a thoughtful plan for the smile you have today and the one you're working toward."
-        image={liveAssets.office}
-        imagePosition="50% 45%"
+        image={serviceHeroes.routine.image}
+        imagePosition={serviceHeroes.routine.position}
+        imageMobile={serviceHeroes.routine.mobile}
       >
         <div class="mt-9 flex flex-wrap gap-3">
           <span class="stamp">Cosmetic dentistry</span>

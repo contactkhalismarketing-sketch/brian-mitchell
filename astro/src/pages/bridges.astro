@@ -5,7 +5,7 @@ import PracticeHeader from "../components/PracticeHeader.astro";
 import PracticeFooter from "../components/PracticeFooter.astro";
 import PageHero from "../components/PageHero.astro";
 import ContactBand from "../components/ContactBand.astro";
-import { liveAssets } from "../lib/data";
+import { serviceHeroes } from "../lib/data";
 
 const bridgeSteps = [
   ["Reshaping", "The teeth on either side of the gap are gently reshaped to support the bridge."],
@@ -23,8 +23,9 @@ const bridgeSteps = [
         eyebrow="Bridges"
         title="A fixed way to fill the gap."
         body="Dental bridges use your existing teeth as anchors for an artificial tooth, restoring your bite and your smile without a removable appliance."
-        image={liveAssets.office}
-        imagePosition="45% 62%"
+        image={serviceHeroes.bridges.image}
+        imagePosition={serviceHeroes.bridges.position}
+        imageMobile={serviceHeroes.bridges.mobile}
       >
         <div class="mt-9 flex flex-col gap-3 sm:flex-row">
           <a class="action-button primary" href="/contact-us"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book a consultation</a>

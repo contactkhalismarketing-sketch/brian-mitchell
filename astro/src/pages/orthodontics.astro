@@ -5,7 +5,7 @@ import PracticeHeader from "../components/PracticeHeader.astro";
 import PracticeFooter from "../components/PracticeFooter.astro";
 import PageHero from "../components/PageHero.astro";
 import ContactBand from "../components/ContactBand.astro";
-import { liveAssets } from "../lib/data";
+import { serviceHeroes } from "../lib/data";
 
 const orthodonticsOptions = [
   ["Traditional orthodontics", "The gold standard for teeth straightening and bite correction, now available with nearly invisible tooth-colored brackets alongside classic metal options."],
@@ -21,7 +21,9 @@ const orthodonticsOptions = [
         eyebrow="Orthodontics"
         title="Straighter teeth, at your pace."
         body="A personalized path to a straighter smile and a better bite, with traditional and Invisalign options for patients of every age."
-        image={liveAssets.orthodontics}
+        image={serviceHeroes.orthodontics.image}
+        imagePosition={serviceHeroes.orthodontics.position}
+        imageMobile={serviceHeroes.orthodontics.mobile}
       >
         <div class="mt-9 flex flex-col gap-3 sm:flex-row">
           <a class="action-button primary" href="/contact-us"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book a consultation</a>

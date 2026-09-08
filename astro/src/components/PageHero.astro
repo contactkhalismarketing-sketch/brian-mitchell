@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
 interface Props {
@@ -8,15 +8,28 @@ interface Props {
   body: string;
   image: ImageMetadata;
   imagePosition?: string;
+  imageMobile?: ImageMetadata;
+  imageMobilePosition?: string;
   taller?: boolean;
 }
 
-const { eyebrow, title, body, image, imagePosition = "center", taller = false } = Astro.props;
+const { eyebrow, title, body, image, imagePosition = "center", imageMobile, imageMobilePosition = "center", taller = false } = Astro.props;
+
+const positionVars = `--hero-pos-desktop: ${imagePosition}; --hero-pos-mobile: ${imageMobile ? imageMobilePosition : imagePosition};`;
+const desktop = imageMobile ? await getImage({ src: image, width: 1920, format: "webp" }) : null;
+const mobile = imageMobile ? await getImage({ src: imageMobile, width: 1024, format: "webp" }) : null;
 ---
 
 <section class={`page-hero relative isolate overflow-hidden bg-[#2b2930] text-[#2b2930] ${taller ? "taller" : ""}`}>
   <div class="page-hero__image-band relative">
-    <Image src={image} alt="" style={{ objectPosition: imagePosition }} class="absolute inset-0 h-full w-full object-cover" width={1440} loading="eager" />
+    {desktop && mobile ? (
+      <picture>
+        <source media="(min-width: 1024px)" srcset={desktop.src} />
+        <img src={mobile.src} alt="" style={positionVars} class="absolute inset-0 h-full w-full object-cover" loading="eager" fetchpriority="high" />
+      </picture>
+    ) : (
+      <Image src={image} alt="" style={positionVars} class="absolute inset-0 h-full w-full object-cover" width={1440} loading="eager" />
+    )}
   </div>
   <div class="page-hero__copy-band relative">
     <div class="relative mx-auto flex max-w-[1440px] items-center px-5 sm:px-8 lg:px-12 xl:pl-20">

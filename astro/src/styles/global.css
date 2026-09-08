@@ -114,6 +114,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero-overlay { background: linear-gradient(90deg, rgba(255,250,243,.74) 0%, rgba(255,250,243,.46) 38%, rgba(255,250,243,.12) 65%, rgba(24,33,31,.08) 100%); }
 
 .page-hero__image-band { height: clamp(200px, 40vw, 320px); overflow: hidden; }
+.page-hero__image-band img { object-position: var(--hero-pos-mobile, center); }
 .page-hero.taller .page-hero__image-band { height: clamp(230px, 46vw, 380px); }
 .page-hero__copy-band { background: #fffaf3; position: relative; }
 .page-hero__copy-panel { max-width: 40rem; padding: 2.15rem 0 2.5rem; }
@@ -122,6 +123,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .page-hero { height: clamp(520px, 38vw, 620px); }
   .page-hero.taller { height: clamp(580px, 44vw, 680px); }
   .page-hero__image-band, .page-hero.taller .page-hero__image-band { height: 100%; inset: 0; position: absolute; z-index: 0; }
+  .page-hero__image-band img { object-position: var(--hero-pos-desktop, center); }
   .page-hero__copy-band { background: transparent; height: 100%; position: relative; z-index: 2; }
   .page-hero__copy-band > div { height: 100%; }
   .page-hero__copy-panel { background: #fffaf3; box-shadow: 0 20px 50px rgba(39,89,78,.14); padding: 2.35rem 2.55rem 2.15rem; }
