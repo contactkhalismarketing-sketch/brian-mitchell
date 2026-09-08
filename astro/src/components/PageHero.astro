@@ -12,17 +12,20 @@ interface Props {
 }
 
 const { eyebrow, title, body, image, imagePosition = "center", taller = false } = Astro.props;
-const verticalPadding = taller ? "py-28 sm:py-32 lg:py-40 xl:py-44" : "py-24 lg:py-32";
 ---
 
-<section class="relative isolate overflow-hidden bg-[#2b2930] text-white">
-  <Image src={image} alt="" style={{ objectPosition: imagePosition }} class="absolute inset-0 h-full w-full object-cover" width={1440} loading="eager" />
-  <div class="page-hero-scrim absolute inset-0"></div>
-  <div class="sun-portal tall -bottom-24 -right-36 opacity-80" aria-hidden="true"></div>
-  <div class={`relative mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:pl-20 ${verticalPadding}`}>
-    <p class="eyebrow text-[#bde0da]">{eyebrow}</p>
-    <h1 class="display-face mt-4 max-w-3xl text-5xl leading-[.93] tracking-[-.035em] sm:text-6xl lg:text-7xl">{title}</h1>
-    <p class="mt-7 max-w-2xl text-base leading-8 text-[#e7f1ee]">{body}</p>
-    <slot />
+<section class={`page-hero relative isolate overflow-hidden bg-[#2b2930] text-[#2b2930] ${taller ? "taller" : ""}`}>
+  <div class="page-hero__image-band relative">
+    <Image src={image} alt="" style={{ objectPosition: imagePosition }} class="absolute inset-0 h-full w-full object-cover" width={1440} loading="eager" />
+  </div>
+  <div class="page-hero__copy-band relative">
+    <div class="relative mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:pl-20">
+      <div class="page-hero__copy-panel max-w-2xl">
+        <p class="eyebrow">{eyebrow}</p>
+        <h1 class="display-face mt-4 max-w-xl text-4xl leading-[.95] tracking-[-.03em] sm:text-5xl lg:text-6xl">{title}</h1>
+        <p class="mt-6 max-w-2xl text-base leading-8 text-[#52736b]">{body}</p>
+        <slot />
+      </div>
+    </div>
   </div>
 </section>
