@@ -1,8 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import { liveAssets, navigation, patientInfoMenu } from "../lib/data";
+import { liveAssets, navigation, patientInfoMenu, servicesMenu } from "../lib/data";
 import PatientInfoMenu from "./PatientInfoMenu.astro";
+import ServicesMenu from "./ServicesMenu.astro";
 
 interface Props {
   active?: string;
@@ -18,7 +19,7 @@ const [servicesItem, aboutItem, ...restItems] = navigation;
       <Image src={liveAssets.logo} class="h-auto w-full" alt="Dr. Brian Mitchell & Associates Dentistry, Dental Implants, Orthodontics" width={410} loading="eager" />
     </a>
     <nav class="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
-      <a href={servicesItem.href} class={`nav-link ${active === servicesItem.active ? "text-[#27594e]" : ""}`}>{servicesItem.label}</a>
+      <ServicesMenu id="desktop" active={active === servicesItem.active} />
       <a href={aboutItem.href} class={`nav-link ${active === aboutItem.active ? "text-[#27594e]" : ""}`}>{aboutItem.label}</a>
       <PatientInfoMenu id="desktop" active={active === "patient-info"} />
       {restItems.map((item) => (
@@ -43,7 +44,12 @@ const [servicesItem, aboutItem, ...restItems] = navigation;
   </div>
   <nav id="mobile-menu" class="hidden border-t border-[#77a49f]/15 bg-[#fffaf3] px-5 py-5 sm:hidden" aria-label="Mobile navigation">
     <div class="grid gap-4">
-      <a class="nav-link" href={servicesItem.href}>{servicesItem.label}</a>
+      <div>
+        <a class="nav-link" href={servicesItem.href}>{servicesItem.label}</a>
+        <div class="mt-3 grid grid-cols-2 gap-x-4 gap-y-2">
+          {servicesMenu.map((item) => <a class="text-xs font-bold text-[#52736b] no-underline" href={item.href}>{item.label}</a>)}
+        </div>
+      </div>
       <a class="nav-link" href={aboutItem.href}>{aboutItem.label}</a>
       <div class="border-t border-[#77a49f]/15 pt-4">
         <p class="text-[.62rem] font-extrabold uppercase tracking-[.14em] text-[#8a9a96]">Patient info</p>

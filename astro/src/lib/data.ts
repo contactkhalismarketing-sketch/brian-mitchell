@@ -49,6 +49,21 @@ export const navigation = [
   { label: "Contact", href: "/contact-us", active: "contact" },
 ];
 
+export const servicesMenu = [
+  { label: "Cosmetic Dentistry", href: "/cosmetic-dentistry" },
+  { label: "Orthodontics", href: "/orthodontics" },
+  { label: "Dental Implants", href: "/dental-implants" },
+  { label: "Bioclear", href: "/services" },
+  { label: "Whitening", href: "/services" },
+  { label: "Preventative Dentistry", href: "/services" },
+  { label: "Extractions", href: "/services" },
+  { label: "Bridges", href: "/services" },
+  { label: "Root Canals", href: "/services" },
+  { label: "Adult Braces", href: "/services" },
+  { label: "Professional Teeth Cleaning", href: "/services" },
+  { label: "Routine Dental Care", href: "/services" },
+];
+
 // Matches the live site's "Patient Info" dropdown structure
 // (brianmitchelldds.com): First Time Visit, Financial, Forms, FAQ.
 export const patientInfoMenu = [
@@ -247,14 +262,14 @@ export const team = [
 
 export const serviceList = [
   ["Cosmetic Dentistry", "A personalised approach to a smile that feels like you.", liveAssets.cosmetics, "/cosmetic-dentistry"],
-  ["Orthodontics", "Traditional and Invisalign options for patients of every age.", liveAssets.orthodontics, "/services"],
-  ["Dental Implants", "Modern tooth-replacement plans with comfort at the centre.", liveAssets.office, "/services"],
+  ["Orthodontics", "Traditional and Invisalign options for patients of every age.", liveAssets.orthodontics, "/orthodontics"],
+  ["Dental Implants", "Modern tooth-replacement plans with comfort at the centre.", liveAssets.blogImplant, "/dental-implants"],
 ] as const;
 
 export const featuredServices = [
   { number: "01", name: "Cosmetic Dentistry", copy: "Thoughtful aesthetic care for a smile that feels unmistakably like you.", image: liveAssets.cosmetics, href: "/cosmetic-dentistry" },
-  { number: "02", name: "Orthodontics", copy: "Traditional and Invisalign options that fit your life and your smile goals.", image: liveAssets.orthodontics, href: "/services" },
-  { number: "03", name: "Dental Implants", copy: "Modern tooth-replacement plans with comfort, function, and confidence at the centre.", image: liveAssets.office, href: "/services" },
+  { number: "02", name: "Orthodontics", copy: "Traditional and Invisalign options that fit your life and your smile goals.", image: liveAssets.orthodontics, href: "/orthodontics" },
+  { number: "03", name: "Dental Implants", copy: "Modern tooth-replacement plans with comfort, function, and confidence at the centre.", image: liveAssets.blogImplant, href: "/dental-implants" },
 ] as const;
 
 export const additionalServiceList = [

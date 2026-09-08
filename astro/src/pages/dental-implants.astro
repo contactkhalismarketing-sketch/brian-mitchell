@@ -1,0 +1,102 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import PracticeHeader from "../components/PracticeHeader.astro";
+import PracticeFooter from "../components/PracticeFooter.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactBand from "../components/ContactBand.astro";
+import { liveAssets } from "../lib/data";
+
+const implantProcess = [
+  ["3D imaging", "A cone-beam X-ray captures a three-dimensional image of your mouth, replacing guesswork with a precise picture of your bone and teeth."],
+  ["Virtual planning", "Specialized software lets Dr. Mitchell position your implant virtually and preview the result before any work begins."],
+  ["Surgical guide", "That plan is 3D-printed into a surgical guide, a precise blueprint for exactly where and how the implant is placed."],
+  ["Guided placement", "The guide keeps placement accurate to the plan, for a more comfortable visit and a more predictable result."],
+] as const;
+---
+
+<Layout title="Dental Implants | Dr. Brian Mitchell & Associates">
+  <div class="page-shell min-h-screen">
+    <PracticeHeader active="services" />
+    <main>
+      <PageHero
+        eyebrow="Dental Implants"
+        title="Modern tooth replacement, planned with precision."
+        body="Computer-guided surgery and 3D imaging take the guesswork out of implant placement, for a plan built around comfort, function, and a natural-looking result."
+        image={liveAssets.blogImplant}
+      >
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+          <a class="action-button primary" href="/contact-us"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book a consultation</a>
+          <a class="action-button outline" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Ask a question</a>
+        </div>
+      </PageHero>
+      <section class="mx-auto max-w-[1240px] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+        <div class="service-intro-stage">
+          <div>
+            <p class="eyebrow">Precision planning</p>
+            <h2 class="display-face mt-4 max-w-2xl text-4xl leading-[.98] tracking-[-.025em] text-[#2b2930] sm:text-5xl">A plan built before we begin.</h2>
+            <p class="mt-6 max-w-2xl text-base leading-8 text-[#596966]">Dr. Mitchell uses conebeam 3D X-ray technology and computer-guided surgery to plan and place implants with a level of accuracy that free-hand placement can't match, for a process patients often describe as far easier and faster than expected.</p>
+          </div>
+          <div class="service-next-step">
+            <p class="eyebrow text-[#f6d1bd]">Your next step</p>
+            <p class="display-face mt-3 text-3xl leading-none text-white">An implant consultation.</p>
+            <p class="mt-4 text-sm leading-7 text-[#d8e8e5]">We will review your imaging together and talk through whether an implant is the right path for your smile.</p>
+            <a href="/contact-us" class="action-button light mt-6 w-full">Request a consultation <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+          </div>
+        </div>
+
+        <section class="mt-14">
+          <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p class="eyebrow">How it works</p>
+              <h3 class="display-face mt-3 text-3xl leading-none text-[#2b2930] sm:text-4xl">From imaging to placement.</h3>
+            </div>
+            <p class="max-w-md text-sm leading-7 text-[#596966]">Every step is planned before your surgical visit, so there are fewer surprises along the way.</p>
+          </div>
+          <div class="service-option-grid mt-8">
+            {implantProcess.map(([name, copy], index) => (
+              <article class="service-option">
+                <span class="service-option__number">0{index + 1}</span>
+                <div>
+                  <h4 class="display-face text-2xl leading-none text-[#2b2930]">{name}</h4>
+                  <p class="mt-3 text-sm leading-6 text-[#596966]">{copy}</p>
+                </div>
+                <Icon name="lucide:check" class="service-option__check h-5 w-5" />
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="related-services mt-16">
+          <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p class="eyebrow">Continue your care</p>
+              <h3 class="display-face mt-3 text-3xl leading-none text-[#2b2930] sm:text-4xl">You may also be interested in.</h3>
+            </div>
+            <a href="/services" class="text-sm font-extrabold uppercase tracking-[.12em] text-[#27594e] no-underline">View all services <Icon name="lucide:arrow-right" class="ml-1 inline h-4 w-4" /></a>
+          </div>
+          <div class="related-services__grid mt-8">
+            <a href="/orthodontics" class="related-service-link">
+              <span class="related-service-link__number">01</span>
+              <span>
+                <span class="display-face block text-2xl leading-none text-[#2b2930]">Orthodontics</span>
+                <span class="mt-2 block text-sm leading-6 text-[#596966]">Traditional and Invisalign options for patients of every age.</span>
+              </span>
+              <Icon name="lucide:arrow-right" class="related-service-link__arrow h-5 w-5" />
+            </a>
+            <a href="/cosmetic-dentistry" class="related-service-link">
+              <span class="related-service-link__number">02</span>
+              <span>
+                <span class="display-face block text-2xl leading-none text-[#2b2930]">Cosmetic Dentistry</span>
+                <span class="mt-2 block text-sm leading-6 text-[#596966]">A personalized approach to a smile that feels like you.</span>
+              </span>
+              <Icon name="lucide:arrow-right" class="related-service-link__arrow h-5 w-5" />
+            </a>
+          </div>
+        </section>
+      </section>
+      <ContactBand title="A more confident smile starts with a conversation." />
+    </main>
+    <PracticeFooter />
+  </div>
+</Layout>
