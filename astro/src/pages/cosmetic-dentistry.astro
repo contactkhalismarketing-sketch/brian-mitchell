@@ -4,21 +4,26 @@ import Layout from "../layouts/Layout.astro";
 import PracticeHeader from "../components/PracticeHeader.astro";
 import PracticeFooter from "../components/PracticeFooter.astro";
 import ContactBand from "../components/ContactBand.astro";
-import CosmeticSplitHero from "../components/CosmeticSplitHero.astro";
+import PageHero from "../components/PageHero.astro";
 import PorcelainVideoPanel from "../components/PorcelainVideoPanel.astro";
-import { cosmeticOptions } from "../lib/data";
+import { cosmeticOptions, liveAssets } from "../lib/data";
 ---
 
 <Layout title="Cosmetic Dentistry | Dr. Brian Mitchell & Associates">
   <div class="page-shell min-h-screen">
     <PracticeHeader active="services" />
     <main>
-      <CosmeticSplitHero>
+      <PageHero
+        eyebrow="Cosmetic Dentistry"
+        title="Bring your smile into focus."
+        body="Cosmetic care begins with a clear conversation about what you would like to refine. We consider health, structure, and the details that help a result feel like you."
+        image={liveAssets.cosmeticHeroPoster}
+      >
         <div class="mt-9 flex flex-col gap-3 sm:flex-row">
           <a class="action-button primary" href="/contact-us"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book a consultation</a>
-          <a class="action-button light" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Ask a question</a>
+          <a class="action-button outline" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Ask a question</a>
         </div>
-      </CosmeticSplitHero>
+      </PageHero>
       <section class="mx-auto max-w-[1240px] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
         <div class="service-intro-stage">
           <div>
