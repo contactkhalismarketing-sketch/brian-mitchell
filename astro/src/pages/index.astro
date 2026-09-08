@@ -1,12 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import { liveAssets, featuredServices, practiceStats, patientInfoMenu, servicesMenu } from "../lib/data";
 import PatientInfoMenu from "../components/PatientInfoMenu.astro";
 import ServicesMenu from "../components/ServicesMenu.astro";
 import ReviewSlider from "../components/ReviewSlider.astro";
 import StarIcon from "../components/StarIcon.astro";
+
+const heroPoster = await getImage({ src: liveAssets.office, width: 1280, format: "webp" });
 ---
 
 <Layout title="Dr. Brian Mitchell & Associates | Tucson Dentistry">
@@ -62,7 +64,7 @@ import StarIcon from "../components/StarIcon.astro";
       <section class="homepage-hero relative isolate overflow-hidden bg-[#e9f1ed] text-[#2b2930]">
         <div class="homepage-hero__video-band relative">
           <div class="video-hero inset-0" aria-label="Dr. Brian Mitchell & Associates treatment room and dental technology">
-            <video class="video-fallback" autoplay loop muted playsinline preload="metadata" poster={liveAssets.office.src} aria-label="Dr. Brian Mitchell & Associates building and dental technology tour">
+            <video class="video-fallback" autoplay loop muted playsinline preload="metadata" poster={heroPoster.src} aria-label="Dr. Brian Mitchell & Associates building and dental technology tour">
               <source src={liveAssets.heroVideo} type="video/mp4" />
             </video>
           </div>

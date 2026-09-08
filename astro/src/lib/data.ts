@@ -38,7 +38,7 @@ export const liveAssets = {
   bioclear,
   cosmeticHeroPoster,
   cosmeticYoutubeThumb,
-  heroVideo: "/assets/practice/brian-mitchell-full-composition-practice-tour_5757208e.mp4",
+  heroVideo: "/assets/practice/brian-mitchell-hero-loop_5757208e.mp4",
   logoPublicPath: "/assets/practice/brian-mitchell-live-logo_02f81e9c.png",
 };
 
