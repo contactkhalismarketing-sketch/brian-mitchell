@@ -5,7 +5,7 @@ import PracticeHeader from "../components/PracticeHeader.astro";
 import PracticeFooter from "../components/PracticeFooter.astro";
 import PageHero from "../components/PageHero.astro";
 import ContactBand from "../components/ContactBand.astro";
-import { liveAssets } from "../lib/data";
+import { serviceHeroes } from "../lib/data";
 
 const jeuveauUses = [
   ["TMJ, clenching and grinding", "Targeted injections into the jaw muscles reduce the tension behind clenching and grinding (bruxism) and ease TMJ discomfort. Many patients notice improvement within days, along with easier chewing and speaking, and for some, fewer headaches."],
@@ -22,8 +22,9 @@ const jeuveauUses = [
         eyebrow="Jeuveau Injections"
         title="Relief for clenching and grinding. A softer look, too."
         body="Jeuveau is a newer alternative to Botox, administered by our hygienist for TMJ symptoms, clenching and grinding, and facial wrinkles, in a quick 10 to 15 minute visit."
-        image={liveAssets.office}
-        imagePosition="68% 40%"
+        image={serviceHeroes.jeuveau.image}
+        imagePosition={serviceHeroes.jeuveau.position}
+        imageMobile={serviceHeroes.jeuveau.mobile}
       >
         <div class="mt-9 flex flex-col gap-3 sm:flex-row">
           <a class="action-button primary" href="/contact-us"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book a consultation</a>
