@@ -257,10 +257,9 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .compact-service-card:hover .compact-service-card__arrow { transform: translateX(.3rem); }
 .hero-media-label { background: rgba(24,20,22,.78); bottom: 0; color: #ffffff; font-size: .59rem; font-weight: 800; letter-spacing: .12em; padding: .75rem 1rem; position: absolute; right: 0; text-transform: uppercase; backdrop-filter: blur(8px); }
 
-.review-slider__track { cursor: grab; display: flex; touch-action: pan-y; transition: transform 420ms cubic-bezier(.23,1,.32,1); user-select: none; -webkit-user-select: none; }
-.review-slider__track.is-dragging { cursor: grabbing; transition: none; }
-.review-slider { overflow: hidden; }
-.review-slider__slide { flex: 0 0 100%; padding: 0 .25rem; }
+.review-slider__track { display: flex; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.review-slider__track::-webkit-scrollbar { display: none; }
+.review-slider__slide { flex: 0 0 100%; padding: 0 .25rem; scroll-snap-align: start; scroll-snap-stop: always; }
 .review-slider__nav { align-items: center; background: #ffffff; border: 1px solid rgba(53,74,77,.25); border-radius: 999px; color: #354a4d; display: inline-flex; height: 2.25rem; justify-content: center; transition: background 180ms cubic-bezier(.23,1,.32,1), color 180ms cubic-bezier(.23,1,.32,1); width: 2.25rem; }
 .review-slider__nav:hover { background: #354a4d; color: #fff; }
 /* 44px hit area with the visible dot drawn inside it. */
