@@ -13,7 +13,7 @@ const { active = false, id } = Astro.props;
 <div class="patient-info-menu relative">
   <button
     type="button"
-    class={`nav-link patient-info-menu__trigger inline-flex items-center gap-1 ${active ? "text-[#1d5f73]" : ""}`}
+    class={`nav-link patient-info-menu__trigger inline-flex items-center gap-1 ${active ? "text-[#354d49]" : ""}`}
     aria-expanded="false"
     aria-haspopup="true"
     data-patient-info-trigger={id}
@@ -25,14 +25,14 @@ const { active = false, id } = Astro.props;
     class="patient-info-menu__panel services-menu__panel absolute left-0 top-full z-40 hidden w-[560px] pt-3"
     data-patient-info-panel={id}
   >
-    <div class="border border-[#8fc1d3]/25 bg-[#ffffff] p-5 shadow-[0_18px_36px_rgba(29,95,115,.14)]">
+    <div class="border border-[#e2ca9f]/25 bg-[#ffffff] p-5 shadow-[0_18px_36px_rgba(53,77,73,.14)]">
       <div class="services-menu__grid">
         {servicesMenu.map((item) => (
           <a href={item.href} class="services-menu__link no-underline">{item.label}</a>
         ))}
       </div>
-      <div class="mt-4 border-t border-[#8fc1d3]/20 pt-4">
-        <a href="/services/" class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.1em] text-[#1d5f73] no-underline">
+      <div class="mt-4 border-t border-[#e2ca9f]/20 pt-4">
+        <a href="/services/" class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.1em] text-[#354d49] no-underline">
           View all services <Icon name="lucide:arrow-right" class="h-3.5 w-3.5" />
         </a>
       </div>

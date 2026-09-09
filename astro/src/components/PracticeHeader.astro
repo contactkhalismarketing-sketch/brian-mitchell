@@ -21,10 +21,10 @@ const [servicesItem, aboutItem, ...restItems] = navigation;
     </a>
     <nav class="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
       <ServicesMenu id="desktop" active={active === servicesItem.active} />
-      <a href={aboutItem.href} class={`nav-link ${active === aboutItem.active ? "text-[#1d5f73]" : ""}`}>{aboutItem.label}</a>
+      <a href={aboutItem.href} class={`nav-link ${active === aboutItem.active ? "text-[#354d49]" : ""}`}>{aboutItem.label}</a>
       <PatientInfoMenu id="desktop" active={active === "patient-info"} />
       {restItems.map((item) => (
-        <a href={item.href} class={`nav-link ${active === item.active ? "text-[#1d5f73]" : ""}`}>{item.label}</a>
+        <a href={item.href} class={`nav-link ${active === item.active ? "text-[#354d49]" : ""}`}>{item.label}</a>
       ))}
     </nav>
     <div class="hidden items-center gap-3 sm:flex">
@@ -33,7 +33,7 @@ const [servicesItem, aboutItem, ...restItems] = navigation;
     </div>
     <button
       id="mobile-menu-toggle"
-      class="rounded-full border border-[#8fc1d3]/40 p-3 text-[#1d5f73] sm:hidden"
+      class="rounded-full border border-[#e2ca9f]/40 p-3 text-[#354d49] sm:hidden"
       type="button"
       aria-label="Toggle navigation"
       aria-expanded="false"

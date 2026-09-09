@@ -19,7 +19,7 @@ import { liveAssets, firstVisitSteps } from "../lib/data";
         image={liveAssets.office}
         imagePosition="35% 18%"
       >
-        <div class="mt-9 flex items-center gap-3 text-sm font-semibold text-[#1d5f73]">
+        <div class="mt-9 flex items-center gap-3 text-sm font-semibold text-[#354d49]">
           <Icon name="lucide:clock-3" class="h-4 w-4" />
           Plan for one full hour
         </div>
@@ -27,17 +27,17 @@ import { liveAssets, firstVisitSteps } from "../lib/data";
 
       <section class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
         <p class="eyebrow">The process</p>
-        <h2 class="display-face mt-4 max-w-xl text-4xl leading-[.98] tracking-[-.025em] text-[#1f2b33] sm:text-5xl">Four steps, one hour, one clear plan.</h2>
-        <div class="mt-12 grid gap-px border-y border-[#8fc1d3]/20 bg-[#8fc1d3]/20 md:grid-cols-2">
+        <h2 class="display-face mt-4 max-w-xl text-4xl leading-[.98] tracking-[-.025em] text-[#082824] sm:text-5xl">Four steps, one hour, one clear plan.</h2>
+        <div class="mt-12 grid gap-px border-y border-[#e2ca9f]/20 bg-[#e2ca9f]/20 md:grid-cols-2">
           {firstVisitSteps.map((step, index) => (
             <article class="bg-[#ffffff] p-7">
-              <span class="text-xs font-extrabold uppercase tracking-[.14em] text-[#8c6a30]">0{index + 1}</span>
-              <h3 class="display-face mt-3 text-2xl leading-none text-[#1f2b33]">{step.name}</h3>
-              <p class="mt-3 text-sm leading-6 text-[#4d6270]">{step.detail}</p>
+              <span class="text-xs font-extrabold uppercase tracking-[.14em] text-[#7a6233]">0{index + 1}</span>
+              <h3 class="display-face mt-3 text-2xl leading-none text-[#082824]">{step.name}</h3>
+              <p class="mt-3 text-sm leading-6 text-[#55635f]">{step.detail}</p>
             </article>
           ))}
         </div>
-        <p class="mt-10 max-w-2xl text-base leading-8 text-[#4d6270]">Gathering all of this is what lets us build a dental plan specific to you — not a generic one — aimed at the long-term health of your teeth and smile.</p>
+        <p class="mt-10 max-w-2xl text-base leading-8 text-[#55635f]">Gathering all of this is what lets us build a dental plan specific to you — not a generic one — aimed at the long-term health of your teeth and smile.</p>
       </section>
 
       <ContactBand title="Ready to schedule your first visit?" />

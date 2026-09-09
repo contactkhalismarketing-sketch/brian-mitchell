@@ -9,19 +9,19 @@ interface Props {
 const { id } = Astro.props;
 ---
 
-<nav id={id} class="hidden border-t border-[#8fc1d3]/15 bg-[#ffffff] px-5 pb-6 sm:hidden" aria-label="Mobile navigation">
+<nav id={id} class="hidden border-t border-[#e2ca9f]/15 bg-[#ffffff] px-5 pb-6 sm:hidden" aria-label="Mobile navigation">
   <details class="mobile-nav__group">
     <summary class="nav-link mobile-nav__summary">Services <Icon name="lucide:chevron-down" class="h-4 w-4 transition-transform" /></summary>
     <div class="grid gap-3 pb-5 pl-3">
-      {servicesMenu.map((item) => <a class="text-[.78rem] font-bold text-[#1f2b33] no-underline" href={item.href}>{item.label}</a>)}
-      <a href="/services/" class="mt-1 inline-flex items-center gap-1 text-[.62rem] font-extrabold uppercase tracking-[.12em] text-[#1d5f73] no-underline">All services <Icon name="lucide:arrow-right" class="h-3 w-3" /></a>
+      {servicesMenu.map((item) => <a class="text-[.78rem] font-bold text-[#082824] no-underline" href={item.href}>{item.label}</a>)}
+      <a href="/services/" class="mt-1 inline-flex items-center gap-1 text-[.62rem] font-extrabold uppercase tracking-[.12em] text-[#354d49] no-underline">All services <Icon name="lucide:arrow-right" class="h-3 w-3" /></a>
     </div>
   </details>
   <a class="nav-link mobile-nav__link" href="/about/">About</a>
   <details class="mobile-nav__group">
     <summary class="nav-link mobile-nav__summary">Patient info <Icon name="lucide:chevron-down" class="h-4 w-4 transition-transform" /></summary>
     <div class="grid gap-3 pb-5 pl-3">
-      {patientInfoMenu.map((item) => <a class="text-[.78rem] font-bold text-[#1f2b33] no-underline" href={item.href}>{item.label}</a>)}
+      {patientInfoMenu.map((item) => <a class="text-[.78rem] font-bold text-[#082824] no-underline" href={item.href}>{item.label}</a>)}
     </div>
   </details>
   <a class="nav-link mobile-nav__link" href="/patient-info/blogs/">Blogs</a>

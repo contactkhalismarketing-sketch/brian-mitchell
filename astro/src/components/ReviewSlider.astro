@@ -4,16 +4,16 @@ import GoogleRatingBadge from "./GoogleRatingBadge.astro";
 import { testimonials } from "../lib/data";
 ---
 
-<section class="bg-[#eef5f9]">
+<section class="bg-[#f3ecdd]">
   <div class="mx-auto flex max-w-[900px] flex-col items-center px-5 py-16 text-center sm:px-8 lg:py-20">
     <GoogleRatingBadge size="lg" />
     <div class="review-slider mt-8 w-full" data-review-slider>
       <div class="review-slider__track" data-review-track>
         {testimonials.map((item) => (
           <div class="review-slider__slide">
-            <Icon name="lucide:quote" class="mx-auto h-7 w-7 text-[#8c6a30]" />
-            <p class="display-face mx-auto mt-5 max-w-2xl text-2xl leading-tight text-[#1f2b33] sm:text-3xl">{item.quote}</p>
-            <p class="mt-5 text-xs font-extrabold uppercase tracking-[.14em] text-[#3d7488]">— {item.author}, {item.source}</p>
+            <Icon name="lucide:quote" class="mx-auto h-7 w-7 text-[#7a6233]" />
+            <p class="display-face mx-auto mt-5 max-w-2xl text-2xl leading-tight text-[#082824] sm:text-3xl">{item.quote}</p>
+            <p class="mt-5 text-xs font-extrabold uppercase tracking-[.14em] text-[#3d5855]">— {item.author}, {item.source}</p>
           </div>
         ))}
       </div>

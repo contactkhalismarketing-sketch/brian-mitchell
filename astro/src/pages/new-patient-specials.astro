@@ -63,47 +63,47 @@ const highlights = [
       <section class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
         <div class="max-w-2xl">
           <p class="eyebrow">Current offers</p>
-          <h2 class="display-face mt-4 text-3xl leading-none text-[#1f2b33] sm:text-4xl">Simple, upfront pricing to get you started.</h2>
+          <h2 class="display-face mt-4 text-3xl leading-none text-[#082824] sm:text-4xl">Simple, upfront pricing to get you started.</h2>
         </div>
         <div class="mt-12 grid gap-7 lg:grid-cols-3">
           {specials.map((special) => (
-            <article class="flex flex-col border-t-2 border-[#c8a76b] bg-[#eef5f9] p-7">
+            <article class="flex flex-col border-t-2 border-[#e2ca9f] bg-[#f3ecdd] p-7">
               <p class="eyebrow">{special.eyebrow}</p>
-              <h3 class="display-face mt-3 text-2xl leading-none text-[#1f2b33]">{special.name}</h3>
-              <p class="display-face mt-6 text-5xl leading-none text-[#1d5f73]">{special.price}</p>
-              <p class="mt-5 text-sm leading-7 text-[#4d6270]">{special.detail}</p>
-              {special.note && <p class="mt-3 text-xs leading-6 text-[#4d6270]">{special.note}</p>}
+              <h3 class="display-face mt-3 text-2xl leading-none text-[#082824]">{special.name}</h3>
+              <p class="display-face mt-6 text-5xl leading-none text-[#354d49]">{special.price}</p>
+              <p class="mt-5 text-sm leading-7 text-[#55635f]">{special.detail}</p>
+              {special.note && <p class="mt-3 text-xs leading-6 text-[#55635f]">{special.note}</p>}
               <div class="mt-auto pt-6"><a class="action-button dark" href={special.cta.href}><Icon name={special.cta.icon} class="h-4 w-4" />{special.cta.label}</a></div>
             </article>
           ))}
         </div>
-        <p class="mt-8 text-sm leading-7 text-[#4d6270]">Offers are for new patients and may change. Call the practice to confirm current pricing and to find out about other payment options.</p>
+        <p class="mt-8 text-sm leading-7 text-[#55635f]">Offers are for new patients and may change. Call the practice to confirm current pricing and to find out about other payment options.</p>
       </section>
 
-      <section class="relative overflow-hidden bg-[#e8f3f8]">
+      <section class="relative overflow-hidden bg-[#ede4d2]">
         <div class="mx-auto grid max-w-[1440px] gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:px-12 lg:py-28">
           <figure class="relative">
-            <div class="absolute -left-3 -top-3 h-full w-full border border-[#c8a76b]/60" aria-hidden="true"></div>
+            <div class="absolute -left-3 -top-3 h-full w-full border border-[#e2ca9f]/60" aria-hidden="true"></div>
             <Image src={liveAssets.brian} alt="Dr. Brian Mitchell" class="relative aspect-[4/5] w-full object-cover object-top" width={880} />
             <figcaption class="hero-media-label">Dr. Brian Mitchell</figcaption>
           </figure>
           <div>
             <p class="eyebrow">Have a lifetime of smiles</p>
-            <h2 class="display-face mt-4 text-4xl leading-none text-[#1f2b33] sm:text-5xl">With healthy teeth &amp; gums.</h2>
-            <blockquote class="mt-8 border-l-2 border-[#c8a76b] pl-6">
-              <p class="display-face text-xl leading-snug text-[#1f2b33] sm:text-2xl">"This is a spectacular dental office! If you are looking for a new dentist, I cannot recommend this place enough. Everyone on their staff is friendly, accommodating, and knowledgeable. The office is clean and inviting, and I genuinely look forward to my visits. I wouldn't go anywhere else for my dental needs, and I highly suggest you check them out! Dr. Mitchell and his staff are superb!"</p>
-              <footer class="mt-4 text-sm font-bold text-[#3d7488]">— Autumn S.</footer>
+            <h2 class="display-face mt-4 text-4xl leading-none text-[#082824] sm:text-5xl">With healthy teeth &amp; gums.</h2>
+            <blockquote class="mt-8 border-l-2 border-[#e2ca9f] pl-6">
+              <p class="display-face text-xl leading-snug text-[#082824] sm:text-2xl">"This is a spectacular dental office! If you are looking for a new dentist, I cannot recommend this place enough. Everyone on their staff is friendly, accommodating, and knowledgeable. The office is clean and inviting, and I genuinely look forward to my visits. I wouldn't go anywhere else for my dental needs, and I highly suggest you check them out! Dr. Mitchell and his staff are superb!"</p>
+              <footer class="mt-4 text-sm font-bold text-[#3d5855]">— Autumn S.</footer>
             </blockquote>
             <ul class="mt-10 grid gap-3 sm:grid-cols-2">
               {highlights.map((item) => (
-                <li class="flex items-start gap-3 text-sm leading-6 text-[#1f2b33]"><Icon name="lucide:check" class="mt-1 h-4 w-4 flex-none text-[#1d5f73]" />{item}</li>
+                <li class="flex items-start gap-3 text-sm leading-6 text-[#082824]"><Icon name="lucide:check" class="mt-1 h-4 w-4 flex-none text-[#354d49]" />{item}</li>
               ))}
             </ul>
             <div class="mt-10 flex flex-col gap-3 sm:flex-row">
               <a class="action-button primary" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Call (520) 523-4860</a>
               <a class="action-button outline" href="mailto:tucsonsmileteam@gmail.com"><Icon name="lucide:mail" class="h-4 w-4" />Email the practice</a>
             </div>
-            <p class="mt-6 text-sm leading-7 text-[#4d6270]">6383 E. Grant Road, Suite 155, Tucson, AZ 85715</p>
+            <p class="mt-6 text-sm leading-7 text-[#55635f]">6383 E. Grant Road, Suite 155, Tucson, AZ 85715</p>
           </div>
         </div>
       </section>
