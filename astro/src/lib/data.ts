@@ -125,18 +125,31 @@ export const patientInfoMenu = [
 ];
 
 // Sourced from the live Forms page (brianmitchelldds.com/forms/).
+// PDFs are the practice's own forms, copied from brianmitchelldds.com/patient-info/forms/ into public/forms/.
+// The live site links "Endo (Root Canal)" to the tooth-extraction consent PDF, which looks like an error, so it has no file here.
 export const formCategories = [
   {
     name: "New Patient Forms",
-    items: ["New Patient Information", "Financial Office Policies"],
+    items: [
+      { label: "New Patient Information", file: "/forms/NewPatientInformation.pdf" },
+      { label: "Financial Office Policies", file: "/forms/FinancialOfficePolicies.pdf" },
+    ],
   },
   {
     name: "Post-Operative Care Instructions",
-    items: ["Tooth Removal", "Implant Placement", "Mitchell Whitening"],
+    items: [
+      { label: "Tooth Removal", file: "/forms/Post-Treatment-Instructions-Tooth-Removal.pdf" },
+      { label: "Implant Placement", file: "/forms/Implant-placement-post-operative-instructions.pdf" },
+      { label: "Mitchell Whitening", file: "/forms/MitchellWhitening.pdf" },
+    ],
   },
   {
     name: "Consent Forms",
-    items: ["Tooth Extractions", "Endo (Root Canal)", "Surgical Implant"],
+    items: [
+      { label: "Tooth Extractions", file: "/forms/Consent-Tooth-Extraction-Removal-1.pdf" },
+      { label: "Endo (Root Canal)", file: null },
+      { label: "Surgical Implant", file: "/forms/Surgical-Implant-Informed-Consent.pdf" },
+    ],
   },
 ];
 

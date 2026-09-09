@@ -34,9 +34,19 @@ import { liveAssets, formCategories } from "../../lib/data";
               <h3 class="display-face text-2xl leading-none text-[#283e3c]">{category.name}</h3>
               <ul class="mt-5 grid gap-3">
                 {category.items.map((item) => (
-                  <li class="flex items-start gap-2 text-sm leading-6 text-[#4a5a58]">
-                    <Icon name="lucide:file-text" class="mt-0.5 h-4 w-4 flex-none text-[#3f6e69]" />
-                    {item}
+                  <li class="text-sm leading-6 text-[#4a5a58]">
+                    {item.file ? (
+                      <a href={item.file} target="_blank" rel="noopener" class="group flex items-start gap-2 no-underline">
+                        <Icon name="lucide:file-text" class="mt-0.5 h-4 w-4 flex-none text-[#3f6e69]" />
+                        <span class="text-[#283e3c] underline decoration-[#729f9a] underline-offset-4 group-hover:decoration-[#283e3c]">{item.label}</span>
+                        <span class="ml-auto pl-3 text-[.62rem] font-extrabold uppercase tracking-[.12em] text-[#3f6e69]">PDF</span>
+                      </a>
+                    ) : (
+                      <span class="flex items-start gap-2">
+                        <Icon name="lucide:file-text" class="mt-0.5 h-4 w-4 flex-none text-[#3f6e69]" />
+                        <span>{item.label} <span class="text-[#6f807c]">· provided at the practice</span></span>
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -47,7 +57,7 @@ import { liveAssets, formCategories } from "../../lib/data";
         <div class="mt-14 max-w-2xl border-t border-[#729f9a]/25 pt-10">
           <p class="eyebrow">How to submit</p>
           <h2 class="display-face mt-4 text-3xl leading-none text-[#283e3c] sm:text-4xl">Bring them in, or send them ahead.</h2>
-          <p class="mt-5 text-base leading-8 text-[#4a5a58]">Call the practice and our team will get the right forms to you — print and bring them to your visit, or submit beforehand by fax or email.</p>
+          <p class="mt-5 text-base leading-8 text-[#4a5a58]">Download the forms above, print and complete them, then bring them to your visit or send them ahead by fax or email. If you are unsure which forms you need, call the practice and our team will point you to the right ones.</p>
           <div class="mt-6 grid gap-2 text-sm text-[#4a5a58]">
             <p><strong class="text-[#283e3c]">Fax:</strong> (520) 881-3759</p>
             <p><strong class="text-[#283e3c]">Email:</strong> tucsonsmileteam@gmail.com</p>
