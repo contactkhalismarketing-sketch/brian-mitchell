@@ -20,13 +20,13 @@ const ratingClass = size === "lg" ? "text-2xl" : "text-base";
     <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
   </svg>
   <div>
-    <p class={`text-[.62rem] font-extrabold uppercase tracking-[.1em] ${dark ? "text-white/70" : "text-[#596966]"}`}>Google rating</p>
+    <p class={`text-[.62rem] font-extrabold uppercase tracking-[.1em] ${dark ? "text-white/70" : "text-[#4d6270]"}`}>Google rating</p>
     <div class="mt-0.5 flex items-center gap-2">
-      <span class={`display-face leading-none ${ratingClass} ${dark ? "text-white" : "text-[#2b2930]"}`}>{practiceStats.googleRating}</span>
+      <span class={`display-face leading-none ${ratingClass} ${dark ? "text-white" : "text-[#1f2b33]"}`}>{practiceStats.googleRating}</span>
       <div class="flex gap-0.5">
         {[0, 1, 2, 3, 4].map(() => <StarIcon class={`${starClass} text-[#fbbc05]`} />)}
       </div>
     </div>
-    <p class={`mt-0.5 text-xs ${dark ? "text-white/60" : "text-[#4f625d]"}`}>{practiceStats.reviewCount}+ reviews</p>
+    <p class={`mt-0.5 text-xs ${dark ? "text-white/60" : "text-[#4a5f6a]"}`}>{practiceStats.reviewCount}+ reviews</p>
   </div>
 </div>

@@ -20,7 +20,7 @@ const desktop = imageMobile ? await getImage({ src: image, width: 1920, format: 
 const mobile = imageMobile ? await getImage({ src: imageMobile, width: 1024, format: "webp" }) : null;
 ---
 
-<section class={`page-hero relative isolate overflow-hidden bg-[#2b2930] text-[#2b2930] ${taller ? "taller" : ""}`}>
+<section class={`page-hero relative isolate overflow-hidden bg-[#1f2b33] text-[#1f2b33] ${taller ? "taller" : ""}`}>
   <div class="page-hero__image-band relative">
     {desktop && mobile ? (
       <picture>
@@ -36,7 +36,7 @@ const mobile = imageMobile ? await getImage({ src: imageMobile, width: 1024, for
       <div class="page-hero__copy-panel">
         <p class="eyebrow">{eyebrow}</p>
         <h1 class="display-face mt-4 max-w-xl text-4xl leading-[.95] tracking-[-.03em] sm:text-5xl lg:text-6xl">{title}</h1>
-        <p class="mt-6 max-w-2xl text-base leading-8 text-[#52736b]">{body}</p>
+        <p class="mt-6 max-w-2xl text-base leading-8 text-[#3d7488]">{body}</p>
         <slot />
       </div>
     </div>

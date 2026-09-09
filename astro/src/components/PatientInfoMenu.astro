@@ -13,7 +13,7 @@ const { active = false, id } = Astro.props;
 <div class="patient-info-menu relative">
   <button
     type="button"
-    class={`nav-link patient-info-menu__trigger inline-flex items-center gap-1 ${active ? "text-[#27594e]" : ""}`}
+    class={`nav-link patient-info-menu__trigger inline-flex items-center gap-1 ${active ? "text-[#1d5f73]" : ""}`}
     aria-expanded="false"
     aria-haspopup="true"
     data-patient-info-trigger={id}
@@ -25,9 +25,9 @@ const { active = false, id } = Astro.props;
     class="patient-info-menu__panel absolute left-0 top-full z-40 hidden min-w-[210px] pt-3"
     data-patient-info-panel={id}
   >
-    <div class="border border-[#77a49f]/25 bg-[#fffaf3] py-2 shadow-[0_18px_36px_rgba(39,89,78,.14)]">
+    <div class="border border-[#8fc1d3]/25 bg-[#ffffff] py-2 shadow-[0_18px_36px_rgba(29,95,115,.14)]">
       {patientInfoMenu.map((item) => (
-        <a href={item.href} class="block px-5 py-2.5 text-xs font-bold uppercase tracking-[.08em] text-[#2b2930] no-underline hover:bg-[#f0f6f4] hover:text-[#27594e]">{item.label}</a>
+        <a href={item.href} class="block px-5 py-2.5 text-xs font-bold uppercase tracking-[.08em] text-[#1f2b33] no-underline hover:bg-[#f3f9fc] hover:text-[#1d5f73]">{item.label}</a>
       ))}
     </div>
   </div>
