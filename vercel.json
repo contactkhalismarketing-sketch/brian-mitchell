@@ -2,19 +2,337 @@
   "installCommand": "cd astro && corepack enable && pnpm install",
   "buildCommand": "cd astro && pnpm run build",
   "outputDirectory": "astro/dist",
+  "trailingSlash": true,
   "redirects": [
-    { "source": "/homepage", "destination": "/", "statusCode": 301 },
-    { "source": "/services/cosmetic-dentistry", "destination": "/cosmetic-dentistry", "statusCode": 301 },
-    { "source": "/contact", "destination": "/contact-us", "statusCode": 301 },
-    { "source": "/about", "destination": "/about-us", "statusCode": 301 },
-    { "source": "/blog/soft-tissue-management", "destination": "/blogs/the-importance-of-soft-tissue-in-successful-dental-implant-surgery", "statusCode": 301 },
-    { "source": "/blogs/soft-tissue-management", "destination": "/blogs/the-importance-of-soft-tissue-in-successful-dental-implant-surgery", "statusCode": 301 },
-    { "source": "/patient-info/blogs", "destination": "/blogs", "statusCode": 301 },
-    { "source": "/the-importance-of-soft-tissue-in-successful-dental-implant-surgery", "destination": "/blogs/the-importance-of-soft-tissue-in-successful-dental-implant-surgery", "statusCode": 301 },
-    { "source": "/bioclear-restorative-technique", "destination": "/blogs/bioclear-restorative-technique", "statusCode": 301 },
-    { "source": "/planning-for-a-dental-implant", "destination": "/blogs/planning-for-a-dental-implant", "statusCode": 301 },
-    { "source": "/where-to-find-the-best-invisalign-orthodontic-treatment-in-tucson", "destination": "/blogs/where-to-find-the-best-invisalign-orthodontic-treatment-in-tucson", "statusCode": 301 },
-    { "source": "/why-you-need-a-dentist-to-monitor-your-clear-aligner-therapy", "destination": "/blogs/why-you-need-a-dentist-to-monitor-your-clear-aligner-therapy", "statusCode": 301 },
-    { "source": "/the-dangers-of-do-it-yourself-mail-order-aligners", "destination": "/blogs/the-dangers-of-do-it-yourself-mail-order-aligners", "statusCode": 301 }
+    {
+      "source": "/our-team",
+      "destination": "/about/#team",
+      "statusCode": 301
+    },
+    {
+      "source": "/our-team/",
+      "destination": "/about/#team",
+      "statusCode": 301
+    },
+    {
+      "source": "/bio/:name",
+      "destination": "/about/#team",
+      "statusCode": 301
+    },
+    {
+      "source": "/bio/:name/",
+      "destination": "/about/#team",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-dr-mitchell",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-dr-mitchell/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/technology",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/technology/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/practice-photos",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/practice-photos/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/patient-info",
+      "destination": "/first-visit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/patient-info/",
+      "destination": "/first-visit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/patient-care",
+      "destination": "/first-visit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/patient-care/",
+      "destination": "/first-visit/",
+      "statusCode": 301
+    },
+    {
+      "source": "/new-patient-specials",
+      "destination": "/patient-info/financial/",
+      "statusCode": 301
+    },
+    {
+      "source": "/new-patient-specials/",
+      "destination": "/patient-info/financial/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bioclear-a-revolutionry-approach-to-dental-restoration",
+      "destination": "/service/bioclear/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bioclear-a-revolutionry-approach-to-dental-restoration/",
+      "destination": "/service/bioclear/",
+      "statusCode": 301
+    },
+    {
+      "source": "/financing",
+      "destination": "/patient-info/financial/",
+      "statusCode": 301
+    },
+    {
+      "source": "/financing/",
+      "destination": "/patient-info/financial/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sample-page",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sample-page/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/homepage",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/homepage/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/about/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/forms",
+      "destination": "/patient-info/forms/",
+      "statusCode": 301
+    },
+    {
+      "source": "/forms/",
+      "destination": "/patient-info/forms/",
+      "statusCode": 301
+    },
+    {
+      "source": "/faq",
+      "destination": "/patient-info/faq/",
+      "statusCode": 301
+    },
+    {
+      "source": "/faq/",
+      "destination": "/patient-info/faq/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs",
+      "destination": "/patient-info/blogs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/",
+      "destination": "/patient-info/blogs/",
+      "statusCode": 301
+    },
+    {
+      "source": "/jeuveau-injections",
+      "destination": "/jeuveau-injections-in-tucson-effective-tmd-treatment-and-wrinkle-reduction/",
+      "statusCode": 301
+    },
+    {
+      "source": "/jeuveau-injections/",
+      "destination": "/jeuveau-injections-in-tucson-effective-tmd-treatment-and-wrinkle-reduction/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/cosmetic-dentistry",
+      "destination": "/service/cosmetic-dentistry/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/cosmetic-dentistry/",
+      "destination": "/service/cosmetic-dentistry/",
+      "statusCode": 301
+    },
+    {
+      "source": "/adult-braces",
+      "destination": "/service/adult-braces/",
+      "statusCode": 301
+    },
+    {
+      "source": "/adult-braces/",
+      "destination": "/service/adult-braces/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bioclear",
+      "destination": "/service/bioclear/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bioclear/",
+      "destination": "/service/bioclear/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bridges",
+      "destination": "/service/bridges/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bridges/",
+      "destination": "/service/bridges/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cosmetic-dentistry",
+      "destination": "/service/cosmetic-dentistry/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cosmetic-dentistry/",
+      "destination": "/service/cosmetic-dentistry/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dental-implants",
+      "destination": "/service/dental-implants/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dental-implants/",
+      "destination": "/service/dental-implants/",
+      "statusCode": 301
+    },
+    {
+      "source": "/extractions",
+      "destination": "/service/extractions/",
+      "statusCode": 301
+    },
+    {
+      "source": "/extractions/",
+      "destination": "/service/extractions/",
+      "statusCode": 301
+    },
+    {
+      "source": "/orthodontics",
+      "destination": "/service/orthodontics/",
+      "statusCode": 301
+    },
+    {
+      "source": "/orthodontics/",
+      "destination": "/service/orthodontics/",
+      "statusCode": 301
+    },
+    {
+      "source": "/preventative-dentistry",
+      "destination": "/service/preventative-dentistry/",
+      "statusCode": 301
+    },
+    {
+      "source": "/preventative-dentistry/",
+      "destination": "/service/preventative-dentistry/",
+      "statusCode": 301
+    },
+    {
+      "source": "/professional-teeth-cleaning",
+      "destination": "/service/professional-teeth-cleaning/",
+      "statusCode": 301
+    },
+    {
+      "source": "/professional-teeth-cleaning/",
+      "destination": "/service/professional-teeth-cleaning/",
+      "statusCode": 301
+    },
+    {
+      "source": "/root-canals",
+      "destination": "/service/root-canals/",
+      "statusCode": 301
+    },
+    {
+      "source": "/root-canals/",
+      "destination": "/service/root-canals/",
+      "statusCode": 301
+    },
+    {
+      "source": "/whitening",
+      "destination": "/service/whitening/",
+      "statusCode": 301
+    },
+    {
+      "source": "/whitening/",
+      "destination": "/service/whitening/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/soft-tissue-management",
+      "destination": "/the-importance-of-soft-tissue-in-successful-dental-implant-surgery/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/soft-tissue-management/",
+      "destination": "/the-importance-of-soft-tissue-in-successful-dental-implant-surgery/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/soft-tissue-management",
+      "destination": "/the-importance-of-soft-tissue-in-successful-dental-implant-surgery/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/soft-tissue-management/",
+      "destination": "/the-importance-of-soft-tissue-in-successful-dental-implant-surgery/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/:slug",
+      "destination": "/:slug/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blogs/:slug/",
+      "destination": "/:slug/",
+      "statusCode": 301
+    }
   ]
 }

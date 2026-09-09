@@ -1,11 +1,11 @@
 ---
 import { Icon } from "astro-icon/components";
-import Layout from "../layouts/Layout.astro";
-import PracticeHeader from "../components/PracticeHeader.astro";
-import PracticeFooter from "../components/PracticeFooter.astro";
-import PageHero from "../components/PageHero.astro";
-import ContactBand from "../components/ContactBand.astro";
-import { serviceHeroes } from "../lib/data";
+import Layout from "../../layouts/Layout.astro";
+import PracticeHeader from "../../components/PracticeHeader.astro";
+import PracticeFooter from "../../components/PracticeFooter.astro";
+import PageHero from "../../components/PageHero.astro";
+import ContactBand from "../../components/ContactBand.astro";
+import { serviceHeroes } from "../../lib/data";
 
 const extractionCare = [
   ["During your visit", "We numb the area thoroughly before starting, and monitor you closely throughout the procedure."],
@@ -27,7 +27,7 @@ const extractionCare = [
         imageMobile={serviceHeroes.extractions.mobile}
       >
         <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-          <a class="action-button primary" href="/contact-us"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book a consultation</a>
+          <a class="action-button primary" href="/contact/"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book a consultation</a>
           <a class="action-button outline" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Ask a question</a>
         </div>
       </PageHero>
@@ -42,7 +42,7 @@ const extractionCare = [
             <p class="eyebrow text-[#f6d1bd]">Your next step</p>
             <p class="display-face mt-3 text-3xl leading-none text-white">A same-day visit.</p>
             <p class="mt-4 text-sm leading-7 text-[#d8e8e5]">If a tooth is causing pain, call us. Same-day appointments are available.</p>
-            <a href="/contact-us" class="action-button light mt-6 w-full">Request a visit <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+            <a href="/contact/" class="action-button light mt-6 w-full">Request a visit <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
           </div>
         </div>
 
@@ -74,10 +74,10 @@ const extractionCare = [
               <p class="eyebrow">Continue your care</p>
               <h3 class="display-face mt-3 text-3xl leading-none text-[#2b2930] sm:text-4xl">You may also be interested in.</h3>
             </div>
-            <a href="/services" class="text-sm font-extrabold uppercase tracking-[.12em] text-[#27594e] no-underline">View all services <Icon name="lucide:arrow-right" class="ml-1 inline h-4 w-4" /></a>
+            <a href="/services/" class="text-sm font-extrabold uppercase tracking-[.12em] text-[#27594e] no-underline">View all services <Icon name="lucide:arrow-right" class="ml-1 inline h-4 w-4" /></a>
           </div>
           <div class="related-services__grid mt-8">
-            <a href="/dental-implants" class="related-service-link">
+            <a href="/service/dental-implants/" class="related-service-link">
               <span class="related-service-link__number">01</span>
               <span>
                 <span class="display-face block text-2xl leading-none text-[#2b2930]">Dental Implants</span>
@@ -85,7 +85,7 @@ const extractionCare = [
               </span>
               <Icon name="lucide:arrow-right" class="related-service-link__arrow h-5 w-5" />
             </a>
-            <a href="/root-canals" class="related-service-link">
+            <a href="/service/root-canals/" class="related-service-link">
               <span class="related-service-link__number">02</span>
               <span>
                 <span class="display-face block text-2xl leading-none text-[#2b2930]">Root Canals</span>
@@ -93,7 +93,7 @@ const extractionCare = [
               </span>
               <Icon name="lucide:arrow-right" class="related-service-link__arrow h-5 w-5" />
             </a>
-            <a href="/bridges" class="related-service-link">
+            <a href="/service/bridges/" class="related-service-link">
               <span class="related-service-link__number">03</span>
               <span>
                 <span class="display-face block text-2xl leading-none text-[#2b2930]">Bridges</span>

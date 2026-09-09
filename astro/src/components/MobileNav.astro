@@ -14,17 +14,17 @@ const { id } = Astro.props;
     <summary class="nav-link mobile-nav__summary">Services <Icon name="lucide:chevron-down" class="h-4 w-4 transition-transform" /></summary>
     <div class="grid gap-3 pb-5 pl-3">
       {servicesMenu.map((item) => <a class="text-[.78rem] font-bold text-[#2b2930] no-underline" href={item.href}>{item.label}</a>)}
-      <a href="/services" class="mt-1 inline-flex items-center gap-1 text-[.62rem] font-extrabold uppercase tracking-[.12em] text-[#27594e] no-underline">All services <Icon name="lucide:arrow-right" class="h-3 w-3" /></a>
+      <a href="/services/" class="mt-1 inline-flex items-center gap-1 text-[.62rem] font-extrabold uppercase tracking-[.12em] text-[#27594e] no-underline">All services <Icon name="lucide:arrow-right" class="h-3 w-3" /></a>
     </div>
   </details>
-  <a class="nav-link mobile-nav__link" href="/about-us">About</a>
+  <a class="nav-link mobile-nav__link" href="/about/">About</a>
   <details class="mobile-nav__group">
     <summary class="nav-link mobile-nav__summary">Patient info <Icon name="lucide:chevron-down" class="h-4 w-4 transition-transform" /></summary>
     <div class="grid gap-3 pb-5 pl-3">
       {patientInfoMenu.map((item) => <a class="text-[.78rem] font-bold text-[#2b2930] no-underline" href={item.href}>{item.label}</a>)}
     </div>
   </details>
-  <a class="nav-link mobile-nav__link" href="/blogs">Blogs</a>
-  <a class="nav-link mobile-nav__link" href="/contact-us">Contact</a>
-  <a class="action-button primary mt-5 w-full" href="/contact-us">Book an appointment <Icon name="lucide:calendar-days" class="h-4 w-4" /></a>
+  <a class="nav-link mobile-nav__link" href="/patient-info/blogs/">Blogs</a>
+  <a class="nav-link mobile-nav__link" href="/contact/">Contact</a>
+  <a class="action-button primary mt-5 w-full" href="/contact/">Book an appointment <Icon name="lucide:calendar-days" class="h-4 w-4" /></a>
 </nav>

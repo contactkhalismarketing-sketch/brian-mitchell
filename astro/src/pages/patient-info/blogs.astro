@@ -32,7 +32,7 @@ const [featured, ...rest] = posts;
       </PageHero>
       <section class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
         <div class="grid gap-8 border-b border-[#77a49f]/25 pb-12 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
-          <a href={`/blogs/${featured.slug}`} class="block">
+          <a href={`/${featured.slug}/`} class="block">
             <Image src={featured.hero} alt={featured.heroAlt} style={{ objectPosition: featured.heroPosition ?? "center" }} class="aspect-[16/9] w-full object-cover" width={800} loading="eager" />
           </a>
           <article>
@@ -40,12 +40,12 @@ const [featured, ...rest] = posts;
             <h2 class="display-face mt-4 text-4xl leading-[.98] tracking-[-.025em] text-[#2b2930] sm:text-5xl">{featured.title}</h2>
             <p class="mt-5 text-sm leading-7 text-[#596966]">{featured.excerpt}</p>
             <p class="mt-4 text-xs font-bold text-[#6c857e]">{formatPostDate(featured.date)}</p>
-            <a href={`/blogs/${featured.slug}`} class="action-button dark mt-7">Read the article <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+            <a href={`/${featured.slug}/`} class="action-button dark mt-7">Read the article <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
           </article>
         </div>
         <div class="mt-14 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
           {rest.map((post) => (
-            <a href={`/blogs/${post.slug}`} class="service-card group block no-underline">
+            <a href={`/${post.slug}/`} class="service-card group block no-underline">
               <div class="service-card__media">
                 <Image src={post.hero} alt={post.heroAlt} style={{ objectPosition: post.heroPosition ?? "center" }} width={640} />
               </div>

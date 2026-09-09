@@ -92,35 +92,35 @@ export const liveAssets = {
 };
 
 export const navigation = [
-  { label: "Services", href: "/services", active: "services" },
-  { label: "About", href: "/about-us", active: "about" },
-  { label: "Blogs", href: "/blogs", active: "blogs" },
-  { label: "Contact", href: "/contact-us", active: "contact" },
+  { label: "Services", href: "/services/", active: "services" },
+  { label: "About", href: "/about/", active: "about" },
+  { label: "Blogs", href: "/patient-info/blogs/", active: "blogs" },
+  { label: "Contact", href: "/contact/", active: "contact" },
 ];
 
 export const servicesMenu = [
-  { label: "Cosmetic Dentistry", href: "/cosmetic-dentistry" },
-  { label: "Orthodontics", href: "/orthodontics" },
-  { label: "Dental Implants", href: "/dental-implants" },
-  { label: "Bioclear", href: "/bioclear" },
-  { label: "Whitening", href: "/whitening" },
-  { label: "Preventative Dentistry", href: "/preventative-dentistry" },
-  { label: "Extractions", href: "/extractions" },
-  { label: "Bridges", href: "/bridges" },
-  { label: "Root Canals", href: "/root-canals" },
-  { label: "Adult Braces", href: "/adult-braces" },
-  { label: "Professional Teeth Cleaning", href: "/professional-teeth-cleaning" },
-  { label: "Routine Dental Care", href: "/preventative-dentistry" },
-  { label: "Jeuveau Injections", href: "/jeuveau-injections" },
+  { label: "Cosmetic Dentistry", href: "/service/cosmetic-dentistry/" },
+  { label: "Orthodontics", href: "/service/orthodontics/" },
+  { label: "Dental Implants", href: "/service/dental-implants/" },
+  { label: "Bioclear", href: "/service/bioclear/" },
+  { label: "Whitening", href: "/service/whitening/" },
+  { label: "Preventative Dentistry", href: "/service/preventative-dentistry/" },
+  { label: "Extractions", href: "/service/extractions/" },
+  { label: "Bridges", href: "/service/bridges/" },
+  { label: "Root Canals", href: "/service/root-canals/" },
+  { label: "Adult Braces", href: "/service/adult-braces/" },
+  { label: "Professional Teeth Cleaning", href: "/service/professional-teeth-cleaning/" },
+  { label: "Routine Dental Care", href: "/service/preventative-dentistry/" },
+  { label: "Jeuveau Injections", href: "/jeuveau-injections-in-tucson-effective-tmd-treatment-and-wrinkle-reduction/" },
 ];
 
 // Matches the live site's "Patient Info" dropdown structure
 // (brianmitchelldds.com): First Time Visit, Financial, Forms, FAQ.
 export const patientInfoMenu = [
-  { label: "First Time Visit", href: "/first-visit" },
-  { label: "Financial", href: "/financing" },
-  { label: "Forms", href: "/forms" },
-  { label: "FAQ", href: "/faq" },
+  { label: "First Time Visit", href: "/first-visit/" },
+  { label: "Financial", href: "/patient-info/financial/" },
+  { label: "Forms", href: "/patient-info/forms/" },
+  { label: "FAQ", href: "/patient-info/faq/" },
 ];
 
 // Sourced from the live Forms page (brianmitchelldds.com/forms/).
@@ -311,28 +311,28 @@ export const team = [
 ];
 
 export const serviceList = [
-  ["Cosmetic Dentistry", "A personalised approach to a smile that feels like you.", serviceHeroes.cosmetic.mobile, "/cosmetic-dentistry"],
-  ["Orthodontics", "Traditional and Invisalign options for patients of every age.", serviceHeroes.orthodontics.mobile, "/orthodontics"],
-  ["Dental Implants", "Modern tooth-replacement plans with comfort at the centre.", serviceHeroes.implants.mobile, "/dental-implants"],
+  ["Cosmetic Dentistry", "A personalised approach to a smile that feels like you.", serviceHeroes.cosmetic.mobile, "/service/cosmetic-dentistry/"],
+  ["Orthodontics", "Traditional and Invisalign options for patients of every age.", serviceHeroes.orthodontics.mobile, "/service/orthodontics/"],
+  ["Dental Implants", "Modern tooth-replacement plans with comfort at the centre.", serviceHeroes.implants.mobile, "/service/dental-implants/"],
 ] as const;
 
 export const featuredServices = [
-  { number: "01", name: "Cosmetic Dentistry", copy: "Thoughtful aesthetic care for a smile that feels unmistakably like you.", image: serviceHeroes.cosmetic.mobile, href: "/cosmetic-dentistry" },
-  { number: "02", name: "Orthodontics", copy: "Traditional and Invisalign options that fit your life and your smile goals.", image: serviceHeroes.orthodontics.mobile, href: "/orthodontics" },
-  { number: "03", name: "Dental Implants", copy: "Modern tooth-replacement plans with comfort, function, and confidence at the centre.", image: serviceHeroes.implants.mobile, href: "/dental-implants" },
+  { number: "01", name: "Cosmetic Dentistry", copy: "Thoughtful aesthetic care for a smile that feels unmistakably like you.", image: serviceHeroes.cosmetic.mobile, href: "/service/cosmetic-dentistry/" },
+  { number: "02", name: "Orthodontics", copy: "Traditional and Invisalign options that fit your life and your smile goals.", image: serviceHeroes.orthodontics.mobile, href: "/service/orthodontics/" },
+  { number: "03", name: "Dental Implants", copy: "Modern tooth-replacement plans with comfort, function, and confidence at the centre.", image: serviceHeroes.implants.mobile, href: "/service/dental-implants/" },
 ] as const;
 
 export const additionalServiceList = [
-  ["04", "Bioclear", "Conservative, aesthetic solutions for natural teeth.", "/bioclear"],
-  ["05", "Whitening", "A brighter smile planned around your goals.", "/whitening"],
-  ["06", "Preventative Dentistry", "Thoughtful check-ups and cleaning for lasting oral health.", "/preventative-dentistry"],
-  ["07", "Extractions", "Clear guidance and gentle care when a tooth needs attention.", "/extractions"],
-  ["08", "Bridges", "Restorative options designed to renew everyday confidence.", "/bridges"],
-  ["09", "Root Canals", "Comfort-led treatment to protect and preserve your natural tooth.", "/root-canals"],
-  ["10", "Adult Braces", "A considered path toward better alignment at any stage of life.", "/adult-braces"],
-  ["11", "Professional Teeth Cleaning", "A fresh, healthy foundation for your ongoing care.", "/professional-teeth-cleaning"],
-  ["12", "Routine Dental Care", "The essentials of a healthy smile, thoughtfully delivered.", "/preventative-dentistry"],
-  ["13", "Jeuveau Injections", "Relief for clenching, grinding, and TMJ symptoms, plus wrinkle reduction.", "/jeuveau-injections"],
+  ["04", "Bioclear", "Conservative, aesthetic solutions for natural teeth.", "/service/bioclear/"],
+  ["05", "Whitening", "A brighter smile planned around your goals.", "/service/whitening/"],
+  ["06", "Preventative Dentistry", "Thoughtful check-ups and cleaning for lasting oral health.", "/service/preventative-dentistry/"],
+  ["07", "Extractions", "Clear guidance and gentle care when a tooth needs attention.", "/service/extractions/"],
+  ["08", "Bridges", "Restorative options designed to renew everyday confidence.", "/service/bridges/"],
+  ["09", "Root Canals", "Comfort-led treatment to protect and preserve your natural tooth.", "/service/root-canals/"],
+  ["10", "Adult Braces", "A considered path toward better alignment at any stage of life.", "/service/adult-braces/"],
+  ["11", "Professional Teeth Cleaning", "A fresh, healthy foundation for your ongoing care.", "/service/professional-teeth-cleaning/"],
+  ["12", "Routine Dental Care", "The essentials of a healthy smile, thoughtfully delivered.", "/service/preventative-dentistry/"],
+  ["13", "Jeuveau Injections", "Relief for clenching, grinding, and TMJ symptoms, plus wrinkle reduction.", "/jeuveau-injections-in-tucson-effective-tmd-treatment-and-wrinkle-reduction/"],
 ] as const;
 
 export const cosmeticOptions = [

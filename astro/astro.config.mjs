@@ -6,6 +6,8 @@ import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
   integrations: [icon()],
+  // Mirror the live WordPress site: every page URL ends with a trailing slash.
+  trailingSlash: "always",
   build: {
     // The stylesheet is ~12KB; inlining it removes a render-blocking request from the critical path.
     inlineStylesheets: 'always',

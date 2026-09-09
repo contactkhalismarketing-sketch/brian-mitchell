@@ -1,10 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import Layout from "../../layouts/Layout.astro";
-import PracticeHeader from "../../components/PracticeHeader.astro";
-import PracticeFooter from "../../components/PracticeFooter.astro";
-import { posts, formatPostDate, type Post } from "../../lib/posts";
+import Layout from "../layouts/Layout.astro";
+import PracticeHeader from "../components/PracticeHeader.astro";
+import PracticeFooter from "../components/PracticeFooter.astro";
+import { posts, formatPostDate, type Post } from "../lib/posts";
 
 export function getStaticPaths() {
   return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
@@ -21,7 +21,7 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
     <main>
       <section class="bg-[#f7efe5]">
         <div class="mx-auto max-w-[1080px] px-5 py-14 sm:px-8 lg:py-20">
-          <a href="/blogs" class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.11em] text-[#27594e] no-underline"><Icon name="lucide:chevron-right" class="h-4 w-4 rotate-180" />Back to patient information</a>
+          <a href="/patient-info/blogs/" class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.11em] text-[#27594e] no-underline"><Icon name="lucide:chevron-right" class="h-4 w-4 rotate-180" />Back to patient information</a>
           <p class="eyebrow mt-12">{post.category} · Patient education</p>
           <h1 class="display-face mt-5 max-w-4xl text-5xl leading-[.93] tracking-[-.035em] text-[#2b2930] sm:text-6xl lg:text-7xl">{post.title}</h1>
           <div class="mt-8 flex flex-wrap items-center gap-4 text-xs font-bold text-[#6c857e]">
@@ -86,7 +86,7 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
               <p class="eyebrow text-[#bde0da]">Have a question about this?</p>
               <h3 class="display-face mt-3 text-4xl leading-none">Let's talk through the right next step.</h3>
               <p class="mt-4 max-w-xl text-sm leading-7 text-[#d8e8e5]">A visit gives us the chance to understand your goals and review the options available to you.</p>
-              <a href="/contact-us" class="action-button primary mt-7">Request a consultation <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+              <a href="/contact/" class="action-button primary mt-7">Request a consultation <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
             </div>
           </article>
         </div>
@@ -99,11 +99,11 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
               <p class="eyebrow">Keep reading</p>
               <h2 class="display-face mt-3 text-3xl leading-none text-[#2b2930] sm:text-4xl">More from the practice.</h2>
             </div>
-            <a href="/blogs" class="text-sm font-extrabold uppercase tracking-[.12em] text-[#27594e] no-underline">All articles <Icon name="lucide:arrow-right" class="ml-1 inline h-4 w-4" /></a>
+            <a href="/patient-info/blogs/" class="text-sm font-extrabold uppercase tracking-[.12em] text-[#27594e] no-underline">All articles <Icon name="lucide:arrow-right" class="ml-1 inline h-4 w-4" /></a>
           </div>
           <div class="mt-10 grid gap-7 md:grid-cols-3">
             {morePosts.map((other) => (
-              <a href={`/blogs/${other.slug}`} class="service-card group block no-underline">
+              <a href={`/${other.slug}/`} class="service-card group block no-underline">
                 <div class="service-card__media">
                   <Image src={other.hero} alt={other.heroAlt} style={{ objectPosition: other.heroPosition ?? "center" }} width={640} />
                 </div>
