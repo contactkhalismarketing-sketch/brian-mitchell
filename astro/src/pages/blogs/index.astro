@@ -6,7 +6,7 @@ import PracticeHeader from "../../components/PracticeHeader.astro";
 import PracticeFooter from "../../components/PracticeFooter.astro";
 import PageHero from "../../components/PageHero.astro";
 import ContactBand from "../../components/ContactBand.astro";
-import { liveAssets } from "../../lib/data";
+import { serviceHeroes } from "../../lib/data";
 import { posts, formatPostDate } from "../../lib/posts";
 
 const [featured, ...rest] = posts;
@@ -20,7 +20,9 @@ const [featured, ...rest] = posts;
         eyebrow="Patient information"
         title="A closer look at your care."
         body="Clear information can make a dental decision feel easier. Explore clinical insight, treatment context, and patient education from Dr. Brian Mitchell & Associates."
-        image={liveAssets.blogSoftTissue}
+        image={serviceHeroes.blogs.image}
+        imagePosition={serviceHeroes.blogs.position}
+        imageMobile={serviceHeroes.blogs.mobile}
       >
         <div class="mt-9 flex flex-wrap gap-3">
           <span class="stamp">Dental implants</span>

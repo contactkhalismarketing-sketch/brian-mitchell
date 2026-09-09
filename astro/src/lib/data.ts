@@ -47,6 +47,8 @@ import heroWhitening from "../assets/practice/heroes/whitening-hero.jpg";
 import heroWhiteningMobile from "../assets/practice/heroes/whitening-hero-mobile.jpg";
 import heroJeuveau from "../assets/practice/heroes/jeuveau-hero.jpg";
 import heroJeuveauMobile from "../assets/practice/heroes/jeuveau-hero-mobile.jpg";
+import heroBlogs from "../assets/practice/heroes/blogs-hero.jpg";
+import heroBlogsMobile from "../assets/practice/heroes/blogs-hero-mobile.jpg";
 
 // Service hero set: subject sits right of centre with clear space on the left, so the desktop
 // copy card overlays the empty side. `position` is the desktop focal point (x anchored right,
@@ -65,6 +67,8 @@ export const serviceHeroes = {
   routine: { image: heroRoutine, mobile: heroRoutineMobile, position: "100% 53%" },
   whitening: { image: heroWhitening, mobile: heroWhiteningMobile, position: "100% 69%" },
   jeuveau: { image: heroJeuveau, mobile: heroJeuveauMobile, position: "100% 67%" },
+  // Composed in-house from the blog photos (editorial spread on the sand tone), not a stock image.
+  blogs: { image: heroBlogs, mobile: heroBlogsMobile, position: "100% 50%" },
 };
 
 export const liveAssets = {
