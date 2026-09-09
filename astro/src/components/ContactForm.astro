@@ -1,0 +1,25 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  id: string;
+  class?: string;
+}
+
+const { id, class: className = "" } = Astro.props;
+const labelClass = "grid gap-2 text-[.66rem] font-extrabold uppercase tracking-[.12em] text-[#4a665f]";
+---
+
+<form class={`grid gap-4 ${className}`} data-contact-form>
+  <label class={labelClass} for={`${id}-name`}>Name<input id={`${id}-name`} name="name" class="form-field" placeholder="Your name" autocomplete="name" /></label>
+  <label class={labelClass} for={`${id}-email`}>Email<input id={`${id}-email`} name="email" class="form-field" type="email" placeholder="you@email.com" autocomplete="email" /></label>
+  <label class={labelClass} for={`${id}-phone`}>Phone<input id={`${id}-phone`} name="phone" class="form-field" type="tel" placeholder="(000) 000-0000" autocomplete="tel" /></label>
+  <label class={labelClass} for={`${id}-message`}>How can we help?<textarea id={`${id}-message`} name="message" class="form-field min-h-[132px] resize-y" placeholder="Tell us how we can help."></textarea></label>
+  <button type="submit" class="action-button primary w-fit">Send message <Icon name="lucide:arrow-right" class="h-4 w-4" /></button>
+</form>
+
+<script>
+  document.querySelectorAll("[data-contact-form]").forEach((form) => {
+    form.addEventListener("submit", (event) => event.preventDefault());
+  });
+</script>

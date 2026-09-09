@@ -104,6 +104,7 @@ export const servicesMenu = [
   { label: "Adult Braces", href: "/adult-braces" },
   { label: "Professional Teeth Cleaning", href: "/professional-teeth-cleaning" },
   { label: "Routine Dental Care", href: "/preventative-dentistry" },
+  { label: "Jeuveau Injections", href: "/jeuveau-injections" },
 ];
 
 // Matches the live site's "Patient Info" dropdown structure
@@ -303,15 +304,15 @@ export const team = [
 ];
 
 export const serviceList = [
-  ["Cosmetic Dentistry", "A personalised approach to a smile that feels like you.", liveAssets.cosmetics, "/cosmetic-dentistry"],
-  ["Orthodontics", "Traditional and Invisalign options for patients of every age.", liveAssets.orthodontics, "/orthodontics"],
-  ["Dental Implants", "Modern tooth-replacement plans with comfort at the centre.", liveAssets.blogImplant, "/dental-implants"],
+  ["Cosmetic Dentistry", "A personalised approach to a smile that feels like you.", serviceHeroes.cosmetic.mobile, "/cosmetic-dentistry"],
+  ["Orthodontics", "Traditional and Invisalign options for patients of every age.", serviceHeroes.orthodontics.mobile, "/orthodontics"],
+  ["Dental Implants", "Modern tooth-replacement plans with comfort at the centre.", serviceHeroes.implants.mobile, "/dental-implants"],
 ] as const;
 
 export const featuredServices = [
-  { number: "01", name: "Cosmetic Dentistry", copy: "Thoughtful aesthetic care for a smile that feels unmistakably like you.", image: liveAssets.cosmetics, href: "/cosmetic-dentistry" },
-  { number: "02", name: "Orthodontics", copy: "Traditional and Invisalign options that fit your life and your smile goals.", image: liveAssets.orthodontics, href: "/orthodontics" },
-  { number: "03", name: "Dental Implants", copy: "Modern tooth-replacement plans with comfort, function, and confidence at the centre.", image: liveAssets.blogImplant, href: "/dental-implants" },
+  { number: "01", name: "Cosmetic Dentistry", copy: "Thoughtful aesthetic care for a smile that feels unmistakably like you.", image: serviceHeroes.cosmetic.mobile, href: "/cosmetic-dentistry" },
+  { number: "02", name: "Orthodontics", copy: "Traditional and Invisalign options that fit your life and your smile goals.", image: serviceHeroes.orthodontics.mobile, href: "/orthodontics" },
+  { number: "03", name: "Dental Implants", copy: "Modern tooth-replacement plans with comfort, function, and confidence at the centre.", image: serviceHeroes.implants.mobile, href: "/dental-implants" },
 ] as const;
 
 export const additionalServiceList = [
@@ -324,6 +325,7 @@ export const additionalServiceList = [
   ["10", "Adult Braces", "A considered path toward better alignment at any stage of life.", "/adult-braces"],
   ["11", "Professional Teeth Cleaning", "A fresh, healthy foundation for your ongoing care.", "/professional-teeth-cleaning"],
   ["12", "Routine Dental Care", "The essentials of a healthy smile, thoughtfully delivered.", "/preventative-dentistry"],
+  ["13", "Jeuveau Injections", "Relief for clenching, grinding, and TMJ symptoms, plus wrinkle reduction.", "/jeuveau-injections"],
 ] as const;
 
 export const cosmeticOptions = [

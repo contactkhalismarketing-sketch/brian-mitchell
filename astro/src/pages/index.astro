@@ -7,6 +7,7 @@ import PatientInfoMenu from "../components/PatientInfoMenu.astro";
 import ServicesMenu from "../components/ServicesMenu.astro";
 import ReviewSlider from "../components/ReviewSlider.astro";
 import StarIcon from "../components/StarIcon.astro";
+import ContactForm from "../components/ContactForm.astro";
 
 const heroPoster = await getImage({ src: liveAssets.office, width: 1280, format: "webp" });
 ---
@@ -210,22 +211,31 @@ const heroPoster = await getImage({ src: liveAssets.office, width: 1280, format:
 
       <section id="contact" class="relative overflow-hidden bg-[#27594e] text-white">
         <div class="sun-portal tall -right-44 -bottom-28 border-[#f6c3a9]/70" aria-hidden="true"></div>
-        <div class="relative mx-auto grid max-w-[1440px] gap-10 px-5 py-20 sm:px-8 md:grid-cols-[1.15fr_.85fr] lg:px-12 lg:py-28">
+        <div class="relative mx-auto grid max-w-[1440px] gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1fr_.95fr] lg:items-start lg:px-12 lg:py-28">
           <div>
             <p class="eyebrow text-[#f6d1bd]">Book an appointment</p>
             <h2 class="display-face mt-4 max-w-xl text-5xl leading-[.94] tracking-[-.035em] sm:text-6xl">Your next step can be simple.</h2>
-            <p class="mt-7 max-w-lg text-base leading-8 text-white/85">Call our team today to schedule your appointment. We are here to help you feel welcome, informed, and ready to care for your smile.</p>
+            <p class="mt-7 max-w-lg text-base leading-8 text-white/85">Call our team today, or send a note and we will be in touch. We are here to help you feel welcome, informed, and ready to care for your smile.</p>
             <div class="mt-9 flex flex-col gap-3 sm:flex-row">
               <a class="action-button dark" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Call (520) 523-4860</a>
-              <a class="action-button light" href="/contact-us"><Icon name="lucide:calendar-days" class="h-4 w-4" />Online booking to connect</a>
+              <a class="action-button light" href="/contact-us"><Icon name="lucide:map-pin" class="h-4 w-4" />Find the practice</a>
+            </div>
+            <div class="mt-12 grid gap-8 border-t border-white/25 pt-8 sm:grid-cols-2">
+              <div>
+                <p class="text-[.62rem] font-extrabold uppercase tracking-[.16em] text-[#f6d1bd]">Visit us</p>
+                <p class="mt-3 text-base font-bold leading-7">6383 E. Grant Road, Suite 155<br />Tucson, AZ 85715</p>
+              </div>
+              <div>
+                <p class="text-[.62rem] font-extrabold uppercase tracking-[.16em] text-[#f6d1bd]">Office hours</p>
+                <p class="mt-3 text-sm leading-7 text-white/85">Monday–Tuesday · 8am to 4pm<br />Wednesday–Friday · 7am to 4pm</p>
+              </div>
             </div>
           </div>
-          <div class="border-l border-white/35 pl-6 sm:pl-8">
-            <p class="text-[.62rem] font-extrabold uppercase tracking-[.16em] text-[#f6d1bd]">Visit us</p>
-            <p class="mt-4 text-base font-bold leading-7">6383 E. Grant Road, Suite 155<br />Tucson, AZ 85715</p>
-            <div class="hairline my-7"></div>
-            <p class="text-[.62rem] font-extrabold uppercase tracking-[.16em] text-[#f6d1bd]">Office hours</p>
-            <p class="mt-3 text-sm leading-7 text-white/85">Monday · 8am to 4pm<br />Tuesday · 8am to 4pm<br />Wednesday · 7am to 4pm<br />Thursday · 7am to 4pm<br />Friday · 7am to 4pm</p>
+          <div class="bg-[#fffaf3] p-6 text-[#2b2930] shadow-[0_24px_60px_rgba(20,45,39,.28)] sm:p-9">
+            <p class="eyebrow">Message us</p>
+            <h3 class="display-face mt-3 text-3xl leading-none sm:text-4xl">What can we help with?</h3>
+            <p class="mt-4 text-sm leading-7 text-[#596966]">Share a few details and our team will be in touch. For privacy, please do not include sensitive health information in this form.</p>
+            <ContactForm id="home" class="mt-7" />
           </div>
         </div>
       </section>
