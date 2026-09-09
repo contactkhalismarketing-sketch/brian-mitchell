@@ -10,7 +10,7 @@ import ReviewSlider from "../components/ReviewSlider.astro";
 import StarIcon from "../components/StarIcon.astro";
 import ContactForm from "../components/ContactForm.astro";
 
-const heroPoster = await getImage({ src: liveAssets.office, width: 1280, format: "webp" });
+const heroPoster = await getImage({ src: liveAssets.office, width: 1440, widths: [640, 960, 1440, 1920], sizes: "100vw", format: "webp" });
 ---
 
 <Layout title="Dr. Brian Mitchell & Associates | Tucson Dentistry">
@@ -18,7 +18,7 @@ const heroPoster = await getImage({ src: liveAssets.office, width: 1280, format:
     <header class="relative z-20 bg-[#fffaf3]/95 backdrop-blur-md">
       <div class="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-5 py-4 sm:px-8 lg:px-12">
         <a class="block w-[160px] sm:w-[205px]" href="/" aria-label="Dr. Brian Mitchell & Associates home">
-          <Image src={liveAssets.logo} class="h-auto w-full" alt="Dr. Brian Mitchell & Associates Dentistry, Dental Implants, Orthodontics" width={410} loading="eager" />
+          <Image src={liveAssets.logo} class="h-auto w-full" alt="Dr. Brian Mitchell & Associates Dentistry, Dental Implants, Orthodontics" widths={[160, 205, 320, 410]} sizes="(min-width: 640px) 205px, 160px" loading="eager" />
         </a>
         <nav class="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
           <ServicesMenu id="home-desktop" />
@@ -43,9 +43,8 @@ const heroPoster = await getImage({ src: liveAssets.office, width: 1280, format:
       <section class="homepage-hero relative isolate overflow-hidden bg-[#e9f1ed] text-[#2b2930]">
         <div class="homepage-hero__video-band relative">
           <div class="video-hero inset-0" aria-label="Dr. Brian Mitchell & Associates treatment room and dental technology">
-            <video class="video-fallback" autoplay loop muted playsinline preload="metadata" poster={heroPoster.src} aria-label="Dr. Brian Mitchell & Associates building and dental technology tour">
-              <source src={liveAssets.heroVideo} type="video/mp4" />
-            </video>
+            <img class="video-fallback" src={heroPoster.src} srcset={heroPoster.srcSet.attribute} sizes="100vw" width={heroPoster.attributes.width} height={heroPoster.attributes.height} alt="Dr. Brian Mitchell & Associates treatment room" fetchpriority="high" decoding="async" />
+            <video class="video-fallback" autoplay loop muted playsinline preload="none" data-src={liveAssets.heroVideo} aria-label="Dr. Brian Mitchell & Associates building and dental technology tour"></video>
           </div>
           <div class="hero-overlay absolute inset-0 hidden lg:block"></div>
           <div class="homepage-hero__video-scrim absolute inset-x-0 bottom-0 lg:hidden" aria-hidden="true"></div>
@@ -242,6 +241,16 @@ const heroPoster = await getImage({ src: liveAssets.office, width: 1280, format:
 </Layout>
 
 <script>
+  // The poster image is the LCP element; the video only starts fetching once the page has loaded so it doesn't compete with it.
+  const heroVideo = document.querySelector<HTMLVideoElement>("video[data-src]");
+  const startHeroVideo = () => {
+    if (!heroVideo || heroVideo.src) return;
+    heroVideo.src = heroVideo.dataset.src ?? "";
+    heroVideo.play().catch(() => {});
+  };
+  if (document.readyState === "complete") setTimeout(startHeroVideo, 400);
+  else window.addEventListener("load", () => setTimeout(startHeroVideo, 400), { once: true });
+
   const toggle = document.getElementById("home-menu-toggle");
   const menu = document.getElementById("home-mobile-menu");
   const openIcon = toggle?.querySelector('[data-menu-icon="open"]');
