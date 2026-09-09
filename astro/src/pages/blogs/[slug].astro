@@ -103,10 +103,18 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
           </div>
           <div class="mt-10 grid gap-7 md:grid-cols-3">
             {morePosts.map((other) => (
-              <a href={`/blogs/${other.slug}`} class="group block no-underline">
-                <Image src={other.hero} alt={other.heroAlt} style={{ objectPosition: other.heroPosition ?? "center" }} class="aspect-[4/3] w-full object-cover" width={480} />
-                <p class="eyebrow mt-6">{other.category}</p>
-                <h3 class="display-face mt-3 text-2xl leading-tight text-[#2b2930]">{other.title}</h3>
+              <a href={`/blogs/${other.slug}`} class="service-card group block no-underline">
+                <div class="service-card__media">
+                  <Image src={other.hero} alt={other.heroAlt} style={{ objectPosition: other.heroPosition ?? "center" }} width={640} />
+                </div>
+                <div class="service-card__body flex flex-1 flex-col">
+                  <p class="eyebrow">{other.category}</p>
+                  <h3 class="display-face mt-3 text-2xl leading-tight text-[#2b2930]">{other.title}</h3>
+                  <div class="mt-auto flex items-center justify-between gap-3 pt-6">
+                    <span class="text-xs font-bold text-[#4f625d]">{formatPostDate(other.date)}</span>
+                    <span class="service-arrow flex-none"><Icon name="lucide:arrow-right" class="h-4 w-4" /></span>
+                  </div>
+                </div>
               </a>
             ))}
           </div>
