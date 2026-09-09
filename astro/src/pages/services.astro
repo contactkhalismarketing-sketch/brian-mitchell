@@ -32,9 +32,9 @@ import { serviceHeroes, serviceList } from "../lib/data";
         <div class="grid gap-9 lg:grid-cols-[.9fr_1.1fr] lg:items-end">
           <div>
             <p class="eyebrow">How we can help</p>
-            <h2 class="display-face mt-4 max-w-xl text-4xl leading-[.98] tracking-[-.025em] text-[#082824] sm:text-5xl">Thoughtful treatment. Clear next steps.</h2>
+            <h2 class="display-face mt-4 max-w-xl text-4xl leading-[.98] tracking-[-.025em] text-[#283e3c] sm:text-5xl">Thoughtful treatment. Clear next steps.</h2>
           </div>
-          <p class="max-w-xl text-sm leading-7 text-[#55635f]">From routine preventive care to restorative and aesthetic treatment, we begin by understanding your needs and then talk through the options together. New here? <a href="/first-visit/" class="font-bold text-[#354d49] underline underline-offset-2">See exactly what to expect at your first visit</a>.</p>
+          <p class="max-w-xl text-sm leading-7 text-[#4a5a58]">From routine preventive care to restorative and aesthetic treatment, we begin by understanding your needs and then talk through the options together. New here? <a href="/first-visit/" class="font-bold text-[#354a4d] underline underline-offset-2">See exactly what to expect at your first visit</a>.</p>
         </div>
         <div class="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {serviceList.map(([name, copy, image, href], index) => (
@@ -43,11 +43,11 @@ import { serviceHeroes, serviceList } from "../lib/data";
                 <Image src={image} alt="" width={640} />
               </div>
               <div class="service-card__body">
-                <p class="text-[.62rem] font-extrabold uppercase tracking-[.15em] text-[#7a6233]">0{index + 1} · Explore care</p>
+                <p class="text-[.62rem] font-extrabold uppercase tracking-[.15em] text-[#3f6e69]">0{index + 1} · Explore care</p>
                 <div class="mt-3 flex items-end justify-between gap-3">
                   <div>
-                    <h3 class="display-face text-3xl leading-none text-[#082824]">{name}</h3>
-                    <p class="mt-3 max-w-[240px] text-sm leading-6 text-[#55635f]">{copy}</p>
+                    <h3 class="display-face text-3xl leading-none text-[#283e3c]">{name}</h3>
+                    <p class="mt-3 max-w-[240px] text-sm leading-6 text-[#4a5a58]">{copy}</p>
                   </div>
                   <span class="service-arrow flex-none"><Icon name="lucide:arrow-right" class="h-4 w-4" /></span>
                 </div>

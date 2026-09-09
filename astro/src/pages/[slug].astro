@@ -19,14 +19,14 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
   <div class="page-shell min-h-screen">
     <PracticeHeader active="blogs" />
     <main>
-      <section class="bg-[#f3ecdd]">
+      <section class="bg-[#f0f5f4]">
         <div class="mx-auto max-w-[1080px] px-5 py-14 sm:px-8 lg:py-20">
-          <a href="/patient-info/blogs/" class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.11em] text-[#354d49] no-underline"><Icon name="lucide:chevron-right" class="h-4 w-4 rotate-180" />Back to patient information</a>
+          <a href="/patient-info/blogs/" class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.11em] text-[#354a4d] no-underline"><Icon name="lucide:chevron-right" class="h-4 w-4 rotate-180" />Back to patient information</a>
           <p class="eyebrow mt-12">{post.category} · Patient education</p>
-          <h1 class="display-face mt-5 max-w-4xl text-5xl leading-[.93] tracking-[-.035em] text-[#082824] sm:text-6xl lg:text-7xl">{post.title}</h1>
+          <h1 class="display-face mt-5 max-w-4xl text-5xl leading-[.93] tracking-[-.035em] text-[#283e3c] sm:text-6xl lg:text-7xl">{post.title}</h1>
           <div class="mt-8 flex flex-wrap items-center gap-4 text-xs font-bold text-[#6f807c]">
             <span>By Dr. Brian Mitchell & Associates</span>
-            <span class="h-1 w-1 rounded-full bg-[#e2ca9f]"></span>
+            <span class="h-1 w-1 rounded-full bg-[#729f9a]"></span>
             <span>{formatPostDate(post.date)}</span>
           </div>
         </div>
@@ -37,8 +37,8 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
         <div class={`mx-auto mt-14 grid max-w-4xl gap-12 ${headings.length ? "lg:grid-cols-[190px_minmax(0,1fr)]" : ""}`}>
           {headings.length > 0 && (
             <aside class="lg:sticky lg:top-8 lg:self-start">
-              <p class="text-[.63rem] font-extrabold uppercase tracking-[.14em] text-[#7a6233]">In this article</p>
-              <div class="mt-4 grid gap-3 text-sm font-bold text-[#3d5855]">
+              <p class="text-[.63rem] font-extrabold uppercase tracking-[.14em] text-[#3f6e69]">In this article</p>
+              <div class="mt-4 grid gap-3 text-sm font-bold text-[#354a4d]">
                 {headings.map((heading) => <a href={`#${heading.id}`} class="no-underline">{heading.text}</a>)}
               </div>
             </aside>
@@ -47,21 +47,21 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
             {post.blocks.map((block, index) => {
               if (block.type === "p") return <p class={index === 0 ? "lead" : ""}>{block.text}</p>;
               if (block.type === "h2") return <h2 id={block.id}>{block.text}</h2>;
-              if (block.type === "list") return <ul class="my-6 grid gap-2 pl-5 text-base leading-7 text-[#55635f]">{block.items.map((item) => <li class="list-disc">{item}</li>)}</ul>;
+              if (block.type === "list") return <ul class="my-6 grid gap-2 pl-5 text-base leading-7 text-[#4a5a58]">{block.items.map((item) => <li class="list-disc">{item}</li>)}</ul>;
               if (block.type === "terms") return (
-                <dl class="my-8 grid gap-5 border-l-2 border-[#e2ca9f]/40 pl-5">
+                <dl class="my-8 grid gap-5 border-l-2 border-[#729f9a]/40 pl-5">
                   {block.items.map(([term, definition]) => (
                     <div>
-                      <dt class="font-extrabold text-[#082824]">{term}</dt>
-                      <dd class="mt-1 text-base leading-7 text-[#55635f]">{definition}</dd>
+                      <dt class="font-extrabold text-[#283e3c]">{term}</dt>
+                      <dd class="mt-1 text-base leading-7 text-[#4a5a58]">{definition}</dd>
                     </div>
                   ))}
                 </dl>
               );
               if (block.type === "quote") return (
-                <figure class="my-10 border-l-2 border-[#e2ca9f] bg-[#f3ecdd] px-6 py-6">
-                  <Icon name="lucide:quote" class="h-6 w-6 text-[#7a6233]" />
-                  <blockquote class="mt-3 text-[#082824]">{block.text}</blockquote>
+                <figure class="my-10 border-l-2 border-[#729f9a] bg-[#f0f5f4] px-6 py-6">
+                  <Icon name="lucide:quote" class="h-6 w-6 text-[#3f6e69]" />
+                  <blockquote class="mt-3 text-[#283e3c]">{block.text}</blockquote>
                   {block.cite && <figcaption class="mt-4 text-xs font-extrabold uppercase tracking-[.12em] text-[#6f807c]">{block.cite}</figcaption>}
                 </figure>
               );
@@ -74,32 +74,32 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
             })}
 
             {post.sources && (
-              <div class="mt-12 border-t border-[#e2ca9f]/25 pt-6">
-                <p class="text-[.63rem] font-extrabold uppercase tracking-[.14em] text-[#7a6233]">Sources</p>
+              <div class="mt-12 border-t border-[#729f9a]/25 pt-6">
+                <p class="text-[.63rem] font-extrabold uppercase tracking-[.14em] text-[#3f6e69]">Sources</p>
                 <ol class="mt-3 grid gap-2 pl-5 text-xs leading-6 text-[#6f807c]">
-                  {post.sources.map((source) => <li class="list-decimal break-all"><a href={source} rel="noreferrer" target="_blank" class="text-[#3d5855] underline underline-offset-2">{source}</a></li>)}
+                  {post.sources.map((source) => <li class="list-decimal break-all"><a href={source} rel="noreferrer" target="_blank" class="text-[#354a4d] underline underline-offset-2">{source}</a></li>)}
                 </ol>
               </div>
             )}
 
-            <div class="mt-12 bg-[#082824] p-7 text-white sm:p-10">
-              <p class="eyebrow text-[#d9c9a5]">Have a question about this?</p>
+            <div class="mt-12 bg-[#283e3c] p-7 text-white sm:p-10">
+              <p class="eyebrow text-[#9dbfbb]">Have a question about this?</p>
               <h3 class="display-face mt-3 text-4xl leading-none">Let's talk through the right next step.</h3>
-              <p class="mt-4 max-w-xl text-sm leading-7 text-[#e2ca9f]">A visit gives us the chance to understand your goals and review the options available to you.</p>
+              <p class="mt-4 max-w-xl text-sm leading-7 text-[#d5e4e2]">A visit gives us the chance to understand your goals and review the options available to you.</p>
               <a href="/contact/" class="action-button primary mt-7">Request a consultation <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="bg-[#f3ecdd]">
+      <section class="bg-[#f0f5f4]">
         <div class="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 lg:px-12 lg:py-20">
           <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div>
               <p class="eyebrow">Keep reading</p>
-              <h2 class="display-face mt-3 text-3xl leading-none text-[#082824] sm:text-4xl">More from the practice.</h2>
+              <h2 class="display-face mt-3 text-3xl leading-none text-[#283e3c] sm:text-4xl">More from the practice.</h2>
             </div>
-            <a href="/patient-info/blogs/" class="text-sm font-extrabold uppercase tracking-[.12em] text-[#354d49] no-underline">All articles <Icon name="lucide:arrow-right" class="ml-1 inline h-4 w-4" /></a>
+            <a href="/patient-info/blogs/" class="text-sm font-extrabold uppercase tracking-[.12em] text-[#354a4d] no-underline">All articles <Icon name="lucide:arrow-right" class="ml-1 inline h-4 w-4" /></a>
           </div>
           <div class="mt-10 grid gap-7 md:grid-cols-3">
             {morePosts.map((other) => (
@@ -109,7 +109,7 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
                 </div>
                 <div class="service-card__body flex flex-1 flex-col">
                   <p class="eyebrow">{other.category}</p>
-                  <h3 class="display-face mt-3 text-2xl leading-tight text-[#082824]">{other.title}</h3>
+                  <h3 class="display-face mt-3 text-2xl leading-tight text-[#283e3c]">{other.title}</h3>
                   <div class="mt-auto flex items-center justify-between gap-3 pt-6">
                     <span class="text-xs font-bold text-[#4f5f5c]">{formatPostDate(other.date)}</span>
                     <span class="service-arrow flex-none"><Icon name="lucide:arrow-right" class="h-4 w-4" /></span>

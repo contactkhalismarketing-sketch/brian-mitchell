@@ -19,7 +19,7 @@ import { liveAssets, formCategories } from "../../lib/data";
         image={liveAssets.office}
         imagePosition="92% 65%"
       >
-        <div class="mt-9 flex items-center gap-3 text-sm font-semibold text-[#354d49]">
+        <div class="mt-9 flex items-center gap-3 text-sm font-semibold text-[#354a4d]">
           <Icon name="lucide:clock-3" class="h-4 w-4" />
           Arrive 10 minutes early with your insurance card and photo ID
         </div>
@@ -27,15 +27,15 @@ import { liveAssets, formCategories } from "../../lib/data";
 
       <section class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
         <p class="eyebrow">Available forms</p>
-        <h2 class="display-face mt-4 max-w-xl text-4xl leading-[.98] tracking-[-.025em] text-[#082824] sm:text-5xl">What you'll need, by visit type.</h2>
+        <h2 class="display-face mt-4 max-w-xl text-4xl leading-[.98] tracking-[-.025em] text-[#283e3c] sm:text-5xl">What you'll need, by visit type.</h2>
         <div class="mt-12 grid gap-7 lg:grid-cols-3">
           {formCategories.map((category) => (
-            <article class="border-t-2 border-[#e2ca9f] bg-[#f3ecdd] p-7">
-              <h3 class="display-face text-2xl leading-none text-[#082824]">{category.name}</h3>
+            <article class="border-t-2 border-[#729f9a] bg-[#f0f5f4] p-7">
+              <h3 class="display-face text-2xl leading-none text-[#283e3c]">{category.name}</h3>
               <ul class="mt-5 grid gap-3">
                 {category.items.map((item) => (
-                  <li class="flex items-start gap-2 text-sm leading-6 text-[#55635f]">
-                    <Icon name="lucide:file-text" class="mt-0.5 h-4 w-4 flex-none text-[#7a6233]" />
+                  <li class="flex items-start gap-2 text-sm leading-6 text-[#4a5a58]">
+                    <Icon name="lucide:file-text" class="mt-0.5 h-4 w-4 flex-none text-[#3f6e69]" />
                     {item}
                   </li>
                 ))}
@@ -44,13 +44,13 @@ import { liveAssets, formCategories } from "../../lib/data";
           ))}
         </div>
 
-        <div class="mt-14 max-w-2xl border-t border-[#e2ca9f]/25 pt-10">
+        <div class="mt-14 max-w-2xl border-t border-[#729f9a]/25 pt-10">
           <p class="eyebrow">How to submit</p>
-          <h2 class="display-face mt-4 text-3xl leading-none text-[#082824] sm:text-4xl">Bring them in, or send them ahead.</h2>
-          <p class="mt-5 text-base leading-8 text-[#55635f]">Call the practice and our team will get the right forms to you — print and bring them to your visit, or submit beforehand by fax or email.</p>
-          <div class="mt-6 grid gap-2 text-sm text-[#55635f]">
-            <p><strong class="text-[#082824]">Fax:</strong> (520) 881-3759</p>
-            <p><strong class="text-[#082824]">Email:</strong> tucsonsmileteam@gmail.com</p>
+          <h2 class="display-face mt-4 text-3xl leading-none text-[#283e3c] sm:text-4xl">Bring them in, or send them ahead.</h2>
+          <p class="mt-5 text-base leading-8 text-[#4a5a58]">Call the practice and our team will get the right forms to you — print and bring them to your visit, or submit beforehand by fax or email.</p>
+          <div class="mt-6 grid gap-2 text-sm text-[#4a5a58]">
+            <p><strong class="text-[#283e3c]">Fax:</strong> (520) 881-3759</p>
+            <p><strong class="text-[#283e3c]">Email:</strong> tucsonsmileteam@gmail.com</p>
           </div>
           <a class="action-button dark mt-7" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Call (520) 523-4860</a>
         </div>
