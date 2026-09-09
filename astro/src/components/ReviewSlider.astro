@@ -51,6 +51,51 @@ import { testimonials } from "../lib/data";
         dots.forEach((dot, i) => dot.classList.toggle("is-active", i === index));
       }
 
+      // Swipe / drag: the track follows the finger, then snaps to the next review
+      // once the drag passes a fifth of the width (or is a quick flick), otherwise snaps back.
+      let dragStartX = 0;
+      let dragStartTime = 0;
+      let dragging = false;
+      let dragDelta = 0;
+
+      function onPointerDown(event: PointerEvent) {
+        if (event.pointerType === "mouse" && event.button !== 0) return;
+        dragging = true;
+        dragDelta = 0;
+        dragStartX = event.clientX;
+        dragStartTime = event.timeStamp;
+        track?.classList.add("is-dragging");
+        if (timer) clearInterval(timer);
+      }
+
+      function onPointerMove(event: PointerEvent) {
+        if (!dragging || !track) return;
+        dragDelta = event.clientX - dragStartX;
+        const atEdge = (index === 0 && dragDelta > 0) || (index === slides.length - 1 && dragDelta < 0);
+        const offset = atEdge ? dragDelta * 0.35 : dragDelta;
+        track.style.setProperty("transform", `translateX(calc(-${index * 100}% + ${offset}px))`);
+      }
+
+      function onPointerUp(event: PointerEvent) {
+        if (!dragging || !track) return;
+        dragging = false;
+        track.classList.remove("is-dragging");
+        const width = track.clientWidth || 1;
+        const elapsed = event.timeStamp - dragStartTime;
+        const flick = Math.abs(dragDelta) > 40 && elapsed < 300;
+        if (dragDelta < -width / 5 || (flick && dragDelta < 0)) show(index + 1);
+        else if (dragDelta > width / 5 || (flick && dragDelta > 0)) show(index - 1);
+        else show(index);
+        restart();
+      }
+
+      track.addEventListener("pointerdown", onPointerDown);
+      track.addEventListener("pointermove", onPointerMove);
+      track.addEventListener("pointerup", onPointerUp);
+      track.addEventListener("pointercancel", onPointerUp);
+      track.addEventListener("pointerleave", (event) => { if (dragging) onPointerUp(event); });
+      track.addEventListener("dragstart", (event) => event.preventDefault());
+
       function restart() {
         if (timer) clearInterval(timer);
         timer = setInterval(() => show(index + 1), 7000);
