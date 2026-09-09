@@ -1,0 +1,118 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import PracticeHeader from "../../components/PracticeHeader.astro";
+import PracticeFooter from "../../components/PracticeFooter.astro";
+import { posts, formatPostDate, type Post } from "../../lib/posts";
+
+export function getStaticPaths() {
+  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props as { post: Post };
+const headings = post.blocks.filter((block) => block.type === "h2") as Extract<Post["blocks"][number], { type: "h2" }>[];
+const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
+---
+
+<Layout title={`${post.title} | Dr. Brian Mitchell & Associates`}>
+  <div class="page-shell min-h-screen">
+    <PracticeHeader active="blogs" />
+    <main>
+      <section class="bg-[#f7efe5]">
+        <div class="mx-auto max-w-[1080px] px-5 py-14 sm:px-8 lg:py-20">
+          <a href="/blogs" class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.11em] text-[#27594e] no-underline"><Icon name="lucide:chevron-right" class="h-4 w-4 rotate-180" />Back to patient information</a>
+          <p class="eyebrow mt-12">{post.category} · Patient education</p>
+          <h1 class="display-face mt-5 max-w-4xl text-5xl leading-[.93] tracking-[-.035em] text-[#2b2930] sm:text-6xl lg:text-7xl">{post.title}</h1>
+          <div class="mt-8 flex flex-wrap items-center gap-4 text-xs font-bold text-[#6c857e]">
+            <span>By Dr. Brian Mitchell & Associates</span>
+            <span class="h-1 w-1 rounded-full bg-[#df8b64]"></span>
+            <span>{formatPostDate(post.date)}</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-[1080px] px-5 py-12 sm:px-8 lg:py-16">
+        <Image src={post.hero} alt={post.heroAlt} style={{ objectPosition: post.heroPosition ?? "center" }} class="aspect-[16/8] w-full object-cover" width={1080} loading="eager" />
+        <div class={`mx-auto mt-14 grid max-w-4xl gap-12 ${headings.length ? "lg:grid-cols-[190px_minmax(0,1fr)]" : ""}`}>
+          {headings.length > 0 && (
+            <aside class="lg:sticky lg:top-8 lg:self-start">
+              <p class="text-[.63rem] font-extrabold uppercase tracking-[.14em] text-[#9d4d2c]">In this article</p>
+              <div class="mt-4 grid gap-3 text-sm font-bold text-[#52736b]">
+                {headings.map((heading) => <a href={`#${heading.id}`} class="no-underline">{heading.text}</a>)}
+              </div>
+            </aside>
+          )}
+          <article class="article-copy">
+            {post.blocks.map((block, index) => {
+              if (block.type === "p") return <p class={index === 0 ? "lead" : ""}>{block.text}</p>;
+              if (block.type === "h2") return <h2 id={block.id}>{block.text}</h2>;
+              if (block.type === "list") return <ul class="my-6 grid gap-2 pl-5 text-base leading-7 text-[#596966]">{block.items.map((item) => <li class="list-disc">{item}</li>)}</ul>;
+              if (block.type === "terms") return (
+                <dl class="my-8 grid gap-5 border-l-2 border-[#77a49f]/40 pl-5">
+                  {block.items.map(([term, definition]) => (
+                    <div>
+                      <dt class="font-extrabold text-[#2b2930]">{term}</dt>
+                      <dd class="mt-1 text-base leading-7 text-[#596966]">{definition}</dd>
+                    </div>
+                  ))}
+                </dl>
+              );
+              if (block.type === "quote") return (
+                <figure class="my-10 border-l-2 border-[#df8b64] bg-[#f7efe5] px-6 py-6">
+                  <Icon name="lucide:quote" class="h-6 w-6 text-[#9d4d2c]" />
+                  <blockquote class="display-face mt-3 text-2xl leading-tight text-[#2b2930]">{block.text}</blockquote>
+                  {block.cite && <figcaption class="mt-4 text-xs font-extrabold uppercase tracking-[.12em] text-[#6c857e]">{block.cite}</figcaption>}
+                </figure>
+              );
+              return (
+                <figure class="my-10">
+                  <Image src={block.image} alt={block.alt} class="w-full" width={900} />
+                  {block.caption && <figcaption class="mt-3 text-xs leading-6 text-[#6c857e]">{block.caption}</figcaption>}
+                </figure>
+              );
+            })}
+
+            {post.sources && (
+              <div class="mt-12 border-t border-[#77a49f]/25 pt-6">
+                <p class="text-[.63rem] font-extrabold uppercase tracking-[.14em] text-[#9d4d2c]">Sources</p>
+                <ol class="mt-3 grid gap-2 pl-5 text-xs leading-6 text-[#6c857e]">
+                  {post.sources.map((source) => <li class="list-decimal break-all"><a href={source} rel="noreferrer" target="_blank" class="text-[#52736b] underline underline-offset-2">{source}</a></li>)}
+                </ol>
+              </div>
+            )}
+
+            <div class="mt-12 bg-[#2b2930] p-7 text-white sm:p-10">
+              <p class="eyebrow text-[#bde0da]">Have a question about this?</p>
+              <h3 class="display-face mt-3 text-4xl leading-none">Let's talk through the right next step.</h3>
+              <p class="mt-4 max-w-xl text-sm leading-7 text-[#d8e8e5]">A visit gives us the chance to understand your goals and review the options available to you.</p>
+              <a href="/contact-us" class="action-button primary mt-7">Request a consultation <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="bg-[#f7efe5]">
+        <div class="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 lg:px-12 lg:py-20">
+          <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p class="eyebrow">Keep reading</p>
+              <h2 class="display-face mt-3 text-3xl leading-none text-[#2b2930] sm:text-4xl">More from the practice.</h2>
+            </div>
+            <a href="/blogs" class="text-sm font-extrabold uppercase tracking-[.12em] text-[#27594e] no-underline">All articles <Icon name="lucide:arrow-right" class="ml-1 inline h-4 w-4" /></a>
+          </div>
+          <div class="mt-10 grid gap-7 md:grid-cols-3">
+            {morePosts.map((other) => (
+              <a href={`/blogs/${other.slug}`} class="group block no-underline">
+                <Image src={other.hero} alt={other.heroAlt} style={{ objectPosition: other.heroPosition ?? "center" }} class="aspect-[4/3] w-full object-cover" width={480} />
+                <p class="eyebrow mt-6">{other.category}</p>
+                <h3 class="display-face mt-3 text-2xl leading-tight text-[#2b2930]">{other.title}</h3>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+    <PracticeFooter />
+  </div>
+</Layout>

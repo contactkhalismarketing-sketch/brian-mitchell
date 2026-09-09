@@ -7,7 +7,7 @@ import { liveAssets } from "../lib/data";
 <footer class="bg-[#fffaf3]">
   <div class="mx-auto flex max-w-[1440px] flex-col justify-between gap-7 px-5 pt-10 sm:px-8 md:flex-row md:items-center lg:px-12">
     <Image src={liveAssets.logo} alt="Dr. Brian Mitchell & Associates" class="w-[210px]" width={410} />
-    <div class="text-xs leading-6 text-[#72827f]">
+    <div class="text-xs leading-6 text-[#4f625d]">
       <p>6383 E. Grant Road, Suite 155 · Tucson, AZ 85715</p>
       <p>Monday–Tuesday 8am–4pm · Wednesday–Friday 7am–4pm</p>
     </div>
@@ -19,6 +19,12 @@ import { liveAssets } from "../lib/data";
   <div class="mx-auto flex max-w-[1440px] flex-wrap gap-x-6 gap-y-2 px-5 py-6 sm:px-8 lg:px-12">
     <a href="/first-visit" class="text-[.68rem] font-extrabold uppercase tracking-[.1em] text-[#52736b] no-underline hover:text-[#27594e]">Your first visit</a>
     <a href="/financing" class="text-[.68rem] font-extrabold uppercase tracking-[.1em] text-[#52736b] no-underline hover:text-[#27594e]">Financing & insurance</a>
+  </div>
+  <div class="border-t border-[#77a49f]/20">
+    <div class="mx-auto flex max-w-[1440px] flex-col gap-2 px-5 py-5 text-xs leading-6 text-[#4f625d] sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
+      <p>&copy; {new Date().getFullYear()} Dr. Brian Mitchell & Associates. All rights reserved.</p>
+      <p>Website designed by <a href="https://khalismarketing.com.au" target="_blank" rel="noopener" class="font-bold text-[#27594e] underline underline-offset-2">Khalis Marketing</a></p>
+    </div>
   </div>
 </footer>
 <div class="fixed inset-x-0 bottom-0 z-40 flex items-center gap-3 bg-[#fffaf3]/95 px-4 py-3 shadow-[0_-6px_30px_rgba(26,29,30,.13)] backdrop-blur md:hidden">

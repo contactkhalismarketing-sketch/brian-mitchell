@@ -148,16 +148,16 @@ const heroPoster = await getImage({ src: liveAssets.office, width: 1280, format:
           </div>
           <div class="featured-service-grid mt-12">
             {featuredServices.map((service) => (
-              <a class="homepage-service-card group block no-underline" href={service.href}>
-                <Image src={service.image} alt="" class="absolute inset-0 h-full w-full object-cover object-center" width={640} />
-                <div class="absolute inset-0 bg-gradient-to-t from-[#2b2930]/90 via-[#2b2930]/12 to-transparent"></div>
-                <div class="absolute right-4 top-4 h-11 w-11 rounded-full border border-[#df8b64]/80" aria-hidden="true"></div>
-                <div class="relative flex min-h-[330px] flex-col justify-end p-6 text-white">
-                  <p class="text-[.62rem] font-extrabold uppercase tracking-[.15em] text-[#d7e9e6]">{service.number} · Care tailored to you</p>
+              <a class="service-card group block no-underline" href={service.href}>
+                <div class="service-card__media">
+                  <Image src={service.image} alt="" width={640} />
+                </div>
+                <div class="service-card__body">
+                  <p class="text-[.62rem] font-extrabold uppercase tracking-[.15em] text-[#9d4d2c]">{service.number} · Care tailored to you</p>
                   <div class="mt-3 flex items-end justify-between gap-3">
                     <div>
-                      <h3 class="display-face text-3xl leading-none">{service.name}</h3>
-                      <p class="mt-3 max-w-[245px] text-sm leading-6 text-white/85">{service.copy}</p>
+                      <h3 class="display-face text-3xl leading-none text-[#2b2930]">{service.name}</h3>
+                      <p class="mt-3 max-w-[245px] text-sm leading-6 text-[#596966]">{service.copy}</p>
                     </div>
                     <span class="service-arrow flex-none"><Icon name="lucide:arrow-right" class="h-4 w-4" /></span>
                   </div>
@@ -244,10 +244,16 @@ const heroPoster = await getImage({ src: liveAssets.office, width: 1280, format:
     <footer class="bg-[#fffaf3]">
       <div class="mx-auto flex max-w-[1440px] flex-col justify-between gap-7 px-5 py-10 sm:px-8 md:flex-row md:items-center lg:px-12">
         <Image src={liveAssets.logo} alt="Dr. Brian Mitchell & Associates" class="w-[210px]" width={410} />
-        <p class="max-w-md text-[.62rem] leading-5 text-[#72827f]">Dentistry · Dental Implants · Orthodontics · 6383 E. Grant Road, Suite 155, Tucson, AZ 85715</p>
+        <p class="max-w-md text-xs leading-5 text-[#4f625d]">Dentistry · Dental Implants · Orthodontics · 6383 E. Grant Road, Suite 155, Tucson, AZ 85715</p>
         <div class="flex items-center gap-3 border-l-2 border-[#bb6846] pl-3">
           <Image src={liveAssets.bioclear} alt="Dr. Brian Mitchell BioClear Certified" class="h-16 w-16 object-contain" width={128} />
           <p class="max-w-[155px] text-[0.64rem] font-extrabold uppercase leading-4 tracking-[0.11em] text-[#27594e]">Dr. Brian Mitchell<br />BioClear Certified</p>
+        </div>
+      </div>
+      <div class="border-t border-[#77a49f]/20">
+        <div class="mx-auto flex max-w-[1440px] flex-col gap-2 px-5 py-5 text-xs leading-6 text-[#4f625d] sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
+          <p>&copy; {new Date().getFullYear()} Dr. Brian Mitchell & Associates. All rights reserved.</p>
+          <p>Website designed by <a href="https://khalismarketing.com.au" target="_blank" rel="noopener" class="font-bold text-[#27594e] underline underline-offset-2">Khalis Marketing</a></p>
         </div>
       </div>
     </footer>

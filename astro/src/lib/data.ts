@@ -335,8 +335,3 @@ export const cosmeticOptions = [
   ["Bioclear", "A conservative aesthetic option designed to preserve your natural tooth structure."],
 ] as const;
 
-export const articles = [
-  ["The Importance of Soft Tissue in Successful Dental Implant Surgery", "Dental Implants", "A closer look at the tissue that supports aesthetics, stability, and long-term implant success.", liveAssets.blogSoftTissue],
-  ["Soft Tissue Management", "Dental Implants", "How careful planning supports the natural form and function around a restored tooth.", liveAssets.blogImplant],
-  ["Dr. Mitchell and Associates' High-tech Method", "Technology", "Why 3D X-ray technology is a valuable part of a precise implant-planning process.", liveAssets.brianAbout],
-] as const;

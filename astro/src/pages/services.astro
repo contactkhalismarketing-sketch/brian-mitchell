@@ -38,16 +38,16 @@ import { serviceHeroes, serviceList } from "../lib/data";
         </div>
         <div class="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {serviceList.map(([name, copy, image, href], index) => (
-            <a href={href} class="service-card group block min-h-[390px] no-underline">
-              <Image src={image} alt="" class="absolute inset-0 h-full w-full object-cover" width={640} />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#2b2930]/90 via-[#2b2930]/10 to-transparent"></div>
-              <div class="absolute right-4 top-4 h-11 w-11 rounded-full border border-[#df8b64]/80" aria-hidden="true"></div>
-              <div class="relative flex min-h-[390px] flex-col justify-end p-6 text-white">
-                <p class="text-[.62rem] font-extrabold uppercase tracking-[.15em] text-[#d7e9e6]">0{index + 1} · Explore care</p>
+            <a href={href} class="service-card group block no-underline">
+              <div class="service-card__media">
+                <Image src={image} alt="" width={640} />
+              </div>
+              <div class="service-card__body">
+                <p class="text-[.62rem] font-extrabold uppercase tracking-[.15em] text-[#9d4d2c]">0{index + 1} · Explore care</p>
                 <div class="mt-3 flex items-end justify-between gap-3">
                   <div>
-                    <h3 class="display-face text-3xl leading-none">{name}</h3>
-                    <p class="mt-3 max-w-[240px] text-sm leading-6 text-white/85">{copy}</p>
+                    <h3 class="display-face text-3xl leading-none text-[#2b2930]">{name}</h3>
+                    <p class="mt-3 max-w-[240px] text-sm leading-6 text-[#596966]">{copy}</p>
                   </div>
                   <span class="service-arrow flex-none"><Icon name="lucide:arrow-right" class="h-4 w-4" /></span>
                 </div>

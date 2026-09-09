@@ -6,7 +6,10 @@ import PracticeHeader from "../../components/PracticeHeader.astro";
 import PracticeFooter from "../../components/PracticeFooter.astro";
 import PageHero from "../../components/PageHero.astro";
 import ContactBand from "../../components/ContactBand.astro";
-import { liveAssets, articles } from "../../lib/data";
+import { liveAssets } from "../../lib/data";
+import { posts, formatPostDate } from "../../lib/posts";
+
+const [featured, ...rest] = posts;
 ---
 
 <Layout title="Patient Information | Dr. Brian Mitchell & Associates">
@@ -16,32 +19,39 @@ import { liveAssets, articles } from "../../lib/data";
       <PageHero
         eyebrow="Patient information"
         title="A closer look at your care."
-        body="Clear information can make a dental decision feel easier. Explore the latest clinical insight, treatment context, and patient education from Dr. Brian Mitchell & Associates."
+        body="Clear information can make a dental decision feel easier. Explore clinical insight, treatment context, and patient education from Dr. Brian Mitchell & Associates."
         image={liveAssets.blogSoftTissue}
       >
-        <div class="mt-9 flex gap-3">
+        <div class="mt-9 flex flex-wrap gap-3">
           <span class="stamp">Dental implants</span>
-          <span class="stamp">Patient education</span>
+          <span class="stamp">Orthodontics</span>
+          <span class="stamp">Restorative dentistry</span>
         </div>
       </PageHero>
       <section class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
         <div class="grid gap-8 border-b border-[#77a49f]/25 pb-12 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
-          <Image src={liveAssets.blogSoftTissue} alt="Soft tissue management illustration" class="aspect-[16/9] w-full object-cover" width={800} />
+          <a href={`/blogs/${featured.slug}`} class="block">
+            <Image src={featured.hero} alt={featured.heroAlt} style={{ objectPosition: featured.heroPosition ?? "center" }} class="aspect-[16/9] w-full object-cover" width={800} loading="eager" />
+          </a>
           <article>
-            <p class="eyebrow">Featured article · Dental implants</p>
-            <h2 class="display-face mt-4 text-4xl leading-[.98] tracking-[-.025em] text-[#2b2930] sm:text-5xl">The Importance of Soft Tissue in Successful Dental Implant Surgery</h2>
-            <p class="mt-5 text-sm leading-7 text-[#596966]">Soft tissue management plays a critical role in the stability, aesthetics, and long-term success of dental implants. Learn how careful planning supports a natural result.</p>
-            <a href="/blogs/soft-tissue-management" class="action-button dark mt-7">Read the article <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+            <p class="eyebrow">Featured article · {featured.category}</p>
+            <h2 class="display-face mt-4 text-4xl leading-[.98] tracking-[-.025em] text-[#2b2930] sm:text-5xl">{featured.title}</h2>
+            <p class="mt-5 text-sm leading-7 text-[#596966]">{featured.excerpt}</p>
+            <p class="mt-4 text-xs font-bold text-[#6c857e]">{formatPostDate(featured.date)}</p>
+            <a href={`/blogs/${featured.slug}`} class="action-button dark mt-7">Read the article <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
           </article>
         </div>
-        <div class="mt-14 grid gap-7 md:grid-cols-3">
-          {articles.slice(1).map(([title, category, copy, image]) => (
+        <div class="mt-14 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+          {rest.map((post) => (
             <article>
-              <Image src={image} alt="" class="aspect-[4/3] w-full object-cover" width={480} />
-              <p class="eyebrow mt-6">{category}</p>
-              <h3 class="display-face mt-3 text-3xl leading-none text-[#2b2930]">{title}</h3>
-              <p class="mt-4 text-sm leading-7 text-[#596966]">{copy}</p>
-              <a href="/blogs/soft-tissue-management" class="mt-5 inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.11em] text-[#27594e] no-underline">Read more <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+              <a href={`/blogs/${post.slug}`} class="block">
+                <Image src={post.hero} alt={post.heroAlt} style={{ objectPosition: post.heroPosition ?? "center" }} class="aspect-[4/3] w-full object-cover" width={480} />
+              </a>
+              <p class="eyebrow mt-6">{post.category}</p>
+              <h3 class="display-face mt-3 text-3xl leading-none text-[#2b2930]"><a href={`/blogs/${post.slug}`} class="no-underline">{post.title}</a></h3>
+              <p class="mt-4 text-sm leading-7 text-[#596966]">{post.excerpt}</p>
+              <p class="mt-3 text-xs font-bold text-[#6c857e]">{formatPostDate(post.date)}</p>
+              <a href={`/blogs/${post.slug}`} class="mt-5 inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.11em] text-[#27594e] no-underline">Read more <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
             </article>
           ))}
         </div>
