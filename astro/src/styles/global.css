@@ -172,10 +172,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .service-next-step { background: #27594e; padding: 1.75rem; position: relative; }
 .service-next-step::before { border: 1px solid rgba(246,195,169,.55); border-bottom: 0; border-radius: 999px 999px 0 0; content: ""; height: 170px; position: absolute; right: -32px; top: -104px; width: 300px; }
 .service-next-step > * { position: relative; z-index: 1; }
-.service-option-grid { display: grid; gap: 1px; background: rgba(39,89,78,.18); border: 1px solid rgba(39,89,78,.18); }
-/* These grids draw their dividers with a 1px gap over a sage background, so an odd trailing card must stretch across the row or the empty cell shows through. */
-.service-option-grid .service-option:last-child:nth-child(odd) { grid-column: 1 / -1; }
-.service-option { align-items: start; background: #fffaf3; display: grid; gap: 1rem; grid-template-columns: auto minmax(0,1fr) auto; padding: 1.4rem; position: relative; transition: background 180ms cubic-bezier(.23,1,.32,1); }
+/* Dividers are drawn by each card's outline into the 1px gap, so an empty trailing cell is just page background. */
+.service-option-grid { display: grid; gap: 1px; padding: 1px; }
+.service-option { align-items: start; background: #fffaf3; display: grid; gap: 1rem; grid-template-columns: auto minmax(0,1fr) auto; outline: 1px solid rgba(39,89,78,.18); padding: 1.4rem; position: relative; transition: background 180ms cubic-bezier(.23,1,.32,1); }
 .service-option:hover { background: #edf4f1; }
 .service-option__number { color: #9d4d2c; font-size: .65rem; font-weight: 800; letter-spacing: .12em; padding-top: .22rem; }
 .service-option__check { color: #27594e; margin-top: .22rem; }
@@ -252,8 +251,8 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .compact-services-stage__heading { align-items: end; display: flex; flex-direction: column; gap: 1.25rem; justify-content: space-between; }
 .compact-services-stage__heading > div { align-self: flex-start; }
 .compact-services-stage__heading > p { color: #596966; font-size: .86rem; line-height: 1.7; max-width: 31rem; }
-.compact-service-grid { background: rgba(39,89,78,.2); border-bottom: 1px solid rgba(39,89,78,.2); border-top: 1px solid rgba(39,89,78,.2); display: grid; gap: 1px; margin-top: 2rem; }
-.compact-service-card { align-items: center; background: #fffaf3; color: #2b2930; display: grid; gap: .9rem; grid-template-columns: auto minmax(0,1fr) auto; min-height: 108px; padding: 1.25rem; text-decoration: none; transition: background 180ms cubic-bezier(.23,1,.32,1), box-shadow 180ms cubic-bezier(.23,1,.32,1), transform 180ms cubic-bezier(.23,1,.32,1); }
+.compact-service-grid { display: grid; gap: 1px; margin-top: 2rem; padding: 1px 0; }
+.compact-service-card { align-items: center; background: #fffaf3; color: #2b2930; display: grid; gap: .9rem; grid-template-columns: auto minmax(0,1fr) auto; min-height: 108px; outline: 1px solid rgba(39,89,78,.2); padding: 1.25rem; text-decoration: none; transition: background 180ms cubic-bezier(.23,1,.32,1), box-shadow 180ms cubic-bezier(.23,1,.32,1), transform 180ms cubic-bezier(.23,1,.32,1); }
 .compact-service-card:hover { background: #edf4f1; box-shadow: inset 4px 0 #bb6846; transform: translateX(3px); }
 .compact-service-card:focus-visible { outline: 3px solid rgba(187,104,70,.45); outline-offset: -3px; }
 .compact-service-card__number { align-self: start; color: #9d4d2c; font-size: .63rem; font-weight: 800; letter-spacing: .12em; padding-top: .2rem; }
@@ -306,6 +305,6 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .article-next-step { background: #2b2930; margin-top: 3.2rem; overflow: hidden; padding: 2rem; position: relative; color: #fff; }
 .article-next-step__portal { border-color: rgba(246,195,169,.54); bottom: -112px; height: 235px; right: -82px; width: 395px; }
 
-@media (min-width: 640px) { .featured-service-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } .compact-services-stage__heading { flex-direction: row; } .compact-service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .compact-service-card { min-height: 126px; padding: 1.35rem; } .compact-service-card:last-child:nth-child(odd) { grid-column: 1 / -1; } }
-@media (min-width: 1024px) { .compact-service-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } .compact-service-card { min-height: 144px; padding: 1.45rem; } .compact-service-card:last-child:nth-child(odd) { grid-column: auto; } .compact-service-card:last-child:nth-child(3n+1) { grid-column: 1 / -1; } .compact-service-card:last-child:nth-child(3n+2) { grid-column: span 2; } }
+@media (min-width: 640px) { .featured-service-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } .compact-services-stage__heading { flex-direction: row; } .compact-service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .compact-service-card { min-height: 126px; padding: 1.35rem; } }
+@media (min-width: 1024px) { .compact-service-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } .compact-service-card { min-height: 144px; padding: 1.45rem; } }
 @media (max-width: 639px) { .hero-media-label { display: none; } .about-practice-video__tag { display: none; } .homepage-hero__copy-panel h1 { font-size: clamp(3.25rem, 15vw, 4.4rem); } .compact-services-stage { margin-top: 2.7rem; } .doctor-feature__content .action-button { margin-top: 2.3rem; } .article-copy { font-size: 1rem; line-height: 1.76; } .article-copy h2 { margin-top: 2.65rem; } .article-hero__portal { height: 250px; right: -190px; top: -105px; width: 480px; } .article-image-frame__label { bottom: .75rem; font-size: .52rem; left: .75rem; padding: .55rem .65rem; } .article-toc { border-left: 0; border-top: 2px solid #bb6846; padding: 1.15rem; } .article-toc > div { grid-template-columns: repeat(3,minmax(0,1fr)); gap: .4rem; } .article-toc a { align-items: start; font-size: .72rem; gap: .4rem; grid-template-columns: 1fr; padding: .35rem 0; } .article-pullquote { margin: 2.2rem 0; padding: 1.25rem; } .article-pullquote p { font-size: 1.4rem; } .article-next-step { margin-top: 2.6rem; padding: 1.6rem; } }
