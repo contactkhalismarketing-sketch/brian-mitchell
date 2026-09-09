@@ -173,6 +173,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .service-next-step::before { border: 1px solid rgba(246,195,169,.55); border-bottom: 0; border-radius: 999px 999px 0 0; content: ""; height: 170px; position: absolute; right: -32px; top: -104px; width: 300px; }
 .service-next-step > * { position: relative; z-index: 1; }
 .service-option-grid { display: grid; gap: 1px; background: rgba(39,89,78,.18); border: 1px solid rgba(39,89,78,.18); }
+/* These grids draw their dividers with a 1px gap over a sage background, so an odd trailing card must stretch across the row or the empty cell shows through. */
+.service-option-grid .service-option:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .service-option { align-items: start; background: #fffaf3; display: grid; gap: 1rem; grid-template-columns: auto minmax(0,1fr) auto; padding: 1.4rem; position: relative; transition: background 180ms cubic-bezier(.23,1,.32,1); }
 .service-option:hover { background: #edf4f1; }
 .service-option__number { color: #9d4d2c; font-size: .65rem; font-weight: 800; letter-spacing: .12em; padding-top: .22rem; }
@@ -277,9 +279,10 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 @media (min-width: 640px) { .doctor-feature__content .action-button { align-self: flex-start; margin-top: auto; } }
 
 /* Article reading system — editorial type scale and a quiet, numbered in-page navigator. */
-.article-copy { color: #40514d; font-size: 1.05rem; line-height: 1.82; }
-.article-copy .lead { color: #2b2930; font-family: var(--font-display); font-size: clamp(1.5rem,2.2vw,2rem); line-height: 1.32; margin: 0 0 2.1rem; }
-.article-copy p + p { margin-top: 1.35rem; }
+.article-copy { color: #40514d; font-size: 1.075rem; line-height: 1.8; }
+.article-copy .lead { color: #2b2930; font-size: 1.25rem; font-weight: 500; line-height: 1.65; margin: 0 0 1.75rem; }
+.article-copy p + p, .article-copy figure + p, .article-copy dl + p { margin-top: 1.35rem; }
+.article-copy blockquote { font-family: var(--font-display); font-size: 1.3rem; line-height: 1.45; }
 .article-copy h2 { color: #2b2930; font-family: var(--font-display); font-size: clamp(2rem,3vw,2.7rem); letter-spacing: -.025em; line-height: .98; margin-top: 3.4rem; scroll-margin-top: 2rem; }
 .article-copy h2 + p { margin-top: 1.25rem; }
 .article-copy img { border: 1px solid rgba(39,89,78,.15); }
@@ -303,6 +306,6 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .article-next-step { background: #2b2930; margin-top: 3.2rem; overflow: hidden; padding: 2rem; position: relative; color: #fff; }
 .article-next-step__portal { border-color: rgba(246,195,169,.54); bottom: -112px; height: 235px; right: -82px; width: 395px; }
 
-@media (min-width: 640px) { .featured-service-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } .compact-services-stage__heading { flex-direction: row; } .compact-service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .compact-service-card { min-height: 126px; padding: 1.35rem; } }
-@media (min-width: 1024px) { .compact-service-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } .compact-service-card { min-height: 144px; padding: 1.45rem; } }
+@media (min-width: 640px) { .featured-service-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } .compact-services-stage__heading { flex-direction: row; } .compact-service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .compact-service-card { min-height: 126px; padding: 1.35rem; } .compact-service-card:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+@media (min-width: 1024px) { .compact-service-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } .compact-service-card { min-height: 144px; padding: 1.45rem; } .compact-service-card:last-child:nth-child(odd) { grid-column: auto; } .compact-service-card:last-child:nth-child(3n+1) { grid-column: 1 / -1; } .compact-service-card:last-child:nth-child(3n+2) { grid-column: span 2; } }
 @media (max-width: 639px) { .hero-media-label { display: none; } .about-practice-video__tag { display: none; } .homepage-hero__copy-panel h1 { font-size: clamp(3.25rem, 15vw, 4.4rem); } .compact-services-stage { margin-top: 2.7rem; } .doctor-feature__content .action-button { margin-top: 2.3rem; } .article-copy { font-size: 1rem; line-height: 1.76; } .article-copy h2 { margin-top: 2.65rem; } .article-hero__portal { height: 250px; right: -190px; top: -105px; width: 480px; } .article-image-frame__label { bottom: .75rem; font-size: .52rem; left: .75rem; padding: .55rem .65rem; } .article-toc { border-left: 0; border-top: 2px solid #bb6846; padding: 1.15rem; } .article-toc > div { grid-template-columns: repeat(3,minmax(0,1fr)); gap: .4rem; } .article-toc a { align-items: start; font-size: .72rem; gap: .4rem; grid-template-columns: 1fr; padding: .35rem 0; } .article-pullquote { margin: 2.2rem 0; padding: 1.25rem; } .article-pullquote p { font-size: 1.4rem; } .article-next-step { margin-top: 2.6rem; padding: 1.6rem; } }

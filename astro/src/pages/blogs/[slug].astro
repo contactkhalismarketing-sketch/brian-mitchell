@@ -61,7 +61,7 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
               if (block.type === "quote") return (
                 <figure class="my-10 border-l-2 border-[#df8b64] bg-[#f7efe5] px-6 py-6">
                   <Icon name="lucide:quote" class="h-6 w-6 text-[#9d4d2c]" />
-                  <blockquote class="display-face mt-3 text-2xl leading-tight text-[#2b2930]">{block.text}</blockquote>
+                  <blockquote class="mt-3 text-[#2b2930]">{block.text}</blockquote>
                   {block.cite && <figcaption class="mt-4 text-xs font-extrabold uppercase tracking-[.12em] text-[#6c857e]">{block.cite}</figcaption>}
                 </figure>
               );
