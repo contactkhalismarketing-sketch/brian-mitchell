@@ -246,6 +246,7 @@ const heroPoster = await getImage({ src: liveAssets.office, width: 1440, widths:
   const startHeroVideo = () => {
     if (!heroVideo || heroVideo.src) return;
     heroVideo.src = heroVideo.dataset.src ?? "";
+    heroVideo.addEventListener("playing", () => { document.querySelector<HTMLImageElement>("img.video-fallback")?.setAttribute("hidden", ""); }, { once: true });
     heroVideo.play().catch(() => {});
   };
   if (document.readyState === "complete") setTimeout(startHeroVideo, 400);
