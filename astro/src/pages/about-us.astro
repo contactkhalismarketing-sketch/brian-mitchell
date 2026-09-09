@@ -71,7 +71,12 @@ import { liveAssets, team } from "../lib/data";
             </div>
             <p class="max-w-md text-sm leading-7 text-[#596966]">The same welcoming team supports every step—from your first call through treatment and ongoing care.</p>
           </div>
-          <div class="team-grid mt-12">
+          <figure class="relative mx-auto mt-12 max-w-[1100px]">
+            <div class="absolute -left-3 -top-3 hidden h-full w-full border border-[#d77c55]/55 sm:block" aria-hidden="true"></div>
+            <Image src={liveAssets.team} alt="The Dr. Brian Mitchell & Associates team outside the practice at 6383 E. Grant Road" class="relative w-full" width={1100} loading="lazy" />
+            <figcaption class="hero-media-label">The whole team · Tucson, Arizona</figcaption>
+          </figure>
+          <div class="team-grid mt-14">
             {team.map((member, index) => (
               <article class={`team-card team-card-${index + 1}`}>
                 <Image src={member.image} alt={member.name} width={320} />
