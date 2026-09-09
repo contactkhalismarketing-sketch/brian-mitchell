@@ -1,0 +1,115 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import PracticeHeader from "../components/PracticeHeader.astro";
+import PracticeFooter from "../components/PracticeFooter.astro";
+import PageHero from "../components/PageHero.astro";
+import ContactBand from "../components/ContactBand.astro";
+import { liveAssets } from "../lib/data";
+
+// Offers and the patient quote are taken from the live page
+// (brianmitchelldds.com/new-patient-specials/). Do not invent offers or reviews.
+const specials = [
+  {
+    eyebrow: "Comprehensive",
+    name: "Invisalign® treatment",
+    price: "Free consultation",
+    detail: "Transform your smile with Tucson's premier Invisalign provider, Dr. Brian Mitchell. Schedule your free consultation for expert clear aligner treatment.",
+    note: null,
+    cta: { label: "Call for a consultation", href: "tel:5205234860", icon: "lucide:phone" },
+  },
+  {
+    eyebrow: "Dental implant*",
+    name: "Including final crown",
+    price: "$3,500",
+    detail: "A complete single-tooth implant, from placement through to the finished crown, at one clear price.",
+    note: "*Does not include bone or soft tissue grafting if necessary.",
+    cta: { label: "Book a consultation", href: "/contact/", icon: "lucide:calendar-days" },
+  },
+  {
+    eyebrow: "In-house",
+    name: "Dental savings plan",
+    price: "$650 per year",
+    detail: "Our membership plan for patients without insurance. Find out more about this and other payment options.",
+    note: null,
+    cta: { label: "Call for more information", href: "tel:5205234860", icon: "lucide:phone" },
+  },
+];
+
+const highlights = [
+  "50 years of combined experience",
+  "Cosmetic dentistry",
+  "Extractions and root canals",
+  "Preventative dentistry",
+  "Orthodontics",
+  "Most insurances accepted",
+  "CareCredit® financing offered",
+];
+---
+
+<Layout title="New Patient Specials | Dr. Brian Mitchell & Associates" description="New patient specials at Dr. Brian Mitchell & Associates in Tucson: free Invisalign consultation, $3,500 dental implant including final crown, and a $650 per year in-house dental savings plan.">
+  <div class="page-shell min-h-screen">
+    <PracticeHeader active="patient-info" />
+    <main>
+      <PageHero
+        eyebrow="New patient specials"
+        title="A perfect smile is right around the corner."
+        body="Three offers for new patients: a free Invisalign consultation, a complete dental implant at one clear price, and an in-house savings plan for anyone without insurance."
+        image={liveAssets.office}
+        imagePosition="50% 45%"
+      />
+
+      <section class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <div class="max-w-2xl">
+          <p class="eyebrow">Current offers</p>
+          <h2 class="display-face mt-4 text-3xl leading-none text-[#2b2930] sm:text-4xl">Simple, upfront pricing to get you started.</h2>
+        </div>
+        <div class="mt-12 grid gap-7 lg:grid-cols-3">
+          {specials.map((special) => (
+            <article class="flex flex-col border-t-2 border-[#bb6846] bg-[#f7efe5] p-7">
+              <p class="eyebrow">{special.eyebrow}</p>
+              <h3 class="display-face mt-3 text-2xl leading-none text-[#2b2930]">{special.name}</h3>
+              <p class="display-face mt-6 text-5xl leading-none text-[#27594e]">{special.price}</p>
+              <p class="mt-5 text-sm leading-7 text-[#596966]">{special.detail}</p>
+              {special.note && <p class="mt-3 text-xs leading-6 text-[#596966]">{special.note}</p>}
+              <div class="mt-auto pt-6"><a class="action-button dark" href={special.cta.href}><Icon name={special.cta.icon} class="h-4 w-4" />{special.cta.label}</a></div>
+            </article>
+          ))}
+        </div>
+        <p class="mt-8 text-sm leading-7 text-[#596966]">Offers are for new patients and may change. Call the practice to confirm current pricing and to find out about other payment options.</p>
+      </section>
+
+      <section class="relative overflow-hidden bg-[#e9f1ed]">
+        <div class="mx-auto grid max-w-[1440px] gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:px-12 lg:py-28">
+          <figure class="relative">
+            <div class="absolute -left-3 -top-3 h-full w-full border border-[#bb6846]/60" aria-hidden="true"></div>
+            <Image src={liveAssets.brian} alt="Dr. Brian Mitchell" class="relative aspect-[4/5] w-full object-cover object-top" width={880} />
+            <figcaption class="hero-media-label">Dr. Brian Mitchell</figcaption>
+          </figure>
+          <div>
+            <p class="eyebrow">Have a lifetime of smiles</p>
+            <h2 class="display-face mt-4 text-4xl leading-none text-[#2b2930] sm:text-5xl">With healthy teeth &amp; gums.</h2>
+            <blockquote class="mt-8 border-l-2 border-[#bb6846] pl-6">
+              <p class="display-face text-xl leading-snug text-[#2b2930] sm:text-2xl">"This is a spectacular dental office! If you are looking for a new dentist, I cannot recommend this place enough. Everyone on their staff is friendly, accommodating, and knowledgeable. The office is clean and inviting, and I genuinely look forward to my visits. I wouldn't go anywhere else for my dental needs, and I highly suggest you check them out! Dr. Mitchell and his staff are superb!"</p>
+              <footer class="mt-4 text-sm font-bold text-[#52736b]">— Autumn S.</footer>
+            </blockquote>
+            <ul class="mt-10 grid gap-3 sm:grid-cols-2">
+              {highlights.map((item) => (
+                <li class="flex items-start gap-3 text-sm leading-6 text-[#2b2930]"><Icon name="lucide:check" class="mt-1 h-4 w-4 flex-none text-[#27594e]" />{item}</li>
+              ))}
+            </ul>
+            <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+              <a class="action-button primary" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Call (520) 523-4860</a>
+              <a class="action-button outline" href="mailto:tucsonsmileteam@gmail.com"><Icon name="lucide:mail" class="h-4 w-4" />Email the practice</a>
+            </div>
+            <p class="mt-6 text-sm leading-7 text-[#596966]">6383 E. Grant Road, Suite 155, Tucson, AZ 85715</p>
+          </div>
+        </div>
+      </section>
+
+      <ContactBand title="Ready to claim a new patient special?" />
+    </main>
+    <PracticeFooter />
+  </div>
+</Layout>

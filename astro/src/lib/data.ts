@@ -115,12 +115,13 @@ export const servicesMenu = [
 ];
 
 // Matches the live site's "Patient Info" dropdown structure
-// (brianmitchelldds.com): First Time Visit, Financial, Forms, FAQ.
+// (brianmitchelldds.com): First Time Visit, Financial, Forms, FAQ, plus the New Patient Specials page.
 export const patientInfoMenu = [
   { label: "First Time Visit", href: "/first-visit/" },
   { label: "Financial", href: "/patient-info/financial/" },
   { label: "Forms", href: "/patient-info/forms/" },
   { label: "FAQ", href: "/patient-info/faq/" },
+  { label: "New Patient Specials", href: "/new-patient-specials/" },
 ];
 
 // Sourced from the live Forms page (brianmitchelldds.com/forms/).

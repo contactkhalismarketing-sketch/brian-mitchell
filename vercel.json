@@ -75,16 +75,6 @@
       "statusCode": 301
     },
     {
-      "source": "/new-patient-specials",
-      "destination": "/patient-info/financial/",
-      "statusCode": 301
-    },
-    {
-      "source": "/new-patient-specials/",
-      "destination": "/patient-info/financial/",
-      "statusCode": 301
-    },
-    {
       "source": "/bioclear-a-revolutionry-approach-to-dental-restoration",
       "destination": "/service/bioclear/",
       "statusCode": 301
