@@ -73,7 +73,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .nav-link { color: #202424; font-size: .68rem; font-weight: 800; letter-spacing: .085em; position: relative; text-decoration: none; text-transform: uppercase; }
 .nav-link::after { background: #5f8f8a; bottom: -8px; content: ""; height: 2px; left: 0; position: absolute; transform: scaleX(0); transform-origin: right; transition: transform 180ms cubic-bezier(.23,1,.32,1); width: 100%; }
-.nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
+@media (hover: hover) { .nav-link:hover::after { transform: scaleX(1); transform-origin: left; } }
+/* Mobile accordion rows never show the desktop underline; on touch devices a tap leaves :hover stuck and the line drew across the first item. */
+.mobile-nav__summary::after, .mobile-nav__link::after { display: none; }
 .patient-info-menu { align-items: center; display: inline-flex; }
 /* Mobile nav: Services and Patient info collapse behind native <details>, closed until tapped. */
 .mobile-nav__group, .mobile-nav__link { border-bottom: 1px solid rgba(114,159,154,.18); }
