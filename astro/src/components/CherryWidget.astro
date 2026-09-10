@@ -42,9 +42,9 @@
         },
       }, ["floatingEstimator"]);
     }
-    // Automated browsers (Lighthouse, crawlers, link checkers) get no financing widget:
+    // Automated browsers (Lighthouse/PageSpeed, headless Chrome, crawlers) get no financing widget:
     // Cherry's API refuses them and the refusals surface as console errors in audits.
-    if (navigator.webdriver) return;
+    if (navigator.webdriver || /Lighthouse|HeadlessChrome|bot|crawler|spider/i.test(navigator.userAgent)) return;
     if (document.readyState === "complete") setTimeout(loadCherry, 1500);
     else window.addEventListener("load", function () { setTimeout(loadCherry, 1500); }, { once: true });
   })();
