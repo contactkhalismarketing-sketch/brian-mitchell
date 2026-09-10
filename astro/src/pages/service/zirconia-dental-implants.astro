@@ -43,23 +43,16 @@ const process = [
 // The section renders only once cases have been supplied.
 const cases: { title: string; summary: string; stages: { label: string; image: ImageMetadata; alt: string }[] }[] = [];
 
-const faqs = [
-  ["Is a zirconia implant as strong as titanium?", "Modern zirconia implants are engineered for the forces of chewing and have a growing body of clinical evidence behind them. Titanium still has the longer track record and the widest range of designs. Dr. Mitchell will tell you honestly which material he recommends for your case and why."],
-  ["Will I be able to see the implant?", "No. The implant sits in the bone beneath the gum. Zirconia's advantage is that if gum tissue is thin or recedes, a white ceramic implant stays invisible where a titanium one can show as a grey shadow."],
-  ["Which implant system does Dr. Mitchell use?", "Dr. Mitchell places SDS zirconia implants, a Swiss ceramic implant system designed specifically for metal-free treatment."],
-  ["Can a zirconia implant be placed on the same day as an extraction?", "In selected cases, yes. Immediate placement depends on the condition of the bone and tissue at the site, which is assessed on your 3D imaging before any decision is made."],
-  ["How much does a zirconia implant cost?", "Fees depend on the case, including whether bone or soft-tissue grafting is needed. You will receive a clear, written estimate before treatment, and financing options are available."],
-] as const;
 ---
 
-<Layout title="Zirconia Dental Implants in Tucson | Dr. Brian Mitchell & Associates" description="Metal-free zirconia dental implants in Tucson from Dr. Brian Mitchell, using SDS ceramic implants with 3D imaging and computer-guided placement. A balanced look at zirconia versus titanium.">
+<Layout title="Zirconia Dental Implants | Dr. Brian Mitchell & Associates">
   <div class="page-shell min-h-screen">
     <PracticeHeader active="services" />
     <main>
       <PageHero
         eyebrow="Zirconia Dental Implants"
-        title="Zirconia dental implants in Tucson."
-        body="A metal-free alternative to traditional titanium dental implants: a ceramic, tooth-coloured implant placed with the same 3D planning and guided precision as every implant in our practice."
+        title="A metal-free implant option."
+        body="A ceramic, tooth-coloured alternative to traditional titanium implants, placed with the same 3D planning and guided precision as every implant in our practice."
         image={serviceHeroes.zirconia.image}
         imagePosition={serviceHeroes.zirconia.position}
         imageMobile={serviceHeroes.zirconia.mobile}
@@ -195,25 +188,7 @@ const faqs = [
       )}
 
       <section class="mx-auto max-w-[1240px] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
-        <div class="grid gap-10 lg:grid-cols-[.6fr_1.4fr]">
-          <div>
-            <p class="eyebrow">Common questions</p>
-            <h2 class="display-face mt-3 text-3xl leading-none text-[#283e3c] sm:text-4xl">Zirconia implants, answered.</h2>
-          </div>
-          <div class="grid gap-1">
-            {faqs.map(([question, answer]) => (
-              <details class="group border-b border-[#729f9a]/30 py-5">
-                <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-left text-lg font-bold text-[#283e3c]">
-                  {question}
-                  <Icon name="lucide:chevron-down" class="h-5 w-5 flex-none text-[#3f6e69] transition-transform group-open:rotate-180" />
-                </summary>
-                <p class="mt-3 max-w-2xl text-sm leading-7 text-[#4a5a58]">{answer}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-
-        <section class="related-services mt-16">
+        <section class="related-services">
           <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div>
               <p class="eyebrow">Continue your care</p>
