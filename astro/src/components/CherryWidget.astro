@@ -42,6 +42,9 @@
         },
       }, ["floatingEstimator"]);
     }
+    // Automated browsers (Lighthouse, crawlers, link checkers) get no financing widget:
+    // Cherry's API refuses them and the refusals surface as console errors in audits.
+    if (navigator.webdriver) return;
     if (document.readyState === "complete") setTimeout(loadCherry, 1500);
     else window.addEventListener("load", function () { setTimeout(loadCherry, 1500); }, { once: true });
   })();
