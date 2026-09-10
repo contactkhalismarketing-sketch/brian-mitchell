@@ -59,6 +59,8 @@ export const serviceHeroes = {
   bridges: { image: heroBridges, mobile: heroBridgesMobile, position: "100% 58%" },
   cosmetic: { image: heroCosmetic, mobile: heroCosmeticMobile, position: "100% 69%" },
   implants: { image: heroImplants, mobile: heroImplantsMobile, position: "100% 67%" },
+  // Temporary: shares the implants hero until a dedicated zirconia hero is supplied.
+  zirconia: { image: heroImplants, mobile: heroImplantsMobile, position: "100% 67%" },
   extractions: { image: heroExtractions, mobile: heroExtractionsMobile, position: "100% 69%" },
   orthodontics: { image: heroOrthodontics, mobile: heroOrthodonticsMobile, position: "100% 69%" },
   preventative: { image: heroPreventative, mobile: heroPreventativeMobile, position: "100% 62%" },
@@ -102,6 +104,7 @@ export const servicesMenu = [
   { label: "Cosmetic Dentistry", href: "/service/cosmetic-dentistry/" },
   { label: "Orthodontics", href: "/service/orthodontics/" },
   { label: "Dental Implants", href: "/service/dental-implants/" },
+  { label: "Zirconia Dental Implants", href: "/service/zirconia-dental-implants/" },
   { label: "Bioclear", href: "/service/bioclear/" },
   { label: "Whitening", href: "/service/whitening/" },
   { label: "Preventative Dentistry", href: "/service/preventative-dentistry/" },
@@ -337,16 +340,17 @@ export const featuredServices = [
 ] as const;
 
 export const additionalServiceList = [
-  ["04", "Bioclear", "Conservative, aesthetic solutions for natural teeth.", "/service/bioclear/"],
-  ["05", "Whitening", "A brighter smile planned around your goals.", "/service/whitening/"],
-  ["06", "Preventative Dentistry", "Thoughtful check-ups and cleaning for lasting oral health.", "/service/preventative-dentistry/"],
-  ["07", "Extractions", "Clear guidance and gentle care when a tooth needs attention.", "/service/extractions/"],
-  ["08", "Bridges", "Restorative options designed to renew everyday confidence.", "/service/bridges/"],
-  ["09", "Root Canals", "Comfort-led treatment to protect and preserve your natural tooth.", "/service/root-canals/"],
-  ["10", "Adult Braces", "A considered path toward better alignment at any stage of life.", "/service/adult-braces/"],
-  ["11", "Professional Teeth Cleaning", "A fresh, healthy foundation for your ongoing care.", "/service/professional-teeth-cleaning/"],
-  ["12", "Routine Dental Care", "The essentials of a healthy smile, thoughtfully delivered.", "/service/preventative-dentistry/"],
-  ["13", "Jeuveau Injections", "Relief for clenching, grinding, and TMJ symptoms, plus wrinkle reduction.", "/jeuveau-injections-in-tucson-effective-tmd-treatment-and-wrinkle-reduction/"],
+  ["04", "Zirconia Dental Implants", "Metal-free ceramic implants, planned in 3D and placed to the plan.", "/service/zirconia-dental-implants/"],
+  ["05", "Bioclear", "Conservative, aesthetic solutions for natural teeth.", "/service/bioclear/"],
+  ["06", "Whitening", "A brighter smile planned around your goals.", "/service/whitening/"],
+  ["07", "Preventative Dentistry", "Thoughtful check-ups and cleaning for lasting oral health.", "/service/preventative-dentistry/"],
+  ["08", "Extractions", "Clear guidance and gentle care when a tooth needs attention.", "/service/extractions/"],
+  ["09", "Bridges", "Restorative options designed to renew everyday confidence.", "/service/bridges/"],
+  ["10", "Root Canals", "Comfort-led treatment to protect and preserve your natural tooth.", "/service/root-canals/"],
+  ["11", "Adult Braces", "A considered path toward better alignment at any stage of life.", "/service/adult-braces/"],
+  ["12", "Professional Teeth Cleaning", "A fresh, healthy foundation for your ongoing care.", "/service/professional-teeth-cleaning/"],
+  ["13", "Routine Dental Care", "The essentials of a healthy smile, thoughtfully delivered.", "/service/preventative-dentistry/"],
+  ["14", "Jeuveau Injections", "Relief for clenching, grinding, and TMJ symptoms, plus wrinkle reduction.", "/jeuveau-injections-in-tucson-effective-tmd-treatment-and-wrinkle-reduction/"],
 ] as const;
 
 export const cosmeticOptions = [

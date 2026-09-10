@@ -1,0 +1,257 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import PracticeHeader from "../../components/PracticeHeader.astro";
+import PracticeFooter from "../../components/PracticeFooter.astro";
+import PageHero from "../../components/PageHero.astro";
+import ContactBand from "../../components/ContactBand.astro";
+import { liveAssets, serviceHeroes } from "../../lib/data";
+
+// Neither material is presented as universally better; both lists are deliberately balanced.
+const titanium = [
+  "Decades of clinical history",
+  "Extremely strong",
+  "Excellent long-term survival",
+  "Widest range of implant designs",
+];
+
+const zirconia = [
+  "Ceramic, metal-free",
+  "Tooth-colored, so nothing grey shows at the gum line",
+  "Excellent biocompatibility",
+  "Increasingly strong clinical evidence",
+  "An attractive option for selected patients",
+];
+
+const whoItSuits = [
+  ["Patients who prefer metal-free care", "Some patients simply want no metal in the mouth. Zirconia offers a ceramic path to the same result: a fixed, natural-feeling tooth."],
+  ["Thin or receding gum tissue", "Where tissue is thin, the grey of a titanium implant can show through over time. A white ceramic implant stays invisible."],
+  ["Front teeth and the smile zone", "In the esthetic zone the colour of what sits beneath the gum matters, which is where tooth-coloured zirconia earns its place."],
+  ["Known metal sensitivities", "For patients with a history of metal sensitivity, a ceramic implant removes that question from the equation."],
+] as const;
+
+const process = [
+  ["Consultation and 3D imaging", "A cone-beam X-ray gives Dr. Mitchell a three-dimensional picture of your bone and surrounding teeth, and the conversation starts with whether zirconia or titanium suits you best."],
+  ["Digital planning", "The implant position is planned on screen before anything happens in the chair, so the surgical visit follows a blueprint rather than a guess."],
+  ["Guided placement", "A 3D-printed surgical guide keeps placement true to the plan. Where the case allows, the implant can be placed at the time of extraction."],
+  ["Healing and restoration", "Once the implant has integrated with the bone, a ceramic crown completes the tooth, matched to the shade of your natural teeth."],
+] as const;
+
+// Clinical case gallery. Cases are real patient work supplied by the practice; nothing here is stock or generated.
+// Each case: { title, summary, stages: [{ label, image, alt }] } where labels run before → planning → surgery → restoration.
+// The section renders only once cases have been supplied.
+const cases: { title: string; summary: string; stages: { label: string; image: ImageMetadata; alt: string }[] }[] = [];
+
+const faqs = [
+  ["Is a zirconia implant as strong as titanium?", "Modern zirconia implants are engineered for the forces of chewing and have a growing body of clinical evidence behind them. Titanium still has the longer track record and the widest range of designs. Dr. Mitchell will tell you honestly which material he recommends for your case and why."],
+  ["Will I be able to see the implant?", "No. The implant sits in the bone beneath the gum. Zirconia's advantage is that if gum tissue is thin or recedes, a white ceramic implant stays invisible where a titanium one can show as a grey shadow."],
+  ["Which implant system does Dr. Mitchell use?", "Dr. Mitchell places SDS zirconia implants, a Swiss ceramic implant system designed specifically for metal-free treatment."],
+  ["Can a zirconia implant be placed on the same day as an extraction?", "In selected cases, yes. Immediate placement depends on the condition of the bone and tissue at the site, which is assessed on your 3D imaging before any decision is made."],
+  ["How much does a zirconia implant cost?", "Fees depend on the case, including whether bone or soft-tissue grafting is needed. You will receive a clear, written estimate before treatment, and financing options are available."],
+] as const;
+---
+
+<Layout title="Zirconia Dental Implants in Tucson | Dr. Brian Mitchell & Associates" description="Metal-free zirconia dental implants in Tucson from Dr. Brian Mitchell, using SDS ceramic implants with 3D imaging and computer-guided placement. A balanced look at zirconia versus titanium.">
+  <div class="page-shell min-h-screen">
+    <PracticeHeader active="services" />
+    <main>
+      <PageHero
+        eyebrow="Zirconia Dental Implants"
+        title="Zirconia dental implants in Tucson."
+        body="A metal-free alternative to traditional titanium dental implants: a ceramic, tooth-coloured implant placed with the same 3D planning and guided precision as every implant in our practice."
+        image={serviceHeroes.zirconia.image}
+        imagePosition={serviceHeroes.zirconia.position}
+        imageMobile={serviceHeroes.zirconia.mobile}
+      >
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+          <a class="action-button primary" href="/contact/"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book a consultation</a>
+          <a class="action-button outline" href="tel:5205234860"><Icon name="lucide:phone" class="h-4 w-4" />Ask a question</a>
+        </div>
+      </PageHero>
+
+      <section class="mx-auto max-w-[1240px] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+        <div class="grid gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
+          <figure class="relative max-w-sm">
+            <div class="absolute -left-3 -top-3 h-full w-full border border-[#729f9a]/60" aria-hidden="true"></div>
+            <Image src={liveAssets.brian} alt="Dr. Brian Mitchell" class="relative aspect-[4/5] w-full object-cover object-top" width={720} />
+            <figcaption class="hero-media-label">Dr. Brian Mitchell, D.D.S.</figcaption>
+          </figure>
+          <div>
+            <p class="eyebrow">Meet your implant dentist</p>
+            <h2 class="display-face mt-4 max-w-2xl text-4xl leading-[.98] tracking-[-.025em] text-[#283e3c] sm:text-5xl">Placed by a dentist who plans every case in 3D.</h2>
+            <p class="mt-6 max-w-2xl text-base leading-8 text-[#4a5a58]">Dr. Mitchell has built his implant practice around conebeam 3D imaging, digital planning and guided surgery, and he places SDS zirconia implants for patients who want a metal-free option. Every zirconia case starts with the same question as every titanium case: what will give this patient the most predictable, natural result?</p>
+            <p class="mt-4 max-w-2xl text-base leading-8 text-[#4a5a58]">That means an honest conversation about both materials, a plan you can see on screen before treatment, and a surgical visit that follows that plan precisely.</p>
+            <a class="action-button dark mt-8" href="/about/">Learn more about Dr. Mitchell <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#f0f5f4]">
+        <div class="mx-auto max-w-[1240px] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+          <div class="max-w-2xl">
+            <p class="eyebrow">Two materials</p>
+            <h2 class="display-face mt-4 text-4xl leading-[.98] tracking-[-.025em] text-[#283e3c] sm:text-5xl">Titanium and zirconia, side by side.</h2>
+            <p class="mt-6 text-base leading-8 text-[#4a5a58]">Both are excellent ways to replace a missing tooth. Neither is universally better. The right choice depends on where the tooth is, the condition of your bone and gum tissue, and your own preferences.</p>
+          </div>
+          <div class="mt-10 grid gap-6 md:grid-cols-2">
+            <article class="border-t-2 border-[#354a4d] bg-white p-7 sm:p-8">
+              <p class="eyebrow">Traditional</p>
+              <h3 class="display-face mt-3 text-3xl leading-none text-[#283e3c]">Titanium</h3>
+              <ul class="mt-6 grid gap-3">
+                {titanium.map((item) => (
+                  <li class="flex items-start gap-3 text-sm leading-6 text-[#4a5a58]"><Icon name="lucide:check" class="mt-1 h-4 w-4 flex-none text-[#354a4d]" />{item}</li>
+                ))}
+              </ul>
+            </article>
+            <article class="border-t-2 border-[#729f9a] bg-white p-7 sm:p-8">
+              <p class="eyebrow">Metal-free</p>
+              <h3 class="display-face mt-3 text-3xl leading-none text-[#283e3c]">Zirconia</h3>
+              <ul class="mt-6 grid gap-3">
+                {zirconia.map((item) => (
+                  <li class="flex items-start gap-3 text-sm leading-6 text-[#4a5a58]"><Icon name="lucide:check" class="mt-1 h-4 w-4 flex-none text-[#3f6e69]" />{item}</li>
+                ))}
+              </ul>
+            </article>
+          </div>
+          <p class="mt-8 max-w-2xl text-sm leading-7 text-[#4a5a58]">Dr. Mitchell places both. If titanium is the better choice for your case, that is what he will recommend.</p>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-[1240px] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+        <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div>
+            <p class="eyebrow">Who zirconia suits</p>
+            <h2 class="display-face mt-3 text-3xl leading-none text-[#283e3c] sm:text-4xl">When a ceramic implant makes sense.</h2>
+          </div>
+          <p class="max-w-md text-sm leading-7 text-[#4a5a58]">These are the situations where Dr. Mitchell most often discusses zirconia. Your imaging decides the rest.</p>
+        </div>
+        <div class="service-option-grid mt-8">
+          {whoItSuits.map(([name, copy], index) => (
+            <article class="service-option">
+              <span class="service-option__number">0{index + 1}</span>
+              <div>
+                <h3 class="display-face text-2xl leading-none text-[#283e3c]">{name}</h3>
+                <p class="mt-3 text-sm leading-6 text-[#4a5a58]">{copy}</p>
+              </div>
+              <Icon name="lucide:check" class="service-option__check h-5 w-5" />
+            </article>
+          ))}
+        </div>
+
+        <section class="mt-16">
+          <div class="service-intro-stage">
+            <div>
+              <p class="eyebrow">How it works</p>
+              <h2 class="display-face mt-4 max-w-2xl text-4xl leading-[.98] tracking-[-.025em] text-[#283e3c] sm:text-5xl">Planned in 3D, placed to the plan.</h2>
+              <ol class="mt-8 grid gap-6">
+                {process.map(([name, copy], index) => (
+                  <li class="grid grid-cols-[2.5rem_1fr] gap-4">
+                    <span class="display-face text-2xl leading-none text-[#729f9a]">0{index + 1}</span>
+                    <div>
+                      <h3 class="display-face text-2xl leading-none text-[#283e3c]">{name}</h3>
+                      <p class="mt-2 text-sm leading-7 text-[#4a5a58]">{copy}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <div class="service-next-step">
+              <p class="eyebrow text-[#d5e4e2]">Your next step</p>
+              <p class="display-face mt-3 text-3xl leading-none text-white">A zirconia consultation.</p>
+              <p class="mt-4 text-sm leading-7 text-[#d5e4e2]">We will take your 3D imaging, talk through titanium and zirconia for your case, and give you a clear written plan and estimate.</p>
+              <a href="/contact/" class="action-button light mt-6 w-full">Request a consultation <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      {cases.length > 0 && (
+        <section class="bg-[#f0f5f4]">
+          <div class="mx-auto max-w-[1240px] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+            <div class="max-w-2xl">
+              <p class="eyebrow">Clinical cases</p>
+              <h2 class="display-face mt-4 text-4xl leading-[.98] tracking-[-.025em] text-[#283e3c] sm:text-5xl">Real zirconia cases from our practice.</h2>
+              <p class="mt-6 text-base leading-8 text-[#4a5a58]">Each case is shown from the starting point through planning, surgery and the finished restoration. All images are Dr. Mitchell's own patients, shared with permission.</p>
+            </div>
+            <div class="mt-12 grid gap-12">
+              {cases.map((item) => (
+                <article>
+                  <h3 class="display-face text-2xl leading-none text-[#283e3c] sm:text-3xl">{item.title}</h3>
+                  <p class="mt-3 max-w-2xl text-sm leading-7 text-[#4a5a58]">{item.summary}</p>
+                  <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    {item.stages.map((stage) => (
+                      <figure class="bg-white p-2">
+                        <Image src={stage.image} alt={stage.alt} class="aspect-[4/3] w-full object-cover" width={640} />
+                        <figcaption class="px-1 pb-1 pt-3 text-[.66rem] font-extrabold uppercase tracking-[.12em] text-[#3f6e69]">{stage.label}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section class="mx-auto max-w-[1240px] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+        <div class="grid gap-10 lg:grid-cols-[.6fr_1.4fr]">
+          <div>
+            <p class="eyebrow">Common questions</p>
+            <h2 class="display-face mt-3 text-3xl leading-none text-[#283e3c] sm:text-4xl">Zirconia implants, answered.</h2>
+          </div>
+          <div class="grid gap-1">
+            {faqs.map(([question, answer]) => (
+              <details class="group border-b border-[#729f9a]/30 py-5">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-6 text-left text-lg font-bold text-[#283e3c]">
+                  {question}
+                  <Icon name="lucide:chevron-down" class="h-5 w-5 flex-none text-[#3f6e69] transition-transform group-open:rotate-180" />
+                </summary>
+                <p class="mt-3 max-w-2xl text-sm leading-7 text-[#4a5a58]">{answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        <section class="related-services mt-16">
+          <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p class="eyebrow">Continue your care</p>
+              <h3 class="display-face mt-3 text-3xl leading-none text-[#283e3c] sm:text-4xl">You may also be interested in.</h3>
+            </div>
+            <a href="/services/" class="text-sm font-extrabold uppercase tracking-[.12em] text-[#354a4d] no-underline">View all services <Icon name="lucide:arrow-right" class="ml-1 inline h-4 w-4" /></a>
+          </div>
+          <div class="related-services__grid mt-8">
+            <a href="/service/dental-implants/" class="related-service-link">
+              <span class="related-service-link__number">01</span>
+              <span>
+                <span class="display-face block text-2xl leading-none text-[#283e3c]">Dental Implants</span>
+                <span class="mt-2 block text-sm leading-6 text-[#4a5a58]">Computer-guided titanium implants planned in 3D.</span>
+              </span>
+              <Icon name="lucide:arrow-right" class="related-service-link__arrow h-5 w-5" />
+            </a>
+            <a href="/service/extractions/" class="related-service-link">
+              <span class="related-service-link__number">02</span>
+              <span>
+                <span class="display-face block text-2xl leading-none text-[#283e3c]">Extractions</span>
+                <span class="mt-2 block text-sm leading-6 text-[#4a5a58]">Clear guidance and gentle care when a tooth needs to come out.</span>
+              </span>
+              <Icon name="lucide:arrow-right" class="related-service-link__arrow h-5 w-5" />
+            </a>
+            <a href="/service/cosmetic-dentistry/" class="related-service-link">
+              <span class="related-service-link__number">03</span>
+              <span>
+                <span class="display-face block text-2xl leading-none text-[#283e3c]">Cosmetic Dentistry</span>
+                <span class="mt-2 block text-sm leading-6 text-[#4a5a58]">A personalized approach to a smile that feels like you.</span>
+              </span>
+              <Icon name="lucide:arrow-right" class="related-service-link__arrow h-5 w-5" />
+            </a>
+          </div>
+        </section>
+      </section>
+
+      <ContactBand title="Ask Dr. Mitchell whether zirconia is right for you." />
+    </main>
+    <PracticeFooter />
+  </div>
+</Layout>
