@@ -306,3 +306,6 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 
 /* Decorative arcs need an empty corner to sit in; narrow layouts have none, so they are hidden below the desktop breakpoint. */
 @media (max-width: 1023px) { .sun-portal, .team-section::before, .about-practice-video__copy::before { display: none; } }
+
+/* Cherry "Pay over time" estimator: sit above the fixed Call/Book bar on phones. */
+@media (max-width: 767px) { [class*="floatingEstimator-floatingContainer"] { bottom: 5.75rem !important; } }

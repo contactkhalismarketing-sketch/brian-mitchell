@@ -1,0 +1,48 @@
+---
+// Cherry "Pay over time" floating estimator. Slug and defaults are the practice's own,
+// carried over from the current site's embed; colours/fonts match this design.
+// Loaded after the page has painted so it never competes with the hero for bandwidth.
+---
+
+<div id="floatingEstimator"></div>
+<script is:inline>
+  (function () {
+    function loadCherry() {
+      (function (w, d, s, o, f, js, fjs) {
+        w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments); };
+        (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+        js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
+      })(window, document, "script", "_hw", "https://files.withcherry.com/widgets/widget.js");
+      _hw("init", {
+        debug: false,
+        variables: {
+          slug: "dr-brian-mitchell-dentistry-and-orthodontics",
+          name: "Dr. Brian Mitchell Dentistry and Orthodontics",
+          images: [21],
+          customLogo: "",
+          defaultPurchaseAmount: 2000,
+          customImage: "",
+          imageCategory: "dental",
+          language: "en",
+        },
+        styles: {
+          primaryColor: "#354a4d",
+          secondaryColor: "#729f9a1a",
+          fontFamily: "Manrope",
+          headerFontFamily: "DM Serif Display",
+          floatingEstimator: {
+            position: "bottom-right",
+            offset: { x: "0px", y: "0px" },
+            zIndex: 40,
+            ctaFontFamily: "Manrope",
+            bodyFontFamily: "Manrope",
+            ctaColor: "#354a4d",
+            ctaTextColor: "#FFFFFF",
+          },
+        },
+      }, ["floatingEstimator"]);
+    }
+    if (document.readyState === "complete") setTimeout(loadCherry, 1500);
+    else window.addEventListener("load", function () { setTimeout(loadCherry, 1500); }, { once: true });
+  })();
+</script>

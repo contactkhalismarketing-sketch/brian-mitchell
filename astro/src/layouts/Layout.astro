@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Analytics from "@vercel/analytics/astro";
+import CherryWidget from "../components/CherryWidget.astro";
 
 interface Props {
   title: string;
@@ -29,6 +30,7 @@ const {
   </head>
   <body>
     <slot />
+    <CherryWidget />
     <Analytics />
   </body>
 </html>
