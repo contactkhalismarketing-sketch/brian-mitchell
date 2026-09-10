@@ -11,19 +11,22 @@ const { active = false, id } = Astro.props;
 ---
 
 <div class="patient-info-menu relative">
-  <button
-    type="button"
-    class={`nav-link patient-info-menu__trigger inline-flex items-center gap-1 ${active ? "text-[#354a4d]" : ""}`}
-    aria-expanded="false"
-    aria-haspopup="true"
-    data-patient-info-trigger={id}
-  >
-    Services
-    <Icon name="lucide:chevron-down" class="h-3 w-3 transition-transform" data-patient-info-chevron={id} />
-  </button>
+  <span class={`nav-link inline-flex items-center gap-1 ${active ? "text-[#354a4d]" : ""}`}>
+    <a href="/services/" class="services-menu__label">Services</a>
+    <button
+      type="button"
+      class="services-menu__toggle patient-info-menu__trigger"
+      aria-label="Show services menu"
+      aria-expanded="false"
+      aria-haspopup="true"
+      data-services-trigger={id}
+    >
+      <Icon name="lucide:chevron-down" class="h-3 w-3 transition-transform" data-services-chevron={id} />
+    </button>
+  </span>
   <div
     class="patient-info-menu__panel services-menu__panel absolute left-0 top-full z-40 hidden w-[560px] pt-3"
-    data-patient-info-panel={id}
+    data-services-panel={id}
   >
     <div class="border border-[#729f9a]/25 bg-[#ffffff] p-5 shadow-[0_18px_36px_rgba(53,74,77,.14)]">
       <div class="services-menu__grid">
@@ -41,11 +44,11 @@ const { active = false, id } = Astro.props;
 </div>
 
 <script>
-  function setupPatientInfoMenus() {
-    document.querySelectorAll("[data-patient-info-trigger]").forEach((trigger) => {
-      const id = trigger.getAttribute("data-patient-info-trigger");
-      const panel = document.querySelector(`[data-patient-info-panel="${id}"]`);
-      const chevron = document.querySelector(`[data-patient-info-chevron="${id}"]`);
+  function setupServicesMenus() {
+    document.querySelectorAll("[data-services-trigger]").forEach((trigger) => {
+      const id = trigger.getAttribute("data-services-trigger");
+      const panel = document.querySelector(`[data-services-panel="${id}"]`);
+      const chevron = document.querySelector(`[data-services-chevron="${id}"]`);
       if (!panel) return;
 
       trigger.addEventListener("click", (event) => {
@@ -57,11 +60,11 @@ const { active = false, id } = Astro.props;
     });
 
     document.addEventListener("click", () => {
-      document.querySelectorAll("[data-patient-info-panel]").forEach((panel) => panel.classList.add("hidden"));
-      document.querySelectorAll("[data-patient-info-trigger]").forEach((trigger) => trigger.setAttribute("aria-expanded", "false"));
-      document.querySelectorAll("[data-patient-info-chevron]").forEach((chevron) => chevron.classList.remove("rotate-180"));
+      document.querySelectorAll("[data-services-panel]").forEach((panel) => panel.classList.add("hidden"));
+      document.querySelectorAll("[data-services-trigger]").forEach((trigger) => trigger.setAttribute("aria-expanded", "false"));
+      document.querySelectorAll("[data-services-chevron]").forEach((chevron) => chevron.classList.remove("rotate-180"));
     });
   }
 
-  setupPatientInfoMenus();
+  setupServicesMenus();
 </script>

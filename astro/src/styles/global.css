@@ -86,6 +86,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .mobile-nav__summary-link { color: inherit; text-decoration: none; }
 .mobile-nav__toggle { align-items: center; display: inline-flex; justify-content: center; margin: -.75rem -.5rem -.75rem 0; min-height: 44px; min-width: 44px; }
 .mobile-nav__group[open] .mobile-nav__summary svg { transform: rotate(180deg); }
+.services-menu__label { color: inherit; text-decoration: none; }
+.services-menu__toggle { align-items: center; background: none; border: 0; color: inherit; cursor: pointer; display: inline-flex; margin: -.6rem -.4rem -.6rem 0; padding: .6rem .4rem; }
 .services-menu__grid { column-gap: 1.25rem; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); row-gap: .15rem; }
 .services-menu__link { border-radius: .25rem; color: #283e3c; font-size: .72rem; font-weight: 700; padding: .55rem .5rem; }
 .services-menu__link:hover { background: #f4f8f7; color: #354a4d; }
