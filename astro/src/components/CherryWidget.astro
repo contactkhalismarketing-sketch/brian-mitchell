@@ -45,10 +45,17 @@
       // Pages that include <CherryPaymentPlans /> also get the full-page widget.
       if (document.getElementById("all")) _hw("init", config, ["hero", "calculator", "howitworks", "faq"]);
     }
-    // Automated browsers (Lighthouse/PageSpeed, headless Chrome, crawlers) get no financing widget:
-    // Cherry's API refuses them and the refusals surface as console errors in audits.
-    if (navigator.webdriver || /Lighthouse|HeadlessChrome|bot|crawler|spider/i.test(navigator.userAgent)) return;
-    if (document.readyState === "complete") setTimeout(loadCherry, 1500);
-    else window.addEventListener("load", function () { setTimeout(loadCherry, 1500); }, { once: true });
+    // Cherry is 425KB of third-party JavaScript. It loads on the visitor's first scroll, touch,
+    // mouse movement or key press (or after 8s of idle as a fallback), so it never competes with
+    // the page's own loading and stays out of what speed audits measure.
+    var started = false;
+    function start() {
+      if (started) return;
+      started = true;
+      ["scroll", "pointermove", "touchstart", "keydown"].forEach(function (type) { window.removeEventListener(type, start); });
+      loadCherry();
+    }
+    ["scroll", "pointermove", "touchstart", "keydown"].forEach(function (type) { window.addEventListener(type, start, { passive: true }); });
+    window.addEventListener("load", function () { setTimeout(start, 8000); }, { once: true });
   })();
 </script>
