@@ -24,9 +24,11 @@ import { liveAssets, financingOptions } from "../../lib/data";
       <section class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
         <CherryPaymentPlans />
 
-        <div class="mt-20 max-w-2xl border-t border-[#729f9a]/25 pt-14">
+        <div class="mt-20 border-t border-[#729f9a]/25 pt-14">
+          <div class="max-w-2xl">
           <p class="eyebrow">Other ways to pay</p>
           <h2 class="display-face mt-4 text-3xl leading-none text-[#283e3c] sm:text-4xl">Insurance, our savings plan, and CareCredit.</h2>
+          </div>
         </div>
         <div class="mt-10 grid gap-7 lg:grid-cols-3">
           {financingOptions.map((option) => (
