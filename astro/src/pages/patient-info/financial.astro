@@ -5,6 +5,7 @@ import PracticeHeader from "../../components/PracticeHeader.astro";
 import PracticeFooter from "../../components/PracticeFooter.astro";
 import PageHero from "../../components/PageHero.astro";
 import ContactBand from "../../components/ContactBand.astro";
+import CherryPaymentPlans from "../../components/CherryPaymentPlans.astro";
 import { liveAssets, financingOptions } from "../../lib/data";
 ---
 
@@ -21,7 +22,13 @@ import { liveAssets, financingOptions } from "../../lib/data";
       />
 
       <section class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
-        <div class="grid gap-7 lg:grid-cols-3">
+        <CherryPaymentPlans />
+
+        <div class="mt-20 max-w-2xl border-t border-[#729f9a]/25 pt-14">
+          <p class="eyebrow">Other ways to pay</p>
+          <h2 class="display-face mt-4 text-3xl leading-none text-[#283e3c] sm:text-4xl">Insurance, our savings plan, and CareCredit.</h2>
+        </div>
+        <div class="mt-10 grid gap-7 lg:grid-cols-3">
           {financingOptions.map((option) => (
             <article class="border-t-2 border-[#729f9a] bg-[#f0f5f4] p-7">
               <h2 class="display-face text-2xl leading-none text-[#283e3c]">{option.name}</h2>

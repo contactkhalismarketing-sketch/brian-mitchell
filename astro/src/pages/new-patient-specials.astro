@@ -6,6 +6,7 @@ import PracticeHeader from "../components/PracticeHeader.astro";
 import PracticeFooter from "../components/PracticeFooter.astro";
 import PageHero from "../components/PageHero.astro";
 import ContactBand from "../components/ContactBand.astro";
+import CherryPaymentPlans from "../components/CherryPaymentPlans.astro";
 import { liveAssets } from "../lib/data";
 
 // Offers and the patient quote are taken from the live page
@@ -78,6 +79,10 @@ const highlights = [
           ))}
         </div>
         <p class="mt-8 text-sm leading-7 text-[#4a5a58]">Offers are for new patients and may change. Call the practice to confirm current pricing and to find out about other payment options.</p>
+
+        <div class="mt-20 border-t border-[#729f9a]/25 pt-14">
+          <CherryPaymentPlans intro="Spread the cost of any of these treatments into monthly payments. Check what you qualify for in about a minute, before you book." />
+        </div>
       </section>
 
       <section class="relative overflow-hidden bg-[#e6efee]">

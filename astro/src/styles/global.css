@@ -314,3 +314,7 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 
 /* Cherry "Pay over time" estimator: sit above the fixed Call/Book bar on phones. */
 @media (max-width: 767px) { [class*="floatingEstimator-floatingContainer"] { bottom: 5.75rem !important; } }
+
+/* Cherry full-page widget: constrain to a readable column and let its card sit on our page background. */
+.cherry-plans__widget { max-width: 1100px; margin-inline: auto; }
+.cherry-plans__widget > div:empty { display: none; }

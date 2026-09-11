@@ -13,7 +13,7 @@
         (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
         js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
       })(window, document, "script", "_hw", "https://files.withcherry.com/widgets/widget.js");
-      _hw("init", {
+      var config = {
         debug: false,
         variables: {
           slug: "dr-brian-mitchell-dentistry-and-orthodontics",
@@ -40,7 +40,10 @@
             ctaTextColor: "#FFFFFF",
           },
         },
-      }, ["floatingEstimator"]);
+      };
+      _hw("init", config, ["floatingEstimator"]);
+      // Pages that include <CherryPaymentPlans /> also get the full-page widget.
+      if (document.getElementById("all")) _hw("init", config, ["hero", "calculator", "howitworks", "faq"]);
     }
     // Automated browsers (Lighthouse/PageSpeed, headless Chrome, crawlers) get no financing widget:
     // Cherry's API refuses them and the refusals surface as console errors in audits.

@@ -1,0 +1,36 @@
+---
+import { Icon } from "astro-icon/components";
+
+// Cherry's full-page "Treat now, pay later" widget. The mount points below are filled by
+// Cherry's script (initialised in CherryWidget.astro), which carries all rate/APR wording
+// and the required disclosures, so none of that is written here.
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  intro?: string;
+}
+
+const {
+  eyebrow = "Pay over time",
+  title = "Monthly payment plans with Cherry.",
+  intro = "Cherry lets you split the cost of treatment into monthly payments. Check what you qualify for in about a minute, before you book.",
+} = Astro.props;
+
+const applyUrl = "https://pay.withcherry.com/dr-brian-mitchell-dentistry-and-orthodontics?utm_source=merchant&utm_medium=website";
+---
+
+<section class="cherry-plans" aria-labelledby="cherry-plans-heading">
+  <div class="max-w-2xl">
+    <p class="eyebrow">{eyebrow}</p>
+    <h2 id="cherry-plans-heading" class="display-face mt-4 text-3xl leading-none text-[#283e3c] sm:text-4xl">{title}</h2>
+    <p class="mt-5 text-base leading-8 text-[#4a5a58]">{intro}</p>
+    <a class="action-button dark mt-6" href={applyUrl} target="_blank" rel="noopener"><Icon name="lucide:circle-percent" class="h-4 w-4" />See if you qualify with Cherry</a>
+  </div>
+  <div class="cherry-plans__widget mt-10">
+    <div id="all"></div>
+    <div id="hero"></div>
+    <div id="calculator"></div>
+    <div id="howitworks"></div>
+    <div id="faq"></div>
+  </div>
+</section>
