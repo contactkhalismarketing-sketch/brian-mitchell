@@ -49,13 +49,17 @@
     // mouse movement or key press (or after 8s of idle as a fallback), so it never competes with
     // the page's own loading and stays out of what speed audits measure.
     var started = false;
-    function start() {
+    // Never start on a touch: iOS treats a page change during the first tap as a hover and
+    // swallows the click, so every link would need two taps. Touch users trigger it by scrolling.
+    var triggers = ["scroll", "pointermove", "keydown"];
+    function start(event) {
       if (started) return;
+      if (event && event.type === "pointermove" && event.pointerType !== "mouse") return;
       started = true;
-      ["scroll", "pointermove", "touchstart", "keydown"].forEach(function (type) { window.removeEventListener(type, start); });
+      triggers.forEach(function (type) { window.removeEventListener(type, start); });
       loadCherry();
     }
-    ["scroll", "pointermove", "touchstart", "keydown"].forEach(function (type) { window.addEventListener(type, start, { passive: true }); });
+    triggers.forEach(function (type) { window.addEventListener(type, start, { passive: true }); });
     window.addEventListener("load", function () { setTimeout(start, 8000); }, { once: true });
   })();
 </script>
