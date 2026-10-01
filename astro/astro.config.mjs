@@ -2,10 +2,13 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [icon()],
+  // Production domain. Sitemap and canonical URLs use this even while the site is on the staging host.
+  site: 'https://brianmitchelldds.com',
+  integrations: [icon(), sitemap()],
   // Mirror the live WordPress site: every page URL ends with a trailing slash.
   trailingSlash: "always",
   build: {
