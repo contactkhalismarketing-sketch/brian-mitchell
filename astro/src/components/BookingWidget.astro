@@ -36,7 +36,21 @@ const loaderSrc = "https://appcontent.practicenumbers.com/phone_number_replace_7
       return loading;
     }
 
+    // The booking panel is an 80vw x 90vh box anchored to the top-left of its full-screen iframe.
+    // The iframe is same-origin (built with document.write), so centre the panel on screens wide
+    // enough for it not to fill the width. Phones keep the widget's own full-width layout.
+    function centreBookingPanel() {
+      var iframe = document.getElementById("pbn-oab-widget-iframe");
+      var doc = iframe && iframe.contentDocument;
+      if (!doc || !doc.head || doc.getElementById("kh-booking-centre")) return;
+      var style = doc.createElement("style");
+      style.id = "kh-booking-centre";
+      style.textContent = "@media (min-width: 768px) { body > div.flex.items-center.justify-center > div[class] { position: fixed !important; top: 50% !important; left: 50% !important; transform: translate(-50%, -50%) !important; margin: 0 !important; } }";
+      doc.head.appendChild(style);
+    }
+
     function openBooking() {
+      centreBookingPanel();
       var open = window.openPracticeNumbersAppointmentBookingWidget;
       if (typeof open !== "function") return false;
       open();
