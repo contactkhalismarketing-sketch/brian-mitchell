@@ -7,7 +7,7 @@ import ContactBand from "../components/ContactBand.astro";
 import PracticeTourPanel from "../components/PracticeTourPanel.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import { liveAssets, team } from "../lib/data";
+import { liveAssets, team, doctors } from "../lib/data";
 ---
 
 <Layout title="About | Dr. Brian Mitchell & Associates">
@@ -41,24 +41,23 @@ import { liveAssets, team } from "../lib/data";
         <div class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <p class="eyebrow">Meet the doctors</p>
           <div class="mt-8 grid gap-7 lg:grid-cols-2">
-            <article class="grid overflow-hidden bg-[#ffffff] shadow-[0_20px_46px_rgba(40,62,60,.09)] sm:grid-cols-[.78fr_1.22fr] doctor-feature">
-              <Image src={liveAssets.brianAbout} alt="Dr. Brian Mitchell" class="h-full min-h-[360px] w-full object-cover object-[center_20%]" width={640} />
-              <div class="doctor-feature__content p-8">
-                <p class="eyebrow">Dr. Brian Mitchell</p>
-                <h3 class="display-face mt-3 text-3xl leading-none text-[#283e3c]">Dedicated to your smile.</h3>
-                <p class="mt-5 text-sm leading-7 text-[#4a5a58]">Originally from Salt Lake City, Dr. Mitchell studied Exercise Physiology at the University of Utah before completing dental training at the Baltimore College of Dental Surgery. After more than a decade in Arizona, he brings a thoughtful, precise perspective to helping patients protect and improve their smiles. Outside the practice, he enjoys time with his daughters, Tucson mornings, meditation, exercise, and a good book.</p>
-                <a href="/contact/" class="action-button primary mt-7">Book an appointment <Icon name="lucide:calendar-days" class="h-4 w-4" /></a>
-              </div>
-            </article>
-            <article class="grid overflow-hidden bg-[#ffffff] shadow-[0_20px_46px_rgba(40,62,60,.09)] sm:grid-cols-[.78fr_1.22fr] doctor-feature">
-              <Image src={liveAssets.dianaAbout} alt="Dr. Diana Zhen" class="h-full min-h-[360px] w-full object-cover object-[center_20%]" width={640} />
-              <div class="doctor-feature__content p-8">
-                <p class="eyebrow">Dr. Diana Zhen</p>
-                <h3 class="display-face mt-3 text-3xl leading-none text-[#283e3c]">Thoughtful, patient-first care.</h3>
-                <p class="mt-5 text-sm leading-7 text-[#4a5a58]">Raised in San Francisco, Dr. Zhen earned her dental degree at Roseman University College of Dental Medicine and completed an Advanced Education in General Dentistry residency at the Society of St. Vincent de Paul's Dental Oral Health Center in Phoenix. She is passionate about comprehensive care and the tangible difference dentistry can make in a patient's well-being. Away from the practice, she enjoys staying active, reading, and exploring new places.</p>
-                <a href="/contact/" class="action-button primary mt-7">Book an appointment <Icon name="lucide:calendar-days" class="h-4 w-4" /></a>
-              </div>
-            </article>
+            {doctors.map((doctor) => (
+              <article class="grid overflow-hidden bg-[#ffffff] shadow-[0_20px_46px_rgba(40,62,60,.09)] sm:grid-cols-[.78fr_1.22fr] doctor-feature">
+                {doctor.name === "Dr. Brian Mitchell" ? (
+                  <Image src={liveAssets.brianAbout} alt={doctor.name} class="h-full min-h-[360px] w-full object-cover object-[center_20%]" width={640} />
+                ) : (
+                  <div class="doctor-feature__placeholder" aria-label={`${doctor.name} photo coming soon`}>
+                    <span>{doctor.name.replace("Dr. ", "").split(" ").map((part) => part[0]).join("")}</span>
+                  </div>
+                )}
+                <div class="doctor-feature__content p-8">
+                  <p class="eyebrow">{doctor.name} · {doctor.role}</p>
+                  <h3 class="display-face mt-3 text-3xl leading-none text-[#283e3c]">{doctor.heading}</h3>
+                  <p class="mt-5 text-sm leading-7 text-[#4a5a58]">{doctor.bio}</p>
+                  <a href="/contact/" class="action-button primary mt-7">Book an appointment <Icon name="lucide:calendar-days" class="h-4 w-4" /></a>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -79,7 +78,11 @@ import { liveAssets, team } from "../lib/data";
           <div class="team-grid mt-14">
             {team.map((member, index) => (
               <article class={`team-card team-card-${index + 1}`}>
-                <Image src={member.image} alt={member.name} width={320} />
+                {member.image ? (
+                  <Image src={member.image} alt={member.name} width={320} />
+                ) : (
+                  <div class="team-card__placeholder" aria-label={`${member.name} photo coming soon`}><span>{member.name[0]}</span></div>
+                )}
                 <div>
                   <h3 class="display-face text-3xl leading-none text-[#283e3c]">{member.name}</h3>
                   <p class="mt-2 text-[.66rem] font-extrabold uppercase tracking-[.12em] text-[#354a4d]">{member.role}</p>
