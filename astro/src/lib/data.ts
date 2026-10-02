@@ -16,6 +16,12 @@ import nita from "../assets/practice/nita_74b0856c.jpg";
 import jackie from "../assets/practice/jackie_99712114.jpg";
 import kiana from "../assets/practice/kiana_d5850992.jpg";
 import gisselle from "../assets/practice/gisselle_06071191.jpg";
+import adrianna from "../assets/practice/adrianna.jpg";
+import carolina from "../assets/practice/carolina.jpg";
+import francisca from "../assets/practice/francisca.jpg";
+import hannah from "../assets/practice/hannah.jpg";
+import jessica from "../assets/practice/jessica.jpg";
+import jasai from "../assets/practice/jasai.jpg";
 import heroAdultBraces from "../assets/practice/heroes/adult-braces-hero.jpg";
 import heroAdultBracesMobile from "../assets/practice/heroes/adult-braces-hero-mobile.jpg";
 import heroBioclear from "../assets/practice/heroes/bioclear-hero.jpg";
@@ -268,21 +274,25 @@ export const team: { name: string; role: string; image?: ImageMetadata; bio: str
   {
     name: "Jasai",
     role: "Patient Care Coordinator",
+    image: jasai,
     bio: "As your Patient Care Coordinator, I’m here to help you feel welcome, answer your questions, and make scheduling your dental care easier. I enjoy connecting with people and building relationships. I want every patient to feel comfortable and supported. Outside of work, I’m a proud mom and first-generation college student studying History. I love caring for my plants, spending time with my daughter, exploring my creative side, and going on new adventures. I plan to bring that same warmth and curiosity to our office every day!",
   },
   {
     name: "Francisca",
     role: "Treatment Coordinator",
+    image: francisca,
     bio: "As a Tucson native, I enjoy the desert scenery through hiking and long drives. Over the past 16 years, my experience as a dental coordinator has provided me with valuable tools that I utilize in my current role as a Treatment Coordinator. I enjoy helping patients navigate insurance questions and am eager to continue learning new skills in this position.",
   },
   {
     name: "Jessica",
     role: "Insurance Specialist",
+    image: jessica,
     bio: "I grew up in a small town on the western slope of Colorado and have lived in Tucson for 19 years. I’ve been blessed to work in the dental field for 22 years, 16 of those with Dr. Mitchell and Associates. I’ve found my niche in insurance processing and pride myself on using my knowledge to get claims paid for both our patients and the Dr.’s benefit. I love helping patients navigate insurance. Personally, I enjoy reading, hiking, camping, rock hounding, and finding hidden treasures. I’m also certified in Reiki and QHHT.",
   },
   {
     name: "Adrianna",
     role: "Lead Dental Assistant",
+    image: adrianna,
     bio: "I’m 23 years old and have five years of experience in dentistry. I truly love working with people of all ages and helping transform smiles while restoring confidence. I feel so fortunate to be part of such a beautiful office and to build meaningful connections with all my patients. Outside of work, I love spending time with my family and friends, making memories, and enjoying life with my Goldendoodle, who always keeps me smiling!",
   },
   {
@@ -294,11 +304,13 @@ export const team: { name: string; role: string; image?: ImageMetadata; bio: str
   {
     name: "Carolina",
     role: "Dental Assistant",
+    image: carolina,
     bio: "Hi, I’m Carolina! I’ve had a passion for dentistry since I was 12 years old, so getting to work in a field I’ve always loved makes me really happy. I enjoy learning something new every day and growing in my career. Outside of work, I love spending my weekends downtown with my friends, trying yoga or Pilates, and getting creative with art—especially when the seasonal holidays come around!",
   },
   {
     name: "Hannah",
     role: "Dental Assistant",
+    image: hannah,
     bio: "I’m currently 26 years old and have been working in dentistry for about two years now. My favorite part of my job is helping our patients feel confident in their oral care and build lasting connections with them. Sitting in the dental chair can feel stressful, so I always strive to bring a warm, welcoming energy to make your experience as smooth and easy as possible! When I’m not at the office, you can usually find me out with my friends, at concerts, or doing something creative.",
   },
   {
