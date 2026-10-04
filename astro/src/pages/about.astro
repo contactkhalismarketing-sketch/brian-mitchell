@@ -40,11 +40,11 @@ import { liveAssets, team, doctors } from "../lib/data";
       <section class="bg-[#f0f5f4]">
         <div class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <p class="eyebrow">Meet the doctors</p>
-          <div class="mt-8 grid gap-7 lg:grid-cols-2">
+          <div class="mt-8 grid gap-7">
             {doctors.map((doctor) => (
-              <article class="grid overflow-hidden bg-[#ffffff] shadow-[0_20px_46px_rgba(40,62,60,.09)] sm:grid-cols-[.78fr_1.22fr] doctor-feature">
+              <article class="grid overflow-hidden bg-[#ffffff] shadow-[0_20px_46px_rgba(40,62,60,.09)] sm:grid-cols-[.7fr_1.3fr] lg:grid-cols-[.45fr_1.55fr] doctor-feature">
                 {doctor.name === "Dr. Brian Mitchell" ? (
-                  <Image src={liveAssets.brianAbout} alt={doctor.name} class="h-full min-h-[360px] w-full object-cover object-[center_20%]" width={640} />
+                  <Image src={liveAssets.brianAbout} alt={doctor.name} class="h-full min-h-[360px] w-full object-cover object-[center_22%]" width={900} />
                 ) : (
                   <div class="doctor-feature__placeholder" aria-label={`${doctor.name} photo coming soon`}>
                     <span>{doctor.name.replace("Dr. ", "").split(" ").map((part) => part[0]).join("")}</span>
@@ -73,7 +73,7 @@ import { liveAssets, team, doctors } from "../lib/data";
           <figure class="relative mx-auto mt-12 max-w-[1100px]">
             <div class="absolute -left-3 -top-3 hidden h-full w-full border border-[#5f8f8a]/55 sm:block" aria-hidden="true"></div>
             <Image src={liveAssets.team} alt="The Dr. Brian Mitchell & Associates team outside the practice at 6383 E. Grant Road" class="relative aspect-[16/10] w-full object-cover object-[50%_62%]" width={1100} loading="lazy" />
-            <figcaption class="hero-media-label">The whole team · Tucson, Arizona</figcaption>
+            <figcaption class="hero-media-label">Our Team</figcaption>
           </figure>
           <div class="team-grid mt-14">
             {team.map((member, index) => (
