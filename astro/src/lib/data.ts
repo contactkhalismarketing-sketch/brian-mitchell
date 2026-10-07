@@ -1,5 +1,6 @@
 import logo from "../assets/practice/brian-mitchell-live-logo_02f81e9c.png";
 import brian from "../assets/practice/brian_c0d844bb.jpg";
+import amanKaur from "../assets/practice/aman-kaur.jpg";
 import office from "../assets/practice/brian-mitchell-live-office_d91a92cb.jpg";
 import cosmetics from "../assets/practice/cosmetics_48be418b.png";
 import orthodontics from "../assets/practice/ortho_9f9f5437.png";
@@ -81,6 +82,7 @@ export const liveAssets = {
   cosmetics,
   orthodontics,
   brianAbout: brian,
+  amanKaur,
   team: teamPracticePhoto,
   blogSoftTissue,
   blogImplant,
@@ -345,17 +347,19 @@ export const team: { name: string; role: string; image?: ImageMetadata; bio: str
   },
 ];
 
-// Doctors, from the same document. Dr. Kaur's photo is pending; pages show a placeholder until it arrives.
+// Doctors, from the same document.
 export const doctors = [
   {
     name: "Dr. Brian Mitchell",
     role: "Owner and Dentist",
+    image: brian,
     heading: "Dedicated to your smile.",
     bio: "Born and raised in Salt Lake City, Dr. Mitchell studied Exercise Physiology at the University of Utah before earning his dental degree from the Baltimore College of Dental Surgery in Baltimore, Maryland. For the past 20 years he has practiced dentistry in Arizona and is proud to call Tucson home. What he enjoys most is helping people improve not only their smiles but also their confidence, health, and quality of life, and he believes great dental care begins with listening, treating every person with kindness, and tailoring care to each patient’s needs. He is grateful for his team and for the relationships built with patients over the years, which he counts among the greatest joys of his career. Outside the office he enjoys time with his wife and daughters, reading, exercising, and playing guitar.",
   },
   {
     name: "Dr. Aman Kaur",
     role: "Dentist",
+    image: amanKaur,
     heading: "Prevention-first, patient-centred care.",
     bio: "A graduate of the University of Arizona with degrees in Public Health and Molecular & Cellular Biology, Dr. Kaur earned her doctorate and public health certificate from the ATSU Arizona School of Dentistry and Oral Health. She has worked with community health clinics across the U.S. and internationally, serving diverse populations in Arizona, California, Washington, Virginia, Peru, Mexico, and India, and was honored as ATSU Woman of the Year in 2016. Committed to continuing education, she strives to provide innovative, high-quality, comprehensive care, with a strong emphasis on patient education and preventive care that empowers patients to take an active role in their oral health. Born and raised in Arizona, she enjoys time with her husband, family, and friends, as well as traveling, hiking, and exploring.",
   },

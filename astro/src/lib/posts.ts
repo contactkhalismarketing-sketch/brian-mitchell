@@ -71,7 +71,7 @@ export const posts: Post[] = [
       { type: "image", image: liveAssets.brian, alt: "Dr. Brian Mitchell" },
       { type: "h2", id: "dr-mitchell-shares", text: "Dr. Brian Mitchell shares" },
       { type: "quote", text: "My Dental Implant System has transformed the implant process into a nearly painless experience. Patients often express surprise at the speed and ease with which implants are placed using this groundbreaking technology.", cite: "Dr. Brian Mitchell" },
-      { type: "p", text: "If you are considering dental implants, choose Dr. Brian Mitchell and Associates. The extensive experience and expertise with dental implants and tissue augmentation by Dr. Brian Mitchell and Associates is why you will receive the best dental implant. Dr. Brian Mitchell & Associates, where innovation meets compassionate care. Call (520) 523-4860. Located at 6383 E Grant Rd. Suite 155, Tucson, AZ 85715." },
+      { type: "p", text: "If you are considering dental implants, choose Dr. Brian Mitchell and Associates. The extensive experience and expertise with dental implants and tissue augmentation by Dr. Brian Mitchell and Associates is why you will receive the best dental implant. Dr. Brian Mitchell & Associates, where innovation meets compassionate care. Call (520) 881-6767. Located at 6383 E Grant Rd. Suite 155, Tucson, AZ 85715." },
       { type: "h2", id: "terms", text: "Terms and definitions" },
       { type: "terms", items: [
         ["Connective tissue", "The foundational supporting and binding tissues, such as the gums (gingiva), dental pulp, and periodontal ligament, that anchor, nourish, and protect the teeth."],
@@ -175,7 +175,7 @@ export const posts: Post[] = [
       { type: "p", text: "Your priority should be consulting an orthodontist who will determine if you are a candidate for Invisalign. Dr. Mitchell is the premier orthodontist specialist of Tucson who will guide you through the process." },
       { type: "h2", id: "about-dr-mitchell", text: "About Dr. Mitchell" },
       { type: "p", text: "Dr. Mitchell graduated from the Baltimore College of Dental Surgery in Maryland. He was born and raised in Salt Lake City, Utah, where he studied Exercise Physiology at the University of Utah. His well-established practice in Tucson specializes in general dentistry, including implants, dentures, and orthodontics, which includes expertise in Invisalign clear braces." },
-      { type: "p", text: "The Invisalign treatment is also affordable, with payment options offered by Dr. Mitchell. The first step for exploring affordable braces in Tucson is to set up an appointment with Dr. Mitchell, the best orthodontist Tucson has to offer. To request an appointment, use the contact form on this site or call (520) 523-4860." },
+      { type: "p", text: "The Invisalign treatment is also affordable, with payment options offered by Dr. Mitchell. The first step for exploring affordable braces in Tucson is to set up an appointment with Dr. Mitchell, the best orthodontist Tucson has to offer. To request an appointment, use the contact form on this site or call (520) 881-6767." },
     ],
     sources: [
       "https://www.forbes.com/health/dental/what-is-invisalign/",
@@ -223,7 +223,7 @@ export const posts: Post[] = [
       { type: "h2", id: "a-better-path", text: "A better path in Tucson" },
       { type: "p", text: "Dr. Brian Mitchell, located in Tucson, is a qualified expert in Invisalign aligners and will provide you with a free Invisalign consultation to develop your exclusive treatment plan." },
       { type: "quote", text: "Invisalign is a way to straighten teeth without metal braces. We will make a clear mouthpiece or tray for you that will straighten your teeth over time. These trays are removable so you can brush and eat normally.", cite: "Dr. Brian Mitchell" },
-      { type: "p", text: "The Invisalign treatment is also affordable, with payment options offered by Dr. Mitchell. The first step for exploring affordable braces in Tucson is to set up an appointment with Dr. Mitchell, one of the best orthodontists Tucson has to offer. To request an appointment, use the contact form on this site or call (520) 523-4860." },
+      { type: "p", text: "The Invisalign treatment is also affordable, with payment options offered by Dr. Mitchell. The first step for exploring affordable braces in Tucson is to set up an appointment with Dr. Mitchell, one of the best orthodontists Tucson has to offer. To request an appointment, use the contact form on this site or call (520) 881-6767." },
     ],
     sources: [
       "https://www.bbc.com/news/uk-58038752",

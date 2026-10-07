@@ -43,13 +43,7 @@ import { liveAssets, team, doctors } from "../lib/data";
           <div class="mt-8 grid gap-7">
             {doctors.map((doctor) => (
               <article class="grid overflow-hidden bg-[#ffffff] shadow-[0_20px_46px_rgba(40,62,60,.09)] sm:grid-cols-[.7fr_1.3fr] lg:grid-cols-[.45fr_1.55fr] doctor-feature">
-                {doctor.name === "Dr. Brian Mitchell" ? (
-                  <Image src={liveAssets.brianAbout} alt={doctor.name} class="h-full min-h-[360px] w-full object-cover object-[center_22%]" width={900} />
-                ) : (
-                  <div class="doctor-feature__placeholder" aria-label={`${doctor.name} photo coming soon`}>
-                    <span>{doctor.name.replace("Dr. ", "").split(" ").map((part) => part[0]).join("")}</span>
-                  </div>
-                )}
+                <Image src={doctor.image} alt={doctor.name} class="h-full min-h-[360px] w-full object-cover object-[center_22%]" width={900} />
                 <div class="doctor-feature__content p-8">
                   <p class="eyebrow">{doctor.name} · {doctor.role}</p>
                   <h3 class="display-face mt-3 text-3xl leading-none text-[#283e3c]">{doctor.heading}</h3>
