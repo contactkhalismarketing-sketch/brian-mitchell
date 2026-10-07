@@ -1,25 +1,68 @@
 ---
 import { Icon } from "astro-icon/components";
 
+// Submissions go to the practice via Formspree (form meaeezpk). Sent with fetch so the visitor
+// stays on the page; if JavaScript is unavailable the plain POST still works and Formspree
+// shows its own thank-you page. The "_gotcha" field is a honeypot: hidden from people, and
+// Formspree discards any submission where a bot has filled it in.
 interface Props {
   id: string;
   class?: string;
 }
 
 const { id, class: className = "" } = Astro.props;
+const endpoint = "https://formspree.io/f/meaeezpk";
 const labelClass = "grid gap-2 text-[.66rem] font-extrabold uppercase tracking-[.12em] text-[#4f5f5c]";
 ---
 
-<form class={`grid gap-4 ${className}`} data-contact-form>
-  <label class={labelClass} for={`${id}-name`}>Name<input id={`${id}-name`} name="name" class="form-field" placeholder="Your name" autocomplete="name" /></label>
-  <label class={labelClass} for={`${id}-email`}>Email<input id={`${id}-email`} name="email" class="form-field" type="email" placeholder="you@email.com" autocomplete="email" /></label>
+<form class={`grid gap-4 ${className}`} action={endpoint} method="POST" data-contact-form novalidate>
+  <label class={labelClass} for={`${id}-name`}>Name<input id={`${id}-name`} name="name" class="form-field" placeholder="Your name" autocomplete="name" required /></label>
+  <label class={labelClass} for={`${id}-email`}>Email<input id={`${id}-email`} name="email" class="form-field" type="email" placeholder="you@email.com" autocomplete="email" required /></label>
   <label class={labelClass} for={`${id}-phone`}>Phone<input id={`${id}-phone`} name="phone" class="form-field" type="tel" placeholder="(000) 000-0000" autocomplete="tel" /></label>
-  <label class={labelClass} for={`${id}-message`}>How can we help?<textarea id={`${id}-message`} name="message" class="form-field min-h-[132px] resize-y" placeholder="Tell us how we can help."></textarea></label>
+  <label class={labelClass} for={`${id}-message`}>How can we help?<textarea id={`${id}-message`} name="message" class="form-field min-h-[132px] resize-y" placeholder="Tell us how we can help." required></textarea></label>
+  <input type="hidden" name="_subject" value="Website enquiry from brianmitchelldds.com" />
+  <input type="hidden" name="page" value={Astro.url.pathname} />
+  <div class="contact-form__trap" aria-hidden="true"><label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label></div>
+  <p class="text-xs leading-5 text-[#6f807c]">Please don't include health details in this form. For anything urgent, call (520) 881-6767.</p>
+  <p class="contact-form__status text-sm font-semibold text-[#283e3c]" role="status" aria-live="polite" hidden></p>
   <button type="submit" class="action-button primary w-fit">Send message <Icon name="lucide:arrow-right" class="h-4 w-4" /></button>
 </form>
 
+<style>
+  .contact-form__trap { height: 0; left: -9999px; overflow: hidden; position: absolute; top: 0; width: 0; }
+</style>
+
 <script>
-  document.querySelectorAll("[data-contact-form]").forEach((form) => {
-    form.addEventListener("submit", (event) => event.preventDefault());
+  document.querySelectorAll<HTMLFormElement>("[data-contact-form]").forEach((form) => {
+    const status = form.querySelector<HTMLElement>(".contact-form__status");
+    const button = form.querySelector<HTMLButtonElement>("button[type=submit]");
+
+    const show = (text: string, isError = false) => {
+      if (!status) return;
+      status.textContent = text;
+      status.hidden = false;
+      status.classList.toggle("text-[#b3261e]", isError);
+    };
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      if (button) { button.disabled = true; button.setAttribute("aria-busy", "true"); }
+      show("Sending…");
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+        if (!response.ok) throw new Error(String(response.status));
+        form.reset();
+        form.querySelectorAll<HTMLElement>("label, button").forEach((el) => { el.hidden = true; });
+        show("Thank you. Your message has been sent and the practice will be in touch soon.");
+      } catch {
+        show("Sorry, your message could not be sent. Please call (520) 881-6767 or email tucsonsmileteam@gmail.com.", true);
+        if (button) { button.disabled = false; button.removeAttribute("aria-busy"); }
+      }
+    });
   });
 </script>
