@@ -132,7 +132,7 @@ export const patientInfoMenu = [
 
 // Sourced from the live Forms page (brianmitchelldds.com/forms/).
 // PDFs are the practice's own forms, copied from brianmitchelldds.com/patient-info/forms/ into public/forms/.
-// The live site links "Endo (Root Canal)" to the tooth-extraction consent PDF, which looks like an error, so it has no file here.
+// The live site linked "Endo (Root Canal)" to the extraction consent by mistake; the practice supplied the correct form on 2026-10-10.
 export const formCategories = [
   {
     name: "New Patient Forms",
@@ -153,7 +153,7 @@ export const formCategories = [
     name: "Consent Forms",
     items: [
       { label: "Tooth Extractions", file: "/forms/Consent-Tooth-Extraction-Removal-1.pdf" },
-      { label: "Endo (Root Canal)", file: null },
+      { label: "Endo (Root Canal)", file: "/forms/Root-Canal-Endodontic-Consent.pdf" },
       { label: "Surgical Implant", file: "/forms/Surgical-Implant-Informed-Consent.pdf" },
     ],
   },
