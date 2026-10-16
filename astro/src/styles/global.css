@@ -319,3 +319,21 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 /* Cherry full-page widget: constrain to a readable column and let its card sit on our page background. */
 .cherry-plans__widget { max-width: 1100px; margin-inline: auto; }
 .cherry-plans__widget > div:empty { display: none; }
+
+/* Hero "blend" (client feedback: the white card looked pasted onto the photo).
+   Desktop only. Instead of a floating white card with a drop shadow, the copy sits on a soft
+   brand-teal column anchored to the left edge, which fades into the photo/video over ~12rem.
+   The column width tracks the 1440px content container so text never runs past the solid area. */
+@media (min-width: 1024px) {
+  .page-hero, .homepage-hero { --hero-blend-solid: calc(max(0px, (100% - 1440px) / 2) + 47rem); }
+  .page-hero__copy-band::before { background: linear-gradient(90deg, #f0f5f4 0, #f0f5f4 var(--hero-blend-solid), rgba(240,245,244,.86) calc(var(--hero-blend-solid) + 4rem), rgba(240,245,244,0) calc(var(--hero-blend-solid) + 13rem)); content: ""; inset: 0; pointer-events: none; position: absolute; }
+  .page-hero__copy-band > div { position: relative; z-index: 1; }
+  .page-hero__copy-panel { background: transparent; box-shadow: none; min-height: 0; padding: 0; }
+  .homepage-hero::after { background: linear-gradient(90deg, #f0f5f4 0, #f0f5f4 var(--hero-blend-solid), rgba(240,245,244,.86) calc(var(--hero-blend-solid) + 4rem), rgba(240,245,244,0) calc(var(--hero-blend-solid) + 13rem)); }
+  .homepage-hero .hero-overlay { display: none; }
+  .homepage-hero__copy-panel { background: transparent; box-shadow: none; margin-bottom: 0; padding: 0; }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .page-hero, .homepage-hero { --hero-blend-solid: 37rem; }
+  .page-hero__copy-panel, .homepage-hero__copy-panel { max-width: 33rem; }
+}
