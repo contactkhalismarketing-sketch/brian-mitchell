@@ -55,6 +55,10 @@ const labelClass = "grid gap-2 text-[.66rem] font-extrabold uppercase tracking-[
           body: new FormData(form),
           headers: { Accept: "application/json" },
         });
+        // Formspree refuses in-page submissions while reCAPTCHA is switched on for the form (403).
+        // In that case send the form the ordinary way: Formspree shows its captcha, then its own
+        // thank-you page. Nothing is lost either way.
+        if (response.status === 403) { HTMLFormElement.prototype.submit.call(form); return; }
         if (!response.ok) throw new Error(String(response.status));
         form.reset();
         form.querySelectorAll<HTMLElement>("label, button").forEach((el) => { el.hidden = true; });
