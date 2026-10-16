@@ -1,0 +1,9 @@
+
+/* Hero option A, "frosted glass": the copy card stays (it keeps text readable) but is translucent
+   and blurs the photo/video behind it, with no drop shadow, so the image shows through the card. */
+@media (min-width: 1024px) {
+  .homepage-hero::after { background: linear-gradient(90deg, rgba(255,255,255,.28) 0%, rgba(255,255,255,.1) 45%, transparent 70%); }
+  .homepage-hero .hero-overlay { display: none; }
+  .homepage-hero__copy-panel, .page-hero__copy-panel { -webkit-backdrop-filter: blur(22px) saturate(1.15); backdrop-filter: blur(22px) saturate(1.15); background: rgba(255,255,255,.66); border: 1px solid rgba(255,255,255,.55); border-radius: 6px; box-shadow: none; }
+  .page-hero__copy-panel { min-height: 0; }
+}

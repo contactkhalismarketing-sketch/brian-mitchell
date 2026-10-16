@@ -6,7 +6,6 @@ import cosmetics from "../assets/practice/cosmetics_48be418b.png";
 import orthodontics from "../assets/practice/ortho_9f9f5437.png";
 import teamPracticePhoto from "../assets/practice/team-practice_c32289f8.jpg";
 import practiceBuildingMobile from "../assets/practice/practice-building-mobile.jpg";
-import aboutHeroDesktop from "../assets/practice/about-hero-desktop.jpg";
 import blogSoftTissue from "../assets/practice/blog-soft-tissue_118170c6.png";
 import blogImplant from "../assets/practice/blog-implant_6ad9e8fd.png";
 import bioclear from "../assets/practice/bioclear-certified-dr-brian-mitchell_489e77d8.png";
@@ -88,8 +87,6 @@ export const liveAssets = {
   team: teamPracticePhoto,
   // Top of the group photo only (building front, no people) for the About hero on phones.
   practiceBuildingMobile,
-  // Building on the right half, brand-teal on the left, so the sign is not hidden by the hero's copy column on desktop.
-  aboutHeroDesktop,
   blogSoftTissue,
   blogImplant,
   bioclear,
