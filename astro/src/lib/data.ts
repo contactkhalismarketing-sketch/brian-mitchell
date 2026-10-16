@@ -1,4 +1,6 @@
 import logo from "../assets/practice/brian-mitchell-live-logo_02f81e9c.png";
+// Same artwork with the built-in empty padding removed, so the header logo can be larger in the same space.
+import logoTrimmed from "../assets/practice/brian-mitchell-logo-trimmed.png";
 import brian from "../assets/practice/brian_c0d844bb.jpg";
 import amanKaur from "../assets/practice/aman-kaur.jpg";
 import office from "../assets/practice/brian-mitchell-live-office_d91a92cb.jpg";
@@ -78,6 +80,7 @@ export const serviceHeroes = {
 
 export const liveAssets = {
   logo,
+  logoTrimmed,
   brian,
   office,
   cosmetics,
