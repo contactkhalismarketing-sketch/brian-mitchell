@@ -34,7 +34,7 @@ import heroBridges from "../assets/practice/heroes/bridges-hero.jpg";
 import heroBridgesMobile from "../assets/practice/heroes/bridges-hero-mobile.jpg";
 import heroCosmetic from "../assets/practice/heroes/cosmetic-dentistry-hero.jpg";
 import heroCosmeticMobile from "../assets/practice/heroes/cosmetic-dentistry-hero-mobile.jpg";
-// Service-card crops (the earlier, subject-centred versions) for the 4:3 cards on the homepage and Services page.
+// 4:3 service-card crops, centred on each subject, for the cards on the homepage and Services page.
 import cardCosmetic from "../assets/practice/heroes/cosmetic-dentistry-card.jpg";
 import cardOrthodontics from "../assets/practice/heroes/orthodontics-card.jpg";
 import cardImplants from "../assets/practice/heroes/dental-implants-card.jpg";
