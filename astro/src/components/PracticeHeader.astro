@@ -15,8 +15,8 @@ const [servicesItem, aboutItem, ...restItems] = navigation;
 ---
 
 <header class="relative z-30 bg-[#ffffff]/95 backdrop-blur-md">
-  <div class="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-5 py-4 sm:px-8 lg:px-12">
-    <a href="/" class="block w-[190px] sm:w-[220px] xl:w-[260px]" aria-label="Dr. Brian Mitchell & Associates home">
+  <div class="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-5 py-4 sm:px-8 lg:px-12 xl:grid xl:grid-cols-[1fr_auto_1fr]">
+    <a href="/" class="block w-[190px] sm:w-[220px] xl:w-[260px] xl:justify-self-start" aria-label="Dr. Brian Mitchell & Associates home">
       <Image src={liveAssets.logoTrimmed} class="h-auto w-full" alt="Dr. Brian Mitchell & Associates Dentistry, Dental Implants, Orthodontics" widths={[190, 220, 260, 380, 440, 520]} sizes="(min-width: 1280px) 260px, (min-width: 640px) 220px, 190px" loading="eager" />
     </a>
     <nav class="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
@@ -27,7 +27,7 @@ const [servicesItem, aboutItem, ...restItems] = navigation;
         <a href={item.href} class={`nav-link ${active === item.active ? "text-[#354a4d]" : ""}`}>{item.label}</a>
       ))}
     </nav>
-    <div class="hidden items-center gap-3 sm:flex">
+    <div class="hidden items-center gap-3 sm:flex xl:justify-self-end">
       <a class="action-button outline" href="tel:5208816767"><Icon name="lucide:phone" class="h-3.5 w-3.5" />Call us</a>
       <a href="/contact/" class="action-button primary"><Icon name="lucide:calendar-days" class="h-3.5 w-3.5" />Book an appointment</a>
     </div>
