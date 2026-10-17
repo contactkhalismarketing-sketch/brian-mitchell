@@ -34,6 +34,10 @@ import heroBridges from "../assets/practice/heroes/bridges-hero.jpg";
 import heroBridgesMobile from "../assets/practice/heroes/bridges-hero-mobile.jpg";
 import heroCosmetic from "../assets/practice/heroes/cosmetic-dentistry-hero.jpg";
 import heroCosmeticMobile from "../assets/practice/heroes/cosmetic-dentistry-hero-mobile.jpg";
+// Service-card crops (the earlier, subject-centred versions) for the 4:3 cards on the homepage and Services page.
+import cardCosmetic from "../assets/practice/heroes/cosmetic-dentistry-card.jpg";
+import cardOrthodontics from "../assets/practice/heroes/orthodontics-card.jpg";
+import cardImplants from "../assets/practice/heroes/dental-implants-card.jpg";
 import heroImplants from "../assets/practice/heroes/dental-implants-hero.jpg";
 import heroImplantsMobile from "../assets/practice/heroes/dental-implants-hero-mobile.jpg";
 import heroExtractions from "../assets/practice/heroes/extractions-hero.jpg";
@@ -62,12 +66,12 @@ export const serviceHeroes = {
   adultBraces: { image: heroAdultBraces, mobile: heroAdultBracesMobile, position: "100% 58%" },
   bioclear: { image: heroBioclear, mobile: heroBioclearMobile, position: "100% 62%" },
   bridges: { image: heroBridges, mobile: heroBridgesMobile, position: "100% 58%" },
-  cosmetic: { image: heroCosmetic, mobile: heroCosmeticMobile, position: "100% 69%" },
-  implants: { image: heroImplants, mobile: heroImplantsMobile, position: "100% 67%" },
+  cosmetic: { image: heroCosmetic, mobile: heroCosmeticMobile, card: cardCosmetic, position: "100% 69%" },
+  implants: { image: heroImplants, mobile: heroImplantsMobile, card: cardImplants, position: "100% 67%" },
   // Temporary: shares the implants hero until a dedicated zirconia hero is supplied.
   zirconia: { image: heroImplants, mobile: heroImplantsMobile, position: "100% 67%" },
   extractions: { image: heroExtractions, mobile: heroExtractionsMobile, position: "100% 69%" },
-  orthodontics: { image: heroOrthodontics, mobile: heroOrthodonticsMobile, position: "100% 69%" },
+  orthodontics: { image: heroOrthodontics, mobile: heroOrthodonticsMobile, card: cardOrthodontics, position: "100% 69%" },
   preventative: { image: heroPreventative, mobile: heroPreventativeMobile, position: "100% 62%" },
   cleaning: { image: heroCleaning, mobile: heroCleaningMobile, position: "100% 60%" },
   rootCanals: { image: heroRootCanals, mobile: heroRootCanalsMobile, position: "100% 64%" },
@@ -372,15 +376,15 @@ export const doctors = [
 ];
 
 export const serviceList = [
-  ["Cosmetic Dentistry", "A personalised approach to a smile that feels like you.", serviceHeroes.cosmetic.mobile, "/service/cosmetic-dentistry/"],
-  ["Orthodontics", "Traditional and Invisalign options for patients of every age.", serviceHeroes.orthodontics.mobile, "/service/orthodontics/"],
-  ["Dental Implants", "Modern tooth-replacement plans with comfort at the centre.", serviceHeroes.implants.mobile, "/service/dental-implants/"],
+  ["Cosmetic Dentistry", "A personalised approach to a smile that feels like you.", serviceHeroes.cosmetic.card, "/service/cosmetic-dentistry/"],
+  ["Orthodontics", "Traditional and Invisalign options for patients of every age.", serviceHeroes.orthodontics.card, "/service/orthodontics/"],
+  ["Dental Implants", "Modern tooth-replacement plans with comfort at the centre.", serviceHeroes.implants.card, "/service/dental-implants/"],
 ] as const;
 
 export const featuredServices = [
-  { number: "01", name: "Cosmetic Dentistry", copy: "Thoughtful aesthetic care for a smile that feels unmistakably like you.", image: serviceHeroes.cosmetic.mobile, href: "/service/cosmetic-dentistry/" },
-  { number: "02", name: "Orthodontics", copy: "Traditional and Invisalign options that fit your life and your smile goals.", image: serviceHeroes.orthodontics.mobile, href: "/service/orthodontics/" },
-  { number: "03", name: "Dental Implants", copy: "Modern tooth-replacement plans with comfort, function, and confidence at the centre.", image: serviceHeroes.implants.mobile, href: "/service/dental-implants/" },
+  { number: "01", name: "Cosmetic Dentistry", copy: "Thoughtful aesthetic care for a smile that feels unmistakably like you.", image: serviceHeroes.cosmetic.card, href: "/service/cosmetic-dentistry/" },
+  { number: "02", name: "Orthodontics", copy: "Traditional and Invisalign options that fit your life and your smile goals.", image: serviceHeroes.orthodontics.card, href: "/service/orthodontics/" },
+  { number: "03", name: "Dental Implants", copy: "Modern tooth-replacement plans with comfort, function, and confidence at the centre.", image: serviceHeroes.implants.card, href: "/service/dental-implants/" },
 ] as const;
 
 export const additionalServiceList = [
