@@ -128,9 +128,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .porcelain-video-panel__tag { bottom: 1.8rem; color: #ffffff; font-size: .58rem; font-weight: 800; letter-spacing: .13em; position: absolute; right: 1.75rem; text-transform: uppercase; }
 .hero-overlay { background: linear-gradient(90deg, rgba(255,255,255,.74) 0%, rgba(255,255,255,.46) 38%, rgba(255,255,255,.12) 65%, rgba(40,62,60,.08) 100%); }
 
-.page-hero__image-band { height: clamp(200px, 40vw, 320px); overflow: hidden; }
+/* Mobile/tablet hero band keeps the same 2.2:1 shape as the mobile hero crops, so phones and tablets frame the subject the same way. */
+.page-hero__image-band { height: clamp(170px, 45.5vw, 465px); overflow: hidden; }
 .page-hero__image-band img { object-position: var(--hero-pos-mobile, center); }
-.page-hero.taller .page-hero__image-band { height: clamp(230px, 46vw, 380px); }
+.page-hero.taller .page-hero__image-band { height: clamp(170px, 43vw, 440px); }
 .page-hero__copy-band { background: #ffffff; position: relative; }
 .page-hero__copy-panel { max-width: 40rem; padding: 2.15rem 0 2.5rem; }
 .page-hero__copy-panel .stamp { border-color: rgba(53,74,77,.38); color: #354a4d; }
