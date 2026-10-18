@@ -224,11 +224,6 @@ export const practiceStats = {
 
 export const specials = [
   {
-    name: "Dental Implant Special",
-    price: "$3,500",
-    detail: "Includes the final crown. Does not include bone or soft tissue grafting, if needed.",
-  },
-  {
     name: "Invisalign® Treatment",
     price: "Free consultation",
     detail: "A complimentary consultation to talk through comprehensive clear-aligner treatment.",

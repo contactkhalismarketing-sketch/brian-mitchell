@@ -21,14 +21,6 @@ const specials = [
     cta: { label: "Call for a consultation", href: "tel:5208816767", icon: "lucide:phone" },
   },
   {
-    eyebrow: "Dental implant*",
-    name: "Including final crown",
-    price: "$3,500",
-    detail: "A complete single-tooth implant, from placement through to the finished crown, at one clear price.",
-    note: "*Does not include bone or soft tissue grafting if necessary.",
-    cta: { label: "Book a consultation", href: "/contact/", icon: "lucide:calendar-days" },
-  },
-  {
     eyebrow: "In-house",
     name: "Dental savings plan",
     price: "$650 per year",
@@ -49,14 +41,14 @@ const highlights = [
 ];
 ---
 
-<Layout title="New Patient Specials | Dr. Brian Mitchell & Associates" description="New patient specials at Dr. Brian Mitchell & Associates in Tucson: free Invisalign consultation, $3,500 dental implant including final crown, and a $650 per year in-house dental savings plan.">
+<Layout title="New Patient Specials | Dr. Brian Mitchell & Associates" description="New patient specials at Dr. Brian Mitchell & Associates in Tucson: a free Invisalign consultation and a $650 per year in-house dental savings plan.">
   <div class="page-shell min-h-screen">
     <PracticeHeader active="patient-info" />
     <main>
       <PageHero
         eyebrow="New patient specials"
         title="A perfect smile is right around the corner."
-        body="Three offers for new patients: a free Invisalign consultation, a complete dental implant at one clear price, and an in-house savings plan for anyone without insurance."
+        body="Two offers for new patients: a free Invisalign consultation, and an in-house savings plan for anyone without insurance."
         image={liveAssets.office}
         imagePosition="50% 45%"
       />
@@ -66,7 +58,7 @@ const highlights = [
           <p class="eyebrow">Current offers</p>
           <h2 class="display-face mt-4 text-3xl leading-none text-[#283e3c] sm:text-4xl">Simple, upfront pricing to get you started.</h2>
         </div>
-        <div class="mt-12 grid gap-7 lg:grid-cols-3">
+        <div class="mt-12 grid max-w-5xl gap-7 md:grid-cols-2">
           {specials.map((special) => (
             <article class="flex flex-col border-t-2 border-[#729f9a] bg-[#f0f5f4] p-7">
               <p class="eyebrow">{special.eyebrow}</p>
