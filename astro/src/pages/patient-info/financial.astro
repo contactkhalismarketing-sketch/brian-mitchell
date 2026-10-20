@@ -6,7 +6,7 @@ import PracticeFooter from "../../components/PracticeFooter.astro";
 import PageHero from "../../components/PageHero.astro";
 import ContactBand from "../../components/ContactBand.astro";
 import CherryPaymentPlans from "../../components/CherryPaymentPlans.astro";
-import { liveAssets, financingOptions } from "../../lib/data";
+import { liveAssets, financingOptions, heroAlt } from "../../lib/data";
 ---
 
 <Layout title="Financing & Insurance | Dr. Brian Mitchell & Associates">
@@ -18,6 +18,7 @@ import { liveAssets, financingOptions } from "../../lib/data";
         title="Clear costs, before any work begins."
         body="We believe you should understand exactly how a visit is paid for before you're in the chair. Here's every option, in plain terms."
         image={liveAssets.office}
+        imageAlt={heroAlt.office}
         imagePosition="50% 78%"
       />
 

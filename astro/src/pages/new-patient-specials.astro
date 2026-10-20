@@ -7,7 +7,7 @@ import PracticeFooter from "../components/PracticeFooter.astro";
 import PageHero from "../components/PageHero.astro";
 import ContactBand from "../components/ContactBand.astro";
 import CherryPaymentPlans from "../components/CherryPaymentPlans.astro";
-import { liveAssets } from "../lib/data";
+import { liveAssets, heroAlt } from "../lib/data";
 
 // Offers and the patient quote are taken from the live page
 // (brianmitchelldds.com/new-patient-specials/). Do not invent offers or reviews.
@@ -50,6 +50,7 @@ const highlights = [
         title="A perfect smile is right around the corner."
         body="Two offers for new patients: a free Invisalign consultation, and an in-house savings plan for anyone without insurance."
         image={liveAssets.office}
+        imageAlt={heroAlt.office}
         imagePosition="50% 45%"
       />
 

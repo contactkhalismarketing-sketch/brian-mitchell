@@ -11,9 +11,10 @@ interface Props {
   imageMobile?: ImageMetadata;
   imageMobilePosition?: string;
   taller?: boolean;
+  imageAlt?: string;
 }
 
-const { eyebrow, title, body, image, imagePosition = "center", imageMobile, imageMobilePosition = "center", taller = false } = Astro.props;
+const { eyebrow, title, body, image, imagePosition = "center", imageMobile, imageMobilePosition = "center", taller = false, imageAlt = "" } = Astro.props;
 
 const positionVars = `--hero-pos-desktop: ${imagePosition}; --hero-pos-mobile: ${imageMobile ? imageMobilePosition : imagePosition};`;
 const desktop = imageMobile ? await getImage({ src: image, width: 1920, format: "webp" }) : null;
@@ -25,10 +26,10 @@ const mobile = imageMobile ? await getImage({ src: imageMobile, width: 1024, for
     {desktop && mobile ? (
       <picture>
         <source media="(min-width: 1024px)" srcset={desktop.src} />
-        <img src={mobile.src} alt="" style={positionVars} class="absolute inset-0 h-full w-full object-cover" loading="eager" fetchpriority="high" />
+        <img src={mobile.src} alt={imageAlt} style={positionVars} class="absolute inset-0 h-full w-full object-cover" loading="eager" fetchpriority="high" />
       </picture>
     ) : (
-      <Image src={image} alt="" style={positionVars} class="absolute inset-0 h-full w-full object-cover" width={1440} loading="eager" />
+      <Image src={image} alt={imageAlt} style={positionVars} class="absolute inset-0 h-full w-full object-cover" width={1440} loading="eager" />
     )}
   </div>
   <div class="page-hero__copy-band relative">

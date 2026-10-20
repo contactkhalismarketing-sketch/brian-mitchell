@@ -7,7 +7,7 @@ import ContactBand from "../components/ContactBand.astro";
 import PracticeTourPanel from "../components/PracticeTourPanel.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import { liveAssets, team, doctors } from "../lib/data";
+import { liveAssets, team, doctors, heroAlt } from "../lib/data";
 ---
 
 <Layout title="About | Dr. Brian Mitchell & Associates">
@@ -19,6 +19,7 @@ import { liveAssets, team, doctors } from "../lib/data";
         title="Personal care from a team that knows you by name."
         body="Driven by a commitment to cultivating strong, healthy, and aesthetically pleasing smiles, our team welcomes you into a serene environment where your comfort and goals come first."
         image={liveAssets.team}
+        imageAlt={heroAlt.practice}
         imagePosition="50% 0%"
         imageMobile={liveAssets.practiceBuildingMobile}
         imageMobilePosition="50% 0%"

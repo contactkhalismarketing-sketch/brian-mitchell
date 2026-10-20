@@ -126,7 +126,7 @@ const heroPoster = await getImage({ src: liveAssets.office, width: 1440, widths:
             {featuredServices.map((service) => (
               <a class="service-card group block no-underline" href={service.href}>
                 <div class="service-card__media">
-                  <Image src={service.image} alt="" width={640} />
+                  <Image src={service.image} alt={service.alt} width={640} />
                 </div>
                 <div class="service-card__body">
                   <div class="flex items-end justify-between gap-3">

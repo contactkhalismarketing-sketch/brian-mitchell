@@ -5,7 +5,7 @@ import PracticeHeader from "../../components/PracticeHeader.astro";
 import PracticeFooter from "../../components/PracticeFooter.astro";
 import PageHero from "../../components/PageHero.astro";
 import ContactBand from "../../components/ContactBand.astro";
-import { liveAssets } from "../../lib/data";
+import { liveAssets, heroAlt } from "../../lib/data";
 ---
 
 <Layout title="FAQ | Dr. Brian Mitchell & Associates">
@@ -17,6 +17,7 @@ import { liveAssets } from "../../lib/data";
         title="Have a question? Just ask us directly."
         body="Our FAQ page is being put together. In the meantime, our team is happy to answer anything by phone or email — no question is too small."
         image={liveAssets.office}
+        imageAlt={heroAlt.office}
         imagePosition="12% 45%"
       >
         <div class="mt-9 flex flex-col gap-3 sm:flex-row">

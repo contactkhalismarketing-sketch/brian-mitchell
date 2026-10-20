@@ -5,7 +5,7 @@ import PracticeHeader from "../../components/PracticeHeader.astro";
 import PracticeFooter from "../../components/PracticeFooter.astro";
 import PageHero from "../../components/PageHero.astro";
 import ContactBand from "../../components/ContactBand.astro";
-import { liveAssets, formCategories } from "../../lib/data";
+import { liveAssets, formCategories, heroAlt } from "../../lib/data";
 ---
 
 <Layout title="Patient Forms | Dr. Brian Mitchell & Associates">
@@ -17,6 +17,7 @@ import { liveAssets, formCategories } from "../../lib/data";
         title="Handle the paperwork before you arrive."
         body="Complete your forms ahead of time and your first visit runs smoother from the moment you walk in."
         image={liveAssets.office}
+        imageAlt={heroAlt.office}
         imagePosition="92% 65%"
       >
         <div class="mt-9 flex items-center gap-3 text-sm font-semibold text-[#354a4d]">

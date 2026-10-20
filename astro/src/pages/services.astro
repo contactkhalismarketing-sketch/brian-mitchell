@@ -19,6 +19,7 @@ import { serviceHeroes, serviceList } from "../lib/data";
         title="Care made personal."
         body="Welcome to our dental family. Our team makes your dental journey as comfortable as possible, with a thoughtful plan for the smile you have today and the one you're working toward."
         image={serviceHeroes.routine.image}
+        imageAlt={serviceHeroes.routine.alt}
         imagePosition={serviceHeroes.routine.position}
         imageMobile={serviceHeroes.routine.mobile}
       >
@@ -37,10 +38,10 @@ import { serviceHeroes, serviceList } from "../lib/data";
           <p class="max-w-xl text-sm leading-7 text-[#4a5a58]">From routine preventive care to restorative and aesthetic treatment, we begin by understanding your needs and then talk through the options together. New here? <a href="/first-visit/" class="font-bold text-[#354a4d] underline underline-offset-2">See exactly what to expect at your first visit</a>.</p>
         </div>
         <div class="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {serviceList.map(([name, copy, image, href], index) => (
+          {serviceList.map(([name, copy, image, alt, href], index) => (
             <a href={href} class="service-card group block no-underline">
               <div class="service-card__media">
-                <Image src={image} alt="" width={640} />
+                <Image src={image} alt={alt} width={640} />
               </div>
               <div class="service-card__body">
                 <div class="flex items-end justify-between gap-3">

@@ -62,24 +62,30 @@ import heroBlogsMobile from "../assets/practice/heroes/blogs-hero-mobile.jpg";
 // Service hero set: subject sits right of centre with clear space on the left, so the desktop
 // copy card overlays the empty side. `position` is the desktop focal point (x anchored right,
 // y centred on the subject); the mobile crop is already tight around the subject.
+// Hero alt text is also used for the matching service cards.
+export const heroAlt = {
+  office: "Treatment room at Dr. Brian Mitchell & Associates with a dental chair and an X-ray on screen",
+  practice: "The Dr. Brian Mitchell & Associates building on East Grant Road in Tucson",
+};
+
 export const serviceHeroes = {
-  adultBraces: { image: heroAdultBraces, mobile: heroAdultBracesMobile, position: "100% 58%" },
-  bioclear: { image: heroBioclear, mobile: heroBioclearMobile, position: "100% 62%" },
-  bridges: { image: heroBridges, mobile: heroBridgesMobile, position: "100% 58%" },
-  cosmetic: { image: heroCosmetic, mobile: heroCosmeticMobile, card: cardCosmetic, position: "100% 69%" },
-  implants: { image: heroImplants, mobile: heroImplantsMobile, card: cardImplants, position: "100% 67%" },
+  adultBraces: { image: heroAdultBraces, mobile: heroAdultBracesMobile, position: "100% 58%", alt: "Dental models with clear braces and a clear aligner on a white counter" },
+  bioclear: { image: heroBioclear, mobile: heroBioclearMobile, position: "100% 62%", alt: "Tooth model with tooth-coloured composite restorations, clear Bioclear matrices and a dental instrument" },
+  bridges: { image: heroBridges, mobile: heroBridgesMobile, position: "100% 58%", alt: "Dental model showing a dental bridge replacing a missing tooth" },
+  cosmetic: { image: heroCosmetic, mobile: heroCosmeticMobile, card: cardCosmetic, position: "100% 69%", alt: "Dental model with porcelain veneers and a veneer shade guide on a tray" },
+  implants: { image: heroImplants, mobile: heroImplantsMobile, card: cardImplants, position: "100% 67%", alt: "Dental implant beside a crown and a jaw model showing a placed implant" },
   // Temporary: shares the implants hero until a dedicated zirconia hero is supplied.
-  zirconia: { image: heroImplants, mobile: heroImplantsMobile, position: "100% 67%" },
-  extractions: { image: heroExtractions, mobile: heroExtractionsMobile, position: "100% 69%" },
-  orthodontics: { image: heroOrthodontics, mobile: heroOrthodonticsMobile, card: cardOrthodontics, position: "100% 69%" },
-  preventative: { image: heroPreventative, mobile: heroPreventativeMobile, position: "100% 62%" },
-  cleaning: { image: heroCleaning, mobile: heroCleaningMobile, position: "100% 60%" },
-  rootCanals: { image: heroRootCanals, mobile: heroRootCanalsMobile, position: "100% 64%" },
-  routine: { image: heroRoutine, mobile: heroRoutineMobile, position: "100% 53%" },
-  whitening: { image: heroWhitening, mobile: heroWhiteningMobile, position: "100% 69%" },
-  jeuveau: { image: heroJeuveau, mobile: heroJeuveauMobile, position: "100% 67%" },
+  zirconia: { image: heroImplants, mobile: heroImplantsMobile, position: "100% 67%", alt: "Dental implant beside a crown and a jaw model showing a placed implant" },
+  extractions: { image: heroExtractions, mobile: heroExtractionsMobile, position: "100% 69%", alt: "Extraction forceps, gauze and a tooth model on a tray" },
+  orthodontics: { image: heroOrthodontics, mobile: heroOrthodonticsMobile, card: cardOrthodontics, position: "100% 69%", alt: "Clear aligner on a dental model with a 3D smile scan on a screen behind" },
+  preventative: { image: heroPreventative, mobile: heroPreventativeMobile, position: "100% 62%", alt: "Dental chair and instrument tray in a bright treatment room" },
+  cleaning: { image: heroCleaning, mobile: heroCleaningMobile, position: "100% 60%", alt: "Ultrasonic scaler and hygiene instruments on a tray beside a dental model" },
+  rootCanals: { image: heroRootCanals, mobile: heroRootCanalsMobile, position: "100% 64%", alt: "Cross-section model of a tooth showing its root canals, beside a set of root canal files" },
+  routine: { image: heroRoutine, mobile: heroRoutineMobile, position: "100% 53%", alt: "Dental chair beside a window, with an X-ray displayed on a screen behind" },
+  whitening: { image: heroWhitening, mobile: heroWhiteningMobile, position: "100% 69%", alt: "Custom whitening tray, whitening gel syringe and a tooth shade guide" },
+  jeuveau: { image: heroJeuveau, mobile: heroJeuveauMobile, position: "100% 67%", alt: "Jaw muscle anatomy model with a vial and syringe used for Jeuveau injections" },
   // Composed in-house from the blog photos (editorial spread on the sand tone), not a stock image.
-  blogs: { image: heroBlogs, mobile: heroBlogsMobile, position: "100% 50%" },
+  blogs: { image: heroBlogs, mobile: heroBlogsMobile, position: "100% 50%", alt: "Collage of patient care photos, including a dentist with a patient and a clear aligner being fitted" },
 };
 
 export const liveAssets = {
@@ -371,15 +377,15 @@ export const doctors = [
 ];
 
 export const serviceList = [
-  ["Cosmetic Dentistry", "A personalised approach to a smile that feels like you.", serviceHeroes.cosmetic.card, "/service/cosmetic-dentistry/"],
-  ["Orthodontics", "Traditional and Invisalign options for patients of every age.", serviceHeroes.orthodontics.card, "/service/orthodontics/"],
-  ["Dental Implants", "Modern tooth-replacement plans with comfort at the centre.", serviceHeroes.implants.card, "/service/dental-implants/"],
+  ["Cosmetic Dentistry", "A personalised approach to a smile that feels like you.", serviceHeroes.cosmetic.card, serviceHeroes.cosmetic.alt, "/service/cosmetic-dentistry/"],
+  ["Orthodontics", "Traditional and Invisalign options for patients of every age.", serviceHeroes.orthodontics.card, serviceHeroes.orthodontics.alt, "/service/orthodontics/"],
+  ["Dental Implants", "Modern tooth-replacement plans with comfort at the centre.", serviceHeroes.implants.card, serviceHeroes.implants.alt, "/service/dental-implants/"],
 ] as const;
 
 export const featuredServices = [
-  { number: "01", name: "Cosmetic Dentistry", copy: "Thoughtful aesthetic care for a smile that feels unmistakably like you.", image: serviceHeroes.cosmetic.card, href: "/service/cosmetic-dentistry/" },
-  { number: "02", name: "Orthodontics", copy: "Traditional and Invisalign options that fit your life and your smile goals.", image: serviceHeroes.orthodontics.card, href: "/service/orthodontics/" },
-  { number: "03", name: "Dental Implants", copy: "Modern tooth-replacement plans with comfort, function, and confidence at the centre.", image: serviceHeroes.implants.card, href: "/service/dental-implants/" },
+  { number: "01", name: "Cosmetic Dentistry", copy: "Thoughtful aesthetic care for a smile that feels unmistakably like you.", image: serviceHeroes.cosmetic.card, alt: serviceHeroes.cosmetic.alt, href: "/service/cosmetic-dentistry/" },
+  { number: "02", name: "Orthodontics", copy: "Traditional and Invisalign options that fit your life and your smile goals.", image: serviceHeroes.orthodontics.card, alt: serviceHeroes.orthodontics.alt, href: "/service/orthodontics/" },
+  { number: "03", name: "Dental Implants", copy: "Modern tooth-replacement plans with comfort, function, and confidence at the centre.", image: serviceHeroes.implants.card, alt: serviceHeroes.implants.alt, href: "/service/dental-implants/" },
 ] as const;
 
 export const additionalServiceList = [
