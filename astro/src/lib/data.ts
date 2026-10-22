@@ -25,7 +25,6 @@ import carolina from "../assets/practice/carolina.jpg";
 import francisca from "../assets/practice/francisca.jpg";
 import hannah from "../assets/practice/hannah.jpg";
 import jessica from "../assets/practice/jessica.jpg";
-import jasai from "../assets/practice/jasai.jpg";
 import heroAdultBraces from "../assets/practice/heroes/adult-braces-hero.jpg";
 import heroAdultBracesMobile from "../assets/practice/heroes/adult-braces-hero-mobile.jpg";
 import heroBioclear from "../assets/practice/heroes/bioclear-hero.jpg";
@@ -283,12 +282,6 @@ export const team: { name: string; role: string; image?: ImageMetadata; bio: str
     role: "Office Manager",
     image: kiana,
     bio: "Growing up in a Filipino-American household as a military kid, I moved often and learned how to adapt to new places, people, and experiences. Those experiences have shaped how I approach my role as Office Manager, where I solve problems, bring people together, and create the structure that helps our office run smoothly. I enjoy bringing my values into my work to help both our patients and our team feel right at home. I also love music, art, traveling, trying new food, camping, and spending time with loved ones.",
-  },
-  {
-    name: "Jasai",
-    role: "Patient Care Coordinator",
-    image: jasai,
-    bio: "As your Patient Care Coordinator, I’m here to help you feel welcome, answer your questions, and make scheduling your dental care easier. I enjoy connecting with people and building relationships. I want every patient to feel comfortable and supported. Outside of work, I’m a proud mom and first-generation college student studying History. I love caring for my plants, spending time with my daughter, exploring my creative side, and going on new adventures. I plan to bring that same warmth and curiosity to our office every day!",
   },
   {
     name: "Francisca",
