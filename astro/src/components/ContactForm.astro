@@ -61,7 +61,8 @@ const labelClass = "grid gap-2 text-[.66rem] font-extrabold uppercase tracking-[
         if (response.status === 403) { HTMLFormElement.prototype.submit.call(form); return; }
         if (!response.ok) throw new Error(String(response.status));
         form.reset();
-        form.querySelectorAll<HTMLElement>("label, button").forEach((el) => { el.hidden = true; });
+        // After sending, show only the thank-you message: hide every field, the note and the button.
+        Array.from(form.children).forEach((el) => { if (el !== status) (el as HTMLElement).hidden = true; });
         show("Thank you. Your message has been sent and the practice will be in touch soon.");
       } catch {
         show("Sorry, your message could not be sent. Please call (520) 881-6767 or email checkin@brianmitchelldds.com.", true);
