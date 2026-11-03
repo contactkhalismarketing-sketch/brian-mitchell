@@ -40,7 +40,7 @@ const [featured, ...rest] = posts;
             <p class="eyebrow">Featured article · {featured.category}</p>
             <h2 class="display-face mt-4 text-4xl leading-[.98] tracking-[-.025em] text-[#283e3c] sm:text-5xl">{featured.title}</h2>
             <p class="mt-5 text-sm leading-7 text-[#4a5a58]">{featured.excerpt}</p>
-            <p class="mt-4 text-xs font-bold text-[#6f807c]">{formatPostDate(featured.date)}</p>
+            <p class="mt-4 text-xs font-bold text-[#566663]">{formatPostDate(featured.date)}</p>
             <a href={`/${featured.slug}/`} class="action-button dark mt-7">Read the article <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
           </article>
         </div>

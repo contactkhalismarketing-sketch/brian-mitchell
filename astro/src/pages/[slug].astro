@@ -24,7 +24,7 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
           <a href="/patient-info/blogs/" class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[.11em] text-[#354a4d] no-underline"><Icon name="lucide:chevron-right" class="h-4 w-4 rotate-180" />Back to patient information</a>
           <p class="eyebrow mt-12">{post.category} · Patient education</p>
           <h1 class="display-face mt-5 max-w-4xl text-5xl leading-[.93] tracking-[-.035em] text-[#283e3c] sm:text-6xl lg:text-7xl">{post.title}</h1>
-          <div class="mt-8 flex flex-wrap items-center gap-4 text-xs font-bold text-[#6f807c]">
+          <div class="mt-8 flex flex-wrap items-center gap-4 text-xs font-bold text-[#566663]">
             <span>By Dr. Brian Mitchell & Associates</span>
             <span class="h-1 w-1 rounded-full bg-[#729f9a]"></span>
             <span>{formatPostDate(post.date)}</span>
@@ -62,13 +62,13 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
                 <figure class="my-10 border-l-2 border-[#729f9a] bg-[#f0f5f4] px-6 py-6">
                   <Icon name="lucide:quote" class="h-6 w-6 text-[#3f6e69]" />
                   <blockquote class="mt-3 text-[#283e3c]">{block.text}</blockquote>
-                  {block.cite && <figcaption class="mt-4 text-xs font-extrabold uppercase tracking-[.12em] text-[#6f807c]">{block.cite}</figcaption>}
+                  {block.cite && <figcaption class="mt-4 text-xs font-extrabold uppercase tracking-[.12em] text-[#566663]">{block.cite}</figcaption>}
                 </figure>
               );
               return (
                 <figure class="my-10">
                   <Image src={block.image} alt={block.alt} class="w-full" width={900} />
-                  {block.caption && <figcaption class="mt-3 text-xs leading-6 text-[#6f807c]">{block.caption}</figcaption>}
+                  {block.caption && <figcaption class="mt-3 text-xs leading-6 text-[#566663]">{block.caption}</figcaption>}
                 </figure>
               );
             })}
@@ -76,7 +76,7 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
             {post.sources && (
               <div class="mt-12 border-t border-[#729f9a]/25 pt-6">
                 <p class="text-[.63rem] font-extrabold uppercase tracking-[.14em] text-[#3f6e69]">Sources</p>
-                <ol class="mt-3 grid gap-2 pl-5 text-xs leading-6 text-[#6f807c]">
+                <ol class="mt-3 grid gap-2 pl-5 text-xs leading-6 text-[#566663]">
                   {post.sources.map((source) => <li class="list-decimal break-all"><a href={source} rel="noreferrer" target="_blank" class="text-[#354a4d] underline underline-offset-2">{source}</a></li>)}
                 </ol>
               </div>

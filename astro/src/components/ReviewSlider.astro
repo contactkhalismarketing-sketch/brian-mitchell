@@ -48,8 +48,9 @@ import { testimonials } from "../lib/data";
       let index = 0;
       let timer: ReturnType<typeof setInterval> | undefined;
       let scrollSettle: ReturnType<typeof setTimeout> | undefined;
-      // Slide width is read once (and on resize) rather than inside scroll/timer callbacks, which forced layout.
-      let slideWidth = track.clientWidth || 1;
+      // Slide width comes from a ResizeObserver, so it's never read synchronously (which forced layout).
+      let slideWidth = 1;
+      new ResizeObserver((entries) => { slideWidth = entries[0].contentRect.width || 1; }).observe(track);
 
       function markActive(i: number) {
         index = i;
@@ -84,9 +85,9 @@ import { testimonials } from "../lib/data";
       root.querySelector("[data-review-next]")?.addEventListener("click", () => { show(index + 1); restart(); });
       dots.forEach((dot, i) => dot.addEventListener("click", () => { show(i); restart(); }));
 
-      window.addEventListener("resize", () => { slideWidth = track.clientWidth || 1; show(index, false); });
+      window.addEventListener("resize", () => requestAnimationFrame(() => show(index, false)));
 
-      show(0, false);
+      markActive(0);
       restart();
     });
   }

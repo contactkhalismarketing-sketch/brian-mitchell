@@ -33,13 +33,26 @@ const {
     <title>{title}</title>
     <!-- Ahrefs Web Analytics (async, ~3KB; does not block rendering) -->
     <script is:inline src="https://analytics.ahrefs.com/analytics.js" data-key="IUFfsl58dcu7ur/kNQfC9w" async></script>
-    <!-- Google Analytics 4 (property previously loaded through the old site's Tag Manager container GTM-P5988B6S) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-QPLJDNE04Q"></script>
+    <!-- Google Analytics 4 (G-QPLJDNE04Q). The gtag() queue starts immediately so the page view is
+         recorded from the moment the page opens; the ~150KB library itself is fetched on the visitor's
+         first scroll, tap, click or key press (or 5s after load), so it doesn't slow the page's own loading. -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
       gtag("config", "G-QPLJDNE04Q");
+      (function () {
+        var loaded = false, events = ["scroll", "pointerdown", "touchstart", "keydown"];
+        function load() {
+          if (loaded) return; loaded = true;
+          events.forEach(function (e) { window.removeEventListener(e, load); });
+          var s = document.createElement("script"); s.async = true;
+          s.src = "https://www.googletagmanager.com/gtag/js?id=G-QPLJDNE04Q";
+          document.head.appendChild(s);
+        }
+        events.forEach(function (e) { window.addEventListener(e, load, { passive: true }); });
+        window.addEventListener("load", function () { setTimeout(load, 5000); }, { once: true });
+      })();
     </script>
   </head>
   <body>
