@@ -9,7 +9,8 @@ export const meta = {
 
 export const hero = {
   title: "Your Dentist in Tucson, AZ",
-  subtitle: "Dentistry redefined. Personal care, modern technology and a team that knows you by name.",
+  // The approved subheading ("Dentistry redefined. Personal care, modern technology and a team that knows
+  // you by name.") was removed from the hero at the agency's request on 12 Nov 2026.
   intro: "Looking for a dentist in Tucson who takes the time to listen? At Dr. Brian Mitchell & Associates, we care for families, professionals and retirees across east Tucson from our office on East Grant Road. Whether you need a routine cleaning, a tooth replaced or a smile you feel good about, you will get a clear plan, honest advice and care that fits your life.",
 };
 

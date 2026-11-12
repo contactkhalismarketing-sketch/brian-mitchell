@@ -383,3 +383,16 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .home-dentist__photo { aspect-ratio: 4 / 3; height: auto; object-fit: cover; object-position: center 18%; width: 100%; }
 @media (min-width: 640px) { .home-payment-panel { padding: 2.5rem; } .home-dentist { grid-template-columns: .9fr 1.1fr; } .home-dentist__photo { aspect-ratio: auto; height: 100%; min-height: 320px; } }
 @media (min-width: 1024px) { .homepage-hero__subtitle { font-size: 1.5rem; } }
+
+/* FAQ blocks sit centred on the page: heading centred, question list centred at a readable width. */
+.faq-section .content-head { margin-inline: auto; max-width: 56rem; text-align: center; }
+.faq-section .content-head h2 { margin-inline: auto; }
+.faq-section .content-faq { margin-inline: auto; }
+
+/* Table alignment: rows centred vertically, so a label that wraps to two lines no longer leaves the
+   other cells floating at the top; first column wide enough that most labels stay on one line. */
+.content-table table { table-layout: fixed; }
+.content-table tbody th, .content-table tbody td { vertical-align: middle; }
+.content-table thead th:first-child, .content-table tbody th { width: 30%; }
+.content-table--2 thead th:first-child, .content-table--2 tbody th { width: 42%; }
+.content-table--2 table { min-width: 0; }

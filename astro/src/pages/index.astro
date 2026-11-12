@@ -59,8 +59,7 @@ const heroPoster = await getImage({ src: liveAssets.office, width: 1440, widths:
           <div class="homepage-hero__content relative mx-auto flex max-w-[1440px] items-end px-5 pb-10 pt-9 sm:px-8 lg:px-12 lg:pb-20 lg:pt-16 xl:pl-20">
             <div class="homepage-hero__copy-panel">
               <h1 class="fade-up display-face max-w-xl text-5xl leading-[.95] tracking-[-.035em] sm:text-6xl lg:text-[4.1rem] xl:text-[4.4rem]">{c.hero.title}</h1>
-              <p class="fade-up delay-3 homepage-hero__subtitle">{c.hero.subtitle}</p>
-              <p class="fade-up delay-3 mt-5 max-w-lg text-[.95rem] leading-7 text-[#4f5f5c]">{c.hero.intro}</p>
+              <p class="fade-up delay-3 mt-6 max-w-lg text-[.95rem] leading-7 text-[#4f5f5c]">{c.hero.intro}</p>
               <div class="fade-up delay-3 mt-7 flex flex-col gap-3 sm:flex-row">
                 <a class="action-button primary" href="/contact/"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book an Appointment</a>
                 <a class="action-button hero-outline" href="tel:5208816767"><Icon name="lucide:phone" class="h-4 w-4" />Call (520) 881-6767</a>
@@ -180,7 +179,7 @@ const heroPoster = await getImage({ src: liveAssets.office, width: 1440, widths:
         </div>
       </section>
 
-      <section id="faq" class="mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+      <section id="faq" class="faq-section mx-auto max-w-[1440px] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
         <SectionHead eyebrow="Questions" title="Frequently Asked Questions" />
         <div class="mt-8"><FaqList items={c.faqs} /></div>
       </section>
