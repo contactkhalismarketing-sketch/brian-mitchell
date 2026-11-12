@@ -424,3 +424,9 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .content-steps { gap: 1rem; }
 .content-steps li { background: #f0f5f4; padding: 1.35rem 1.3rem 1.45rem; }
 @media (min-width: 1024px) { .content-steps { gap: 1rem; } }
+
+/* Homepage "why" and "payment" panels: two equal full-height boxes, tops aligned. */
+.home-payment-panel { align-self: stretch; display: flex; flex-direction: column; }
+.home-payment-panel > .action-button { align-self: flex-start; margin-top: auto; }
+.home-payment-panel .content-leads { gap: .75rem; }
+.home-payment-panel .content-leads li { padding: 1.1rem 1.25rem 1.2rem; }
