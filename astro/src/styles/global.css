@@ -401,3 +401,9 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .content-steps p { color: #4a5a58; font-size: .9rem; line-height: 1.7; margin-top: .45rem; }
 @media (min-width: 640px) { .content-leads--2, .content-leads--3 { grid-template-columns: repeat(2,minmax(0,1fr)); } .content-steps { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (min-width: 1024px) { .content-leads--3 { grid-template-columns: repeat(3,minmax(0,1fr)); } .content-steps { gap: 2rem; grid-template-columns: repeat(var(--steps), minmax(0,1fr)); } }
+/* Trust items in the service intro: a tidy grid (one column on phones, two on wider screens)
+   so each tick lines up under the one above instead of wrapping unevenly. */
+.content-trust { display: grid; gap: .75rem 2rem; grid-template-columns: minmax(0,1fr); }
+.content-trust li { align-items: flex-start; }
+.content-trust li svg { flex: none; margin-top: .15rem; }
+@media (min-width: 640px) { .content-trust { grid-template-columns: repeat(2, minmax(0,1fr)); } }
