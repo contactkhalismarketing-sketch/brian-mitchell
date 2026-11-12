@@ -11,6 +11,7 @@ import LeadList from "../../components/content/LeadList.astro";
 import StepList from "../../components/content/StepList.astro";
 import CompareTable from "../../components/content/CompareTable.astro";
 import FaqList from "../../components/content/FaqList.astro";
+import FeatureBlock from "../../components/content/FeatureBlock.astro";
 import { serviceHeroes } from "../../lib/data";
 import * as c from "../../content-pages/orthodontics";
 ---
@@ -62,7 +63,7 @@ import * as c from "../../content-pages/orthodontics";
         </section>
 
         <section class="content-section">
-          <SectionHead title="Traditional Braces with Tooth-Colored Brackets" intro={c.braces} />
+          <FeatureBlock eyebrow="Braces" title="Traditional Braces with Tooth-Colored Brackets" html={c.braces} />
         </section>
 
         <section class="content-section">
@@ -71,7 +72,7 @@ import * as c from "../../content-pages/orthodontics";
         </section>
 
         <section class="content-section">
-          <SectionHead title="The Benefit of Orthodontics at Your Family Dental Office" intro={c.familyOffice} />
+          <FeatureBlock dark eyebrow="One office" title="The Benefit of Orthodontics at Your Family Dental Office" html={c.familyOffice} />
         </section>
 
         <section class="content-section">

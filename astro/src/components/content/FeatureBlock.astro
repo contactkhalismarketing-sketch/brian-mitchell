@@ -1,0 +1,12 @@
+---
+// A short text-only section presented as a panel: heading on the left, copy on the right on wide screens.
+interface Props { eyebrow?: string; title: string; html: string; dark?: boolean }
+const { eyebrow, title, html, dark = false } = Astro.props;
+---
+<div class={`content-feature ${dark ? "content-feature--dark" : ""}`}>
+  <div>
+    {eyebrow && <p class={`eyebrow ${dark ? "text-[#9dbfbb]" : ""}`}>{eyebrow}</p>}
+    <h2 class={`display-face mt-3 text-3xl leading-[1.04] tracking-[-.02em] sm:text-4xl ${dark ? "text-white" : "text-[#283e3c]"}`}>{title}</h2>
+  </div>
+  <p class="content-feature__copy" set:html={html} />
+</div>

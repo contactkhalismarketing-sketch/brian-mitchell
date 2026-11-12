@@ -407,3 +407,11 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .content-trust li { align-items: flex-start; }
 .content-trust li svg { flex: none; margin-top: .15rem; }
 @media (min-width: 640px) { .content-trust { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+
+.content-feature { background: #f0f5f4; border-left: 3px solid #729f9a; display: grid; gap: 1.25rem; padding: 1.75rem; }
+.content-feature__copy { color: #4a5a58; font-size: 1rem; line-height: 1.9; }
+.content-feature--dark { background: #354a4d; border-left-color: #9dbfbb; }
+.content-feature--dark .content-feature__copy { color: #d5e4e2; }
+.content-feature--dark .content-feature__copy a { color: #ffffff; text-decoration-color: #9dbfbb; }
+.content-feature__copy a { color: #283e3c; font-weight: 700; text-decoration: underline; text-decoration-color: #729f9a; text-underline-offset: 3px; }
+@media (min-width: 1024px) { .content-feature { align-items: center; gap: 3rem; grid-template-columns: .9fr 1.1fr; padding: 2.75rem 3rem; } }
