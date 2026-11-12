@@ -347,14 +347,6 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .content-card__more { align-items: center; color: #354a4d; display: inline-flex; font-size: .66rem; font-weight: 800; gap: .4rem; letter-spacing: .12em; margin-top: auto; padding-top: 1.1rem; text-transform: uppercase; }
 @media (hover: hover) { .content-card--link:hover { background: #f4f8f7; } .content-card--link:hover .content-card__more svg { transform: translateX(.25rem); } }
 .content-card__more svg { transition: transform 180ms cubic-bezier(.23,1,.32,1); }
-.content-leads { display: grid; gap: 1.1rem 2.5rem; }
-.content-leads li { align-items: start; display: grid; gap: .8rem; grid-template-columns: auto minmax(0,1fr); }
-.content-leads__icon { background: #e6efee; border-radius: 999px; box-sizing: content-box; color: #354a4d; margin-top: .2rem; padding: .3rem; }
-.content-leads p { color: #4a5a58; font-size: .95rem; line-height: 1.8; }
-.content-leads strong { color: #283e3c; font-weight: 800; }
-.content-steps { display: grid; gap: 1px; padding: 1px; }
-.content-steps li { align-items: start; background: #ffffff; display: grid; gap: 1.1rem; grid-template-columns: auto minmax(0,1fr); outline: 1px solid rgba(53,74,77,.18); padding: 1.4rem 1.5rem; }
-.content-steps__number { color: #3f6e69; font-size: .7rem; font-weight: 800; letter-spacing: .12em; padding-top: .45rem; }
 .content-table { -webkit-overflow-scrolling: touch; border: 1px solid rgba(53,74,77,.2); overflow-x: auto; }
 .content-table:focus-visible { outline: 3px solid rgba(114,159,154,.45); outline-offset: 2px; }
 .content-table table { background: #ffffff; border-collapse: collapse; font-size: .9rem; min-width: 620px; width: 100%; }
@@ -375,7 +367,7 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .content-trust li { align-items: center; color: #283e3c; display: inline-flex; font-size: .82rem; font-weight: 700; gap: .45rem; }
 .content-trust svg { color: #3f6e69; }
 .page-hero__subtitle { color: #3f6e69; font-family: var(--font-display); font-size: 1.45rem; line-height: 1.2; margin-top: .9rem; }
-@media (min-width: 640px) { .content-cards { grid-template-columns: repeat(2,minmax(0,1fr)); } .content-leads { grid-template-columns: repeat(2,minmax(0,1fr)); } .content-leads--1 { grid-template-columns: minmax(0,1fr); } }
+@media (min-width: 640px) { .content-cards { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (min-width: 1024px) { .content-cards:not(.content-cards--2) { grid-template-columns: repeat(3,minmax(0,1fr)); } .content-section { margin-top: 5.5rem; } .page-hero__subtitle { font-size: 1.7rem; } }
 .homepage-hero__subtitle { color: #3f6e69; font-family: var(--font-display); font-size: 1.3rem; line-height: 1.25; margin-top: 1rem; max-width: 32rem; }
 .home-payment-panel { align-self: start; background: #f0f5f4; border-top: 2px solid #729f9a; padding: 1.75rem; }
@@ -396,3 +388,16 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .content-table thead th:first-child, .content-table tbody th { width: 30%; }
 .content-table--2 thead th:first-child, .content-table--2 tbody th { width: 42%; }
 .content-table--2 table { min-width: 0; }
+
+/* Minimal lists and steps (12 Nov 2026): hairline dividers, no icons or boxes. */
+.content-leads { display: grid; gap: 1.75rem 2.75rem; }
+.content-leads li { border-top: 1px solid rgba(53,74,77,.18); padding-top: 1.1rem; }
+.content-leads h3 { color: #283e3c; font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; line-height: 1.15; }
+.content-leads p { color: #4a5a58; font-size: .92rem; line-height: 1.75; margin-top: .45rem; max-width: 34rem; }
+.content-steps { counter-reset: none; display: grid; gap: 1.75rem; }
+.content-steps li { border-top: 2px solid #729f9a; padding-top: 1.1rem; }
+.content-steps__number { color: #3f6e69; display: block; font-size: .7rem; font-weight: 800; letter-spacing: .14em; }
+.content-steps h3 { color: #283e3c; font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; line-height: 1.15; margin-top: .55rem; }
+.content-steps p { color: #4a5a58; font-size: .9rem; line-height: 1.7; margin-top: .45rem; }
+@media (min-width: 640px) { .content-leads--2, .content-leads--3 { grid-template-columns: repeat(2,minmax(0,1fr)); } .content-steps { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (min-width: 1024px) { .content-leads--3 { grid-template-columns: repeat(3,minmax(0,1fr)); } .content-steps { gap: 2rem; grid-template-columns: repeat(var(--steps), minmax(0,1fr)); } }

@@ -1,14 +1,15 @@
 ---
-import { Icon } from "astro-icon/components";
-// "Bold lead. Supporting text." list, two columns on wide screens.
-interface Props { items: [string, string][]; columns?: 1 | 2 }
+// Minimal list: each item is a short bold lead on its own line with the supporting text beneath,
+// laid out in columns with a hairline above each item (no icons).
+interface Props { items: [string, string][]; columns?: 1 | 2 | 3 }
 const { items, columns = 2 } = Astro.props;
+const lead = (text: string) => text.replace(/[:.]\s*$/, "");
 ---
-<ul class={`content-leads ${columns === 1 ? "content-leads--1" : ""}`}>
-  {items.map(([lead, text]) => (
+<ul class={`content-leads content-leads--${columns}`}>
+  {items.map(([title, text]) => (
     <li>
-      <Icon name="lucide:check" class="content-leads__icon h-4 w-4" />
-      <p><strong>{lead}</strong> <span set:html={text} /></p>
+      <h3>{lead(title)}</h3>
+      <p set:html={text.charAt(0).toUpperCase() + text.slice(1)} />
     </li>
   ))}
 </ul>

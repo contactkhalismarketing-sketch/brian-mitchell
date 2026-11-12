@@ -56,7 +56,7 @@ import * as c from "../../content-pages/orthodontics";
 
         <section class="content-section">
           <SectionHead title="Invisalign in Tucson" intro={c.invisalignIntro} />
-          <LeadList items={c.invisalignPoints} />
+          <LeadList items={c.invisalignPoints} columns={2} />
           <div class="content-prose mt-6"><p>{c.invisalignWear}</p></div>
           <div class="mt-8"><CardGrid items={c.invisalignExtras} columns={2} /></div>
         </section>
@@ -81,12 +81,12 @@ import * as c from "../../content-pages/orthodontics";
 
         <section class="content-section">
           <SectionHead title="Invisalign Cost in Tucson" intro={c.costIntro} />
-          <LeadList items={c.cost} columns={1} />
+          <LeadList items={c.cost} columns={3} />
         </section>
 
         <section class="content-section">
           <SectionHead title="Why Choose Dr. Mitchell for Invisalign in Tucson?" />
-          <LeadList items={c.why} />
+          <LeadList items={c.why} columns={3} />
         </section>
 
         <section class="content-section faq-section">
