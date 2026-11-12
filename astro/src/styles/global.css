@@ -415,3 +415,12 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .content-feature--dark .content-feature__copy a { color: #ffffff; text-decoration-color: #9dbfbb; }
 .content-feature__copy a { color: #283e3c; font-weight: 700; text-decoration: underline; text-decoration-color: #729f9a; text-underline-offset: 3px; }
 @media (min-width: 1024px) { .content-feature { align-items: center; gap: 3rem; grid-template-columns: .9fr 1.1fr; padding: 2.75rem 3rem; } }
+/* Lead-list items as light brand-green cards (consistent on every page). */
+.content-leads { gap: 1rem; }
+.content-leads li { background: #f0f5f4; border-top: 2px solid #729f9a; padding: 1.35rem 1.4rem 1.45rem; }
+.content-leads p { max-width: none; }
+/* Inside panels that are already light green, the cards switch to white so they still read as cards. */
+.home-payment-panel .content-leads li, .service-intro-stage .content-leads li { background: #ffffff; }
+.content-steps { gap: 1rem; }
+.content-steps li { background: #f0f5f4; padding: 1.35rem 1.3rem 1.45rem; }
+@media (min-width: 1024px) { .content-steps { gap: 1rem; } }
