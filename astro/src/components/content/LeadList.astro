@@ -1,0 +1,14 @@
+---
+import { Icon } from "astro-icon/components";
+// "Bold lead. Supporting text." list, two columns on wide screens.
+interface Props { items: [string, string][]; columns?: 1 | 2 }
+const { items, columns = 2 } = Astro.props;
+---
+<ul class={`content-leads ${columns === 1 ? "content-leads--1" : ""}`}>
+  {items.map(([lead, text]) => (
+    <li>
+      <Icon name="lucide:check" class="content-leads__icon h-4 w-4" />
+      <p><strong>{lead}</strong> <span set:html={text} /></p>
+    </li>
+  ))}
+</ul>

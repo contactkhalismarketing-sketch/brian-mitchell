@@ -5,38 +5,41 @@ import PracticeHeader from "../../components/PracticeHeader.astro";
 import PracticeFooter from "../../components/PracticeFooter.astro";
 import PageHero from "../../components/PageHero.astro";
 import ContactBand from "../../components/ContactBand.astro";
+import SectionHead from "../../components/content/SectionHead.astro";
+import CardGrid from "../../components/content/CardGrid.astro";
+import LeadList from "../../components/content/LeadList.astro";
+import StepList from "../../components/content/StepList.astro";
+import CompareTable from "../../components/content/CompareTable.astro";
+import FaqList from "../../components/content/FaqList.astro";
 import { serviceHeroes } from "../../lib/data";
-
-const orthodonticsOptions = [
-  ["Traditional orthodontics", "The gold standard for teeth straightening and bite correction, now available with nearly invisible tooth-colored brackets alongside classic metal options."],
-  ["Invisalign", "A clear, removable tray designed to gradually straighten your teeth. Trays come out for brushing, flossing, and meals, so oral hygiene stays simple."],
-] as const;
+import * as c from "../../content-pages/orthodontics";
 ---
 
-<Layout title="Orthodontics | Dr. Brian Mitchell & Associates">
+<Layout title={c.meta.title} description={c.meta.description}>
   <div class="page-shell min-h-screen">
     <PracticeHeader active="services" />
     <main>
       <PageHero
-        eyebrow="Orthodontics"
-        title="Straighter teeth, at your pace."
-        body="A personalized path to a straighter smile and a better bite, with traditional and Invisalign options for patients of every age."
+        eyebrow={c.hero.eyebrow}
+        title={c.hero.title}
+        subtitle={c.hero.subtitle}
         image={serviceHeroes.orthodontics.image}
         imageAlt={serviceHeroes.orthodontics.alt}
         imagePosition={serviceHeroes.orthodontics.position}
         imageMobile={serviceHeroes.orthodontics.mobile}
       >
-        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-          <a class="action-button primary" href="/contact/"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book a consultation</a>
-          <a class="action-button outline" href="tel:5208816767"><Icon name="lucide:phone" class="h-4 w-4" />Ask a question</a>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a class="action-button primary" href="/contact/"><Icon name="lucide:calendar-days" class="h-4 w-4" />Book My Free Invisalign Consult</a>
+          <a class="action-button outline" href="tel:5208816767"><Icon name="lucide:phone" class="h-4 w-4" />Call (520) 881-6767</a>
         </div>
       </PageHero>
       <section class="mx-auto max-w-[1240px] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
         <div class="service-intro-stage">
           <div>
-            <p class="eyebrow">Smiles and healthy bites</p>
-            <h2 class="display-face mt-4 max-w-2xl text-4xl leading-[.98] tracking-[-.025em] text-[#283e3c] sm:text-5xl">Two paths to a straighter smile.</h2>
-            <p class="mt-6 max-w-2xl text-base leading-8 text-[#4a5a58]">Whether you prefer the proven results of traditional braces or the discretion of clear aligners, your plan is built around your teeth, your bite, and your day-to-day life. We treat teens and adults alike.</p>
+            <p class="max-w-2xl text-base leading-8 text-[#4a5a58] sm:text-[1.075rem] sm:leading-9" set:html={c.intro} />
+            <ul class="content-trust">
+              {c.trust.map((item) => <li><Icon name="lucide:check" class="h-4 w-4" />{item}</li>)}
+            </ul>
           </div>
           <div class="service-next-step">
             <p class="eyebrow text-[#d5e4e2]">Your next step</p>
@@ -46,29 +49,52 @@ const orthodonticsOptions = [
           </div>
         </div>
 
-        <section class="mt-14">
-          <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-            <div>
-              <p class="eyebrow">Explore your options</p>
-              <h3 class="display-face mt-3 text-3xl leading-none text-[#283e3c] sm:text-4xl">Two ways to get there.</h3>
-            </div>
-            <p class="max-w-md text-sm leading-7 text-[#4a5a58]">Your treatment plan is always tailored to your bite, your priorities, and your timeline.</p>
-          </div>
-          <div class="service-option-grid mt-8">
-            {orthodonticsOptions.map(([name, copy], index) => (
-              <article class="service-option">
-                <span class="service-option__number">0{index + 1}</span>
-                <div>
-                  <h4 class="display-face text-2xl leading-none text-[#283e3c]">{name}</h4>
-                  <p class="mt-3 text-sm leading-6 text-[#4a5a58]">{copy}</p>
-                </div>
-                <Icon name="lucide:check" class="service-option__check h-5 w-5" />
-              </article>
-            ))}
-          </div>
+        <section class="content-section">
+          <SectionHead title="Alignment Problems We Treat" />
+          <CardGrid items={c.problems} />
         </section>
 
-        <section class="related-services mt-16">
+        <section class="content-section">
+          <SectionHead title="Invisalign in Tucson" intro={c.invisalignIntro} />
+          <LeadList items={c.invisalignPoints} />
+          <div class="content-prose mt-6"><p>{c.invisalignWear}</p></div>
+          <div class="mt-8"><CardGrid items={c.invisalignExtras} columns={2} /></div>
+        </section>
+
+        <section class="content-section">
+          <SectionHead title="Traditional Braces with Tooth-Colored Brackets" intro={c.braces} />
+        </section>
+
+        <section class="content-section">
+          <SectionHead title="Invisalign vs. Braces: Which Is Right for You?" intro={c.comparisonIntro} />
+          <CompareTable caption="Invisalign and traditional braces compared" columns={c.comparison.columns} rows={c.comparison.rows} />
+        </section>
+
+        <section class="content-section">
+          <SectionHead title="The Benefit of Orthodontics at Your Family Dental Office" intro={c.familyOffice} />
+        </section>
+
+        <section class="content-section">
+          <SectionHead title="What to Expect" />
+          <StepList items={c.steps} />
+        </section>
+
+        <section class="content-section">
+          <SectionHead title="Invisalign Cost in Tucson" intro={c.costIntro} />
+          <LeadList items={c.cost} columns={1} />
+        </section>
+
+        <section class="content-section">
+          <SectionHead title="Why Choose Dr. Mitchell for Invisalign in Tucson?" />
+          <LeadList items={c.why} />
+        </section>
+
+        <section class="content-section">
+          <SectionHead title="Invisalign FAQs" />
+          <FaqList items={c.faqs} />
+        </section>
+
+        <section class="related-services content-section">
           <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div>
               <p class="eyebrow">Continue your care</p>
@@ -104,7 +130,7 @@ const orthodonticsOptions = [
           </div>
         </section>
       </section>
-      <ContactBand title="A more confident bite starts with a conversation." />
+      <ContactBand title={c.closing.title} text={c.closing.text} />
     </main>
     <PracticeFooter />
   </div>

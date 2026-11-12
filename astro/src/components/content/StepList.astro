@@ -1,0 +1,15 @@
+---
+interface Props { items: [string, string][] }
+const { items } = Astro.props;
+---
+<ol class="content-steps">
+  {items.map(([lead, text], index) => (
+    <li>
+      <span class="content-steps__number">{String(index + 1).padStart(2, "0")}</span>
+      <div>
+        <h3 class="display-face text-2xl leading-[1.08] text-[#283e3c]">{lead}</h3>
+        <p class="mt-2 text-sm leading-7 text-[#4a5a58]" set:html={text} />
+      </div>
+    </li>
+  ))}
+</ol>

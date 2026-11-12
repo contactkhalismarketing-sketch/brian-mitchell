@@ -5,7 +5,8 @@ import type { ImageMetadata } from "astro";
 interface Props {
   eyebrow: string;
   title: string;
-  body: string;
+  subtitle?: string;
+  body?: string;
   image: ImageMetadata;
   imagePosition?: string;
   imageMobile?: ImageMetadata;
@@ -14,7 +15,7 @@ interface Props {
   imageAlt?: string;
 }
 
-const { eyebrow, title, body, image, imagePosition = "center", imageMobile, imageMobilePosition = "center", taller = false, imageAlt = "" } = Astro.props;
+const { eyebrow, title, subtitle, body, image, imagePosition = "center", imageMobile, imageMobilePosition = "center", taller = false, imageAlt = "" } = Astro.props;
 
 const positionVars = `--hero-pos-desktop: ${imagePosition}; --hero-pos-mobile: ${imageMobile ? imageMobilePosition : imagePosition};`;
 const desktop = imageMobile ? await getImage({ src: image, width: 1920, format: "webp" }) : null;
@@ -37,7 +38,8 @@ const mobile = imageMobile ? await getImage({ src: imageMobile, width: 1024, for
       <div class="page-hero__copy-panel">
         <p class="eyebrow">{eyebrow}</p>
         <h1 class="display-face mt-4 max-w-xl text-4xl leading-[.95] tracking-[-.03em] sm:text-5xl lg:text-6xl">{title}</h1>
-        <p class="mt-6 max-w-2xl text-base leading-8 text-[#354a4d]">{body}</p>
+        {subtitle && <p class="page-hero__subtitle">{subtitle}</p>}
+        {body && <p class="mt-6 max-w-2xl text-base leading-8 text-[#354a4d]">{body}</p>}
         <slot />
       </div>
     </div>

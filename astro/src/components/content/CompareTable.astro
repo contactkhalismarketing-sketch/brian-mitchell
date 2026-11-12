@@ -1,0 +1,16 @@
+---
+// First column holds the row labels. Scrolls sideways on narrow screens rather than squashing.
+interface Props { columns: string[]; rows: string[][]; caption: string }
+const { columns, rows, caption } = Astro.props;
+---
+<div class="content-table" role="region" aria-label={caption} tabindex="0">
+  <table>
+    <caption class="sr-only">{caption}</caption>
+    <thead><tr>{columns.map((c) => <th scope="col">{c}</th>)}</tr></thead>
+    <tbody>
+      {rows.map((row) => (
+        <tr>{row.map((cell, i) => i === 0 ? <th scope="row">{cell}</th> : <td>{cell}</td>)}</tr>
+      ))}
+    </tbody>
+  </table>
+</div>

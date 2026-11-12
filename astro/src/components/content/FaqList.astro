@@ -1,0 +1,14 @@
+---
+import { Icon } from "astro-icon/components";
+// Answers stay in the HTML when collapsed, so they are readable by search engines.
+interface Props { items: [string, string][] }
+const { items } = Astro.props;
+---
+<div class="content-faq">
+  {items.map(([question, answer]) => (
+    <details>
+      <summary><h3>{question}</h3><Icon name="lucide:plus" class="content-faq__icon h-5 w-5" /></summary>
+      <p set:html={answer} />
+    </details>
+  ))}
+</div>

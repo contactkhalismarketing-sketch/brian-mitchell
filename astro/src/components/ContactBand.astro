@@ -3,9 +3,10 @@ import { Icon } from "astro-icon/components";
 
 interface Props {
   title?: string;
+  text?: string;
 }
 
-const { title = "Let's make a plan for your smile." } = Astro.props;
+const { title = "Let's make a plan for your smile.", text } = Astro.props;
 ---
 
 <section class="relative overflow-hidden bg-[#354a4d] text-white">
@@ -14,6 +15,7 @@ const { title = "Let's make a plan for your smile." } = Astro.props;
     <div>
       <p class="eyebrow text-[#d5e4e2]">Book an appointment</p>
       <h2 class="display-face mt-3 max-w-xl text-4xl leading-none sm:text-5xl">{title}</h2>
+      {text && <p class="mt-5 max-w-xl text-base leading-8 text-white/85" set:html={text.replace("(520) 881-6767", '<span class="whitespace-nowrap">(520) 881-6767</span>')} />}
     </div>
     <div class="flex flex-col gap-3 sm:flex-row">
       <a class="action-button dark" href="tel:5208816767"><Icon name="lucide:phone" class="h-4 w-4" />Call (520) 881-6767</a>
