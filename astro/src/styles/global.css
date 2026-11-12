@@ -430,3 +430,9 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .home-payment-panel > .action-button { align-self: flex-start; margin-top: auto; }
 .home-payment-panel .content-leads { gap: .75rem; }
 .home-payment-panel .content-leads li { padding: 1.1rem 1.25rem 1.2rem; }
+
+.content-icon-rows li { align-items: start; border-top: 1px solid rgba(53,74,77,.16); display: grid; gap: 1rem; grid-template-columns: auto minmax(0,1fr); padding: 1.1rem 0; }
+.content-icon-rows li:last-child { border-bottom: 1px solid rgba(53,74,77,.16); }
+.content-icon-rows__icon { align-items: center; background: #ffffff; border: 1px solid rgba(114,159,154,.45); border-radius: 999px; color: #354a4d; display: inline-flex; height: 2.5rem; justify-content: center; width: 2.5rem; }
+.content-icon-rows h3 { color: #283e3c; font-family: var(--font-display); font-size: 1.25rem; font-weight: 400; line-height: 1.15; }
+.content-icon-rows p { color: #4a5a58; font-size: .9rem; line-height: 1.7; margin-top: .3rem; }

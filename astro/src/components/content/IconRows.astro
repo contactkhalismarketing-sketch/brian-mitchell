@@ -1,0 +1,18 @@
+---
+import { Icon } from "astro-icon/components";
+// Rows with a small icon, used inside panels: no boxes, just a hairline between items.
+interface Props { items: [string, string][]; icons: string[] }
+const { items, icons } = Astro.props;
+const lead = (text: string) => text.replace(/[:.]\s*$/, "");
+---
+<ul class="content-icon-rows">
+  {items.map(([title, text], index) => (
+    <li>
+      <span class="content-icon-rows__icon"><Icon name={icons[index] ?? "lucide:check"} class="h-[1.15rem] w-[1.15rem]" /></span>
+      <div>
+        <h3>{lead(title)}</h3>
+        <p set:html={text.charAt(0).toUpperCase() + text.slice(1)} />
+      </div>
+    </li>
+  ))}
+</ul>

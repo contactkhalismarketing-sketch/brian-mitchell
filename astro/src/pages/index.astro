@@ -6,6 +6,7 @@ import { liveAssets, practiceStats } from "../lib/data";
 import SectionHead from "../components/content/SectionHead.astro";
 import CardGrid from "../components/content/CardGrid.astro";
 import LeadList from "../components/content/LeadList.astro";
+import IconRows from "../components/content/IconRows.astro";
 import FaqList from "../components/content/FaqList.astro";
 import * as c from "../content-pages/home";
 import PatientInfoMenu from "../components/PatientInfoMenu.astro";
@@ -136,11 +137,11 @@ const heroPoster = await getImage({ src: liveAssets.office, width: 1440, widths:
         <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
           <div class="home-payment-panel">
             <SectionHead eyebrow="Why choose us" title="Why Tucson Patients Choose Dr. Mitchell" />
-            <div class="mt-8"><LeadList items={c.why} columns={1} /></div>
+            <div class="mt-7"><IconRows items={c.why} icons={["lucide:users", "lucide:graduation-cap", "lucide:heart-pulse", "lucide:sunrise", "lucide:map-pin", "lucide:star"]} /></div>
           </div>
           <div class="home-payment-panel">
             <SectionHead eyebrow="Insurance and payment" title="Insurance, Savings Plan and Payment Options" intro={c.paymentIntro} />
-            <div class="mt-7"><LeadList items={c.payment} columns={1} /></div>
+            <div class="mt-6"><IconRows items={c.payment} icons={["lucide:shield-check", "lucide:piggy-bank", "lucide:calendar-check"]} /></div>
             <a class="action-button dark mt-8" href="/patient-info/financial/">See Financing &amp; Insurance <Icon name="lucide:arrow-right" class="h-4 w-4" /></a>
           </div>
         </div>
