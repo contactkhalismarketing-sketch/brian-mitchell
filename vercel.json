@@ -5,6 +5,11 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/forms/MitchellWhitening.pdf",
+      "destination": "/patient-info/forms/",
+      "statusCode": 301
+    },
+    {
       "source": "/our-team",
       "destination": "/about/#team",
       "statusCode": 301

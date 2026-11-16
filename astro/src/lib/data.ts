@@ -158,7 +158,6 @@ export const formCategories = [
     items: [
       { label: "Tooth Removal", file: "/forms/Post-Treatment-Instructions-Tooth-Removal.pdf" },
       { label: "Implant Placement", file: "/forms/Implant-placement-post-operative-instructions.pdf" },
-      { label: "Mitchell Whitening", file: "/forms/MitchellWhitening.pdf" },
     ],
   },
   {
