@@ -291,7 +291,8 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .article-copy > h3 + p, .article-copy > h3 + ol, .article-copy > h3 + ul { margin-top: .75rem; }
 .article-copy p a, .article-copy li a { color: #354a4d; text-decoration: underline; text-decoration-color: rgba(114,159,154,.7); text-underline-offset: 3px; }
 .article-copy strong { color: #283e3c; font-weight: 800; }
-.article-table { margin: 2rem 0; font-size: .95rem; line-height: 1.55; }
+.article-table { margin: 2rem 0; }
+.article-table .content-table tbody th, .article-table .content-table tbody td { font-size: 1rem; line-height: 1.55; }
 .article-faqs, .article-author { margin-top: 3.4rem; }
 .article-faq { border-top: 1px solid rgba(114,159,154,.3); padding-top: 1.1rem; margin-top: 1.4rem; }
 .article-faq h3 { margin-top: 0; font-size: 1.3rem; }

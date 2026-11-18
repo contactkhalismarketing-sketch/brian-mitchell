@@ -92,8 +92,8 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
               if (block.type === "p") return <p class={index === 0 ? "lead" : ""} set:html={block.text} />;
               if (block.type === "h2") return <h2 id={block.id}>{block.text}</h2>;
               if (block.type === "h3") return <h3>{block.text}</h3>;
-              if (block.type === "list") return <ul class="my-6 grid gap-2 pl-5 text-base leading-7 text-[#4a5a58]">{block.items.map((item) => <li class="list-disc" set:html={item} />)}</ul>;
-              if (block.type === "ol") return <ol class="my-6 grid gap-2 pl-6 text-base leading-7 text-[#4a5a58]">{block.items.map((item) => <li class="list-decimal pl-1" set:html={item} />)}</ol>;
+              if (block.type === "list") return <ul class="my-6 grid gap-2 pl-5">{block.items.map((item) => <li class="list-disc" set:html={item} />)}</ul>;
+              if (block.type === "ol") return <ol class="my-6 grid gap-2 pl-6">{block.items.map((item) => <li class="list-decimal pl-1" set:html={item} />)}</ol>;
               if (block.type === "table") return <div class="article-table"><CompareTable columns={block.columns} rows={block.rows} caption={block.caption} /></div>;
               if (block.type === "terms") return (
                 <dl class="my-8 grid gap-5 border-l-2 border-[#729f9a]/40 pl-5">
