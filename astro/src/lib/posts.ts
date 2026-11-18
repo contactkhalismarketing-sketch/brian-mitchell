@@ -1,8 +1,6 @@
 import type { ImageMetadata } from "astro";
 import invisalignTucson from "../assets/blog/invisalign-tucson.jpg";
-import mailOrderAligners from "../assets/blog/mail-order-aligners.jpg";
 import monitorAlignerTherapy from "../assets/blog/monitor-aligner-therapy.jpg";
-import planningImplant from "../assets/blog/planning-implant.jpg";
 import planningImplantCbct from "../assets/blog/planning-implant-cbct.jpg";
 import planningImplantXrayRoom from "../assets/blog/planning-implant-xray-room.jpg";
 import bioclearTechnique from "../assets/blog/bioclear-technique.jpg";
@@ -12,6 +10,9 @@ import { liveAssets } from "./data";
 export type PostBlock =
   | { type: "p"; text: string }
   | { type: "h2"; id: string; text: string }
+  | { type: "h3"; text: string }
+  | { type: "ol"; items: string[] }
+  | { type: "table"; caption: string; columns: string[]; rows: string[][] }
   | { type: "quote"; text: string; cite?: string }
   | { type: "list"; items: string[] }
   | { type: "terms"; items: [string, string][] }
@@ -27,7 +28,16 @@ export interface Post {
   heroAlt: string;
   heroPosition?: string;
   blocks: PostBlock[];
-  sources?: string[];
+  sources?: (string | { label: string; url: string })[];
+  // Optional fields used by the Nov 2026 rewrites. Paragraph, list and FAQ text may contain inline HTML links.
+  seoTitle?: string;
+  description?: string;
+  updated?: string;
+  author?: string;
+  faqHeading?: string;
+  faqs?: [string, string][];
+  authorBio?: string;
+  closing?: string;
 }
 
 // Content mirrors the live site's posts (brianmitchelldds.com); light copyediting only.
@@ -125,33 +135,108 @@ export const posts: Post[] = [
     ],
   },
   {
+    // Rewritten Nov 2026 (Blog Rewrite: Dental Implant Planning). Original publish date kept.
     slug: "planning-for-a-dental-implant",
-    title: "Planning for a Dental Implant",
+    title: "Dental Implant Planning: How 3D Imaging Makes Implants More Precise",
+    seoTitle: "Dental Implant Planning: How 3D Imaging Improves Results",
+    description: "How Dr. Brian Mitchell plans every dental implant in 3D with cone-beam imaging and guided surgery, and what to expect at your Tucson implant visit.",
     category: "Dental Implants",
-    excerpt: "What to weigh before implant surgery, from your overall health and your dentist's experience to how cone-beam 3D imaging guides precise placement.",
+    excerpt: "How Dr. Mitchell maps your jawbone, nerves and gums in 3D before an implant is placed, and what to expect from consultation to final tooth.",
     date: "2025-04-22",
-    hero: planningImplant,
-    heroAlt: "A smiling patient pointing at a dental implant model held by a dentist",
-    heroPosition: "center 35%",
+    updated: "2026-11-18",
+    author: "Dr. Brian Mitchell, DDS",
+    hero: planningImplantCbct,
+    heroAlt: "Cone-beam CT scan for dental implant planning in Tucson",
+    heroPosition: "center 40%",
     blocks: [
-      { type: "p", text: "If you are considering having a dental implant, it is a good idea to investigate the surgery's benefits and risks and determine your dentist's experience. According to the U.S. Food and Drug Administration, implant planning should include your specific patient needs. \"Your overall health is an important factor in determining whether you are a good candidate for dental implants, how long it will take to heal, and how long the implant may stay in place.\" Finding a surgeon who has the proper experience and education, and uses the latest technology, is an important part of your treatment planning. Your dentist should be willing to meet with you in a pretreatment consultation." },
+      { type: "p", text: "Good dental implant planning is the difference between an implant that feels like a natural tooth for decades and one that causes problems. Before any implant is placed at our Tucson office, Dr. Brian Mitchell maps your jawbone, nerves and gums in 3D, then plans the exact position, angle and depth of the implant on screen. Here is what that planning involves, why it matters, and what to expect." },
+      { type: "h2", id: "why-planning-matters", text: "Why Dental Implant Planning Matters" },
+      { type: "p", text: "A dental implant is a small post placed in the jawbone to replace the root of a missing tooth. Once it bonds with the bone, it supports a crown, bridge or denture. Because the implant becomes part of your jaw, where it goes matters a great deal." },
+      { type: "p", text: "Careful planning helps:" },
+      { type: "list", items: [
+        "Place the implant in the strongest, healthiest bone",
+        "Avoid nerves, sinuses and the roots of neighboring teeth",
+        "Line the implant up with your bite so the crown feels natural when you chew",
+        "Support healthy gums around the implant for a natural-looking result",
+        "Reduce surprises during the procedure and shorten recovery",
+      ] },
+      { type: "p", text: "The U.S. Food and Drug Administration notes that your overall health affects whether you are a good candidate, how long healing takes and how long an implant may last. That is why planning starts with you, not the implant." },
+      { type: "h2", id: "implant-consultation", text: "What Happens at Your Implant Consultation" },
+      { type: "p", text: "Your first visit is a conversation as much as an exam. Dr. Mitchell believes every patient deserves time to understand their options before agreeing to treatment." },
       { type: "quote", text: "I am a firm believer you should conduct a candid interview with a potential dentist before doing any complex dental work. I also strongly believe a dentist should be willing to give you thirty minutes of their time to explain their treatment plan and answer your questions.", cite: "Dr. Brian Mitchell" },
-      { type: "p", text: "Dr. Brian Mitchell uses computer-guided surgery and cutting-edge 3D X-ray technology, allowing him to navigate the intricacies of implant placement with unprecedented accuracy." },
-      { type: "h2", id: "cone-beam-imaging", text: "Cone-beam imaging" },
-      { type: "quote", text: "Cone-beam computed tomography systems (CBCT) are a variation of traditional computed tomography (CT) systems. The CBCT systems used by dental professionals rotate around the patient, capturing data using a cone-shaped X-ray beam. These data are used to reconstruct a three-dimensional (3D) image of the following regions of the patient's anatomy: dental (teeth); oral and maxillofacial region (mouth, jaw, and neck); and ears, nose, and throat.", cite: "U.S. Food and Drug Administration" },
-      { type: "p", text: "The cone beam CT is used for various clinical applications, including dental implant planning. CBCT imaging is an effective surgical tool used for dental implants. Beam computed tomography, and the value of the increased image quality, is an excellent surgical guide for implant surgery and should be discussed as part of your treatment planning for implant dentistry." },
-      { type: "image", image: planningImplantXrayRoom, alt: "A dental team member reviewing a panoramic X-ray while a patient stands at the imaging machine" },
-      { type: "image", image: planningImplantCbct, alt: "A patient positioned in a cone-beam CT scanner while a clinician operates the controls" },
-      { type: "h2", id: "radiation-and-benefits", text: "Weighing radiation and benefits" },
-      { type: "quote", text: "X-ray imaging, including dental CBCT, provides a fast, non-invasive way of answering a number of clinical questions. Dental CBCT images provide three-dimensional (3-D) information, rather than the two-dimensional (2-D) information provided by a conventional X-ray image. This may help with the diagnosis, treatment, and evaluation of certain conditions.", cite: "U.S. Food and Drug Administration" },
-      { type: "p", text: "Radiation exposure from CBCT imaging is lower than from other CT exams; however, the CBCT scan could expose you to more radiation than a conventional X-ray. This additional radiation exposure dose should be discussed with your dentist while conducting your implant planning. Concerns about radiation dose from beam computed tomography are larger with youthful patients because they may be more sensitive to radiation exposure throughout a longer life expectancy. The benefits of beam CT, with better image quality and precise implant placement with cone beam computed implant dentistry, outweigh the risks involved in implant dentistry treatment planning." },
-      { type: "p", text: "Dr. Brian Mitchell and Associates uses cone beam radiography and fully guided surgical placement for implants." },
-      { type: "quote", text: "The last few years have brought amazing technological advances in our ability to place dental implants quickly and more accurately than ever before. My Dental Implant System has transformed the implant process into a nearly painless experience. Patients often express surprise at the speed and ease with which implants are placed using this groundbreaking technology.", cite: "Dr. Brian Mitchell" },
-      { type: "p", text: "Cone beam computed imagery will ensure your implant placement is meticulous, allowing superior results." },
+      { type: "p", text: "At your consultation, we will:" },
+      { type: "ol", items: [
+        "<strong>Review your health history,</strong> including medications, smoking and conditions like diabetes that can affect healing.",
+        "<strong>Examine your teeth and gums</strong> to check for gum disease or decay that should be treated first.",
+        "<strong>Talk through your options:</strong> a single implant, an implant-supported bridge, implant-supported dentures, or a metal-free <a href=\"/service/zirconia-dental-implants/\">zirconia implant</a>.",
+        "<strong>Take your records:</strong> a cone-beam 3D scan of your jaw and a digital intraoral scan of your teeth at a quick records appointment (more on this below).",
+        "<strong>Give you a clear plan and estimate,</strong> including timing, cost and payment options.",
+      ] },
+      { type: "h3", text: "Your Dental Implant Timeline" },
+      { type: "ol", items: [
+        "<strong>Records appointment:</strong> one quick visit for your cone-beam CT scan and intraoral scan.",
+        "<strong>About two weeks of planning:</strong> Dr. Mitchell uses your scans to plan the exact position, angle and depth of your implant.",
+        "<strong>Implant placement:</strong> your implant is placed following that plan, usually about two weeks after your records appointment.",
+        "<strong>Healing and your final tooth:</strong> once the implant has bonded with the bone, your crown, bridge or denture is attached.",
+      ] },
+      { type: "h2", id: "candidate", text: "Are You a Candidate for Dental Implants?" },
+      { type: "p", text: "Most adults who are missing one or more teeth can have implants. You are likely a good candidate if you:" },
+      { type: "list", items: [
+        "Have healthy gums, or are willing to treat gum disease first",
+        "Have enough jawbone to hold the implant, or can have a bone graft",
+        "Are in good general health, with conditions like diabetes well managed",
+        "Don't smoke, or are willing to stop during healing, since smoking slows healing and raises the risk of implant failure",
+      ] },
+      { type: "p", text: "If a tooth still needs to come out, we can often plan the <a href=\"/service/extractions/\">tooth extraction</a> and the implant together." },
+      { type: "h2", id: "cone-beam-imaging", text: "Cone-Beam 3D Imaging Explained" },
+      { type: "p", text: "A regular dental X-ray shows your teeth in two dimensions. A cone-beam computed tomography (CBCT) scan rotates around your head and builds a three-dimensional image of your teeth, jaw and surrounding structures." },
+      { type: "p", text: "With a CBCT scan, Dr. Mitchell can see:" },
+      { type: "list", items: [
+        "The height, width and density of your jawbone",
+        "The exact location of nerves and sinuses",
+        "How your bite lines up",
+        "Whether you need a bone graft before the implant",
+      ] },
+      { type: "p", text: "The scan takes less than a minute and doesn't hurt. You simply stand or sit still while the machine circles your head." },
+      { type: "image", image: planningImplantXrayRoom, alt: "Dentist reviewing X-ray during dental implant planning" },
+      { type: "h3", text: "Is a CBCT Scan Safe?" },
+      { type: "p", text: "According to the FDA, a dental CBCT scan uses less radiation than other types of CT scans but more than a standard dental X-ray. For implant planning, the detail it provides usually outweighs the small extra exposure. We only take a scan when it helps plan your care, and we're happy to discuss radiation with you, especially for younger patients." },
+      { type: "h2", id: "guided-surgery", text: "Guided Implant Surgery vs. Freehand Placement" },
+      { type: "p", text: "Once your scans are complete, Dr. Mitchell uses planning software to place a virtual implant in your 3D image. He adjusts its position until it sits in the best bone, clear of nerves and lined up with your future crown." },
+      { type: "p", text: "That digital plan then guides the placement itself, so the implant goes exactly where it was planned. This is called guided implant surgery, and it's how every implant is placed at our office." },
+      { type: "table", caption: "Guided implant surgery compared with freehand placement", columns: ["", "Guided implant surgery", "Freehand placement"], rows: [
+        ["Planning", "3D scan and digital plan before surgery", "Based on 2D X-rays and judgment during surgery"],
+        ["Accuracy", "Implant follows the planned position, angle and depth", "Depends on the dentist's estimate in the moment"],
+        ["Procedure", "Often shorter and less invasive", "Can take longer if adjustments are needed"],
+        ["Comfort", "Often less swelling and a smoother recovery", "Varies more from case to case"],
+      ] },
+      { type: "quote", text: "The last few years have brought amazing technological advances in our ability to place dental implants quickly and more accurately than ever before. Patients often express surprise at the speed and ease with which implants are placed using this groundbreaking technology.", cite: "Dr. Brian Mitchell" },
+      { type: "h2", id: "bone-graft", text: "When Is a Bone Graft Needed?" },
+      { type: "p", text: "After a tooth is lost, the jawbone in that area slowly shrinks. If there isn't enough bone to hold an implant securely, a bone graft adds or rebuilds bone first. Your 3D scan shows exactly how much bone you have, so you'll know before treatment whether a graft is part of your plan. Healthy gums matter just as much as bone. Read more in our article on <a href=\"/the-importance-of-soft-tissue-in-successful-dental-implant-surgery/\">why soft tissue matters for dental implants</a>." },
+      { type: "h2", id: "questions-to-ask", text: "Questions to Ask Your Implant Dentist" },
+      { type: "p", text: "Before you commit, it's worth asking any dentist:" },
+      { type: "ol", items: [
+        "Will you take a 3D cone-beam scan before placing my implant?",
+        "Do you use guided surgery or place implants freehand?",
+        "Will I need a bone graft or extraction first?",
+        "What type of implant and crown do you recommend, and why?",
+        "How long will treatment take from start to finish?",
+        "What is included in the cost, and what payment options are available?",
+      ] },
     ],
+    faqHeading: "Dental Implant Planning FAQs",
+    faqs: [
+      ["How long does dental implant planning take?", "Usually about two weeks. At a quick records appointment, we take a cone-beam CT scan and an intraoral scan of your teeth. Dr. Mitchell then spends about two weeks planning your treatment, and your implant is placed at your next appointment."],
+      ["Does implant planning cost extra?", "Yes. The records appointment, where we take your CT scan and intraoral scan, has a separate fee. We'll tell you the cost upfront, and you can ask about payment options such as Cherry and CareCredit."],
+      ["How long does it take for an implant to heal?", "The implant usually takes a few months to fully bond with the jawbone before the final crown is placed. Your plan will include a timeline for your case."],
+      ["Can I get an implant if I've been missing a tooth for years?", "Often, yes. You may need a bone graft if the bone has shrunk, and your 3D scan will show whether that's the case."],
+      ["Are zirconia implants planned the same way?", "Yes. Metal-free zirconia implants go through the same 3D planning process. Learn more about <a href=\"/service/zirconia-dental-implants/\">zirconia dental implants in Tucson</a>."],
+    ],
+    authorBio: "<strong>Dr. Brian Mitchell, DDS</strong> earned his dental degree from the Baltimore College of Dental Surgery and has practiced dentistry in Arizona for 20 years. He uses cone-beam imaging and fully guided surgery to plan and place dental implants at his east Tucson office. <a href=\"/about/\">Read more about Dr. Mitchell</a>.",
+    closing: "<strong>Thinking about a dental implant?</strong> <a href=\"/contact/\">Book an implant consultation</a> with Dr. Mitchell at our Tucson office on East Grant Road. Call <a href=\"tel:5208816767\">(520) 881-6767</a> or learn more about <a href=\"/service/dental-implants/\">dental implants in Tucson</a>. Ask about our <a href=\"/patient-info/financial/\">financing and payment options</a>.",
     sources: [
-      "https://www.fda.gov/medical-devices/dental-devices/dental-implants-what-you-should-know",
-      "https://www.fda.gov/radiation-emitting-products/medical-x-ray-imaging/dental-cone-beam-computed-tomography",
+      { label: "U.S. FDA: Dental Implants, What You Should Know", url: "https://www.fda.gov/medical-devices/dental-devices/dental-implants-what-you-should-know" },
+      { label: "U.S. FDA: Dental Cone-Beam Computed Tomography", url: "https://www.fda.gov/radiation-emitting-products/medical-x-ray-imaging/dental-cone-beam-computed-tomography" },
     ],
   },
   {
@@ -183,51 +268,82 @@ export const posts: Post[] = [
     ],
   },
   {
-    slug: "why-you-need-a-dentist-to-monitor-your-clear-aligner-therapy",
-    title: "Why You Need a Dentist to Monitor Your Clear Aligner Therapy",
-    category: "Orthodontics",
-    excerpt: "Clear aligners move teeth a little at a time. A dentist makes sure the fit is right, you are a good candidate, and your progress stays on track.",
+    // Rewritten Nov 2026 (Blog Rewrite: Mail-Order Aligners vs Invisalign). Original publish date kept.
+    // Absorbs the old "Why You Need a Dentist to Monitor Your Clear Aligner Therapy" post, which now 301s here.
+    slug: "the-dangers-of-do-it-yourself-mail-order-aligners",
+    title: "Mail-Order Aligners vs. Invisalign: The Risks of DIY Teeth Straightening",
+    seoTitle: "Mail-Order Aligners vs Invisalign: The Real Risks of DIY Straightening",
+    description: "Thinking about mail-order aligners? Learn the risks, what happened to SmileDirectClub patients, and how dentist-supervised Invisalign compares.",
+    category: "Invisalign & Orthodontics",
+    excerpt: "What can go wrong with mail-order aligners, what happened when SmileDirectClub shut down, and how dentist-supervised Invisalign compares.",
     date: "2024-05-22",
+    updated: "2026-11-18",
+    author: "Dr. Brian Mitchell, DDS",
+    // Placeholder until the brief's photo (Invisalign trays beside a phone showing the DentalMonitoring app) is supplied.
     hero: monitorAlignerTherapy,
-    heroAlt: "A dentist in blue gloves holding a clear aligner in front of a patient",
+    heroAlt: "Dentist holding a clear aligner in front of a patient in Tucson",
     heroPosition: "center 55%",
     blocks: [
-      { type: "p", text: "Even Michael Jordan had a coach. Jordan is widely considered to be the greatest basketball player of all time. But even Jordan was mentored by some of the best coaches, including Phil Jackson with the Chicago Bulls and Dean Smith as his college coach at North Carolina." },
-      { type: "p", text: "Dr. Brian Mitchell and his staff are your Invisalign treatment experts in Tucson. Clear aligner therapy is a modern approach to straightening teeth." },
-      { type: "quote", text: "Clear aligners are designed to move teeth a little at a time. The aligners are plastic replicas of your teeth. Wearing them puts gentle pressure on the teeth, ever-so-slightly repositioning them. Clear aligners are one of many technological advancements that have made orthodontic treatment less conspicuous and one of many 'appliances' orthodontists use to move teeth and align jaws to create a healthy, beautiful smile.", cite: "American Association of Orthodontists" },
-      { type: "h2", id: "the-right-fit", text: "The right fit, and the right candidate" },
-      { type: "p", text: "There are many reasons why you should consult a dentist to discuss your treatment planning for teeth straightening. The first is ensuring you have a proper fit with your clear aligner treatment. This initial consultation is also important to make sure you are a good candidate for this treatment. You will discover if you have any underlying dental problems, such as gum disease, severe overbite, or a severely turned tooth, that might call for a different treatment." },
-      { type: "h2", id: "monitoring-progress", text: "Monitoring your progress" },
-      { type: "p", text: "Dental monitoring is the second reason you should use a dentist: to keep track of your progress and modify your treatment." },
-      { type: "quote", text: "Like traditional braces, aligners are designed to move teeth a little at a time. Before treatment begins, the dentist will examine the patient, and take diagnostic records including x-rays, photographs, and impressions or digital scans of the teeth. From that information, the dentist can arrive at a diagnosis, and then work within the aligner software to design your smile and plan the treatment process, which tooth moves where, and in what order, guiding teeth into healthy positions.", cite: "American Association of Orthodontists" },
+      { type: "p", text: "Mail-order aligners promise a straighter smile without ever seeing a dentist in person. The trouble is that moving teeth is a medical treatment, and skipping the exam, the X-rays and the in-person check-ins can turn a simple fix into a bigger problem. Here's what can go wrong with mail-order aligners, what happened when the biggest brand shut down, and how dentist-supervised Invisalign compares, including remote check-ins from home." },
+      { type: "h2", id: "what-are-mail-order-aligners", text: "What Are Mail-Order Aligners?" },
+      { type: "p", text: "Mail-order (or direct-to-consumer) aligners are clear plastic trays you buy online. You usually take impressions of your teeth at home or get a quick scan at a retail location, and the trays are shipped to your door. A dentist you never meet may sign off on the plan remotely, but in most cases no one examines your teeth, gums or bone in person before treatment starts." },
+      { type: "p", text: "They look similar to Invisalign, and they are often marketed as cheaper and faster. The difference is what happens before and during treatment." },
+      { type: "h2", id: "risks", text: "The Risks of DIY Teeth Straightening" },
+      { type: "h3", text: "No Exam, No X-Rays" },
+      { type: "p", text: "Before teeth can move safely, a dentist needs to check that your gums are healthy, your roots are strong enough to move, and there's no hidden decay or infection. That requires an in-person exam and X-rays. Mail-order treatment usually skips both, so problems like gum disease or a failing filling can be missed and made worse by the pressure of aligners." },
+      { type: "h3", text: "Problems With Your Bite" },
+      { type: "p", text: "Straight-looking front teeth don't always mean a healthy bite. If teeth are moved without looking at how your upper and lower jaws fit together, you can end up with a bite that feels off, jaw discomfort or uneven wear on your teeth." },
+      { type: "h3", text: "Damage to Teeth and Gums" },
+      { type: "p", text: "Moving teeth too fast or in the wrong direction can cause gum recession, loose teeth or damage to tooth roots. In one case reported by the BBC, a man said mail-order aligners had weakened his front teeth so much that he could no longer bite into an apple." },
+      { type: "h3", text: "No One to Call When Something Goes Wrong" },
+      { type: "p", text: "Aligners don't always track as planned. A tray might stop fitting, a tooth might fall behind, or you might feel pain. With in-person care, your dentist spots this early and adjusts the plan. With mail-order treatment, you may be left sending photos to a support team or giving up altogether." },
+      { type: "h3", text: "Results That Don't Last" },
+      { type: "p", text: "Without the right retainers and follow-up, teeth tend to drift back. Some mail-order customers report little or no change in their smile, or watch their teeth shift again after treatment ends." },
+      { type: "h2", id: "smiledirectclub", text: "What Happened to SmileDirectClub Patients?" },
+      { type: "p", text: "SmileDirectClub was the best-known mail-order aligner company. It filed for bankruptcy in September 2023 and shut down on December 8, 2023. Its aligner service, app and customer support ended, along with its lifetime guarantee. Customers partway through treatment did not receive the rest of their aligners, and the company told them to see a local dentist. Patients who had financed treatment were told they were still expected to keep making payments." },
+      { type: "p", text: "The lesson is not just about one company. When your treatment depends on a business rather than a dentist you can see in person, you have no one to finish your care if that business changes or closes." },
+      { type: "h2", id: "in-person-supervision", text: "Why In-Person Supervision Matters" },
+      { type: "p", text: "Even Michael Jordan had a coach. The best results come from having an expert watch your progress and step in when something needs to change. That's what a dentist does during aligner treatment." },
+      { type: "h3", text: "The Right Fit and the Right Candidate" },
+      { type: "p", text: "At your first visit, we examine your teeth and gums, take photos and a digital scan, and check whether aligners are the right tool for your case. Issues like gum disease, a severe overbite or a badly turned tooth may need to be handled differently, and it's far better to know that before you start." },
+      { type: "h3", text: "A Plan Built Around Your Exam" },
+      { type: "p", text: "Your scans and records are used to design every tooth movement, in the right order, guiding teeth into healthy positions. Dr. Mitchell is a Gold Tier Invisalign provider and offers comprehensive orthodontic treatment for adults and children." },
+      { type: "h3", text: "Progress Checks That Catch Problems Early" },
+      { type: "p", text: "Regular check-ins let us confirm your teeth are moving as planned and make changes if one falls behind. Refinement trays fine-tune the result before you finish." },
+      { type: "h2", id: "dentalmonitoring", text: "Home Convenience, With a Real Dentist: DentalMonitoring" },
+      { type: "p", text: "One reason people choose mail-order aligners is that they don't want frequent office visits. You don't have to give up supervision to get that convenience." },
+      { type: "p", text: "With DentalMonitoring, our <a href=\"/service/orthodontics/\">Invisalign</a> patients use an app to send scans of their teeth from home. Our team reviews them and tracks your progress between office visits, so we can spot a problem early without you taking time off work. There is no extra charge for DentalMonitoring." },
+      { type: "h2", id: "comparison", text: "Mail-Order Aligners vs. Dentist-Supervised Invisalign" },
+      { type: "table", caption: "Mail-order aligners compared with Invisalign at Dr. Mitchell's office", columns: ["", "Mail-order aligners", "Invisalign at Dr. Mitchell's office"], rows: [
+        ["In-person exam and X-rays", "Usually not", "Yes, before treatment starts"],
+        ["Who plans your treatment", "A remote reviewer you may never meet", "A dentist who has examined you in person"],
+        ["Bite and gum health checked", "Limited", "Yes"],
+        ["Progress checks", "Photos or none", "In-office visits plus DentalMonitoring from home"],
+        ["Refinement trays", "Varies by company", "Included in your fee"],
+        ["First set of retainers", "Often extra", "Included in your fee"],
+        ["Help if something goes wrong", "Customer support", "Your dentist, in person"],
+        ["Payment options", "Varies", "Insurance, HSA/FSA, Cherry and CareCredit"],
+      ] },
+      { type: "h2", id: "worth-the-cost", text: "Is Invisalign Worth the Extra Cost?" },
+      { type: "p", text: "Mail-order aligners can look cheaper upfront, but the price often leaves out exams, refinements, retainers and help if something goes wrong. Fixing problems caused by unsupervised treatment can cost far more than doing it right the first time." },
+      { type: "p", text: "At our office, your Invisalign fee includes your aligners, any refinement trays, your first set of retainers and all aligner check visits. Many PPO plans include orthodontic benefits, you can use HSA or FSA funds, and monthly payments are available through Cherry and CareCredit. See our <a href=\"/patient-info/financial/\">financing options</a> for details." },
     ],
-    sources: ["https://aaoinfo.org/whats-trending/orthodontic-treatment-with-clear-aligners/"],
-  },
-  {
-    slug: "the-dangers-of-do-it-yourself-mail-order-aligners",
-    title: "The Dangers of Do-It-Yourself Mail-Order Aligners",
-    category: "Orthodontics",
-    excerpt: "Mail-order aligners skip the exam, the X-rays, and the monitoring. Here is why that matters, and what a qualified orthodontist does differently.",
-    date: "2024-05-22",
-    hero: mailOrderAligners,
-    heroAlt: "A man grimacing while holding a mail-order clear aligner",
-    heroPosition: "center 30%",
-    blocks: [
-      { type: "p", text: "There are some things in life you should not try to do yourself. When it comes to dental care, especially aligning your teeth, it is wise to use a qualified orthodontist. It may be tempting to order teeth aligners from mail-order companies, but you will be much better served by visiting a dental professional." },
-      { type: "quote", text: "Dentists have told the BBC that people ordering clear braces or 'aligners' online may be unaware of the harm they can cause. One man said aligners weakened his front teeth, leaving him unable to bite into an apple.", cite: "BBC News" },
-      { type: "p", text: "Many of the do-it-yourself teeth alignment companies have come under scrutiny and have had many complaints about their mail-order teeth straightening products." },
-      { type: "quote", text: "Major medical organizations like the American Dental Association and the American Association of Orthodontists have alleged that Smile Direct Club puts patients in danger and is practicing medicine illegally. They have filed complaints with the FTC, FDA, and at least 36 state boards. SmileDirectClub's practices have earned it over 1,200 Better Business Bureau complaints in just 5 years as a company.", cite: "Hindenburg Research" },
-      { type: "h2", id: "what-can-go-wrong", text: "What can go wrong" },
-      { type: "p", text: "The dangers of using mail-order aligners range from the possibility of making existing dental issues worse, or creating entirely new problems, to simply not being effective. Some consumers have complained about the braces they ordered online not working, noticing no difference in the shape of their teeth. It is important to have your progress monitored by an orthodontist." },
-      { type: "quote", text: "In traditional dentistry, train-track braces and clear aligners are fitted by dentists and orthodontists themselves, or a trained orthodontic therapist, after an in-person consultation. The health of the hard and soft tissues of the mouth, the teeth and gums, and whether the roots of the teeth can sustain movement, are some of the factors dentists consider. X-rays are instrumental in this process. Once someone starts wearing braces, regular appointments allow dentists to monitor how teeth are moving and to spot and address complications.", cite: "BBC News" },
-      { type: "h2", id: "a-better-path", text: "A better path in Tucson" },
-      { type: "p", text: "Dr. Brian Mitchell, located in Tucson, is a qualified expert in Invisalign aligners and will provide you with a free Invisalign consultation to develop your exclusive treatment plan." },
-      { type: "quote", text: "Invisalign is a way to straighten teeth without metal braces. We will make a clear mouthpiece or tray for you that will straighten your teeth over time. These trays are removable so you can brush and eat normally.", cite: "Dr. Brian Mitchell" },
-      { type: "p", text: "The Invisalign treatment is also affordable, with payment options offered by Dr. Mitchell. The first step for exploring affordable braces in Tucson is to set up an appointment with Dr. Mitchell, one of the best orthodontists Tucson has to offer. To request an appointment, use the contact form on this site or call (520) 881-6767." },
+    faqHeading: "Mail-Order Aligner FAQs",
+    faqs: [
+      ["Are mail-order aligners safe?", "They can cause problems when no one examines your teeth, gums and bite in person first. Risks include gum recession, bite problems, damage to roots and results that don't last."],
+      ["Can a dentist fix problems caused by mail-order aligners?", "In many cases, yes. A dentist can examine your teeth, take X-rays and recommend options such as Invisalign or braces to finish or correct treatment."],
+      ["What should I do if I was a SmileDirectClub customer?", "If you stopped partway through or your teeth have shifted, book an exam with a local dentist before wearing any remaining trays. They can check your teeth and gums and explain your options."],
+      ["Do I have to visit the office often with Invisalign?", "No. Check-ins are short, and DentalMonitoring lets you send scans from home between visits at no extra cost."],
+      ["Can adults get Invisalign?", "Yes. The average orthodontic patient at our practice is over 50. Learn more about <a href=\"/service/adult-braces/\">adult braces and aligners in Tucson</a>."],
     ],
+    authorBio: "<strong>Dr. Brian Mitchell, DDS</strong> is a Gold Tier Invisalign provider who has practiced dentistry in Arizona for 20 years. He earned his dental degree from the Baltimore College of Dental Surgery and offers comprehensive orthodontic treatment for adults and children at his east Tucson office. <a href=\"/about/\">Read more about Dr. Mitchell</a>.",
+    closing: "<strong>Want straighter teeth without the risk?</strong> <a href=\"/contact/\">Book a free Invisalign consultation</a> with Dr. Mitchell, or learn more about <a href=\"/service/orthodontics/\">Invisalign in Tucson</a>. Call <a href=\"tel:5208816767\">(520) 881-6767</a>.",
     sources: [
-      "https://www.bbc.com/news/uk-58038752",
-      "https://hindenburgresearch.com/smiledirectclub-moving-fast-and-breaking-things-in-peoples-mouths/",
+      { label: "BBC News: Dentists warn of harm from online aligners", url: "https://www.bbc.com/news/uk-58038752" },
+      { label: "NewMouth: What SmileDirectClub's Closure Means for Its Customers", url: "https://www.newmouth.com/blog/smile-direct-whitening-reviews/" },
+      { label: "Global News: SmileDirectClub officially shuts down", url: "https://globalnews.ca/news/10164616/smiledirectclub-shut-down-bankruptcy-canada" },
+      { label: "CNN via ABC17: SmileDirectClub shuts down", url: "https://abc17news.com/?p=1254185" },
+      { label: "American Association of Orthodontists: Orthodontic treatment with clear aligners", url: "https://aaoinfo.org/whats-trending/orthodontic-treatment-with-clear-aligners/" },
     ],
   },
 ];

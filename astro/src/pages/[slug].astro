@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import PracticeHeader from "../components/PracticeHeader.astro";
 import PracticeFooter from "../components/PracticeFooter.astro";
+import CompareTable from "../components/content/CompareTable.astro";
 import { posts, formatPostDate, type Post } from "../lib/posts";
 
 export function getStaticPaths() {
@@ -11,11 +12,50 @@ export function getStaticPaths() {
 }
 
 const { post } = Astro.props as { post: Post };
-const headings = post.blocks.filter((block) => block.type === "h2") as Extract<Post["blocks"][number], { type: "h2" }>[];
+const headings = (post.blocks.filter((block) => block.type === "h2") as Extract<Post["blocks"][number], { type: "h2" }>[])
+  .map(({ id, text }) => ({ id, text }));
+if (post.faqs?.length) headings.push({ id: "faqs", text: post.faqHeading ?? "FAQs" });
+
+// Structured data: BlogPosting + BreadcrumbList for every post, FAQPage when the post has FAQs.
+const site = "https://brianmitchelldds.com";
+const url = `${site}/${post.slug}/`;
+const plain = (html: string) => html.replace(/<[^>]+>/g, "");
+const heroUrl = new URL(post.hero.src, site).href;
+const schema: Record<string, unknown>[] = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description ?? post.excerpt,
+    image: heroUrl,
+    datePublished: post.date,
+    dateModified: post.updated ?? post.date,
+    author: post.author
+      ? { "@type": "Person", name: "Dr. Brian Mitchell", honorificSuffix: "DDS", url: `${site}/about/` }
+      : { "@type": "Organization", name: "Dr. Brian Mitchell & Associates", url: `${site}/` },
+    publisher: { "@type": "Organization", name: "Dr. Brian Mitchell & Associates", url: `${site}/` },
+    mainEntityOfPage: url,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${site}/` },
+      { "@type": "ListItem", position: 2, name: "Blogs", item: `${site}/patient-info/blogs/` },
+      { "@type": "ListItem", position: 3, name: post.title, item: url },
+    ],
+  },
+];
+if (post.faqs?.length) schema.push({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: post.faqs.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: plain(a) } })),
+});
 const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
 ---
 
-<Layout title={`${post.title} | Dr. Brian Mitchell & Associates`}>
+<Layout title={post.seoTitle ?? `${post.title} | Dr. Brian Mitchell & Associates`} description={post.description}>
+  <Fragment slot="head">{schema.map((item) => <script type="application/ld+json" set:html={JSON.stringify(item)} />)}</Fragment>
   <div class="page-shell min-h-screen">
     <PracticeHeader active="blogs" />
     <main>
@@ -25,9 +65,13 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
           <p class="eyebrow mt-12">{post.category} · Patient education</p>
           <h1 class="display-face mt-5 max-w-4xl text-5xl leading-[.93] tracking-[-.035em] text-[#283e3c] sm:text-6xl lg:text-7xl">{post.title}</h1>
           <div class="mt-8 flex flex-wrap items-center gap-4 text-xs font-bold text-[#566663]">
-            <span>By Dr. Brian Mitchell & Associates</span>
+            <span>By {post.author ?? "Dr. Brian Mitchell & Associates"}</span>
             <span class="h-1 w-1 rounded-full bg-[#729f9a]"></span>
-            <span>{formatPostDate(post.date)}</span>
+            {post.updated ? (
+              <span>Published <time datetime={post.date}>{formatPostDate(post.date)}</time> · Updated <time datetime={post.updated}>{formatPostDate(post.updated)}</time></span>
+            ) : (
+              <span>{formatPostDate(post.date)}</span>
+            )}
           </div>
         </div>
       </section>
@@ -45,9 +89,12 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
           )}
           <article class="article-copy">
             {post.blocks.map((block, index) => {
-              if (block.type === "p") return <p class={index === 0 ? "lead" : ""}>{block.text}</p>;
+              if (block.type === "p") return <p class={index === 0 ? "lead" : ""} set:html={block.text} />;
               if (block.type === "h2") return <h2 id={block.id}>{block.text}</h2>;
-              if (block.type === "list") return <ul class="my-6 grid gap-2 pl-5 text-base leading-7 text-[#4a5a58]">{block.items.map((item) => <li class="list-disc">{item}</li>)}</ul>;
+              if (block.type === "h3") return <h3>{block.text}</h3>;
+              if (block.type === "list") return <ul class="my-6 grid gap-2 pl-5 text-base leading-7 text-[#4a5a58]">{block.items.map((item) => <li class="list-disc" set:html={item} />)}</ul>;
+              if (block.type === "ol") return <ol class="my-6 grid gap-2 pl-6 text-base leading-7 text-[#4a5a58]">{block.items.map((item) => <li class="list-decimal pl-1" set:html={item} />)}</ol>;
+              if (block.type === "table") return <div class="article-table"><CompareTable columns={block.columns} rows={block.rows} caption={block.caption} /></div>;
               if (block.type === "terms") return (
                 <dl class="my-8 grid gap-5 border-l-2 border-[#729f9a]/40 pl-5">
                   {block.items.map(([term, definition]) => (
@@ -73,11 +120,34 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
               );
             })}
 
+            {post.faqs && post.faqs.length > 0 && (
+              <section class="article-faqs">
+                <h2 id="faqs">{post.faqHeading ?? "FAQs"}</h2>
+                {post.faqs.map(([question, answer]) => (
+                  <div class="article-faq">
+                    <h3>{question}</h3>
+                    <p set:html={answer} />
+                  </div>
+                ))}
+              </section>
+            )}
+
+            {post.authorBio && (
+              <section class="article-author">
+                <h2 id="about-the-author">About the Author</h2>
+                <p set:html={post.authorBio} />
+                {post.closing && <p set:html={post.closing} />}
+              </section>
+            )}
+
             {post.sources && (
               <div class="mt-12 border-t border-[#729f9a]/25 pt-6">
                 <p class="text-[.63rem] font-extrabold uppercase tracking-[.14em] text-[#3f6e69]">Sources</p>
                 <ol class="mt-3 grid gap-2 pl-5 text-xs leading-6 text-[#566663]">
-                  {post.sources.map((source) => <li class="list-decimal break-all"><a href={source} rel="noreferrer" target="_blank" class="text-[#354a4d] underline underline-offset-2">{source}</a></li>)}
+                  {post.sources.map((source) => {
+                    const { label, url: href } = typeof source === "string" ? { label: source, url: source } : source;
+                    return <li class={`list-decimal ${typeof source === "string" ? "break-all" : ""}`}><a href={href} rel="noreferrer" target="_blank" class="text-[#354a4d] underline underline-offset-2">{label}</a></li>;
+                  })}
                 </ol>
               </div>
             )}
