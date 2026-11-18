@@ -79,13 +79,28 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
 
       <section class="mx-auto max-w-[1080px] px-5 py-12 sm:px-8 lg:py-16">
         <Image src={post.hero} alt={post.heroAlt} style={{ objectPosition: post.heroPosition ?? "center" }} class="aspect-[16/8] w-full object-cover" width={1080} loading="eager" />
-        <div class={`mx-auto mt-14 grid max-w-4xl gap-12 ${headings.length ? "lg:grid-cols-[190px_minmax(0,1fr)]" : ""}`}>
+        <div class={`mx-auto mt-14 grid max-w-4xl gap-12 ${headings.length ? "lg:grid-cols-[230px_minmax(0,1fr)]" : ""}`}>
           {headings.length > 0 && (
             <aside class="lg:sticky lg:top-8 lg:self-start">
-              <p class="text-[.63rem] font-extrabold uppercase tracking-[.14em] text-[#3f6e69]">In this article</p>
-              <div class="mt-4 grid gap-3 text-sm font-bold text-[#354a4d]">
-                {headings.map((heading) => <a href={`#${heading.id}`} class="no-underline">{heading.text}</a>)}
-              </div>
+              <nav class="toc hidden lg:block" aria-label="In this article">
+                <p class="toc__label">In this article</p>
+                <ol class="toc__list">
+                  {headings.map((heading, i) => (
+                    <li><a href={`#${heading.id}`} data-toc-link={heading.id}><span class="toc__num">{String(i + 1).padStart(2, "0")}</span><span>{heading.text}</span></a></li>
+                  ))}
+                </ol>
+              </nav>
+              <details class="toc toc--mobile lg:hidden">
+                <summary>
+                  <span class="toc__label">In this article</span>
+                  <span class="toc__count">{headings.length} sections <Icon name="lucide:chevron-down" class="toc__chevron h-4 w-4" /></span>
+                </summary>
+                <ol class="toc__list">
+                  {headings.map((heading, i) => (
+                    <li><a href={`#${heading.id}`}><span class="toc__num">{String(i + 1).padStart(2, "0")}</span><span>{heading.text}</span></a></li>
+                  ))}
+                </ol>
+              </details>
             </aside>
           )}
           <article class="article-copy">
@@ -199,4 +214,32 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
     </main>
     <PracticeFooter />
   </div>
+  <script is:inline>
+    // Highlight the contents entry for the section being read.
+    (function () {
+      var links = document.querySelectorAll("[data-toc-link]");
+      if (!links.length || !("IntersectionObserver" in window)) return;
+      var byId = {};
+      links.forEach(function (a) { byId[a.getAttribute("data-toc-link")] = a; });
+      var current = null;
+      function setActive(id) {
+        if (id === current || !byId[id]) return;
+        if (current && byId[current]) byId[current].classList.remove("is-active");
+        byId[id].classList.add("is-active"); current = id;
+      }
+      var headings = Object.keys(byId).map(function (id) { return document.getElementById(id); }).filter(Boolean);
+      var io = new IntersectionObserver(function () {
+        var active = headings[0];
+        headings.forEach(function (h) { if (h.getBoundingClientRect().top < window.innerHeight * 0.35) active = h; });
+        if (active) setActive(active.id);
+      }, { rootMargin: "0px 0px -60% 0px", threshold: [0, 1] });
+      headings.forEach(function (h) { io.observe(h); });
+      window.addEventListener("scroll", function () {
+        var active = headings[0];
+        headings.forEach(function (h) { if (h.getBoundingClientRect().top < window.innerHeight * 0.35) active = h; });
+        if (active) setActive(active.id);
+      }, { passive: true });
+      setActive(headings[0].id);
+    })();
+  </script>
 </Layout>
