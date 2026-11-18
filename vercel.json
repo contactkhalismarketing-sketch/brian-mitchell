@@ -10,6 +10,11 @@
       "statusCode": 301
     },
     {
+      "source": "/why-you-need-a-dentist-to-monitor-your-clear-aligner-therapy/",
+      "destination": "/the-dangers-of-do-it-yourself-mail-order-aligners/",
+      "statusCode": 301
+    },
+    {
       "source": "/forms/MitchellWhitening.pdf",
       "destination": "/patient-info/forms/",
       "statusCode": 301
