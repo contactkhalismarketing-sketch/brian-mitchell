@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import PracticeHeader from "../components/PracticeHeader.astro";
 import PracticeFooter from "../components/PracticeFooter.astro";
 import CompareTable from "../components/content/CompareTable.astro";
+import authorAvatar from "../assets/practice/brian-author-avatar.jpg";
 import { posts, formatPostDate, type Post } from "../lib/posts";
 
 export function getStaticPaths() {
@@ -134,8 +135,13 @@ const morePosts = posts.filter((other) => other.slug !== post.slug).slice(0, 3);
 
             {post.authorBio && (
               <section class="article-author">
-                <h2 id="about-the-author">About the Author</h2>
-                <p set:html={post.authorBio} />
+                <div class="article-author__card">
+                  <Image src={authorAvatar} alt="Dr. Brian Mitchell, DDS" width={192} height={192} class="article-author__photo" loading="lazy" />
+                  <div>
+                    <h2 id="about-the-author">About the Author</h2>
+                    <p set:html={post.authorBio} />
+                  </div>
+                </div>
                 {post.closing && <p set:html={post.closing} />}
               </section>
             )}

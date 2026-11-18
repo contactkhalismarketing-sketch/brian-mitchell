@@ -300,6 +300,11 @@ textarea.form-field { min-height: 10.5rem; padding-top: .95rem; }
 .article-author { border-top: 2px solid #729f9a; padding-top: .5rem; }
 .article-author h2 { margin-top: 1.5rem; font-size: clamp(1.6rem,2.4vw,2rem); }
 .article-author p { margin-top: 1rem; }
+.article-author__card { align-items: start; display: grid; gap: 1.5rem; grid-template-columns: 104px minmax(0,1fr); margin-top: 1.5rem; }
+.article-author__card h2 { margin-top: .2rem; }
+.article-author__card p { margin-top: .75rem; }
+.article-author__photo { aspect-ratio: 1; border: 3px solid #ffffff !important; border-radius: 9999px; box-shadow: 0 0 0 2px #729f9a; height: 104px; object-fit: cover; width: 104px; }
+@media (max-width: 639px) { .article-author__card { gap: 1rem; grid-template-columns: 72px minmax(0,1fr); } .article-author__photo { height: 72px; width: 72px; } }
 .article-hero { background: linear-gradient(105deg, #f0f5f4 0%, #ffffff 72%); overflow: hidden; position: relative; }
 .article-hero__portal { border-color: rgba(114,159,154,.44); height: 380px; right: -145px; top: -140px; width: 720px; }
 .article-image-frame { overflow: hidden; position: relative; }
