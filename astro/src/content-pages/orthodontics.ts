@@ -72,7 +72,7 @@ export const cost: [string, string][] = [
   ["Free consultation for new patients:", "find out if you're a candidate, how long treatment will take and the full price, all in one visit. <a href=\"/new-patient-specials/\">See new patient specials</a>."],
   ["Orthodontic insurance:", "many PPO plans include a lifetime orthodontic maximum that applies to Invisalign the same way it applies to braces. Some plans only cover patients under a certain age, so we check your benefits for you."],
   ["Spread it across treatment:", "Cherry and CareCredit let you pay monthly while your teeth move, instead of paying everything upfront."],
-  ["What's included:", "your Invisalign fee covers your aligners, any refinement trays, your first set of retainers and all aligner check visits."],
+  ["What's included:", "one price covers all of your aligners, refinements and retainers, as well as your aligner check visits."],
   ["HSA/FSA:", "you can use HSA or FSA funds toward treatment. <a href=\"/patient-info/financial/\">See financing and insurance</a>."],
 ];
 
