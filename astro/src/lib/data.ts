@@ -73,8 +73,8 @@ export const serviceHeroes = {
   bridges: { image: heroBridges, mobile: heroBridgesMobile, position: "100% 58%", alt: "Dental model showing a dental bridge replacing a missing tooth" },
   cosmetic: { image: heroCosmetic, mobile: heroCosmeticMobile, card: cardCosmetic, position: "100% 69%", alt: "Dental model with porcelain veneers and a veneer shade guide on a tray" },
   implants: { image: heroImplants, mobile: heroImplantsMobile, card: cardImplants, position: "100% 67%", alt: "Dental implant beside a crown and a jaw model showing a placed implant" },
-  // Temporary: shares the implants hero until a dedicated zirconia hero is supplied.
-  zirconia: { image: heroImplants, mobile: heroImplantsMobile, position: "100% 67%", alt: "Dental implant beside a crown and a jaw model showing a placed implant" },
+  // Temporary: neutral treatment-room image (no titanium implant in view) until Dr. Mitchell's SDS zirconia product photo arrives.
+  zirconia: { image: heroRoutine, mobile: heroRoutineMobile, position: "100% 53%", alt: "Dental chair beside a window, with an X-ray displayed on a screen behind" },
   extractions: { image: heroExtractions, mobile: heroExtractionsMobile, position: "100% 69%", alt: "Extraction forceps, gauze and a tooth model on a tray" },
   orthodontics: { image: heroOrthodontics, mobile: heroOrthodonticsMobile, card: cardOrthodontics, position: "100% 69%", alt: "Clear aligner on a dental model with a 3D smile scan on a screen behind" },
   preventative: { image: heroPreventative, mobile: heroPreventativeMobile, position: "100% 62%", alt: "Dental chair and instrument tray in a bright treatment room" },
